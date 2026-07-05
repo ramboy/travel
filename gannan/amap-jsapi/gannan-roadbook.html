@@ -84,6 +84,7 @@
       display: grid;
       grid-template-columns: 1fr;
       gap: 8px;
+      margin-top: 10px;
     }
     .config-grid.hidden { display: none; }
     input {
@@ -256,9 +257,19 @@
     }
     .fallback b { color: #0f172a; }
     @media (max-width: 940px) {
-      .app { grid-template-columns: 1fr; grid-template-rows: 58vh 42vh; min-height: 100vh; }
+      html, body { height: 100%; }
+      .app { grid-template-columns: 1fr; grid-template-rows: minmax(360px, 56vh) minmax(440px, 44vh); height: auto; min-height: 100vh; }
+      #map { min-height: 360px; }
       .sidebar { border-left: 0; border-top: 1px solid var(--line); }
-      .fallback { width: calc(100vw - 32px); left: 16px; bottom: 44vh; }
+      .header { padding: 16px 16px 12px; }
+      h1 { font-size: 23px; }
+      .config { padding: 12px 16px; }
+      .status { padding: 8px 16px; }
+      .days { padding: 12px 12px 18px; }
+      .toolbar-actions { grid-template-columns: 1fr; }
+      .day-head { grid-template-columns: auto 1fr; }
+      .day-distance { grid-column: 2; text-align: left; }
+      .fallback { width: calc(100vw - 32px); left: 16px; bottom: calc(44vh + 16px); }
     }
   </style>
 </head>
@@ -428,22 +439,26 @@
     const configText = document.getElementById('configText');
     const keyInput = document.getElementById('amapKey');
     const securityInput = document.getElementById('amapSecurity');
+    const configGrid = document.querySelector('.config-grid');
 
     keyInput.value = localStorage.getItem('gannanAmapKey') || DEFAULT_AMAP_KEY;
     securityInput.value = localStorage.getItem('gannanAmapSecurity') || DEFAULT_AMAP_SECURITY;
 
     renderDayCards();
+    updateConfigVisibility();
     showFallback(true);
 
     document.getElementById('loadBtn').addEventListener('click', () => {
       const key = keyInput.value.trim();
       const security = securityInput.value.trim();
       if (!key || !security) {
-        setStatus('缺少内置高德 Web Key 或 securityJsCode，请检查页面配置。');
+        revealConfigInputs();
+        setStatus('手机或线上页面缺少本机高德配置，请在上方填入 Key 和安全密钥后加载。');
         return;
       }
       localStorage.setItem('gannanAmapKey', key);
       localStorage.setItem('gannanAmapSecurity', security);
+      updateConfigVisibility();
       loadRoadbook(key, security);
     });
 
@@ -456,12 +471,16 @@
       localStorage.removeItem('gannanAmapSecurity');
       keyInput.value = '';
       securityInput.value = '';
-      setStatus('已清除浏览器本地覆盖配置，页面仍会使用内置默认配置。');
+      updateConfigVisibility();
+      setStatus('已清除浏览器本机配置。需要重新填入 Key 和安全密钥后加载。');
       showFallback(true);
     });
 
     if (keyInput.value && securityInput.value) {
       loadRoadbook(keyInput.value, securityInput.value);
+    } else {
+      revealConfigInputs();
+      setStatus('线上页面未提交真实 Key。请在本机配置区填入高德 Key 和安全密钥，浏览器会保存在本机。');
     }
 
     async function loadRoadbook(key, securityJsCode) {
@@ -493,8 +512,9 @@
             mapStyle: 'amap://styles/normal'
           });
           map.addControl(new AMap.Scale());
-          map.addControl(new AMap.ToolBar({ position: { right: '455px', top: '20px' } }));
-          map.addControl(new AMap.ControlBar({ position: { right: '455px', top: '88px' } }));
+          const controlRight = isMobileLayout() ? '16px' : '455px';
+          map.addControl(new AMap.ToolBar({ position: { right: controlRight, top: '20px' } }));
+          map.addControl(new AMap.ControlBar({ position: { right: controlRight, top: '88px' } }));
           geocoder = new AMap.Geocoder({ radius: 8000, extensions: 'base' });
           configPanel.classList.add('ok');
           configText.textContent = '高德 JSAPI 已加载。正在解析地点并规划每日驾车路线...';
@@ -562,7 +582,7 @@
       }
       updateTotalMetrics();
       if (routeOverlays.length || markers.length) {
-        map.setFitView([...routeOverlays, ...markers], false, [70, 470, 70, 70]);
+        map.setFitView([...routeOverlays, ...markers], false, mapPadding());
       }
     }
 
@@ -654,7 +674,7 @@
           ...routeOverlays.filter((line) => line.getExtData().day === dayName),
           ...markers.filter((marker) => marker.getExtData().day === dayName)
         ];
-        if (overlays.length) map.setFitView(overlays, false, [80, 470, 80, 80]);
+        if (overlays.length) map.setFitView(overlays, false, mapPadding(80));
       }
     }
 
@@ -671,7 +691,7 @@
         line.setOptions({ strokeOpacity: 0.92, strokeWeight: 7, zIndex: 60 });
       });
       markers.forEach((marker) => marker.setzIndex(120));
-      map.setFitView([...routeOverlays, ...markers], false, [70, 470, 70, 70]);
+      map.setFitView([...routeOverlays, ...markers], false, mapPadding());
       setStatus('正在查看 D1-D9 全程路线。点击任一天卡片可聚焦当天。');
     }
 
@@ -732,6 +752,35 @@
 
     function showFallback(show) {
       fallbackEl.style.display = show ? 'block' : 'none';
+    }
+
+    function updateConfigVisibility() {
+      if (keyInput.value && securityInput.value) {
+        configGrid.classList.add('hidden');
+        configGrid.setAttribute('aria-hidden', 'true');
+        keyInput.tabIndex = -1;
+        securityInput.tabIndex = -1;
+        configText.textContent = '页面将使用本机保存或本地配置的高德 Web Key 加载地图，不在界面展示 Key 或安全密钥。';
+      } else {
+        revealConfigInputs();
+      }
+    }
+
+    function revealConfigInputs() {
+      configGrid.classList.remove('hidden');
+      configGrid.setAttribute('aria-hidden', 'false');
+      keyInput.tabIndex = 0;
+      securityInput.tabIndex = 0;
+      configPanel.classList.remove('ok');
+      configText.textContent = '线上页面未包含真实 Key。请在本机填入高德 Web Key 和 securityJsCode；输入框为密码样式，配置只保存在当前浏览器。';
+    }
+
+    function isMobileLayout() {
+      return window.matchMedia('(max-width: 940px)').matches;
+    }
+
+    function mapPadding(base = 70) {
+      return isMobileLayout() ? [base, base, base, base] : [base, 470, base, base];
     }
 
     function escapeHtml(value) {
