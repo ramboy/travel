@@ -5,30 +5,6 @@
 航班：7/18 3U3195 07:20-10:25；7/26 MU2446 17:55-20:40  
 配套页面：`amap-jsapi/gannan-roadbook.html`，配套路线图：`甘南自驾路书地图_7月18-26.png`
 
-## 沿途景点图片
-
-说明：小红书搜索脚本本次可以登录但搜索结果为空，所以下面先使用公开可访问图片源，并为每个景点附上小红书搜索入口，后续看到喜欢的笔记图可以直接替换。
-
-<div class="spot-grid">
-  <article class="spot-card"><img loading="lazy" referrerpolicy="no-referrer" src="https://n.sinaimg.cn/sinacn20100/152/w2048h2104/20190710/69cb-hzrevpz3199497.jpg" alt="甘肃省博物馆铜奔马"><div><strong>D1 甘肃省博物馆</strong><span>铜奔马/丝路文明重点展品</span><a href="https://www.xiaohongshu.com/search_result?keyword=%E7%94%98%E8%82%83%E7%9C%81%E5%8D%9A%E7%89%A9%E9%A6%86" target="_blank" rel="noreferrer">小红书搜图</a></div></article>
-  <article class="spot-card"><img loading="lazy" referrerpolicy="no-referrer" src="https://dimg04.c-ctrip.com/images/1mf5612000c298kqyCBF3_W_640_400_Q90.jpg?proc=autoorient" alt="美仁大草原"><div><strong>D2 美仁大草原</strong><span>高山草甸、公路草原风景</span><a href="https://www.xiaohongshu.com/search_result?keyword=%E7%BE%8E%E4%BB%81%E5%A4%A7%E8%8D%89%E5%8E%9F" target="_blank" rel="noreferrer">小红书搜图</a></div></article>
-  <article class="spot-card"><img loading="lazy" referrerpolicy="no-referrer" src="https://youimg1.c-ctrip.com/target/100615000000xnfpa0992_W_10000_1200.jpg?proc=autoorient" alt="安多合作米拉日巴佛阁"><div><strong>D2 米拉日巴佛阁</strong><span>合作市地标佛阁，适合短停</span><a href="https://www.xiaohongshu.com/search_result?keyword=%E7%B1%B3%E6%8B%89%E6%97%A5%E5%B7%B4%E4%BD%9B%E9%98%81" target="_blank" rel="noreferrer">小红书搜图</a></div></article>
-  <article class="spot-card"><img loading="lazy" referrerpolicy="no-referrer" src="https://pic1.zhimg.com/v2-53765bfe290ee08a17bf5cf3cc806abf_1440w.jpg?source=172ae18b" alt="洛克之路山谷"><div><strong>D3 洛克之路</strong><span>扎古录到扎尕那山地穿越路段</span><a href="https://www.xiaohongshu.com/search_result?keyword=%E7%94%98%E5%8D%97%E6%B4%9B%E5%85%8B%E4%B9%8B%E8%B7%AF" target="_blank" rel="noreferrer">小红书搜图</a></div></article>
-  <article class="spot-card"><img loading="lazy" referrerpolicy="no-referrer" src="https://img1.qunarzz.com/travel/d8/1610/1f/1517a66aef6aafb5.jpg_r_640x426x70_bff833c7.jpg" alt="达日观景台和扎尕那"><div><strong>D3 达日观景台</strong><span>扎尕那方向观景点，天气决定体验</span><a href="https://www.xiaohongshu.com/search_result?keyword=%E8%BE%BE%E6%97%A5%E8%A7%82%E6%99%AF%E5%8F%B0%20%E6%89%8E%E5%B0%95%E9%82%A3" target="_blank" rel="noreferrer">小红书搜图</a></div></article>
-  <article class="spot-card"><img loading="lazy" referrerpolicy="no-referrer" src="https://n.sinaimg.cn/sinacn10120/267/w1600h1067/20190830/965a-icxmqsv7933078.jpg" alt="扎尕那"><div><strong>D4 扎尕那</strong><span>石城村落、晨雾和山景</span><a href="https://www.xiaohongshu.com/search_result?keyword=%E6%89%8E%E5%B0%95%E9%82%A3" target="_blank" rel="noreferrer">小红书搜图</a></div></article>
-  <article class="spot-card"><img loading="lazy" referrerpolicy="no-referrer" src="https://youimg1.c-ctrip.com/target/100p070000002el70B988.jpg" alt="郎木寺和格尔底寺"><div><strong>D4 格尔底寺/郎木寺</strong><span>郎木寺镇核心寺院景观</span><a href="https://www.xiaohongshu.com/search_result?keyword=%E6%A0%BC%E5%B0%94%E5%BA%95%E5%AF%BA%20%E9%83%8E%E6%9C%A8%E5%AF%BA" target="_blank" rel="noreferrer">小红书搜图</a></div></article>
-  <article class="spot-card"><img loading="lazy" referrerpolicy="no-referrer" src="https://img.pconline.com.cn/images/upload/upc/tx/itbbs/2003/05/c7/195631024_1583387433841_mthumb.jpg" alt="纳摩大峡谷"><div><strong>D4 纳摩大峡谷</strong><span>峡谷轻徒步，注意天气和保暖</span><a href="https://www.xiaohongshu.com/search_result?keyword=%E7%BA%B3%E6%91%A9%E5%A4%A7%E5%B3%A1%E8%B0%B7" target="_blank" rel="noreferrer">小红书搜图</a></div></article>
-  <article class="spot-card"><img loading="lazy" referrerpolicy="no-referrer" src="https://img1.qunarzz.com/travel/d6/1710/aa/eae614fd6912b9b5.jpg?color=#61792b" alt="若尔盖花湖湿地"><div><strong>D5 花湖湿地</strong><span>栈道湿地、候鸟和草原湖泊</span><a href="https://www.xiaohongshu.com/search_result?keyword=%E8%8A%B1%E6%B9%96%E6%B9%BF%E5%9C%B0" target="_blank" rel="noreferrer">小红书搜图</a></div></article>
-  <article class="spot-card"><img loading="lazy" referrerpolicy="no-referrer" src="https://picx.zhimg.com/v2-74e110f2ea6d93f80b4cfb4800aeac95_1440w.jpg" alt="黄河九曲第一湾"><div><strong>D5 黄河九曲第一湾</strong><span>下午打卡优先，日落会影响赶路</span><a href="https://www.xiaohongshu.com/search_result?keyword=%E9%BB%84%E6%B2%B3%E4%B9%9D%E6%9B%B2%E7%AC%AC%E4%B8%80%E6%B9%BE" target="_blank" rel="noreferrer">小红书搜图</a></div></article>
-  <article class="spot-card"><img loading="lazy" referrerpolicy="no-referrer" src="https://tr-osdcp.qunarzz.com/tr-osd-tr-space/img/24b8d7e49e482e0c1eb8a12dc56ef3b2.jpg" alt="莲宝叶则景区"><div><strong>D6 莲宝叶则</strong><span>高海拔湖泊和石山，控制体力</span><a href="https://www.xiaohongshu.com/search_result?keyword=%E8%8E%B2%E5%AE%9D%E5%8F%B6%E5%88%99" target="_blank" rel="noreferrer">小红书搜图</a></div></article>
-  <article class="spot-card"><img loading="lazy" referrerpolicy="no-referrer" src="https://p1.itc.cn/images01/20210909/92735bd58c3c4e2394fe5b7790ceebca.jpeg" alt="各莫寺"><div><strong>D6 各莫寺</strong><span>阿坝县附近藏传佛教寺院</span><a href="https://www.xiaohongshu.com/search_result?keyword=%E5%90%84%E8%8E%AB%E5%AF%BA" target="_blank" rel="noreferrer">小红书搜图</a></div></article>
-  <article class="spot-card"><img loading="lazy" referrerpolicy="no-referrer" src="https://youimg1.c-ctrip.com/target/100b090000003wwf7F1A5.jpg" alt="阿万仓湿地和玛曲湿地"><div><strong>D7 娘玛寺/阿万仓湿地</strong><span>娘玛寺公开图少，此处用阿万仓区域图参考</span><a href="https://www.xiaohongshu.com/search_result?keyword=%E5%A8%98%E7%8E%9B%E5%AF%BA%20%E9%98%BF%E4%B8%87%E4%BB%93%E6%B9%BF%E5%9C%B0" target="_blank" rel="noreferrer">小红书搜图</a></div></article>
-  <article class="spot-card"><img loading="lazy" referrerpolicy="no-referrer" src="https://dimg04.c-ctrip.com/images/0102y1200092lklkt62A6_W_1080_10000_Q80.jpg" alt="郭莽湿地"><div><strong>D7 郭莽湿地</strong><span>G213 旁湿地栈道和洮河源头景观</span><a href="https://www.xiaohongshu.com/search_result?keyword=%E9%83%AD%E8%8E%BD%E6%B9%BF%E5%9C%B0" target="_blank" rel="noreferrer">小红书搜图</a></div></article>
-  <article class="spot-card"><img loading="lazy" referrerpolicy="no-referrer" src="https://n.sinaimg.cn/sinakd10116/701/w985h516/20200730/eb74-iwxpesy3500036.jpg" alt="桑科草原"><div><strong>D7 桑科草原</strong><span>夏河前草原路景，适合短停</span><a href="https://www.xiaohongshu.com/search_result?keyword=%E6%A1%91%E7%A7%91%E8%8D%89%E5%8E%9F" target="_blank" rel="noreferrer">小红书搜图</a></div></article>
-  <article class="spot-card"><img loading="lazy" referrerpolicy="no-referrer" src="https://img1.qunarzz.com/travel/d7/1507/8e/5e05142687af0a.jpg" alt="拉卜楞寺"><div><strong>D8 拉卜楞寺</strong><span>夏河核心人文景点，建议请讲解</span><a href="https://www.xiaohongshu.com/search_result?keyword=%E6%8B%89%E5%8D%9C%E6%A5%9E%E5%AF%BA" target="_blank" rel="noreferrer">小红书搜图</a></div></article>
-  <article class="spot-card"><img loading="lazy" referrerpolicy="no-referrer" src="https://q1.itc.cn/images01/20240705/8faeacb33e714e3d945d0ce7dbce1b49.png" alt="甘加秘境白石崖"><div><strong>D8 甘加秘境</strong><span>白石崖、八角城、甘加草原组合</span><a href="https://www.xiaohongshu.com/search_result?keyword=%E7%94%98%E5%8A%A0%E7%A7%98%E5%A2%83" target="_blank" rel="noreferrer">小红书搜图</a></div></article>
-</div>
-
 ## 重要结论
 
 这版路线整体可执行，主要风险点是天气、洛克之路路况、D5 是否等黄河九曲日落、D8 甘加秘境开放/交通。
@@ -73,6 +49,10 @@
 航班：3U3195 07:20-10:25  
 住宿：兰州市区
 
+<div class="spot-grid day-photos">
+  <article class="spot-card"><img loading="lazy" referrerpolicy="no-referrer" src="https://n.sinaimg.cn/sinacn20100/152/w2048h2104/20190710/69cb-hzrevpz3199497.jpg" alt="甘肃省博物馆铜奔马"><div><strong>甘肃省博物馆</strong><span>铜奔马/丝路文明重点展品</span><a href="https://www.xiaohongshu.com/search_result?keyword=%E7%94%98%E8%82%83%E7%9C%81%E5%8D%9A%E7%89%A9%E9%A6%86" target="_blank" rel="noreferrer">小红书搜图</a></div></article>
+</div>
+
 | 时间 | 安排 |
 |---|---|
 | 10:25-12:00 | 抵达兰州中川机场，取车，检查轮胎、油量、ETC/导航、备胎和玻璃水。 |
@@ -87,6 +67,11 @@
 路线：兰州市 -> 美仁大草原 -> 安多合作米拉日巴佛阁 -> 卓尼扎古录大酒店  
 住宿：卓尼扎古录大酒店
 
+<div class="spot-grid day-photos">
+  <article class="spot-card"><img loading="lazy" referrerpolicy="no-referrer" src="https://dimg04.c-ctrip.com/images/1mf5612000c298kqyCBF3_W_640_400_Q90.jpg?proc=autoorient" alt="美仁大草原"><div><strong>美仁大草原</strong><span>高山草甸、公路草原风景</span><a href="https://www.xiaohongshu.com/search_result?keyword=%E7%BE%8E%E4%BB%81%E5%A4%A7%E8%8D%89%E5%8E%9F" target="_blank" rel="noreferrer">小红书搜图</a></div></article>
+  <article class="spot-card"><img loading="lazy" referrerpolicy="no-referrer" src="https://youimg1.c-ctrip.com/target/100615000000xnfpa0992_W_10000_1200.jpg?proc=autoorient" alt="安多合作米拉日巴佛阁"><div><strong>米拉日巴佛阁</strong><span>合作市地标佛阁，适合短停</span><a href="https://www.xiaohongshu.com/search_result?keyword=%E7%B1%B3%E6%8B%89%E6%97%A5%E5%B7%B4%E4%BD%9B%E9%98%81" target="_blank" rel="noreferrer">小红书搜图</a></div></article>
+</div>
+
 | 时间 | 安排 |
 |---|---|
 | 08:00 | 兰州早餐后出发，加满油。 |
@@ -100,6 +85,11 @@
 
 路线：扎古录镇人民政府（洛克之路起点） -> 达日观景台 -> 扎尕那南门/扎尕那住宿  
 住宿：扎尕那村内或迭部县城
+
+<div class="spot-grid day-photos">
+  <article class="spot-card"><img loading="lazy" referrerpolicy="no-referrer" src="https://pic1.zhimg.com/v2-53765bfe290ee08a17bf5cf3cc806abf_1440w.jpg?source=172ae18b" alt="洛克之路山谷"><div><strong>洛克之路</strong><span>扎古录到扎尕那山地穿越路段</span><a href="https://www.xiaohongshu.com/search_result?keyword=%E7%94%98%E5%8D%97%E6%B4%9B%E5%85%8B%E4%B9%8B%E8%B7%AF" target="_blank" rel="noreferrer">小红书搜图</a></div></article>
+  <article class="spot-card"><img loading="lazy" referrerpolicy="no-referrer" src="https://img1.qunarzz.com/travel/d8/1610/1f/1517a66aef6aafb5.jpg_r_640x426x70_bff833c7.jpg" alt="达日观景台和扎尕那"><div><strong>达日观景台</strong><span>扎尕那方向观景点，天气决定体验</span><a href="https://www.xiaohongshu.com/search_result?keyword=%E8%BE%BE%E6%97%A5%E8%A7%82%E6%99%AF%E5%8F%B0%20%E6%89%8E%E5%B0%94%E9%82%A3" target="_blank" rel="noreferrer">小红书搜图</a></div></article>
+</div>
 
 | 时间 | 安排 |
 |---|---|
@@ -116,6 +106,12 @@
 路线：扎尕那南门售票处 -> 格尔底寺 -> 纳摩大峡谷 -> 郎木寺国际大酒店  
 住宿：郎木寺镇
 
+<div class="spot-grid day-photos">
+  <article class="spot-card"><img loading="lazy" referrerpolicy="no-referrer" src="https://n.sinaimg.cn/sinacn10120/267/w1600h1067/20190830/965a-icxmqsv7933078.jpg" alt="扎尕那"><div><strong>扎尕那</strong><span>石城村落、晨雾和山景</span><a href="https://www.xiaohongshu.com/search_result?keyword=%E6%89%8E%E5%B0%94%E9%82%A3" target="_blank" rel="noreferrer">小红书搜图</a></div></article>
+  <article class="spot-card"><img loading="lazy" referrerpolicy="no-referrer" src="https://youimg1.c-ctrip.com/target/100p070000002el70B988.jpg" alt="郎木寺和格尔底寺"><div><strong>格尔底寺/郎木寺</strong><span>郎木寺镇核心寺院景观</span><a href="https://www.xiaohongshu.com/search_result?keyword=%E6%A0%BC%E5%B0%94%E5%BA%95%E5%AF%BA%20%E9%83%8E%E6%9C%A8%E5%AF%BA" target="_blank" rel="noreferrer">小红书搜图</a></div></article>
+  <article class="spot-card"><img loading="lazy" referrerpolicy="no-referrer" src="https://img.pconline.com.cn/images/upload/upc/tx/itbbs/2003/05/c7/195631024_1583387433841_mthumb.jpg" alt="纳摩大峡谷"><div><strong>纳摩大峡谷</strong><span>峡谷轻徒步，注意天气和保暖</span><a href="https://www.xiaohongshu.com/search_result?keyword=%E7%BA%B3%E6%91%A9%E5%A4%A7%E5%B3%A1%E8%B0%B7" target="_blank" rel="noreferrer">小红书搜图</a></div></article>
+</div>
+
 | 时间 | 安排 |
 |---|---|
 | 05:30-08:00 | 天气好可看扎尕那晨雾/日出。 |
@@ -130,6 +126,11 @@
 
 路线：郎木寺镇 -> 花湖湿地 -> 黄河九曲第一湾 -> 阿坝县  
 住宿：阿坝县
+
+<div class="spot-grid day-photos">
+  <article class="spot-card"><img loading="lazy" referrerpolicy="no-referrer" src="https://img1.qunarzz.com/travel/d6/1710/aa/eae614fd6912b9b5.jpg?color=#61792b" alt="若尔盖花湖湿地"><div><strong>花湖湿地</strong><span>栈道湿地、候鸟和草原湖泊</span><a href="https://www.xiaohongshu.com/search_result?keyword=%E8%8A%B1%E6%B9%96%E6%B9%BF%E5%9C%B0" target="_blank" rel="noreferrer">小红书搜图</a></div></article>
+  <article class="spot-card"><img loading="lazy" referrerpolicy="no-referrer" src="https://picx.zhimg.com/v2-74e110f2ea6d93f80b4cfb4800aeac95_1440w.jpg" alt="黄河九曲第一湾"><div><strong>黄河九曲第一湾</strong><span>下午打卡优先，日落会影响赶路</span><a href="https://www.xiaohongshu.com/search_result?keyword=%E9%BB%84%E6%B2%B3%E4%B9%9D%E6%9B%B2%E7%AC%AC%E4%B8%80%E6%B9%BE" target="_blank" rel="noreferrer">小红书搜图</a></div></article>
+</div>
 
 | 时间 | 安排 |
 |---|---|
@@ -147,6 +148,11 @@
 路线：阿坝县人民政府 -> 莲宝叶则景区 -> 各莫寺 -> 久治玉宫酒店  
 住宿：久治玉宫酒店
 
+<div class="spot-grid day-photos">
+  <article class="spot-card"><img loading="lazy" referrerpolicy="no-referrer" src="https://tr-osdcp.qunarzz.com/tr-osd-tr-space/img/24b8d7e49e482e0c1eb8a12dc56ef3b2.jpg" alt="莲宝叶则景区"><div><strong>莲宝叶则</strong><span>高海拔湖泊和石山，控制体力</span><a href="https://www.xiaohongshu.com/search_result?keyword=%E8%8E%B2%E5%AE%9D%E5%8F%B6%E5%88%99" target="_blank" rel="noreferrer">小红书搜图</a></div></article>
+  <article class="spot-card"><img loading="lazy" referrerpolicy="no-referrer" src="https://p1.itc.cn/images01/20210909/92735bd58c3c4e2394fe5b7790ceebca.jpeg" alt="各莫寺"><div><strong>各莫寺</strong><span>阿坝县附近藏传佛教寺院</span><a href="https://www.xiaohongshu.com/search_result?keyword=%E5%90%84%E8%8E%AB%E5%AF%BA" target="_blank" rel="noreferrer">小红书搜图</a></div></article>
+</div>
+
 | 时间 | 安排 |
 |---|---|
 | 08:00 | 阿坝县早餐后出发。 |
@@ -162,6 +168,12 @@
 住宿：夏河县  
 高德参考：约 324km / 5.5h；实际按 8-9h 总行程预留。
 
+<div class="spot-grid day-photos">
+  <article class="spot-card"><img loading="lazy" referrerpolicy="no-referrer" src="https://youimg1.c-ctrip.com/target/100b090000003wwf7F1A5.jpg" alt="阿万仓湿地和玛曲湿地"><div><strong>娘玛寺/阿万仓湿地</strong><span>娘玛寺公开图少，此处用阿万仓区域图参考</span><a href="https://www.xiaohongshu.com/search_result?keyword=%E5%A8%98%E7%8E%9B%E5%AF%BA%20%E9%98%BF%E4%B8%87%E4%BB%93%E6%B9%BF%E5%9C%B0" target="_blank" rel="noreferrer">小红书搜图</a></div></article>
+  <article class="spot-card"><img loading="lazy" referrerpolicy="no-referrer" src="https://dimg04.c-ctrip.com/images/0102y1200092lklkt62A6_W_1080_10000_Q80.jpg" alt="郭莽湿地"><div><strong>郭莽湿地</strong><span>G213 旁湿地栈道和洮河源头景观</span><a href="https://www.xiaohongshu.com/search_result?keyword=%E9%83%AD%E8%8E%BD%E6%B9%BF%E5%9C%B0" target="_blank" rel="noreferrer">小红书搜图</a></div></article>
+  <article class="spot-card"><img loading="lazy" referrerpolicy="no-referrer" src="https://n.sinaimg.cn/sinakd10116/701/w985h516/20200730/eb74-iwxpesy3500036.jpg" alt="桑科草原"><div><strong>桑科草原</strong><span>夏河前草原路景，适合短停</span><a href="https://www.xiaohongshu.com/search_result?keyword=%E6%A1%91%E7%A7%91%E8%8D%89%E5%8E%9F" target="_blank" rel="noreferrer">小红书搜图</a></div></article>
+</div>
+
 | 时间 | 安排 |
 |---|---|
 | 07:30-08:00 | 久治出发，提前加油，准备路餐。 |
@@ -176,6 +188,11 @@
 
 路线：夏河县人民政府 -> 拉卜楞寺 -> 甘加秘境 -> 临夏市  
 住宿：临夏市
+
+<div class="spot-grid day-photos">
+  <article class="spot-card"><img loading="lazy" referrerpolicy="no-referrer" src="https://img1.qunarzz.com/travel/d7/1507/8e/5e05142687af0a.jpg" alt="拉卜楞寺"><div><strong>拉卜楞寺</strong><span>夏河核心人文景点，建议请讲解</span><a href="https://www.xiaohongshu.com/search_result?keyword=%E6%8B%89%E5%8D%9C%E6%A5%9E%E5%AF%BA" target="_blank" rel="noreferrer">小红书搜图</a></div></article>
+  <article class="spot-card"><img loading="lazy" referrerpolicy="no-referrer" src="https://q1.itc.cn/images01/20240705/8faeacb33e714e3d945d0ce7dbce1b49.png" alt="甘加秘境白石崖"><div><strong>甘加秘境</strong><span>白石崖、八角城、甘加草原组合</span><a href="https://www.xiaohongshu.com/search_result?keyword=%E7%94%98%E5%8A%A0%E7%A7%98%E5%A2%83" target="_blank" rel="noreferrer">小红书搜图</a></div></article>
+</div>
 
 | 时间 | 安排 |
 |---|---|
