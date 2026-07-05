@@ -1,0 +1,4 @@
+window.GANNAN_AMAP_CONFIG = {
+  key: 'YOUR_AMAP_JSAPI_KEY',
+  securityJsCode: 'YOUR_AMAP_SECURITY_JS_CODE'
+};
