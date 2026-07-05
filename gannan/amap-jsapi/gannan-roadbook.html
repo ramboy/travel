@@ -258,18 +258,46 @@
     .fallback b { color: #0f172a; }
     @media (max-width: 940px) {
       html, body { height: 100%; }
-      .app { grid-template-columns: 1fr; grid-template-rows: minmax(360px, 56vh) minmax(440px, 44vh); height: auto; min-height: 100vh; }
-      #map { min-height: 360px; }
+      .app { grid-template-columns: 1fr; grid-template-rows: minmax(340px, 48svh) auto; height: auto; min-height: 100vh; }
+      #map { min-height: 340px; }
       .sidebar { border-left: 0; border-top: 1px solid var(--line); }
       .header { padding: 16px 16px 12px; }
       h1 { font-size: 23px; }
       .config { padding: 12px 16px; }
       .status { padding: 8px 16px; }
-      .days { padding: 12px 12px 18px; }
+      .days {
+        display: flex;
+        gap: 12px;
+        overflow-x: auto;
+        overflow-y: hidden;
+        padding: 12px 12px 18px;
+        scroll-padding: 12px;
+        scroll-snap-type: x mandatory;
+        -webkit-overflow-scrolling: touch;
+      }
+      .days::after {
+        content: "";
+        flex: 0 0 1px;
+      }
+      .day-card {
+        display: flex;
+        flex: 0 0 min(86vw, 390px);
+        flex-direction: column;
+        max-height: 48svh;
+        margin-bottom: 0;
+        scroll-snap-align: start;
+      }
+      .day-card.active {
+        box-shadow: 0 8px 22px rgba(37, 99, 235, .16);
+      }
       .toolbar-actions { grid-template-columns: 1fr; }
       .day-head { grid-template-columns: auto 1fr; }
       .day-distance { grid-column: 2; text-align: left; }
-      .fallback { width: calc(100vw - 32px); left: 16px; bottom: calc(44vh + 16px); }
+      .day-body {
+        min-height: 0;
+        overflow-y: auto;
+      }
+      .fallback { width: calc(100vw - 32px); left: 16px; bottom: calc(52svh + 16px); }
     }
   </style>
 </head>
@@ -657,9 +685,15 @@
 
     function activateDay(dayName) {
       activeDay = dayName;
+      let activeCard = null;
       document.querySelectorAll('.day-card').forEach((card) => {
-        card.classList.toggle('active', card.dataset.day === dayName);
+        const isActive = card.dataset.day === dayName;
+        card.classList.toggle('active', isActive);
+        if (isActive) activeCard = card;
       });
+      if (activeCard && isMobileLayout()) {
+        activeCard.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
+      }
       routeOverlays.forEach((line) => {
         const isActive = line.getExtData().day === dayName;
         line.setOptions({ strokeOpacity: isActive ? 1 : 0.22, strokeWeight: isActive ? 9 : 5, zIndex: isActive ? 90 : 45 });
