@@ -28,6 +28,54 @@
 | 7/25 周六 | D8 | 临夏市 | 夏河 -> 拉卜楞寺 -> 甘加秘境 -> 临夏 | 文化+草原，核实甘加开放 |
 | 7/26 周日 | D9 | 返程 | 临夏 -> 黄洮交汇观景平台 -> 兰州中川机场 T3 | 17:55 航班，13:00 前离开观景平台 |
 
+## 全程海拔示意图
+
+说明：海拔为公开资料和地图信息的近似值，实际路线上下坡、观景台位置和停车点会有几十到数百米差异；这张图用于判断身体适应节奏，不作为精确测绘数据。
+
+<div class="elevation-wrap">
+<svg viewBox="0 0 880 330" role="img" aria-label="甘南自驾全程海拔示意图" style="width:100%;height:auto;display:block;min-width:760px">
+  <defs>
+    <linearGradient id="elevFill" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#f97316" stop-opacity="0.32"/>
+      <stop offset="100%" stop-color="#2563eb" stop-opacity="0.08"/>
+    </linearGradient>
+  </defs>
+  <rect x="0" y="0" width="880" height="330" rx="16" fill="#f8fbff"/>
+  <g stroke="#d8e0ea" stroke-width="1">
+    <line x1="58" y1="240" x2="820" y2="240"/>
+    <line x1="58" y1="176" x2="820" y2="176" stroke-dasharray="4 6"/>
+    <line x1="58" y1="112" x2="820" y2="112" stroke-dasharray="4 6"/>
+    <line x1="58" y1="48" x2="820" y2="48" stroke-dasharray="4 6"/>
+  </g>
+  <g fill="#64748b" font-size="12">
+    <text x="14" y="244">1500m</text>
+    <text x="14" y="180">2500m</text>
+    <text x="14" y="116">3500m</text>
+    <text x="14" y="52">4500m</text>
+  </g>
+  <path d="M58,239 L117,147 L175,173 L234,106 L292,131 L351,119 L410,115 L468,126 L527,47 L586,104 L644,115 L703,149 L761,213 L820,211 L820,240 L58,240 Z" fill="url(#elevFill)"/>
+  <polyline points="58,239 117,147 175,173 234,106 292,131 351,119 410,115 468,126 527,47 586,104 644,115 703,149 761,213 820,211" fill="none" stroke="#ea580c" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+  <g fill="#fff" stroke="#ea580c" stroke-width="3">
+    <circle cx="58" cy="239" r="5"/><circle cx="117" cy="147" r="5"/><circle cx="175" cy="173" r="5"/><circle cx="234" cy="106" r="5"/><circle cx="292" cy="131" r="5"/><circle cx="351" cy="119" r="5"/><circle cx="410" cy="115" r="5"/><circle cx="468" cy="126" r="5"/><circle cx="527" cy="47" r="5"/><circle cx="586" cy="104" r="5"/><circle cx="644" cy="115" r="5"/><circle cx="703" cy="149" r="5"/><circle cx="761" cy="213" r="5"/><circle cx="820" cy="211" r="5"/>
+  </g>
+  <g fill="#152033" font-size="12" font-weight="700">
+    <text x="58" y="227" text-anchor="middle">1520</text><text x="117" y="135" text-anchor="middle">2960</text><text x="175" y="161" text-anchor="middle">2550</text><text x="234" y="94" text-anchor="middle">3600</text><text x="292" y="119" text-anchor="middle">3200</text><text x="351" y="107" text-anchor="middle">3400</text><text x="410" y="103" text-anchor="middle">3450</text><text x="468" y="114" text-anchor="middle">3290</text><text x="527" y="35" text-anchor="middle">4520</text><text x="586" y="92" text-anchor="middle">3630</text><text x="644" y="103" text-anchor="middle">3450</text><text x="703" y="137" text-anchor="middle">2920</text><text x="761" y="201" text-anchor="middle">1917</text><text x="820" y="199" text-anchor="middle">1947</text>
+  </g>
+  <g fill="#475569" font-size="12">
+    <text x="58" y="270" text-anchor="end" transform="rotate(-35 58 270)">兰州</text><text x="117" y="270" text-anchor="end" transform="rotate(-35 117 270)">合作</text><text x="175" y="270" text-anchor="end" transform="rotate(-35 175 270)">扎古录</text><text x="234" y="270" text-anchor="end" transform="rotate(-35 234 270)">洛克之路</text><text x="292" y="270" text-anchor="end" transform="rotate(-35 292 270)">扎尕那</text><text x="351" y="270" text-anchor="end" transform="rotate(-35 351 270)">郎木寺</text><text x="410" y="270" text-anchor="end" transform="rotate(-35 410 270)">花湖/九曲</text><text x="468" y="270" text-anchor="end" transform="rotate(-35 468 270)">阿坝</text><text x="527" y="270" text-anchor="end" transform="rotate(-35 527 270)">莲宝叶则</text><text x="586" y="270" text-anchor="end" transform="rotate(-35 586 270)">久治</text><text x="644" y="270" text-anchor="end" transform="rotate(-35 644 270)">阿万仓</text><text x="703" y="270" text-anchor="end" transform="rotate(-35 703 270)">夏河</text><text x="761" y="270" text-anchor="end" transform="rotate(-35 761 270)">临夏</text><text x="820" y="270" text-anchor="end" transform="rotate(-35 820 270)">中川机场</text>
+  </g>
+</svg>
+</div>
+
+| 路段/节点 | 海拔参考 | 判断 |
+|---|---:|---|
+| 兰州/中川机场 | 约 1500-1950m | 入门适应段，第一天别熬夜 |
+| 合作、扎古录、扎尕那、郎木寺 | 约 2550-3400m | D2-D4 持续抬升，夜间注意保暖和睡眠 |
+| 花湖、黄河九曲、阿坝县 | 约 3290-3450m | D5 全天在 3300m 左右活动，别把日落拖成夜路 |
+| 莲宝叶则 | 约 4200-4520m | 全程最高点，少走快路、少跑跳，身体不适及时下撤 |
+| 久治、阿万仓、郭莽、夏河 | 约 2920-3630m | D7 仍是高海拔长驾驶日，控制停留和体力 |
+| 临夏、返程机场 | 约 1900m | 海拔明显下降，适合返程前恢复 |
+
 ## 景点购票与预约清单
 
 核对时间：2026 年 7 月 5 日。小红书检索本次登录可用，但关键词搜索没有抓到稳定可引用结果；以下以景区官方/公众号公开信息、去哪儿/携程等票务页和公开攻略交叉核对。门票、预约规则和开放范围会随旺季、节假日、天气和临时管控变化，建议出发前 1-2 天再逐项复核。另，网传“甘南所有景点免费”已被公开辟谣，不要按免票营销帖做预算。
@@ -264,6 +312,8 @@
 ## 参考信息来源
 
 - 甘肃省博物馆官方开放信息：https://www.gansumuseum.com/
+- 甘南海拔与天气提示，甘肃天地图：https://gansu.tianditu.gov.cn/gannan/start/index3.html
+- 莲宝叶则高海拔节点参考：https://hk.trip.com/moments/detail/aba-county-1446246-135651951/
 - 甘肃省博物馆预约方式参考：https://www.sohu.com/a/798472509_121106869
 - 扎尕那票务/预约参考：https://touch.piao.qunar.com/touch/detail.htm?id=13845
 - 米拉日巴佛阁介绍，甘南州政府：https://www.gnzrmzf.gov.cn/info/1022/1059.htm
