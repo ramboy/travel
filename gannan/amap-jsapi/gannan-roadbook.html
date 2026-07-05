@@ -27,18 +27,25 @@
     }
     .app {
       display: grid;
-      grid-template-columns: minmax(0, 1fr) 430px;
+      grid-template-columns: 430px minmax(0, 1fr);
+      grid-template-areas: "sidebar map";
       height: 100vh;
       min-height: 720px;
     }
-    #map { width: 100%; height: 100%; }
+    #map {
+      grid-area: map;
+      position: relative;
+      width: 100%;
+      height: 100%;
+    }
     .sidebar {
+      grid-area: sidebar;
       display: flex;
       flex-direction: column;
       min-width: 0;
-      border-left: 1px solid var(--line);
+      border-right: 1px solid var(--line);
       background: var(--panel);
-      box-shadow: -12px 0 30px rgba(15, 23, 42, .08);
+      box-shadow: 12px 0 30px rgba(15, 23, 42, .08);
       z-index: 5;
     }
     .header {
@@ -258,9 +265,21 @@
     .fallback b { color: #0f172a; }
     @media (max-width: 940px) {
       html, body { height: 100%; }
-      .app { grid-template-columns: 1fr; grid-template-rows: minmax(340px, 48svh) auto; height: auto; min-height: 100vh; }
-      #map { min-height: 340px; }
-      .sidebar { border-left: 0; border-top: 1px solid var(--line); }
+      .app {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto minmax(380px, 50svh);
+        grid-template-areas:
+          "sidebar"
+          "map";
+        height: auto;
+        min-height: 100vh;
+      }
+      #map { min-height: 380px; }
+      .sidebar {
+        border-right: 0;
+        border-bottom: 1px solid var(--line);
+        box-shadow: 0 12px 30px rgba(15, 23, 42, .08);
+      }
       .header { padding: 16px 16px 12px; }
       h1 { font-size: 23px; }
       .config { padding: 12px 16px; }
@@ -297,7 +316,7 @@
         min-height: 0;
         overflow-y: auto;
       }
-      .fallback { width: calc(100vw - 32px); left: 16px; bottom: calc(52svh + 16px); }
+      .fallback { width: calc(100vw - 32px); left: 16px; bottom: 16px; }
     }
   </style>
 </head>
@@ -540,9 +559,8 @@
             mapStyle: 'amap://styles/normal'
           });
           map.addControl(new AMap.Scale());
-          const controlRight = isMobileLayout() ? '16px' : '455px';
-          map.addControl(new AMap.ToolBar({ position: { right: controlRight, top: '20px' } }));
-          map.addControl(new AMap.ControlBar({ position: { right: controlRight, top: '88px' } }));
+          map.addControl(new AMap.ToolBar({ position: { right: '16px', top: '20px' } }));
+          map.addControl(new AMap.ControlBar({ position: { right: '16px', top: '88px' } }));
           geocoder = new AMap.Geocoder({ radius: 8000, extensions: 'base' });
           configPanel.classList.add('ok');
           configText.textContent = '高德 JSAPI 已加载。正在解析地点并规划每日驾车路线...';
@@ -814,7 +832,7 @@
     }
 
     function mapPadding(base = 70) {
-      return isMobileLayout() ? [base, base, base, base] : [base, 470, base, base];
+      return [base, base, base, base];
     }
 
     function escapeHtml(value) {

@@ -4,8 +4,8 @@
 
 ## 甘南自驾
 
-- [完整旅行计划 HTML](gannan/甘南自驾完整旅行计划_7月18-26.html)
-- [完整旅行计划 Markdown](gannan/甘南自驾完整旅行计划_7月18-26.md)
+- [完整旅行计划 HTML](gannan/gannan-guide.html)
+- [完整旅行计划 Markdown](gannan/gannan-guide.md)
 - [高德 JSAPI 路书](gannan/amap-jsapi/gannan-roadbook.html)
 - [路线图 PNG](gannan/甘南自驾路书地图_7月18-26.png)
 
