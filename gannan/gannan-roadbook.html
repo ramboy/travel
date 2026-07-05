@@ -147,6 +147,7 @@
       margin-bottom: 12px;
       overflow: hidden;
       background: white;
+      cursor: pointer;
     }
     .day-card.active {
       border-color: var(--blue);
@@ -302,7 +303,8 @@
         display: flex;
         flex: 0 0 min(86vw, 390px);
         flex-direction: column;
-        max-height: 48svh;
+        height: min(32svh, 260px);
+        max-height: 260px;
         margin-bottom: 0;
         scroll-snap-align: start;
       }
@@ -749,8 +751,8 @@
 
     function renderDayCards() {
       daysEl.innerHTML = roadbook.map((day, dayIndex) => `
-        <article class="day-card" data-day="${day.day}">
-          <div class="day-head" role="button" tabindex="0" onclick="activateDay('${day.day}')">
+        <article class="day-card" data-day="${day.day}" role="button" tabindex="0" onclick="activateDay('${day.day}')" onkeydown="handleDayCardKey(event, '${day.day}')">
+          <div class="day-head">
             <span class="badge" style="background:${COLORS[dayIndex]}">${day.day}</span>
             <span class="day-title"><b>${day.date} ${escapeHtml(day.title)}</b><span>${day.stops.length} 个节点</span></span>
             <span class="day-distance" id="metric-${day.day}">待规划</span>
@@ -763,6 +765,13 @@
           </div>
         </article>
       `).join('');
+    }
+
+    function handleDayCardKey(event, dayName) {
+      if (event.key === 'Enter' || event.key === ' ') {
+        event.preventDefault();
+        activateDay(dayName);
+      }
     }
 
     function updateDayMetric(day) {
@@ -847,6 +856,7 @@
 
     window.activateDay = activateDay;
     window.activateFullRoute = activateFullRoute;
+    window.handleDayCardKey = handleDayCardKey;
   </script>
 </body>
 </html>
