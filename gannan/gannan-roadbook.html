@@ -24,13 +24,15 @@
       font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
       color: var(--ink);
       background: var(--bg);
+      overflow: hidden;
     }
     .app {
       display: grid;
       grid-template-columns: 430px minmax(0, 1fr);
       grid-template-areas: "sidebar map";
-      height: 100vh;
+      height: 100dvh;
       min-height: 720px;
+      overflow: hidden;
     }
     #map {
       grid-area: map;
@@ -47,6 +49,8 @@
       background: var(--panel);
       box-shadow: 12px 0 30px rgba(15, 23, 42, .08);
       z-index: 5;
+      min-height: 0;
+      height: 100%;
     }
     .header {
       padding: 22px 22px 16px;
@@ -138,6 +142,8 @@
       line-height: 1.45;
     }
     .days {
+      flex: 1;
+      min-height: 0;
       overflow: auto;
       padding: 14px 16px 22px;
     }
@@ -268,24 +274,27 @@
       html, body { height: 100%; }
       .app {
         grid-template-columns: 1fr;
-        grid-template-rows: auto minmax(380px, 50svh);
+        grid-template-rows: minmax(0, 1fr) minmax(320px, 42svh);
         grid-template-areas:
           "sidebar"
           "map";
-        height: auto;
-        min-height: 100vh;
+        height: 100dvh;
+        min-height: 0;
       }
-      #map { min-height: 380px; }
+      #map { min-height: 320px; }
       .sidebar {
         border-right: 0;
         border-bottom: 1px solid var(--line);
         box-shadow: 0 12px 30px rgba(15, 23, 42, .08);
+        min-height: 0;
       }
       .header { padding: 16px 16px 12px; }
       h1 { font-size: 23px; }
       .config { padding: 12px 16px; }
       .status { padding: 8px 16px; }
       .days {
+        flex: 1;
+        min-height: 0;
         display: flex;
         gap: 12px;
         overflow-x: auto;
@@ -369,10 +378,10 @@
         title: '杭州飞兰州，住兰州市',
         note: '航班 3U3195 07:20-10:25；抵达后取车，下午甘肃省博物馆，傍晚中山桥，晚上住全季酒店(兰州张掖路省政府地铁站店)。',
         stops: [
-          { name: '兰州中川国际机场', address: '兰州中川国际机场', city: '兰州', fallback: [103.6208, 36.5152] },
-          { name: '甘肃省博物馆', address: '甘肃省兰州市七里河区甘肃省博物馆', city: '兰州', fallback: [103.7549, 36.0660] },
-          { name: '中山桥', address: '甘肃省兰州市城关区中山桥', city: '兰州', fallback: [103.8190, 36.0710] },
-          { name: '全季酒店(兰州张掖路省政府地铁站店)', address: '甘肃省兰州市城关区全季酒店兰州张掖路省政府地铁站店', city: '兰州', fallback: [103.8250, 36.0620] }
+          { name: '兰州中川国际机场', address: '兰州中川国际机场', city: '兰州', coord: [103.6208, 36.5152] },
+          { name: '甘肃省博物馆', address: '甘肃省兰州市七里河区甘肃省博物馆', city: '兰州', coord: [103.7549, 36.0660] },
+          { name: '中山桥', address: '甘肃省兰州市城关区中山桥', city: '兰州', coord: [103.8190, 36.0710] },
+          { name: '全季酒店(兰州张掖路省政府地铁站店)', address: '甘肃省兰州市城关区全季酒店兰州张掖路省政府地铁站店', city: '兰州', coord: [103.8250, 36.0620] }
         ]
       },
       {
@@ -381,10 +390,10 @@
         title: '兰州进入甘南，住扎古录',
         note: '从全季酒店出发；住宿：卓尼扎古录大酒店。美仁大草原宜短停，傍晚前抵达扎古录。',
         stops: [
-          { name: '全季酒店(兰州张掖路省政府地铁站店)', address: '甘肃省兰州市城关区全季酒店兰州张掖路省政府地铁站店', city: '兰州', fallback: [103.8250, 36.0620] },
-          { name: '美仁大草原', address: '甘肃省甘南藏族自治州合作市美仁大草原', city: '甘南', fallback: [103.1800, 35.0300] },
-          { name: '安多合作米拉日巴佛阁', address: '甘肃省甘南藏族自治州合作市安多合作米拉日巴佛阁', city: '甘南', fallback: [102.9110, 34.9860] },
-          { name: '卓尼扎古录大酒店', address: '甘肃省甘南藏族自治州卓尼县扎古录镇卓尼扎古录大酒店', city: '甘南', fallback: [103.0500, 34.6100] }
+          { name: '全季酒店(兰州张掖路省政府地铁站店)', address: '甘肃省兰州市城关区全季酒店兰州张掖路省政府地铁站店', city: '兰州', coord: [103.8250, 36.0620] },
+          { name: '美仁大草原', address: '甘肃省甘南藏族自治州合作市美仁大草原', city: '甘南', coord: [103.1800, 35.0300] },
+          { name: '安多合作米拉日巴佛阁', address: '甘肃省甘南藏族自治州合作市安多合作米拉日巴佛阁', city: '甘南', coord: [102.9110, 34.9860] },
+          { name: '卓尼扎古录大酒店', address: '甘肃省甘南藏族自治州卓尼县扎古录镇卓尼扎古录大酒店', city: '甘南', coord: [103.0500, 34.6100] }
         ]
       },
       {
@@ -393,9 +402,9 @@
         title: '扎古录到扎尕那景区内住宿',
         note: '从卓尼扎古录大酒店出发，经达日观景台，住云端山舍·全域日出观景民宿。雨天谨慎走山路。',
         stops: [
-          { name: '卓尼扎古录大酒店', address: '甘肃省甘南藏族自治州卓尼县扎古录镇卓尼扎古录大酒店', city: '甘南', fallback: [103.0500, 34.6100] },
-          { name: '达日观景台', address: '甘肃省甘南藏族自治州卓尼县达日观景台', city: '甘南', fallback: [103.2100, 34.4300] },
-          { name: '云端山舍·全域日出观景民宿(扎尕那达日观景台店)', address: '甘肃省甘南藏族自治州迭部县扎尕那达日观景台云端山舍全域日出观景民宿', city: '甘南', fallback: [103.2210, 34.2060] }
+          { name: '卓尼扎古录大酒店', address: '甘肃省甘南藏族自治州卓尼县扎古录镇卓尼扎古录大酒店', city: '甘南', coord: [103.0500, 34.6100] },
+          { name: '达日观景台', address: '甘肃省甘南藏族自治州卓尼县达日观景台', city: '甘南', coord: [103.2100, 34.4300] },
+          { name: '云端山舍·全域日出观景民宿(扎尕那达日观景台店)', address: '甘肃省甘南藏族自治州迭部县扎尕那达日观景台云端山舍全域日出观景民宿', city: '甘南', coord: [103.2210, 34.2060] }
         ]
       },
       {
@@ -404,11 +413,11 @@
         title: '扎尕那仙女滩转场郎木寺',
         note: '从云端山舍出发，先玩扎尕那仙女滩，再去格尔底寺、纳摩大峡谷，住郎木寺庚盼民宿(白龙江峡谷店)。',
         stops: [
-          { name: '云端山舍·全域日出观景民宿(扎尕那达日观景台店)', address: '甘肃省甘南藏族自治州迭部县扎尕那达日观景台云端山舍全域日出观景民宿', city: '甘南', fallback: [103.2210, 34.2060] },
-          { name: '扎尕那仙女滩', address: '甘肃省甘南藏族自治州迭部县扎尕那仙女滩', city: '甘南', fallback: [103.2180, 34.2160] },
-          { name: '格尔底寺', address: '四川省阿坝藏族羌族自治州若尔盖县郎木寺镇格尔底寺', city: '阿坝', fallback: [102.6420, 34.0900] },
-          { name: '纳摩大峡谷', address: '四川省阿坝藏族羌族自治州若尔盖县郎木寺镇纳摩大峡谷', city: '阿坝', fallback: [102.6400, 34.1000] },
-          { name: '郎木寺庚盼民宿(白龙江峡谷店)', address: '甘肃省甘南藏族自治州碌曲县郎木寺镇郎木寺庚盼民宿白龙江峡谷店', city: '甘南', fallback: [102.6360, 34.0870] }
+          { name: '云端山舍·全域日出观景民宿(扎尕那达日观景台店)', address: '甘肃省甘南藏族自治州迭部县扎尕那达日观景台云端山舍全域日出观景民宿', city: '甘南', coord: [103.2210, 34.2060] },
+          { name: '扎尕那仙女滩', address: '甘肃省甘南藏族自治州迭部县扎尕那仙女滩', city: '甘南', coord: [103.2180, 34.2160] },
+          { name: '格尔底寺', address: '四川省阿坝藏族羌族自治州若尔盖县郎木寺镇格尔底寺', city: '阿坝', coord: [102.6420, 34.0900] },
+          { name: '纳摩大峡谷', address: '四川省阿坝藏族羌族自治州若尔盖县郎木寺镇纳摩大峡谷', city: '阿坝', coord: [102.6400, 34.1000] },
+          { name: '郎木寺庚盼民宿(白龙江峡谷店)', address: '甘肃省甘南藏族自治州碌曲县郎木寺镇郎木寺庚盼民宿白龙江峡谷店', city: '甘南', coord: [102.6360, 34.0870] }
         ]
       },
       {
@@ -417,10 +426,10 @@
         title: '郎木寺、花湖、九曲到阿坝',
         note: '从郎木寺庚盼民宿出发；住宿：朵兰达V酒店(阿坝县店)。黄河九曲第一湾不建议等完整日落后再赶阿坝。',
         stops: [
-          { name: '郎木寺庚盼民宿(白龙江峡谷店)', address: '甘肃省甘南藏族自治州碌曲县郎木寺镇郎木寺庚盼民宿白龙江峡谷店', city: '甘南', fallback: [102.6360, 34.0870] },
-          { name: '花湖湿地', address: '四川省阿坝藏族羌族自治州若尔盖县花湖湿地', city: '阿坝', fallback: [102.8730, 33.9500] },
-          { name: '黄河九曲第一湾', address: '四川省阿坝藏族羌族自治州若尔盖县唐克镇黄河九曲第一湾', city: '阿坝', fallback: [102.4800, 33.5860] },
-          { name: '朵兰达V酒店(阿坝县店)', address: '四川省阿坝藏族羌族自治州阿坝县朵兰达V酒店阿坝县店', city: '阿坝', fallback: [101.7060, 32.9020] }
+          { name: '郎木寺庚盼民宿(白龙江峡谷店)', address: '甘肃省甘南藏族自治州碌曲县郎木寺镇郎木寺庚盼民宿白龙江峡谷店', city: '甘南', coord: [102.6360, 34.0870] },
+          { name: '花湖湿地', address: '四川省阿坝藏族羌族自治州若尔盖县花湖湿地', city: '阿坝', coord: [102.8730, 33.9500] },
+          { name: '黄河九曲第一湾', address: '四川省阿坝藏族羌族自治州若尔盖县唐克镇黄河九曲第一湾', city: '阿坝', coord: [102.4800, 33.5860] },
+          { name: '朵兰达V酒店(阿坝县店)', address: '四川省阿坝藏族羌族自治州阿坝县阳光大道中段5号', city: '阿坝', coord: [101.7026, 32.9046] }
         ]
       },
       {
@@ -429,10 +438,10 @@
         title: '莲宝叶则、各莫寺，住久治',
         note: '从朵兰达V酒店出发；住宿：久治玉宫酒店。莲宝叶则建议留 4 小时以上，注意高海拔和天气。',
         stops: [
-          { name: '朵兰达V酒店(阿坝县店)', address: '四川省阿坝藏族羌族自治州阿坝县朵兰达V酒店阿坝县店', city: '阿坝', fallback: [101.7060, 32.9020] },
-          { name: '莲宝叶则景区', address: '四川省阿坝藏族羌族自治州阿坝县莲宝叶则景区', city: '阿坝', fallback: [101.7900, 32.9850] },
-          { name: '各莫寺', address: '四川省阿坝藏族羌族自治州阿坝县各莫寺', city: '阿坝', fallback: [101.7800, 33.0100] },
-          { name: '久治玉宫酒店', address: '青海省果洛藏族自治州久治县久治玉宫酒店', city: '果洛', fallback: [101.4840, 33.4300] }
+          { name: '朵兰达V酒店(阿坝县店)', address: '四川省阿坝藏族羌族自治州阿坝县阳光大道中段5号', city: '阿坝', coord: [101.7026, 32.9046] },
+          { name: '莲宝叶则景区', address: '四川省阿坝藏族羌族自治州阿坝县莲宝叶则景区', city: '阿坝', coord: [101.7900, 32.9850] },
+          { name: '各莫寺', address: '四川省阿坝藏族羌族自治州阿坝县各莫寺', city: '阿坝', coord: [101.7800, 33.0100] },
+          { name: '久治玉宫酒店', address: '青海省果洛藏族自治州久治县久治玉宫酒店', city: '果洛', coord: [101.4840, 33.4300] }
         ]
       },
       {
@@ -441,12 +450,12 @@
         title: '久治经阿万仓、桑科到夏河',
         note: '从久治玉宫酒店出发，终点为夏河蓝庭雅居酒店；实际含拍照/午餐按 8-9 小时预留。',
         stops: [
-          { name: '久治玉宫酒店', address: '青海省果洛藏族自治州久治县久治玉宫酒店', city: '果洛', fallback: [101.4840, 33.4300] },
-          { name: '娘玛寺', address: '甘肃省甘南藏族自治州玛曲县阿万仓镇娘玛寺', city: '甘南', fallback: [101.9750, 33.6650] },
-          { name: '阿万仓湿地', address: '甘肃省甘南藏族自治州玛曲县阿万仓湿地', city: '甘南', fallback: [101.9800, 33.6600] },
-          { name: '郭莽湿地', address: '甘肃省甘南藏族自治州碌曲县郭莽湿地', city: '甘南', fallback: [102.3800, 34.2300] },
-          { name: '桑科草原', address: '甘肃省甘南藏族自治州夏河县桑科草原', city: '甘南', fallback: [102.4400, 35.0300] },
-          { name: '夏河蓝庭雅居酒店', address: '甘肃省甘南藏族自治州夏河县蓝庭雅居酒店', city: '甘南', fallback: [102.5210, 35.2040] }
+          { name: '久治玉宫酒店', address: '青海省果洛藏族自治州久治县久治玉宫酒店', city: '果洛', coord: [101.4840, 33.4300] },
+          { name: '娘玛寺', address: '甘肃省甘南藏族自治州玛曲县阿万仓镇娘玛寺', city: '甘南', coord: [101.9750, 33.6650] },
+          { name: '阿万仓湿地', address: '甘肃省甘南藏族自治州玛曲县阿万仓湿地', city: '甘南', coord: [101.9800, 33.6600] },
+          { name: '郭莽湿地', address: '甘肃省甘南藏族自治州碌曲县郭莽湿地', city: '甘南', coord: [102.3800, 34.2300] },
+          { name: '桑科草原', address: '甘肃省甘南藏族自治州夏河县桑科草原', city: '甘南', coord: [102.4400, 35.0300] },
+          { name: '夏河蓝庭雅居酒店', address: '甘肃省甘南藏族自治州夏河县蓝庭雅居酒店', city: '甘南', coord: [102.5210, 35.2040] }
         ]
       },
       {
@@ -455,10 +464,10 @@
         title: '拉卜楞寺、甘加秘境，住临夏',
         note: '从夏河蓝庭雅居酒店出发；住宿：临夏八坊十三巷美仑酒店。甘加秘境出发前 1-2 天确认开放和交通。',
         stops: [
-          { name: '夏河蓝庭雅居酒店', address: '甘肃省甘南藏族自治州夏河县蓝庭雅居酒店', city: '甘南', fallback: [102.5210, 35.2040] },
-          { name: '拉卜楞寺', address: '甘肃省甘南藏族自治州夏河县拉卜楞寺', city: '甘南', fallback: [102.5080, 35.1980] },
-          { name: '甘加秘境', address: '甘肃省甘南藏族自治州夏河县甘加秘境', city: '甘南', fallback: [102.6400, 35.4500] },
-          { name: '临夏八坊十三巷美仑酒店', address: '甘肃省临夏回族自治州临夏市临夏八坊十三巷美仑酒店', city: '临夏', fallback: [103.2120, 35.6040] }
+          { name: '夏河蓝庭雅居酒店', address: '甘肃省甘南藏族自治州夏河县蓝庭雅居酒店', city: '甘南', coord: [102.5210, 35.2040] },
+          { name: '拉卜楞寺', address: '甘肃省甘南藏族自治州夏河县拉卜楞寺', city: '甘南', coord: [102.5080, 35.1980] },
+          { name: '甘加秘境', address: '甘肃省甘南藏族自治州夏河县甘加秘境', city: '甘南', coord: [102.6400, 35.4500] },
+          { name: '临夏八坊十三巷美仑酒店', address: '甘肃省临夏回族自治州临夏市临夏八坊十三巷美仑酒店', city: '临夏', coord: [103.2120, 35.6040] }
         ]
       },
       {
@@ -467,20 +476,20 @@
         title: '临夏返兰州中川机场',
         note: '从临夏八坊十三巷美仑酒店出发；航班 MU2446 17:55-20:40；建议 13:00 前离开黄洮交汇，15:00 左右到机场还车。',
         stops: [
-          { name: '临夏八坊十三巷美仑酒店', address: '甘肃省临夏回族自治州临夏市临夏八坊十三巷美仑酒店', city: '临夏', fallback: [103.2120, 35.6040] },
-          { name: '黄洮交汇观景平台', address: '甘肃省临夏回族自治州永靖县黄洮交汇观景平台', city: '临夏', fallback: [103.2860, 35.9180] },
-          { name: '兰州中川国际机场 T3 航站楼', address: '兰州中川国际机场T3航站楼', city: '兰州', fallback: [103.6208, 36.5152] }
+          { name: '临夏八坊十三巷美仑酒店', address: '甘肃省临夏回族自治州临夏市临夏八坊十三巷美仑酒店', city: '临夏', coord: [103.2120, 35.6040] },
+          { name: '黄洮交汇观景平台', address: '甘肃省临夏回族自治州永靖县黄洮交汇观景平台', city: '临夏', coord: [103.2860, 35.9180] },
+          { name: '兰州中川国际机场 T3 航站楼', address: '兰州中川国际机场T3航站楼', city: '兰州', coord: [103.6208, 36.5152] }
         ]
       }
     ];
 
     let AMapRef = null;
     let map = null;
-    let geocoder = null;
     let routeOverlays = [];
     let markers = [];
     let resolvedDays = [];
     let activeDay = null;
+    const ROUTE_CACHE_KEY = 'gannanRoadbookRouteCache:v5';
     const DEFAULT_AMAP_KEY = window.GANNAN_AMAP_CONFIG?.key || '';
     const DEFAULT_AMAP_SECURITY = window.GANNAN_AMAP_CONFIG?.securityJsCode || '';
 
@@ -551,7 +560,7 @@
         AMapLoader.load({
           key,
           version: '2.0',
-          plugins: ['AMap.Scale', 'AMap.ToolBar', 'AMap.ControlBar', 'AMap.Geocoder', 'AMap.Driving']
+          plugins: ['AMap.Scale', 'AMap.ToolBar', 'AMap.ControlBar', 'AMap.Driving']
         }).then(async (AMap) => {
           AMap.getConfig().appname = 'amap-jsapi-skill';
           AMapRef = AMap;
@@ -566,14 +575,19 @@
           map.addControl(new AMap.Scale());
           map.addControl(new AMap.ToolBar({ position: { right: '16px', top: '20px' } }));
           map.addControl(new AMap.ControlBar({ position: { right: '16px', top: '88px' } }));
-          geocoder = new AMap.Geocoder({ radius: 8000, extensions: 'base' });
           configPanel.classList.add('ok');
-          configText.textContent = '高德 JSAPI 已加载。正在解析地点并规划每日驾车路线...';
-          resolvedDays = await resolveAllStops();
+          configText.textContent = '高德 JSAPI 已加载。已使用固定坐标快速生成路书，驾车路线会在后台补全。';
+          resolvedDays = resolveAllStops();
           drawMarkers();
-          await planAllRoutes();
+          drawPreviewRoutes();
           activateDay('D1');
-          setStatus('高德路书已生成。点击右侧每日卡片可聚焦当天路线。');
+          if (applyCachedRoutes()) {
+            activateDay(activeDay || 'D1');
+            setStatus('已使用本机缓存的驾车路线。点击每日卡片可聚焦当天路线。');
+          } else {
+            setStatus('已先显示固定坐标预览路线，正在后台规划真实驾车路线...');
+            planAllRoutes();
+          }
         }).catch((error) => {
           console.error(error);
           showFallback(true);
@@ -587,37 +601,26 @@
     }
 
     function resolveAllStops() {
-      return Promise.all(roadbook.map(async (day, dayIndex) => {
-        const stops = [];
-        for (let i = 0; i < day.stops.length; i += 1) {
-          const stop = day.stops[i];
-          setStatus(`正在解析 ${day.day}：${stop.name}`);
-          const point = await geocode(stop);
-          stops.push({ ...stop, point, globalIndex: globalStopIndex(dayIndex, i) });
-        }
-        return { ...day, color: COLORS[dayIndex], stops, routePaths: [], distance: 0, time: 0, errors: [] };
-      }));
-    }
-
-    function geocode(stop) {
-      return new Promise((resolve) => {
-        geocoder.getLocation(stop.address, (status, result) => {
-          if (status === 'complete' && result.geocodes && result.geocodes.length) {
-            const loc = result.geocodes[0].location;
-            resolve([loc.lng, loc.lat]);
-          } else {
-            resolve(stop.fallback);
-          }
-        });
+      return roadbook.map((day, dayIndex) => {
+        const stops = day.stops.map((stop, i) => ({
+          ...stop,
+          point: stop.coord,
+          globalIndex: globalStopIndex(dayIndex, i)
+        }));
+        return { ...day, color: COLORS[dayIndex], stops, routePaths: [], distance: 0, time: 0, errors: [], planned: false };
       });
     }
 
     async function planAllRoutes() {
       for (const day of resolvedDays) {
+        day.routePaths = [];
+        day.distance = 0;
+        day.time = 0;
+        day.errors = [];
         for (let i = 0; i < day.stops.length - 1; i += 1) {
           const start = day.stops[i].point;
           const end = day.stops[i + 1].point;
-          setStatus(`正在规划 ${day.day}：${day.stops[i].name} → ${day.stops[i + 1].name}`);
+          setStatus(`后台规划 ${day.day}：${day.stops[i].name} → ${day.stops[i + 1].name}`);
           const result = await planSegment(start, end);
           if (result.ok) {
             day.routePaths.push(result.path);
@@ -628,13 +631,19 @@
             day.routePaths.push([start, end]);
           }
         }
+        day.planned = true;
+        removeDayRoutes(day.day);
         drawDayRoute(day);
         updateDayMetric(day);
+        if (activeDay) activateDay(activeDay);
       }
       updateTotalMetrics();
+      const hasErrors = resolvedDays.some((day) => day.errors.length);
+      if (!hasErrors) saveRouteCache();
       if (routeOverlays.length || markers.length) {
         map.setFitView([...routeOverlays, ...markers], false, mapPadding());
       }
+      setStatus(hasErrors ? '真实驾车路线已规划完成，部分路段规划失败，已保留预览线作为兜底。' : '真实驾车路线已规划完成并缓存。下次打开会优先使用缓存。');
     }
 
     function planSegment(start, end) {
@@ -673,10 +682,94 @@
           zIndex: 60,
           showDir: true
         });
-        line.setExtData({ day: day.day });
+        line.setExtData({ day: day.day, preview: !day.planned });
         map.add(line);
         routeOverlays.push(line);
       });
+    }
+
+    function drawPreviewRoutes() {
+      resolvedDays.forEach((day) => {
+        day.routePaths = [];
+        for (let i = 0; i < day.stops.length - 1; i += 1) {
+          day.routePaths.push([day.stops[i].point, day.stops[i + 1].point]);
+        }
+        drawDayRoute(day);
+        updateDayMetric(day);
+      });
+      updateTotalMetrics();
+      if (routeOverlays.length || markers.length) {
+        map.setFitView([...routeOverlays, ...markers], false, mapPadding());
+      }
+    }
+
+    function removeDayRoutes(dayName) {
+      const keep = [];
+      routeOverlays.forEach((line) => {
+        if (line.getExtData().day === dayName) {
+          map.remove(line);
+        } else {
+          keep.push(line);
+        }
+      });
+      routeOverlays = keep;
+    }
+
+    function clearRouteOverlays() {
+      if (routeOverlays.length) map.remove(routeOverlays);
+      routeOverlays = [];
+    }
+
+    function routeSignature() {
+      return JSON.stringify(roadbook.map((day) => ({
+        day: day.day,
+        stops: day.stops.map((stop) => [stop.name, stop.coord])
+      })));
+    }
+
+    function applyCachedRoutes() {
+      try {
+        const cached = JSON.parse(localStorage.getItem(ROUTE_CACHE_KEY) || 'null');
+        if (!cached || cached.signature !== routeSignature() || !Array.isArray(cached.days)) return false;
+        if (cached.days.some((day) => day.errors && day.errors.length)) return false;
+        clearRouteOverlays();
+        cached.days.forEach((cachedDay) => {
+          const day = resolvedDays.find((item) => item.day === cachedDay.day);
+          if (!day) return;
+          day.routePaths = cachedDay.routePaths || [];
+          day.distance = cachedDay.distance || 0;
+          day.time = cachedDay.time || 0;
+          day.errors = cachedDay.errors || [];
+          day.planned = true;
+          drawDayRoute(day);
+          updateDayMetric(day);
+        });
+        updateTotalMetrics();
+        if (routeOverlays.length || markers.length) {
+          map.setFitView([...routeOverlays, ...markers], false, mapPadding());
+        }
+        return true;
+      } catch (error) {
+        console.warn('读取路线缓存失败', error);
+        return false;
+      }
+    }
+
+    function saveRouteCache() {
+      try {
+        localStorage.setItem(ROUTE_CACHE_KEY, JSON.stringify({
+          signature: routeSignature(),
+          days: resolvedDays.map((day) => ({
+            day: day.day,
+            routePaths: day.routePaths,
+            distance: day.distance,
+            time: day.time,
+            errors: day.errors
+          }))
+        }));
+      } catch (error) {
+        console.warn('保存路线缓存失败', error);
+      }
     }
 
     function drawMarkers() {
@@ -781,14 +874,15 @@
       const el = document.getElementById(`metric-${day.day}`);
       if (!el) return;
       const suffix = day.errors.length ? ' · 有失败段' : '';
-      el.textContent = `${formatDistance(day.distance)} / ${formatTime(day.time)}${suffix}`;
+      el.textContent = day.planned ? `${formatDistance(day.distance)} / ${formatTime(day.time)}${suffix}` : '预览中';
     }
 
     function updateTotalMetrics() {
       const totalDistance = resolvedDays.reduce((sum, day) => sum + day.distance, 0);
       const totalTime = resolvedDays.reduce((sum, day) => sum + day.time, 0);
-      document.getElementById('metricDistance').textContent = formatDistance(totalDistance);
-      document.getElementById('metricTime').textContent = formatTime(totalTime);
+      const allPlanned = resolvedDays.length && resolvedDays.every((day) => day.planned);
+      document.getElementById('metricDistance').textContent = allPlanned ? formatDistance(totalDistance) : '预览中';
+      document.getElementById('metricTime').textContent = allPlanned ? formatTime(totalTime) : '预览中';
     }
 
     function globalStopIndex(dayIndex, stopIndex) {
