@@ -3,20 +3,17 @@
 行程日期：2026 年 7 月 18 日至 7 月 26 日  
 出发方式：杭州飞兰州中川国际机场，兰州取车自驾  
 航班：7/18 3U3195 07:20-10:25；7/26 MU2446 17:55-20:40  
-配套页面：`amap-jsapi/gannan-roadbook.html`，配套路线图：`甘南自驾路书地图_7月18-26.png`
 
-## 重要结论
+## 行前重点
 
-这版路线整体可执行，主要风险点是天气、洛克之路路况、D5 是否等黄河九曲日落、D8 甘加秘境开放/交通。
-
-1. D3 需要默认补全到扎尕那住宿，否则 D3 只到达日观景台、D4 从扎尕那出发会断线。
-2. D5 如果坚持住阿坝县，黄河九曲第一湾建议下午打卡，不建议等完整日落后再开夜路去阿坝。
-3. D7 以高德导航为准，久治 -> 娘玛寺 -> 阿万仓湿地 -> 郭莽湿地 -> 桑科草原 -> 夏河约 324km / 5.5h，可执行；含吃饭、拍照、停车建议按 8-9 小时总行程预留。
-4. 甘加秘境曾有停止开放/改造公告，且暑期活动较多，D8 出发前 1-2 天务必向夏河酒店或景区确认开放范围和交通管制。
+1. D3 洛克之路和 D6 莲宝叶则看天气行事，雨雾大就降速、缩短停留或改线。
+2. D5 住阿坝县，黄河九曲第一湾下午打卡，不等完整日落后再走夜路。
+3. D7 久治到夏河约 324km / 5.5h，含午餐、拍照、停车按 8-9 小时预留。
+4. D8 甘加秘境出发前 1-2 天确认开放范围和交通管制。
 
 ## 全程概览
 
-天气/温度为 2026 年 7 月 6 日核对的预报趋势与 7 月高海拔气候参考。甘南、若尔盖、阿坝一线午后阵雨/雷阵雨常见，出发前 3 天务必用中国天气/高德天气逐日复核。
+天气/温度按 7 月高海拔气候和近期预报估算。甘南、若尔盖、阿坝午后阵雨常见，出发前 3 天逐日复核。
 
 原则：全程按“短袖/速干内层 + 防晒层 + 抓绒或薄羽绒 + 冲锋衣/雨衣”分层准备。兰州、临夏白天偏热，高海拔草原和莲宝叶则早晚冷、风大、雨来得快。
 
@@ -34,7 +31,7 @@
 
 ## 全程海拔示意图
 
-说明：海拔为公开资料和地图信息的近似值，实际路线上下坡、观景台位置和停车点会有几十到数百米差异；这张图用于判断身体适应节奏，不作为精确测绘数据。
+海拔为近似值，用来判断身体适应节奏；实际以当天停车点和道路为准。
 
 <div class="elevation-wrap">
 <svg viewBox="0 0 880 330" role="img" aria-label="甘南自驾全程海拔示意图" style="width:100%;height:auto;display:block;min-width:760px">
@@ -91,9 +88,9 @@
 | D3-D4 | 扎尕那 | 旺季建议提前 1-3 天 | 扎尕那官方入口、甘南文旅相关入口、去哪儿/携程 | 成人约 80 元，优待约 40 元 | 暑期可能分时预约或限流，现场票不稳时以线上为准 |
 | D4 | 格尔底寺/郎木寺 | 当天即可 | 现场购票 | 格尔底寺/郎木寺区域约 30 元 | 甘肃赛赤寺、四川格尔底寺分属两侧，收费口径可能不同 |
 | D4 | 纳摩大峡谷 | 当天即可 | 通常随格尔底寺入口进入，现场确认 | 寺庙入口约 30 元；峡谷本身多为免费 | 骑马、向导等另计；遇雨不建议深入峡谷 |
-| D5 | 花湖湿地 | 至少提前 1 天 | 去哪儿/携程/同程，景区公众号或现场；若政策延续则查“阿坝旅游网”实名预约 | 门票+观光车成人约 105 元，学生约 70 元，60-64 岁老人约 30 元 | 旧浙江七市免票名单包含花湖，但有效期至 2026-06-11；本行程默认不免。若官方延续，通常只免首道门票，观光车仍另付 |
-| D5 | 黄河九曲第一湾 | 至少提前 1 天 | 去哪儿/携程/同程，景区公众号或现场；若政策延续则查“阿坝旅游网”实名预约 | 门票+上行观光扶梯成人约 105 元，学生约 90 元，60 岁以上/军人/残疾约 45 元 | 旧浙江七市免票名单包含黄河九曲，但有效期至 2026-06-11；本行程默认不免。扶梯/观光车等二消通常不免 |
-| D6 | 莲宝叶则 | 建议提前 1 天；旺季好天气提前 2-3 天 | 去哪儿/携程/同程，景区公众号或窗口 | 成人约 120 元，老人/学生约 60 元 | 不在旧阿坝浙江七市免票 11 景区名单内；部分平台需换票，高海拔景区注意体力和天气 |
+| D5 | 花湖湿地 | 至少提前 1 天 | 去哪儿/携程/同程，景区公众号或现场 | 门票+观光车成人约 105 元，学生约 70 元 | 浙江免票政策本行程默认不适用；观光车另付 |
+| D5 | 黄河九曲第一湾 | 至少提前 1 天 | 去哪儿/携程/同程，景区公众号或现场 | 门票+上行观光扶梯成人约 105 元，学生约 90 元 | 浙江免票政策本行程默认不适用；扶梯/观光车另付 |
+| D6 | 莲宝叶则 | 建议提前 1 天；旺季好天气提前 2-3 天 | 去哪儿/携程/同程，景区公众号或窗口 | 成人约 120 元，老人/学生约 60 元 | 高海拔景区，按天气和体力安排 |
 | D6 | 各莫寺 | 不需提前 | 现场参观 | 免费 | 主殿/室内区域开放时段以现场为准 |
 | D7 | 娘玛寺 | 不需提前 | 现场参观 | 免费 | 寺院参观注意着装、拍照和宗教礼仪 |
 | D7 | 阿万仓湿地 | 当天或提前 1 天查询 | 现场/票务平台/玛曲文旅信息 | 核心观景台/景区参考约 30 元；外围湿地可能免费 | 官方曾公布试行价，实际按现场收费口径为准 |
@@ -113,7 +110,7 @@
 <div class="spot-grid day-photos">
   <article class="spot-card"><img loading="lazy" referrerpolicy="no-referrer" src="https://n.sinaimg.cn/sinacn20100/152/w2048h2104/20190710/69cb-hzrevpz3199497.jpg" alt="甘肃省博物馆铜奔马"><div><strong>甘肃省博物馆</strong><span>建议 2-3 小时；玩法：直奔铜奔马、彩陶、丝路展，提前预约</span><a href="https://www.xiaohongshu.com/search_result?keyword=%E7%94%98%E8%82%83%E7%9C%81%E5%8D%9A%E7%89%A9%E9%A6%86" target="_blank" rel="noreferrer">小红书搜图</a></div></article>
   <article class="spot-card"><img loading="lazy" referrerpolicy="no-referrer" src="https://upload.wikimedia.org/wikipedia/commons/c/ca/Zhongshan_Bridge_in_Lanzhou.jpg" alt="兰州中山桥白天"><div><strong>中山桥</strong><span>建议 30-60 分钟；玩法：桥上步行、黄河岸边拍白塔山，雨大缩短停留</span><a href="https://www.xiaohongshu.com/search_result?keyword=%E5%85%B0%E5%B7%9E%E4%B8%AD%E5%B1%B1%E6%A1%A5" target="_blank" rel="noreferrer">小红书搜图</a></div></article>
-  <article class="spot-card"><img loading="lazy" referrerpolicy="no-referrer" src="https://dimg04.c-ctrip.com/images/0203b12000q0fnfjkBB7D_W_1280_853_R5_Q70.jpg" alt="全季酒店兰州张掖路外观"><div><strong>全季酒店</strong><span>当晚住宿，酒店真实外景图</span><a href="https://www.xiaohongshu.com/search_result?keyword=%E5%85%A8%E5%AD%A3%E9%85%92%E5%BA%97%20%E5%85%B0%E5%B7%9E%20%E5%BC%A0%E6%8E%96%E8%B7%AF" target="_blank" rel="noreferrer">小红书搜图</a></div></article>
+  <article class="spot-card"><img loading="lazy" referrerpolicy="no-referrer" src="https://dimg04.c-ctrip.com/images/0203b12000q0fnfjkBB7D_W_1280_853_R5_Q70.jpg" alt="全季酒店兰州张掖路外观"><div><strong>全季酒店</strong><span>当晚住宿</span><a href="https://www.xiaohongshu.com/search_result?keyword=%E5%85%A8%E5%AD%A3%E9%85%92%E5%BA%97%20%E5%85%B0%E5%B7%9E%20%E5%BC%A0%E6%8E%96%E8%B7%AF" target="_blank" rel="noreferrer">小红书搜图</a></div></article>
 </div>
 
 | 时间 | 安排 |
@@ -135,7 +132,7 @@
 <div class="spot-grid day-photos">
   <article class="spot-card"><img loading="lazy" referrerpolicy="no-referrer" src="https://dimg04.c-ctrip.com/images/1mf5612000c298kqyCBF3_W_640_400_Q90.jpg?proc=autoorient" alt="美仁大草原"><div><strong>美仁大草原</strong><span>建议 30-45 分钟；玩法：路边安全停车拍草原和经幡，不深入压草场</span><a href="https://www.xiaohongshu.com/search_result?keyword=%E7%BE%8E%E4%BB%81%E5%A4%A7%E8%8D%89%E5%8E%9F" target="_blank" rel="noreferrer">小红书搜图</a></div></article>
   <article class="spot-card"><img loading="lazy" referrerpolicy="no-referrer" src="https://youimg1.c-ctrip.com/target/100615000000xnfpa0992_W_10000_1200.jpg?proc=autoorient" alt="安多合作米拉日巴佛阁"><div><strong>米拉日巴佛阁</strong><span>建议 1-1.5 小时；玩法：登阁看壁画和合作市区，尊重寺院拍照规则</span><a href="https://www.xiaohongshu.com/search_result?keyword=%E7%B1%B3%E6%8B%89%E6%97%A5%E5%B7%B4%E4%BD%9B%E9%98%81" target="_blank" rel="noreferrer">小红书搜图</a></div></article>
-  <article class="spot-card"><img loading="lazy" referrerpolicy="no-referrer" src="https://aw-d.tripcdn.com/images/1mc0412000kvba01aA4C0_R_960_660_R5_D.jpg" alt="卓尼扎古录大酒店外观"><div><strong>卓尼扎古录大酒店</strong><span>当晚住宿，酒店真实外景图</span><a href="https://www.xiaohongshu.com/search_result?keyword=%E5%8D%93%E5%B0%BC%E6%89%8E%E5%8F%A4%E5%BD%95%E5%A4%A7%E9%85%92%E5%BA%97" target="_blank" rel="noreferrer">小红书搜图</a></div></article>
+  <article class="spot-card"><img loading="lazy" referrerpolicy="no-referrer" src="https://aw-d.tripcdn.com/images/1mc0412000kvba01aA4C0_R_960_660_R5_D.jpg" alt="卓尼扎古录大酒店外观"><div><strong>卓尼扎古录大酒店</strong><span>当晚住宿</span><a href="https://www.xiaohongshu.com/search_result?keyword=%E5%8D%93%E5%B0%BC%E6%89%8E%E5%8F%A4%E5%BD%95%E5%A4%A7%E9%85%92%E5%BA%97" target="_blank" rel="noreferrer">小红书搜图</a></div></article>
 </div>
 
 | 时间 | 安排 |
@@ -156,7 +153,7 @@
 <div class="spot-grid day-photos">
   <article class="spot-card"><img loading="lazy" referrerpolicy="no-referrer" src="https://pic1.zhimg.com/v2-53765bfe290ee08a17bf5cf3cc806abf_1440w.jpg?source=172ae18b" alt="洛克之路山谷"><div><strong>洛克之路</strong><span>建议 4-6 小时含停车；玩法：按天气走山谷、垭口、草甸点位，雨雾天降速或改线</span><a href="https://www.xiaohongshu.com/search_result?keyword=%E7%94%98%E5%8D%97%E6%B4%9B%E5%85%8B%E4%B9%8B%E8%B7%AF" target="_blank" rel="noreferrer">小红书搜图</a></div></article>
   <article class="spot-card"><img loading="lazy" referrerpolicy="no-referrer" src="https://img1.qunarzz.com/travel/d8/1610/1f/1517a66aef6aafb5.jpg_r_640x426x70_bff833c7.jpg" alt="达日观景台和扎尕那"><div><strong>达日观景台</strong><span>建议 30-60 分钟；玩法：看扎尕那山势和村落全景，天气好等光线</span><a href="https://www.xiaohongshu.com/search_result?keyword=%E8%BE%BE%E6%97%A5%E8%A7%82%E6%99%AF%E5%8F%B0%20%E6%89%8E%E5%B0%94%E9%82%A3" target="_blank" rel="noreferrer">小红书搜图</a></div></article>
-  <article class="spot-card"><img loading="lazy" referrerpolicy="no-referrer" src="https://aw-d.tripcdn.com/images/1mc4m12000svuudcg6C5C_R_960_660_R5_D.jpg" alt="云端山舍酒店外景"><div><strong>云端山舍</strong><span>当晚住宿，酒店真实外景图</span><a href="https://www.xiaohongshu.com/search_result?keyword=%E4%BA%91%E7%AB%AF%E5%B1%B1%E8%88%8D%20%E6%89%8E%E5%B0%94%E9%82%A3" target="_blank" rel="noreferrer">小红书搜图</a></div></article>
+  <article class="spot-card"><img loading="lazy" referrerpolicy="no-referrer" src="https://aw-d.tripcdn.com/images/1mc4m12000svuudcg6C5C_R_960_660_R5_D.jpg" alt="云端山舍酒店外景"><div><strong>云端山舍</strong><span>当晚住宿</span><a href="https://www.xiaohongshu.com/search_result?keyword=%E4%BA%91%E7%AB%AF%E5%B1%B1%E8%88%8D%20%E6%89%8E%E5%B0%94%E9%82%A3" target="_blank" rel="noreferrer">小红书搜图</a></div></article>
 </div>
 
 | 时间 | 安排 |
@@ -179,7 +176,7 @@
   <article class="spot-card"><img loading="lazy" referrerpolicy="no-referrer" src="https://n.sinaimg.cn/sinacn10120/267/w1600h1067/20190830/965a-icxmqsv7933078.jpg" alt="扎尕那"><div><strong>扎尕那</strong><span>建议 2-3 小时；玩法：晨雾/日出优先，仙女滩和村落观景点二选一深玩</span><a href="https://www.xiaohongshu.com/search_result?keyword=%E6%89%8E%E5%B0%94%E9%82%A3" target="_blank" rel="noreferrer">小红书搜图</a></div></article>
   <article class="spot-card"><img loading="lazy" referrerpolicy="no-referrer" src="https://youimg1.c-ctrip.com/target/100p070000002el70B988.jpg" alt="郎木寺和格尔底寺"><div><strong>格尔底寺/郎木寺</strong><span>建议 1.5-2 小时；玩法：格尔底寺慢看寺院和白龙江源头，进殿不拍照</span><a href="https://www.xiaohongshu.com/search_result?keyword=%E6%A0%BC%E5%B0%94%E5%BA%95%E5%AF%BA%20%E9%83%8E%E6%9C%A8%E5%AF%BA" target="_blank" rel="noreferrer">小红书搜图</a></div></article>
   <article class="spot-card"><img loading="lazy" referrerpolicy="no-referrer" src="https://img.pconline.com.cn/images/upload/upc/tx/itbbs/2003/05/c7/195631024_1583387433841_mthumb.jpg" alt="纳摩大峡谷"><div><strong>纳摩大峡谷</strong><span>建议 1-1.5 小时；玩法：沿峡谷轻徒步，遇雨或体力不足只走入口段</span><a href="https://www.xiaohongshu.com/search_result?keyword=%E7%BA%B3%E6%91%A9%E5%A4%A7%E5%B3%A1%E8%B0%B7" target="_blank" rel="noreferrer">小红书搜图</a></div></article>
-  <article class="spot-card"><img loading="lazy" referrerpolicy="no-referrer" src="https://aw-d.tripcdn.com/images/1mc0d12000t1omkwm798A_R_960_660_R5_D.jpg" alt="郎木寺庚盼民宿外观"><div><strong>郎木寺庚盼民宿</strong><span>当晚住宿，酒店真实外景图</span><a href="https://www.xiaohongshu.com/search_result?keyword=%E9%83%8E%E6%9C%A8%E5%AF%BA%E5%BA%9A%E7%9B%BC%E6%B0%91%E5%AE%BF" target="_blank" rel="noreferrer">小红书搜图</a></div></article>
+  <article class="spot-card"><img loading="lazy" referrerpolicy="no-referrer" src="https://aw-d.tripcdn.com/images/1mc0d12000t1omkwm798A_R_960_660_R5_D.jpg" alt="郎木寺庚盼民宿外观"><div><strong>郎木寺庚盼民宿</strong><span>当晚住宿</span><a href="https://www.xiaohongshu.com/search_result?keyword=%E9%83%8E%E6%9C%A8%E5%AF%BA%E5%BA%9A%E7%9B%BC%E6%B0%91%E5%AE%BF" target="_blank" rel="noreferrer">小红书搜图</a></div></article>
 </div>
 
 | 时间 | 安排 |
@@ -190,7 +187,6 @@
 | 14:00-17:30 | 格尔底寺、纳摩大峡谷轻徒步。 |
 | 晚上 | 入住郎木寺庚盼民宿(白龙江峡谷店)，注意保暖。 |
 
-住宿提醒：郎木寺庚盼民宿(白龙江峡谷店)为更新后的当晚住宿，D5 早上从民宿直接出发去花湖湿地。
 
 ## D5｜7 月 22 日｜郎木寺、花湖、九曲到阿坝
 
@@ -201,7 +197,7 @@
 <div class="spot-grid day-photos">
   <article class="spot-card"><img loading="lazy" referrerpolicy="no-referrer" src="https://img1.qunarzz.com/travel/d6/1710/aa/eae614fd6912b9b5.jpg?color=#61792b" alt="若尔盖花湖湿地"><div><strong>花湖湿地</strong><span>建议 2-2.5 小时；玩法：观光车进出，走栈道看湿地和水鸟，风大注意保暖</span><a href="https://www.xiaohongshu.com/search_result?keyword=%E8%8A%B1%E6%B9%96%E6%B9%BF%E5%9C%B0" target="_blank" rel="noreferrer">小红书搜图</a></div></article>
   <article class="spot-card"><img loading="lazy" referrerpolicy="no-referrer" src="https://picx.zhimg.com/v2-74e110f2ea6d93f80b4cfb4800aeac95_1440w.jpg" alt="黄河九曲第一湾"><div><strong>黄河九曲第一湾</strong><span>建议 1.5-2 小时；玩法：上观景台看黄河弯道，住阿坝则不等完整日落</span><a href="https://www.xiaohongshu.com/search_result?keyword=%E9%BB%84%E6%B2%B3%E4%B9%9D%E6%9B%B2%E7%AC%AC%E4%B8%80%E6%B9%BE" target="_blank" rel="noreferrer">小红书搜图</a></div></article>
-  <article class="spot-card"><img loading="lazy" referrerpolicy="no-referrer" src="https://dimg04.c-ctrip.com/images/0205712000ogas2l267A0_C_750_340_Q70.jpg" alt="朵兰达V酒店阿坝县店外观"><div><strong>朵兰达V酒店</strong><span>当晚住宿，酒店真实外景图</span><a href="https://www.xiaohongshu.com/search_result?keyword=%E6%9C%B5%E5%85%B0%E8%BE%BEV%E9%85%92%E5%BA%97%20%E9%98%BF%E5%9D%9D%E5%8E%BF" target="_blank" rel="noreferrer">小红书搜图</a></div></article>
+  <article class="spot-card"><img loading="lazy" referrerpolicy="no-referrer" src="https://dimg04.c-ctrip.com/images/0205712000ogas2l267A0_C_750_340_Q70.jpg" alt="朵兰达V酒店阿坝县店外观"><div><strong>朵兰达V酒店</strong><span>当晚住宿</span><a href="https://www.xiaohongshu.com/search_result?keyword=%E6%9C%B5%E5%85%B0%E8%BE%BEV%E9%85%92%E5%BA%97%20%E9%98%BF%E5%9D%9D%E5%8E%BF" target="_blank" rel="noreferrer">小红书搜图</a></div></article>
 </div>
 
 | 时间 | 安排 |
@@ -224,7 +220,7 @@
 <div class="spot-grid day-photos">
   <article class="spot-card"><img loading="lazy" referrerpolicy="no-referrer" src="https://tr-osdcp.qunarzz.com/tr-osd-tr-space/img/24b8d7e49e482e0c1eb8a12dc56ef3b2.jpg" alt="莲宝叶则景区"><div><strong>莲宝叶则</strong><span>建议 4-5 小时；玩法：扎尕尔措一线慢走慢拍，少跑跳，不适及时下撤</span><a href="https://www.xiaohongshu.com/search_result?keyword=%E8%8E%B2%E5%AE%9D%E5%8F%B6%E5%88%99" target="_blank" rel="noreferrer">小红书搜图</a></div></article>
   <article class="spot-card"><img loading="lazy" referrerpolicy="no-referrer" src="https://p1.itc.cn/images01/20210909/92735bd58c3c4e2394fe5b7790ceebca.jpeg" alt="各莫寺"><div><strong>各莫寺</strong><span>建议 40-60 分钟；玩法：短停看寺院建筑和转经氛围，作为莲宝叶则后的轻量点</span><a href="https://www.xiaohongshu.com/search_result?keyword=%E5%90%84%E8%8E%AB%E5%AF%BA" target="_blank" rel="noreferrer">小红书搜图</a></div></article>
-  <article class="spot-card"><img loading="lazy" referrerpolicy="no-referrer" src="https://dimg04.c-ctrip.com/images/1mc4l12000s82zmjvA9E4_W_1280_853_R5_Q70.jpg" alt="久治玉宫酒店外观"><div><strong>久治玉宫酒店</strong><span>当晚住宿，酒店真实外景图</span><a href="https://www.xiaohongshu.com/search_result?keyword=%E4%B9%85%E6%B2%BB%E7%8E%89%E5%AE%AB%E9%85%92%E5%BA%97" target="_blank" rel="noreferrer">小红书搜图</a></div></article>
+  <article class="spot-card"><img loading="lazy" referrerpolicy="no-referrer" src="https://dimg04.c-ctrip.com/images/1mc4l12000s82zmjvA9E4_W_1280_853_R5_Q70.jpg" alt="久治玉宫酒店外观"><div><strong>久治玉宫酒店</strong><span>当晚住宿</span><a href="https://www.xiaohongshu.com/search_result?keyword=%E4%B9%85%E6%B2%BB%E7%8E%89%E5%AE%AB%E9%85%92%E5%BA%97" target="_blank" rel="noreferrer">小红书搜图</a></div></article>
 </div>
 
 | 时间 | 安排 |
@@ -247,7 +243,7 @@
   <article class="spot-card"><img loading="lazy" referrerpolicy="no-referrer" src="https://youimg1.c-ctrip.com/target/100b090000003wwf7F1A5.jpg" alt="阿万仓湿地和玛曲湿地"><div><strong>娘玛寺/阿万仓湿地</strong><span>建议 1.5-2 小时；玩法：娘玛寺短停后把重点放阿万仓湿地栈道和草原水系</span><a href="https://www.xiaohongshu.com/search_result?keyword=%E5%A8%98%E7%8E%9B%E5%AF%BA%20%E9%98%BF%E4%B8%87%E4%BB%93%E6%B9%BF%E5%9C%B0" target="_blank" rel="noreferrer">小红书搜图</a></div></article>
   <article class="spot-card"><img loading="lazy" referrerpolicy="no-referrer" src="https://dimg04.c-ctrip.com/images/0102y1200092lklkt62A6_W_1080_10000_Q80.jpg" alt="郭莽湿地"><div><strong>郭莽湿地</strong><span>建议 30-45 分钟；玩法：栈道短走、拍湿地和公路风景，不作为深玩点</span><a href="https://www.xiaohongshu.com/search_result?keyword=%E9%83%AD%E8%8E%BD%E6%B9%BF%E5%9C%B0" target="_blank" rel="noreferrer">小红书搜图</a></div></article>
   <article class="spot-card"><img loading="lazy" referrerpolicy="no-referrer" src="https://n.sinaimg.cn/sinakd10116/701/w985h516/20200730/eb74-iwxpesy3500036.jpg" alt="桑科草原"><div><strong>桑科草原</strong><span>建议 20-40 分钟；玩法：只做顺路拍照点，天色晚或疲劳直接跳过</span><a href="https://www.xiaohongshu.com/search_result?keyword=%E6%A1%91%E7%A7%91%E8%8D%89%E5%8E%9F" target="_blank" rel="noreferrer">小红书搜图</a></div></article>
-  <article class="spot-card"><img loading="lazy" referrerpolicy="no-referrer" src="https://aw-d.tripcdn.com/images/0204u12000n7rgjs3DB96_R_960_660_R5_D.jpg" alt="夏河蓝庭雅居酒店外景"><div><strong>夏河蓝庭雅居酒店</strong><span>当晚住宿，酒店真实外景图</span><a href="https://www.xiaohongshu.com/search_result?keyword=%E5%A4%8F%E6%B2%B3%E8%93%9D%E5%BA%AD%E9%9B%85%E5%B1%85%E9%85%92%E5%BA%97" target="_blank" rel="noreferrer">小红书搜图</a></div></article>
+  <article class="spot-card"><img loading="lazy" referrerpolicy="no-referrer" src="https://aw-d.tripcdn.com/images/0204u12000n7rgjs3DB96_R_960_660_R5_D.jpg" alt="夏河蓝庭雅居酒店外景"><div><strong>夏河蓝庭雅居酒店</strong><span>当晚住宿</span><a href="https://www.xiaohongshu.com/search_result?keyword=%E5%A4%8F%E6%B2%B3%E8%93%9D%E5%BA%AD%E9%9B%85%E5%B1%85%E9%85%92%E5%BA%97" target="_blank" rel="noreferrer">小红书搜图</a></div></article>
 </div>
 
 | 时间 | 安排 |
@@ -269,7 +265,7 @@
 <div class="spot-grid day-photos">
   <article class="spot-card"><img loading="lazy" referrerpolicy="no-referrer" src="https://img1.qunarzz.com/travel/d7/1507/8e/5e05142687af0a.jpg" alt="拉卜楞寺"><div><strong>拉卜楞寺</strong><span>建议 2.5-3 小时；玩法：请讲解或跟寺院路线，看转经长廊、学院和大殿外围</span><a href="https://www.xiaohongshu.com/search_result?keyword=%E6%8B%89%E5%8D%9C%E6%A5%9E%E5%AF%BA" target="_blank" rel="noreferrer">小红书搜图</a></div></article>
   <article class="spot-card"><img loading="lazy" referrerpolicy="no-referrer" src="https://q1.itc.cn/images01/20240705/8faeacb33e714e3d945d0ce7dbce1b49.png" alt="甘加秘境白石崖"><div><strong>甘加秘境</strong><span>建议 3-4 小时；玩法：按开放情况走八角城、白石崖和草原路景，出发前确认管制</span><a href="https://www.xiaohongshu.com/search_result?keyword=%E7%94%98%E5%8A%A0%E7%A7%98%E5%A2%83" target="_blank" rel="noreferrer">小红书搜图</a></div></article>
-  <article class="spot-card"><img loading="lazy" referrerpolicy="no-referrer" src="https://dimg04.c-ctrip.com/images/1mc1512000k3rckxb5D8E.jpg" alt="临夏八坊十三巷美仑酒店外观"><div><strong>临夏八坊十三巷美仑酒店</strong><span>当晚住宿，酒店真实外景图</span><a href="https://www.xiaohongshu.com/search_result?keyword=%E4%B8%B4%E5%A4%8F%E5%85%AB%E5%9D%8A%E5%8D%81%E4%B8%89%E5%B7%B7%E7%BE%8E%E4%BB%91%E9%85%92%E5%BA%97" target="_blank" rel="noreferrer">小红书搜图</a></div></article>
+  <article class="spot-card"><img loading="lazy" referrerpolicy="no-referrer" src="https://dimg04.c-ctrip.com/images/1mc1512000k3rckxb5D8E.jpg" alt="临夏八坊十三巷美仑酒店外观"><div><strong>临夏八坊十三巷美仑酒店</strong><span>当晚住宿</span><a href="https://www.xiaohongshu.com/search_result?keyword=%E4%B8%B4%E5%A4%8F%E5%85%AB%E5%9D%8A%E5%8D%81%E4%B8%89%E5%B7%B7%E7%BE%8E%E4%BB%91%E9%85%92%E5%BA%97" target="_blank" rel="noreferrer">小红书搜图</a></div></article>
 </div>
 
 | 时间 | 安排 |
@@ -297,7 +293,6 @@
 
 ## 全程注意事项
 
-参考甘南/川西自驾常见经验，整段路线最需要管住的是节奏，不是打卡数量。
 
 1. 高原反应以预防为主：D2 后持续在 3000m 左右活动，莲宝叶则最高，少跑跳、少洗很热的澡、别喝酒，明显头痛胸闷就减少停留。
 2. 天气每天复核：甘南和阿坝 7 月午后阵雨多，雨雾会直接影响洛克之路、扎尕那观景、莲宝叶则体验；遇大雨优先保路况，不硬赶景点。
@@ -306,28 +301,3 @@
 5. 寺院和藏区礼仪简单遵守：进殿不拍照、不喧哗，转经按当地方向，人物特写先征得同意；草原路边停车别压草场和堵路。
 6. 行李少而准：冲锋衣/薄羽绒、防晒、雨具、墨镜、保温杯和常用药比漂亮衣服更重要；每天上车前补水、加油、确认离线地图。
 
-## 参考信息来源
-
-- 甘肃省博物馆官方开放信息：https://www.gansumuseum.com/
-- 兰州天气预报，中国气象局：https://weather.cma.cn/web/weather/52889.html
-- 阿坝天气预报，中国天气：https://www.weather.com.cn/weather/101271901.shtml
-- 莲宝叶则景区天气，携程：https://gs.ctrip.com/html5/you/weather/aba744/1684361.html
-- 甘南海拔与天气提示，甘肃天地图：https://gansu.tianditu.gov.cn/gannan/start/index3.html
-- 莲宝叶则高海拔节点参考：https://hk.trip.com/moments/detail/aba-county-1446246-135651951/
-- 甘肃省博物馆预约方式参考：https://www.sohu.com/a/798472509_121106869
-- 扎尕那票务/预约参考：https://touch.piao.qunar.com/touch/detail.htm?id=13845
-- 米拉日巴佛阁介绍，甘南州政府：https://www.gnzrmzf.gov.cn/info/1022/1059.htm
-- 花湖湿地票务参考：https://touch.piao.qunar.com/touch/detail.htm?id=41689
-- 黄河九曲第一湾票务参考：https://touch.piao.qunar.com/touch/detail.htm?id=32678
-- 莲宝叶则票务参考：https://touch.piao.qunar.com/touch/detail.htm?id=468381
-- 甘加秘境票务参考：https://touch.piao.qunar.com/touch/detail.htm?id=507097
-- 阿坝州浙江七市免票政策说明，九寨沟管理局：https://www.jiuzhai.com/news/notice/7725-2021-06-10-08-16-51
-- 阿坝州浙江七市免票景区名单，四川在线：https://sichuan.scol.com.cn/ggxw/202105/58166287.html
-- 四川 2026 面向浙江游客感恩礼包报道：https://news.qq.com/rain/a/20260421A06PFQ00
-- 纳摩大峡谷门票参考：https://gs.ctrip.com/html5/you/sight/zoige3165/140604075.html
-- 阿万仓湿地试行票价，甘南州发改委：https://fzgg.gnzrmzf.gov.cn/info/1026/4914.htm
-- 郭莽湿地门票参考，携程：https://gs.ctrip.com/html5/you/sight/luqu2799/4743368.html
-- 拉卜楞寺门票参考：https://www.meet99.com/jingdian-labulengsi.html
-- 甘南景区免票传言辟谣，新华网：https://www.news.cn/20260626/34f166eee5204f94b7ddea66e3188043/c.html
-- 甘加秘境停止开放公告，夏河县人民政府：https://www.xiahe.gov.cn/info/1208/34786.htm
-- 酒店信息以飞猪/携程/高德实时订单页为准；本攻略已按你最新指定酒店更新住宿衔接。
