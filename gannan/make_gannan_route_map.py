@@ -115,6 +115,37 @@ day_colors = {
     "D9": "#64748B",
 }
 
+amap_metrics = {
+    "D1": {"distance_m": 75933, "duration_s": 5289},
+    "D2": {"distance_m": 307207, "duration_s": 14828},
+    "D3": {"distance_m": 142678, "duration_s": 14600},
+    "D4": {"distance_m": 104801, "duration_s": 9366},
+    "D5": {"distance_m": 291055, "duration_s": 19946},
+    "D6": {"distance_m": 134332, "duration_s": 10289},
+    "D7": {"distance_m": 336587, "duration_s": 19549},
+    "D8": {"distance_m": 166973, "duration_s": 10470},
+    "D9": {"distance_m": 153281, "duration_s": 10399},
+}
+
+
+def format_km(distance_m):
+    return f"{distance_m / 1000:.1f}km"
+
+
+def format_duration(seconds):
+    hours = int(seconds // 3600)
+    minutes = int(((seconds % 3600) + 30) // 60)
+    if minutes == 60:
+        hours += 1
+        minutes = 0
+    return f"{hours}h{minutes:02d}m"
+
+
+def total_amap_metrics():
+    distance = sum(item["distance_m"] for item in amap_metrics.values())
+    duration = sum(item["duration_s"] for item in amap_metrics.values())
+    return distance, duration
+
 
 def lonlat_to_world(lon, lat, z=ZOOM):
     lat_rad = math.radians(lat)
@@ -331,8 +362,14 @@ def draw_panel(draw):
     x, y = PANEL_X + 28, PANEL_Y + 28
     draw.text((x, y), "每日路书", fill="#111827", font=F_TITLE)
     y += 70
-    draw.text((x, y), "7/18-7/26  杭州飞兰州 · 甘南/川北自驾环线", fill="#475569", font=F_SUB)
-    y += 55
+    total_distance, total_duration = total_amap_metrics()
+    draw.text(
+        (x, y),
+        f"7/18-7/26 · 高德实算总计 {format_km(total_distance)} / {format_duration(total_duration)}",
+        fill="#475569",
+        font=F_SUB,
+    )
+    y += 50
     idx = 1
     short_names = {
         "全季酒店(兰州张掖路省政府地铁站店)": "全季酒店(张掖路)",
@@ -344,16 +381,21 @@ def draw_panel(draw):
     }
     for day, date, items in days:
         color = day_colors[day]
-        card_h = 50 + 24 * len(items)
+        metric = amap_metrics.get(day)
+        metric_text = ""
+        if metric:
+            metric_text = f"{format_km(metric['distance_m'])} / {format_duration(metric['duration_s'])}"
+        card_h = 64 + 22 * len(items)
         rounded_rect(draw, (PANEL_X + 24, y - 10, PANEL_X + PANEL_W - 24, y + card_h), 18, "#ffffff", "#e5e7eb", 1)
         draw.rounded_rectangle((x, y, x + 82, y + 34), radius=17, fill=color)
         draw.text((x + 15, y + 3), day, fill="white", font=F_DAY)
         draw.text((x + 96, y + 5), date, fill="#334155", font=F_DAY)
-        yy = y + 40
+        draw.text((x + 185, y + 9), metric_text, fill="#0f766e", font=F_TEXT)
+        yy = y + 50
         for name, lat, lon in items:
             label = f"{idx}. {short_names.get(name, name)}"
             draw.text((x + 8, yy), label, fill="#111827", font=F_SMALL)
-            yy += 24
+            yy += 22
             idx += 1
         y += card_h + 12
 
@@ -365,7 +407,13 @@ def main():
     draw = ImageDraw.Draw(base)
 
     draw.text((70, 38), "甘南自驾路书地图", fill="#0f172a", font=F_TITLE)
-    draw.text((620, 55), "杭州 → 兰州中川机场｜7月18日-26日｜真实驾车导航路线", fill="#475569", font=F_SUB)
+    total_distance, total_duration = total_amap_metrics()
+    draw.text(
+        (620, 55),
+        f"杭州 → 兰州中川机场｜7月18日-26日｜高德参考 {format_km(total_distance)} / {format_duration(total_duration)}",
+        fill="#475569",
+        font=F_SUB,
+    )
 
     draw_shadow(base, (MAP_X, MAP_Y, MAP_X + MAP_W, MAP_Y + MAP_H), radius=32, alpha=45, blur=20)
     map_img, project = make_map(all_points)
@@ -380,8 +428,8 @@ def main():
 
     # Subtle map frame and scale note.
     draw.rounded_rectangle((MAP_X, MAP_Y, MAP_X + MAP_W, MAP_Y + MAP_H), radius=32, outline="#CBD5E1", width=2)
-    draw.rounded_rectangle((MAP_X + 30, MAP_Y + MAP_H - 72, MAP_X + 705, MAP_Y + MAP_H - 25), radius=14, fill=(255, 255, 255, 225))
-    draw.text((MAP_X + 48, MAP_Y + MAP_H - 62), "底图：CARTO/OSM；驾车路线：OSRM/OSM；部分景点坐标为近似点", fill="#475569", font=F_SMALL)
+    draw.rounded_rectangle((MAP_X + 30, MAP_Y + MAP_H - 72, MAP_X + 835, MAP_Y + MAP_H - 25), radius=14, fill=(255, 255, 255, 225))
+    draw.text((MAP_X + 48, MAP_Y + MAP_H - 62), "里程/时长：高德JSAPI；底图/轨迹：CARTO/OSM + OSRM，部分点位为近似点", fill="#475569", font=F_SMALL)
 
     draw_shadow(base, (PANEL_X, PANEL_Y, PANEL_X + PANEL_W, PANEL_Y + PANEL_H), radius=32, alpha=45, blur=20)
     rounded_rect(draw, (PANEL_X, PANEL_Y, PANEL_X + PANEL_W, PANEL_Y + PANEL_H), 32, "#F1F5F9", "#CBD5E1", 2)
