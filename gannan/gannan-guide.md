@@ -17,8 +17,6 @@
 
 原则：全程按“短袖/速干内层 + 防晒层 + 抓绒或薄羽绒 + 冲锋衣/雨衣”分层准备。兰州、临夏白天偏热，高海拔草原和莲宝叶则早晚冷、风大、雨来得快。
 
-去哪儿订单页只看到 D6-D8 住宿订单；D1-D5 若在其他平台预订，房型和价格待补。
-
 | 日期 | 天数 | 住宿 | 主要路线 | 天气/温度参考 | 穿衣建议 | 随身重点 | 节奏判断 |
 |---|---:|---|---|---|---|---|---|
 | 7/18 周六 | D1 | [全季酒店(兰州张掖路省政府地铁站店)](https://m.ctrip.com/html5/hotel/hoteldetail/66757085.html) | 兰州中川机场 -> 甘肃省博物馆 -> 中山桥 -> [全季酒店](https://m.ctrip.com/html5/hotel/hoteldetail/66757085.html) | 多云/阵雨<br>高 32℃<br>低 18℃ | 白天短袖/薄长袖即可，博物馆和晚间黄河边加薄外套。 | 防晒帽、轻薄外套、舒适步行鞋 | 航班到达后轻松适应 |
@@ -26,10 +24,31 @@
 | 7/20 周一 | D3 | [云端山舍·全域日出观景民宿(扎尕那达日观景台店)](https://m.ctrip.com/html5/hotel/hoteldetail/111872533.html) | [卓尼扎古录大酒店](https://m.ctrip.com/html5/hotel/hoteldetail/111531991.html) -> 达日观景台 -> [云端山舍](https://m.ctrip.com/html5/hotel/hoteldetail/111872533.html) | 阵雨<br>高 18℃<br>低 10℃ | 速干长袖 + 抓绒/薄羽绒 + 冲锋衣，山路和观景台按低温风大准备。 | 雨衣、防滑鞋、保暖帽 | 看天气，避免夜走洛克之路 |
 | 7/21 周二 | D4 | [郎木寺庚盼民宿(白龙江峡谷店)](https://m.ctrip.com/html5/hotel/hoteldetail/134867328.html) | [云端山舍](https://m.ctrip.com/html5/hotel/hoteldetail/111872533.html) -> 扎尕那仙女滩 -> 格尔底寺 -> 纳摩大峡谷 -> [郎木寺庚盼民宿](https://m.ctrip.com/html5/hotel/hoteldetail/134867328.html) | 多云/阵雨<br>高 20℃<br>低 8℃ | 清晨看日出穿抓绒/薄羽绒，白天可减到长袖，峡谷带防风防雨层。 | 冲锋衣、轻便徒步鞋 | 轻松转场日 |
 | 7/22 周三 | D5 | [朵兰达V酒店(阿坝县店)](https://m.ctrip.com/html5/hotel/hoteldetail/131972530.html) | [郎木寺庚盼民宿](https://m.ctrip.com/html5/hotel/hoteldetail/134867328.html) -> 花湖 -> 黄河九曲第一湾 -> [朵兰达V酒店](https://m.ctrip.com/html5/hotel/hoteldetail/131972530.html) | 午后阵雨<br>高 21℃<br>低 8℃ | 白天长袖防晒，花湖和九曲风大，下午雨后会冷，保留薄羽绒/抓绒。 | 防晒、雨具、保温杯 | 可行，但别等九曲完整日落 |
-| 7/23 周四 | D6 | [久治玉宫酒店](https://m.ctrip.com/html5/hotel/hoteldetail/121194192.html)<br>订单：豪华双床房（医用级鼻吸供氧）3间，¥1413 | [朵兰达V酒店](https://m.ctrip.com/html5/hotel/hoteldetail/131972530.html) -> 莲宝叶则 -> 各莫寺 -> [久治玉宫酒店](https://m.ctrip.com/html5/hotel/hoteldetail/121194192.html) | 高海拔阵雨<br>高 20℃<br>低 4℃ | 全程最冷的一天，按高海拔湖区准备：抓绒/薄羽绒 + 冲锋衣，别只穿夏装。 | 保暖层、手套/帽子、雨衣 | 景区日，注意高海拔 |
-| 7/24 周五 | D7 | [夏河蓝庭雅居酒店](https://m.ctrip.com/html5/hotel/hoteldetail/130838449.html)<br>订单：豪华双床房3间，¥1350 | [久治玉宫酒店](https://m.ctrip.com/html5/hotel/hoteldetail/121194192.html) -> 娘玛寺 -> 阿万仓 -> 郭莽 -> 桑科 -> [蓝庭雅居酒店](https://m.ctrip.com/html5/hotel/hoteldetail/130838449.html) | 多云/阵雨<br>高 21℃<br>低 7℃ | 长驾驶日，车内轻便，湿地/草原下车加防风外套；早晚可穿抓绒。 | 防风外套、备用袜子 | 高德约 336.6km/5h26m，按 8-9h 安排 |
-| 7/25 周六 | D8 | [临夏八坊十三巷美仑酒店](https://m.ctrip.com/html5/hotel/hoteldetail/127225302.html)<br>订单：大床房2间 ¥764；商务双床房1间 ¥585；合计 ¥1349 | [蓝庭雅居酒店](https://m.ctrip.com/html5/hotel/hoteldetail/130838449.html) -> 拉卜楞寺 -> 甘加秘境 -> [临夏八坊十三巷美仑酒店](https://m.ctrip.com/html5/hotel/hoteldetail/127225302.html) | 多云<br>高 29℃<br>低 12℃ | 夏河早晨偏凉，长袖外套；到临夏气温升高，可换轻薄层。 | 防晒帽、薄外套 | 文化+草原，核实甘加开放 |
+| 7/23 周四 | D6 | [久治玉宫酒店](https://m.ctrip.com/html5/hotel/hoteldetail/121194192.html) | [朵兰达V酒店](https://m.ctrip.com/html5/hotel/hoteldetail/131972530.html) -> 莲宝叶则 -> 各莫寺 -> [久治玉宫酒店](https://m.ctrip.com/html5/hotel/hoteldetail/121194192.html) | 高海拔阵雨<br>高 20℃<br>低 4℃ | 全程最冷的一天，按高海拔湖区准备：抓绒/薄羽绒 + 冲锋衣，别只穿夏装。 | 保暖层、手套/帽子、雨衣 | 景区日，注意高海拔 |
+| 7/24 周五 | D7 | [夏河蓝庭雅居酒店](https://m.ctrip.com/html5/hotel/hoteldetail/130838449.html) | [久治玉宫酒店](https://m.ctrip.com/html5/hotel/hoteldetail/121194192.html) -> 娘玛寺 -> 阿万仓 -> 郭莽 -> 桑科 -> [蓝庭雅居酒店](https://m.ctrip.com/html5/hotel/hoteldetail/130838449.html) | 多云/阵雨<br>高 21℃<br>低 7℃ | 长驾驶日，车内轻便，湿地/草原下车加防风外套；早晚可穿抓绒。 | 防风外套、备用袜子 | 高德约 336.6km/5h26m，按 8-9h 安排 |
+| 7/25 周六 | D8 | [临夏八坊十三巷美仑酒店](https://m.ctrip.com/html5/hotel/hoteldetail/127225302.html) | [蓝庭雅居酒店](https://m.ctrip.com/html5/hotel/hoteldetail/130838449.html) -> 拉卜楞寺 -> 甘加秘境 -> [临夏八坊十三巷美仑酒店](https://m.ctrip.com/html5/hotel/hoteldetail/127225302.html) | 多云<br>高 29℃<br>低 12℃ | 夏河早晨偏凉，长袖外套；到临夏气温升高，可换轻薄层。 | 防晒帽、薄外套 | 文化+草原，核实甘加开放 |
 | 7/26 周日 | D9 | 返程 | [临夏八坊十三巷美仑酒店](https://m.ctrip.com/html5/hotel/hoteldetail/127225302.html) -> 黄洮交汇观景平台 -> 兰州中川机场 T3 | 多云/阵雨<br>高 31℃<br>低 18℃ | 白天偏热，短袖/薄长袖为主，机场和飞机上备薄外套。 | 轻薄外套、易脱鞋/舒适鞋 | 17:55 航班，13:00 前离开观景平台 |
+
+## 住宿订单
+
+仅统计去哪儿订单列表中显示“预订成功”的酒店订单；已取消订单不计入。D1 全季酒店在当前去哪儿订单列表未见预订成功订单，暂不计入住宿合计。
+
+| 天数 | 日期 | 酒店 | 房型 | 间数 | 价格 | 备注 |
+|---|---|---|---|---:|---:|---|
+| D1 | 7/18-7/19 | [全季酒店(兰州张掖路省政府地铁站店)](https://m.ctrip.com/html5/hotel/hoteldetail/66757085.html) | 去哪儿订单列表未见预订成功订单 | - | - | 未计入合计 |
+| D2 | 7/19-7/20 | [卓尼扎古录大酒店](https://m.ctrip.com/html5/hotel/hoteldetail/111531991.html) | 特惠双床房（一次性面巾 + 一次性浴巾） | 3间 | ¥1195 | 2份早餐/间 |
+| D3 | 7/20-7/21 | [云端山舍·全域日出观景民宿(扎尕那达日观景台店)](https://m.ctrip.com/html5/hotel/hoteldetail/111872533.html) | 栖山｜观景双床房 | 1间 | ¥854 | 预订成功 |
+| D3 | 7/20-7/21 | [云端山舍·全域日出观景民宿(扎尕那达日观景台店)](https://m.ctrip.com/html5/hotel/hoteldetail/111872533.html) | 枕山｜观景双床房 | 2间 | ¥1626 | 预订成功 |
+| D4 | 7/21-7/22 | [郎木寺庚盼民宿(白龙江峡谷店)](https://m.ctrip.com/html5/hotel/hoteldetail/134867328.html) | 郎木寺观景｜豪华标间 | 2间 | ¥950.95 | 预订成功 |
+| D4 | 7/21-7/22 | [郎木寺庚盼民宿(白龙江峡谷店)](https://m.ctrip.com/html5/hotel/hoteldetail/134867328.html) | 郎木寺观景｜标间 | 1间 | ¥404.55 | 预订成功 |
+| D5 | 7/22-7/23 | [朵兰达V酒店(阿坝县店)](https://m.ctrip.com/html5/hotel/hoteldetail/131972530.html) | Senior·静谧双床房（智能客控 + 空调 + 制氧机 + 加湿器） | 1间 | ¥534 | 2份早餐 |
+| D5 | 7/22-7/23 | [朵兰达V酒店(阿坝县店)](https://m.ctrip.com/html5/hotel/hoteldetail/131972530.html) | 智能语音大床房 | 2间 | ¥894 | 预订成功 |
+| D6 | 7/23-7/24 | [久治玉宫酒店](https://m.ctrip.com/html5/hotel/hoteldetail/121194192.html) | 豪华双床房（医用级鼻吸供氧） | 3间 | ¥1413 | 预订成功 |
+| D7 | 7/24-7/25 | [夏河蓝庭雅居酒店](https://m.ctrip.com/html5/hotel/hoteldetail/130838449.html) | 豪华双床房 | 3间 | ¥1350 | 预订成功 |
+| D8 | 7/25-7/26 | [临夏八坊十三巷美仑酒店](https://m.ctrip.com/html5/hotel/hoteldetail/127225302.html) | 大床房（迷你Bar + 舒适床垫） | 2间 | ¥764 | 预订成功 |
+| D8 | 7/25-7/26 | [临夏八坊十三巷美仑酒店](https://m.ctrip.com/html5/hotel/hoteldetail/127225302.html) | 商务双床房（高端洗护 + 干湿分离） | 1间 | ¥585 | 预订成功 |
+
+已确认住宿订单合计（D2-D8）：¥10570.50。
 
 ## 同类景点取舍
 
@@ -239,7 +258,6 @@
 路线：[朵兰达V酒店(阿坝县店)](https://m.ctrip.com/html5/hotel/hoteldetail/131972530.html) -> 莲宝叶则景区 -> 各莫寺 -> [久治玉宫酒店](https://m.ctrip.com/html5/hotel/hoteldetail/121194192.html)
 住宿：久治县
 酒店：[久治玉宫酒店](https://m.ctrip.com/html5/hotel/hoteldetail/121194192.html)
-订单：豪华双床房（医用级鼻吸供氧）3间，¥1413
 
 <div class="spot-grid day-photos">
   <article class="spot-card"><img loading="lazy" referrerpolicy="no-referrer" src="https://tr-osdcp.qunarzz.com/tr-osd-tr-space/img/24b8d7e49e482e0c1eb8a12dc56ef3b2.jpg" alt="莲宝叶则景区"><div><strong>莲宝叶则</strong><span>建议 4-5 小时；玩法：扎尕尔措一线慢走慢拍，少跑跳，不适及时下撤</span><a href="https://www.xiaohongshu.com/search_result?keyword=%E8%8E%B2%E5%AE%9D%E5%8F%B6%E5%88%99" target="_blank" rel="noreferrer">小红书搜图</a></div></article>
@@ -261,7 +279,6 @@
 路线：[久治玉宫酒店](https://m.ctrip.com/html5/hotel/hoteldetail/121194192.html) -> 娘玛寺 -> 阿万仓湿地 -> 郭莽湿地 -> 桑科草原 -> [夏河蓝庭雅居酒店](https://m.ctrip.com/html5/hotel/hoteldetail/130838449.html)
 住宿：夏河县
 酒店：[夏河蓝庭雅居酒店](https://m.ctrip.com/html5/hotel/hoteldetail/130838449.html)
-订单：豪华双床房3间，¥1350
 高德参考：约 336.6km / 5h26m；实时路况和 POI 命中会浮动，实际按 8-9h 总行程预留。
 
 <div class="spot-grid day-photos">
@@ -286,7 +303,6 @@
 路线：[夏河蓝庭雅居酒店](https://m.ctrip.com/html5/hotel/hoteldetail/130838449.html) -> 拉卜楞寺 -> 甘加秘境 -> [临夏八坊十三巷美仑酒店](https://m.ctrip.com/html5/hotel/hoteldetail/127225302.html)
 住宿：临夏市
 酒店：[临夏八坊十三巷美仑酒店](https://m.ctrip.com/html5/hotel/hoteldetail/127225302.html)
-订单：大床房（迷你Bar+舒适床垫）2间 ¥764；商务双床房（高端洗护+干湿分离）1间 ¥585；合计 ¥1349
 
 <div class="spot-grid day-photos">
   <article class="spot-card"><img loading="lazy" referrerpolicy="no-referrer" src="https://img1.qunarzz.com/travel/d7/1507/8e/5e05142687af0a.jpg" alt="拉卜楞寺"><div><strong>拉卜楞寺</strong><span>建议 2.5-3 小时；玩法：请讲解或跟寺院路线，看转经长廊、学院和大殿外围</span><a href="https://www.xiaohongshu.com/search_result?keyword=%E6%8B%89%E5%8D%9C%E6%A5%9E%E5%AF%BA" target="_blank" rel="noreferrer">小红书搜图</a></div></article>
