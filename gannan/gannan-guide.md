@@ -19,15 +19,15 @@
 
 | 日期 | 天数 | 住宿 | 主要路线 | 天气/温度参考 | 穿衣建议 | 随身重点 | 节奏判断 |
 |---|---:|---|---|---|---|---|---|
-| 7/18 周六 | D1 | [全季酒店(兰州张掖路省政府地铁站店)](https://hotels.ctrip.com/hotels/list?keyword=%E5%85%A8%E5%AD%A3%E9%85%92%E5%BA%97%28%E5%85%B0%E5%B7%9E%E5%BC%A0%E6%8E%96%E8%B7%AF%E7%9C%81%E6%94%BF%E5%BA%9C%E5%9C%B0%E9%93%81%E7%AB%99%E5%BA%97%29) | 兰州中川机场 -> 甘肃省博物馆 -> 中山桥 -> [全季酒店](https://hotels.ctrip.com/hotels/list?keyword=%E5%85%A8%E5%AD%A3%E9%85%92%E5%BA%97%28%E5%85%B0%E5%B7%9E%E5%BC%A0%E6%8E%96%E8%B7%AF%E7%9C%81%E6%94%BF%E5%BA%9C%E5%9C%B0%E9%93%81%E7%AB%99%E5%BA%97%29) | 多云/阵雨<br>高 32℃<br>低 18℃ | 白天短袖/薄长袖即可，博物馆和晚间黄河边加薄外套。 | 防晒帽、轻薄外套、舒适步行鞋 | 航班到达后轻松适应 |
-| 7/19 周日 | D2 | [卓尼扎古录大酒店](https://hotels.ctrip.com/hotels/list?keyword=%E5%8D%93%E5%B0%BC%E6%89%8E%E5%8F%A4%E5%BD%95%E5%A4%A7%E9%85%92%E5%BA%97) | [全季酒店](https://hotels.ctrip.com/hotels/list?keyword=%E5%85%A8%E5%AD%A3%E9%85%92%E5%BA%97%28%E5%85%B0%E5%B7%9E%E5%BC%A0%E6%8E%96%E8%B7%AF%E7%9C%81%E6%94%BF%E5%BA%9C%E5%9C%B0%E9%93%81%E7%AB%99%E5%BA%97%29) -> 美仁大草原 -> 米拉日巴佛阁 -> [卓尼扎古录大酒店](https://hotels.ctrip.com/hotels/list?keyword=%E5%8D%93%E5%B0%BC%E6%89%8E%E5%8F%A4%E5%BD%95%E5%A4%A7%E9%85%92%E5%BA%97) | 多云/阵雨<br>高 30℃<br>低 12℃ | 早晚薄外套，草原停留加防风外套；车上别穿太厚。 | 防风外套、墨镜、防晒霜 | 正常长途日，约 5h 驾驶 |
-| 7/20 周一 | D3 | [云端山舍·全域日出观景民宿(扎尕那达日观景台店)](https://hotels.ctrip.com/hotels/list?keyword=%E4%BA%91%E7%AB%AF%E5%B1%B1%E8%88%8D%C2%B7%E5%85%A8%E5%9F%9F%E6%97%A5%E5%87%BA%E8%A7%82%E6%99%AF%E6%B0%91%E5%AE%BF%28%E6%89%8E%E5%B0%95%E9%82%A3%E8%BE%BE%E6%97%A5%E8%A7%82%E6%99%AF%E5%8F%B0%E5%BA%97%29) | [卓尼扎古录大酒店](https://hotels.ctrip.com/hotels/list?keyword=%E5%8D%93%E5%B0%BC%E6%89%8E%E5%8F%A4%E5%BD%95%E5%A4%A7%E9%85%92%E5%BA%97) -> 达日观景台 -> [云端山舍](https://hotels.ctrip.com/hotels/list?keyword=%E4%BA%91%E7%AB%AF%E5%B1%B1%E8%88%8D%C2%B7%E5%85%A8%E5%9F%9F%E6%97%A5%E5%87%BA%E8%A7%82%E6%99%AF%E6%B0%91%E5%AE%BF%28%E6%89%8E%E5%B0%95%E9%82%A3%E8%BE%BE%E6%97%A5%E8%A7%82%E6%99%AF%E5%8F%B0%E5%BA%97%29) | 阵雨<br>高 18℃<br>低 10℃ | 速干长袖 + 抓绒/薄羽绒 + 冲锋衣，山路和观景台按低温风大准备。 | 雨衣、防滑鞋、保暖帽 | 看天气，避免夜走洛克之路 |
-| 7/21 周二 | D4 | [郎木寺庚盼民宿(白龙江峡谷店)](https://hotels.ctrip.com/hotels/list?keyword=%E9%83%8E%E6%9C%A8%E5%AF%BA%E5%BA%9A%E7%9B%BC%E6%B0%91%E5%AE%BF%28%E7%99%BD%E9%BE%99%E6%B1%9F%E5%B3%A1%E8%B0%B7%E5%BA%97%29) | [云端山舍](https://hotels.ctrip.com/hotels/list?keyword=%E4%BA%91%E7%AB%AF%E5%B1%B1%E8%88%8D%C2%B7%E5%85%A8%E5%9F%9F%E6%97%A5%E5%87%BA%E8%A7%82%E6%99%AF%E6%B0%91%E5%AE%BF%28%E6%89%8E%E5%B0%95%E9%82%A3%E8%BE%BE%E6%97%A5%E8%A7%82%E6%99%AF%E5%8F%B0%E5%BA%97%29) -> 扎尕那仙女滩 -> 格尔底寺 -> 纳摩大峡谷 -> [郎木寺庚盼民宿](https://hotels.ctrip.com/hotels/list?keyword=%E9%83%8E%E6%9C%A8%E5%AF%BA%E5%BA%9A%E7%9B%BC%E6%B0%91%E5%AE%BF%28%E7%99%BD%E9%BE%99%E6%B1%9F%E5%B3%A1%E8%B0%B7%E5%BA%97%29) | 多云/阵雨<br>高 20℃<br>低 8℃ | 清晨看日出穿抓绒/薄羽绒，白天可减到长袖，峡谷带防风防雨层。 | 冲锋衣、轻便徒步鞋 | 轻松转场日 |
-| 7/22 周三 | D5 | [朵兰达V酒店(阿坝县店)](https://hotels.ctrip.com/hotels/list?keyword=%E6%9C%B5%E5%85%B0%E8%BE%BEV%E9%85%92%E5%BA%97%28%E9%98%BF%E5%9D%9D%E5%8E%BF%E5%BA%97%29) | [郎木寺庚盼民宿](https://hotels.ctrip.com/hotels/list?keyword=%E9%83%8E%E6%9C%A8%E5%AF%BA%E5%BA%9A%E7%9B%BC%E6%B0%91%E5%AE%BF%28%E7%99%BD%E9%BE%99%E6%B1%9F%E5%B3%A1%E8%B0%B7%E5%BA%97%29) -> 花湖 -> 黄河九曲第一湾 -> [朵兰达V酒店](https://hotels.ctrip.com/hotels/list?keyword=%E6%9C%B5%E5%85%B0%E8%BE%BEV%E9%85%92%E5%BA%97%28%E9%98%BF%E5%9D%9D%E5%8E%BF%E5%BA%97%29) | 午后阵雨<br>高 21℃<br>低 8℃ | 白天长袖防晒，花湖和九曲风大，下午雨后会冷，保留薄羽绒/抓绒。 | 防晒、雨具、保温杯 | 可行，但别等九曲完整日落 |
-| 7/23 周四 | D6 | [久治玉宫酒店](https://hotels.ctrip.com/hotels/list?keyword=%E4%B9%85%E6%B2%BB%E7%8E%89%E5%AE%AB%E9%85%92%E5%BA%97) | [朵兰达V酒店](https://hotels.ctrip.com/hotels/list?keyword=%E6%9C%B5%E5%85%B0%E8%BE%BEV%E9%85%92%E5%BA%97%28%E9%98%BF%E5%9D%9D%E5%8E%BF%E5%BA%97%29) -> 莲宝叶则 -> 各莫寺 -> [久治玉宫酒店](https://hotels.ctrip.com/hotels/list?keyword=%E4%B9%85%E6%B2%BB%E7%8E%89%E5%AE%AB%E9%85%92%E5%BA%97) | 高海拔阵雨<br>高 20℃<br>低 4℃ | 全程最冷的一天，按高海拔湖区准备：抓绒/薄羽绒 + 冲锋衣，别只穿夏装。 | 保暖层、手套/帽子、雨衣 | 景区日，注意高海拔 |
-| 7/24 周五 | D7 | [夏河蓝庭雅居酒店](https://hotels.ctrip.com/hotels/list?keyword=%E5%A4%8F%E6%B2%B3%E8%93%9D%E5%BA%AD%E9%9B%85%E5%B1%85%E9%85%92%E5%BA%97) | [久治玉宫酒店](https://hotels.ctrip.com/hotels/list?keyword=%E4%B9%85%E6%B2%BB%E7%8E%89%E5%AE%AB%E9%85%92%E5%BA%97) -> 娘玛寺 -> 阿万仓 -> 郭莽 -> 桑科 -> [蓝庭雅居酒店](https://hotels.ctrip.com/hotels/list?keyword=%E5%A4%8F%E6%B2%B3%E8%93%9D%E5%BA%AD%E9%9B%85%E5%B1%85%E9%85%92%E5%BA%97) | 多云/阵雨<br>高 21℃<br>低 7℃ | 长驾驶日，车内轻便，湿地/草原下车加防风外套；早晚可穿抓绒。 | 防风外套、备用袜子 | 高德约 336.6km/5h26m，按 8-9h 安排 |
-| 7/25 周六 | D8 | [临夏八坊十三巷美仑酒店](https://hotels.ctrip.com/hotels/list?keyword=%E4%B8%B4%E5%A4%8F%E5%85%AB%E5%9D%8A%E5%8D%81%E4%B8%89%E5%B7%B7%E7%BE%8E%E4%BB%91%E9%85%92%E5%BA%97) | [蓝庭雅居酒店](https://hotels.ctrip.com/hotels/list?keyword=%E5%A4%8F%E6%B2%B3%E8%93%9D%E5%BA%AD%E9%9B%85%E5%B1%85%E9%85%92%E5%BA%97) -> 拉卜楞寺 -> 甘加秘境 -> [临夏八坊十三巷美仑酒店](https://hotels.ctrip.com/hotels/list?keyword=%E4%B8%B4%E5%A4%8F%E5%85%AB%E5%9D%8A%E5%8D%81%E4%B8%89%E5%B7%B7%E7%BE%8E%E4%BB%91%E9%85%92%E5%BA%97) | 多云<br>高 29℃<br>低 12℃ | 夏河早晨偏凉，长袖外套；到临夏气温升高，可换轻薄层。 | 防晒帽、薄外套 | 文化+草原，核实甘加开放 |
-| 7/26 周日 | D9 | 返程 | [临夏八坊十三巷美仑酒店](https://hotels.ctrip.com/hotels/list?keyword=%E4%B8%B4%E5%A4%8F%E5%85%AB%E5%9D%8A%E5%8D%81%E4%B8%89%E5%B7%B7%E7%BE%8E%E4%BB%91%E9%85%92%E5%BA%97) -> 黄洮交汇观景平台 -> 兰州中川机场 T3 | 多云/阵雨<br>高 31℃<br>低 18℃ | 白天偏热，短袖/薄长袖为主，机场和飞机上备薄外套。 | 轻薄外套、易脱鞋/舒适鞋 | 17:55 航班，13:00 前离开观景平台 |
+| 7/18 周六 | D1 | [全季酒店(兰州张掖路省政府地铁站店)](https://m.ctrip.com/html5/hotel/hoteldetail/66757085.html) | 兰州中川机场 -> 甘肃省博物馆 -> 中山桥 -> [全季酒店](https://m.ctrip.com/html5/hotel/hoteldetail/66757085.html) | 多云/阵雨<br>高 32℃<br>低 18℃ | 白天短袖/薄长袖即可，博物馆和晚间黄河边加薄外套。 | 防晒帽、轻薄外套、舒适步行鞋 | 航班到达后轻松适应 |
+| 7/19 周日 | D2 | [卓尼扎古录大酒店](https://m.ctrip.com/html5/hotel/hoteldetail/111531991.html) | [全季酒店](https://m.ctrip.com/html5/hotel/hoteldetail/66757085.html) -> 美仁大草原 -> 米拉日巴佛阁 -> [卓尼扎古录大酒店](https://m.ctrip.com/html5/hotel/hoteldetail/111531991.html) | 多云/阵雨<br>高 30℃<br>低 12℃ | 早晚薄外套，草原停留加防风外套；车上别穿太厚。 | 防风外套、墨镜、防晒霜 | 正常长途日，约 5h 驾驶 |
+| 7/20 周一 | D3 | [云端山舍·全域日出观景民宿(扎尕那达日观景台店)](https://m.ctrip.com/html5/hotel/hoteldetail/111872533.html) | [卓尼扎古录大酒店](https://m.ctrip.com/html5/hotel/hoteldetail/111531991.html) -> 达日观景台 -> [云端山舍](https://m.ctrip.com/html5/hotel/hoteldetail/111872533.html) | 阵雨<br>高 18℃<br>低 10℃ | 速干长袖 + 抓绒/薄羽绒 + 冲锋衣，山路和观景台按低温风大准备。 | 雨衣、防滑鞋、保暖帽 | 看天气，避免夜走洛克之路 |
+| 7/21 周二 | D4 | [郎木寺庚盼民宿(白龙江峡谷店)](https://m.ctrip.com/html5/hotel/hoteldetail/134867328.html) | [云端山舍](https://m.ctrip.com/html5/hotel/hoteldetail/111872533.html) -> 扎尕那仙女滩 -> 格尔底寺 -> 纳摩大峡谷 -> [郎木寺庚盼民宿](https://m.ctrip.com/html5/hotel/hoteldetail/134867328.html) | 多云/阵雨<br>高 20℃<br>低 8℃ | 清晨看日出穿抓绒/薄羽绒，白天可减到长袖，峡谷带防风防雨层。 | 冲锋衣、轻便徒步鞋 | 轻松转场日 |
+| 7/22 周三 | D5 | [朵兰达V酒店(阿坝县店)](https://m.ctrip.com/html5/hotel/hoteldetail/131972530.html) | [郎木寺庚盼民宿](https://m.ctrip.com/html5/hotel/hoteldetail/134867328.html) -> 花湖 -> 黄河九曲第一湾 -> [朵兰达V酒店](https://m.ctrip.com/html5/hotel/hoteldetail/131972530.html) | 午后阵雨<br>高 21℃<br>低 8℃ | 白天长袖防晒，花湖和九曲风大，下午雨后会冷，保留薄羽绒/抓绒。 | 防晒、雨具、保温杯 | 可行，但别等九曲完整日落 |
+| 7/23 周四 | D6 | [久治玉宫酒店](https://m.ctrip.com/html5/hotel/hoteldetail/121194192.html) | [朵兰达V酒店](https://m.ctrip.com/html5/hotel/hoteldetail/131972530.html) -> 莲宝叶则 -> 各莫寺 -> [久治玉宫酒店](https://m.ctrip.com/html5/hotel/hoteldetail/121194192.html) | 高海拔阵雨<br>高 20℃<br>低 4℃ | 全程最冷的一天，按高海拔湖区准备：抓绒/薄羽绒 + 冲锋衣，别只穿夏装。 | 保暖层、手套/帽子、雨衣 | 景区日，注意高海拔 |
+| 7/24 周五 | D7 | [夏河蓝庭雅居酒店](https://m.ctrip.com/html5/hotel/hoteldetail/130838449.html) | [久治玉宫酒店](https://m.ctrip.com/html5/hotel/hoteldetail/121194192.html) -> 娘玛寺 -> 阿万仓 -> 郭莽 -> 桑科 -> [蓝庭雅居酒店](https://m.ctrip.com/html5/hotel/hoteldetail/130838449.html) | 多云/阵雨<br>高 21℃<br>低 7℃ | 长驾驶日，车内轻便，湿地/草原下车加防风外套；早晚可穿抓绒。 | 防风外套、备用袜子 | 高德约 336.6km/5h26m，按 8-9h 安排 |
+| 7/25 周六 | D8 | [临夏八坊十三巷美仑酒店](https://m.ctrip.com/html5/hotel/hoteldetail/127225302.html) | [蓝庭雅居酒店](https://m.ctrip.com/html5/hotel/hoteldetail/130838449.html) -> 拉卜楞寺 -> 甘加秘境 -> [临夏八坊十三巷美仑酒店](https://m.ctrip.com/html5/hotel/hoteldetail/127225302.html) | 多云<br>高 29℃<br>低 12℃ | 夏河早晨偏凉，长袖外套；到临夏气温升高，可换轻薄层。 | 防晒帽、薄外套 | 文化+草原，核实甘加开放 |
+| 7/26 周日 | D9 | 返程 | [临夏八坊十三巷美仑酒店](https://m.ctrip.com/html5/hotel/hoteldetail/127225302.html) -> 黄洮交汇观景平台 -> 兰州中川机场 T3 | 多云/阵雨<br>高 31℃<br>低 18℃ | 白天偏热，短袖/薄长袖为主，机场和飞机上备薄外套。 | 轻薄外套、易脱鞋/舒适鞋 | 17:55 航班，13:00 前离开观景平台 |
 
 ## 同类景点取舍
 
@@ -114,10 +114,10 @@
 
 ## D1｜7 月 18 日｜杭州飞兰州，兰州市区适应
 
-路线：兰州中川国际机场 -> 甘肃省博物馆 -> 中山桥 -> [全季酒店(兰州张掖路省政府地铁站店)](https://hotels.ctrip.com/hotels/list?keyword=%E5%85%A8%E5%AD%A3%E9%85%92%E5%BA%97%28%E5%85%B0%E5%B7%9E%E5%BC%A0%E6%8E%96%E8%B7%AF%E7%9C%81%E6%94%BF%E5%BA%9C%E5%9C%B0%E9%93%81%E7%AB%99%E5%BA%97%29)
+路线：兰州中川国际机场 -> 甘肃省博物馆 -> 中山桥 -> [全季酒店(兰州张掖路省政府地铁站店)](https://m.ctrip.com/html5/hotel/hoteldetail/66757085.html)
 航班：3U3195 07:20-10:25
 住宿：兰州市
-酒店：[全季酒店(兰州张掖路省政府地铁站店)](https://hotels.ctrip.com/hotels/list?keyword=%E5%85%A8%E5%AD%A3%E9%85%92%E5%BA%97%28%E5%85%B0%E5%B7%9E%E5%BC%A0%E6%8E%96%E8%B7%AF%E7%9C%81%E6%94%BF%E5%BA%9C%E5%9C%B0%E9%93%81%E7%AB%99%E5%BA%97%29)
+酒店：[全季酒店(兰州张掖路省政府地铁站店)](https://m.ctrip.com/html5/hotel/hoteldetail/66757085.html)
 
 <div class="spot-grid day-photos">
   <article class="spot-card"><img loading="lazy" referrerpolicy="no-referrer" src="https://n.sinaimg.cn/sinacn20100/152/w2048h2104/20190710/69cb-hzrevpz3199497.jpg" alt="甘肃省博物馆铜奔马"><div><strong>甘肃省博物馆</strong><span>建议 2-3 小时；玩法：直奔铜奔马、彩陶、丝路展，提前预约</span><a href="https://www.xiaohongshu.com/search_result?keyword=%E7%94%98%E8%82%83%E7%9C%81%E5%8D%9A%E7%89%A9%E9%A6%86" target="_blank" rel="noreferrer">小红书搜图</a></div></article>
@@ -131,15 +131,15 @@
 | 12:00-13:30 | 机场到兰州市区，午餐可安排牛肉面。 |
 | 14:00-17:00 | 甘肃省博物馆，重点看马踏飞燕、丝路文明、彩陶。 |
 | 17:30-19:00 | 中山桥和黄河风情线散步，天气好可看白塔山方向夜景。 |
-| 晚上 | 入住[全季酒店(兰州张掖路省政府地铁站店)](https://hotels.ctrip.com/hotels/list?keyword=%E5%85%A8%E5%AD%A3%E9%85%92%E5%BA%97%28%E5%85%B0%E5%B7%9E%E5%BC%A0%E6%8E%96%E8%B7%AF%E7%9C%81%E6%94%BF%E5%BA%9C%E5%9C%B0%E9%93%81%E7%AB%99%E5%BA%97%29)，市区晚餐，补充水和路餐。 |
+| 晚上 | 入住[全季酒店(兰州张掖路省政府地铁站店)](https://m.ctrip.com/html5/hotel/hoteldetail/66757085.html)，市区晚餐，补充水和路餐。 |
 
 注意：甘肃省博物馆通常需实名预约，周一闭馆；7/18 为周六，仍建议提前预约并确认停止入馆时间。中山桥为开放式城市景点，雨大或堵车时可缩短停留。
 
 ## D2｜7 月 19 日｜兰州到扎古录
 
-路线：[全季酒店(兰州张掖路省政府地铁站店)](https://hotels.ctrip.com/hotels/list?keyword=%E5%85%A8%E5%AD%A3%E9%85%92%E5%BA%97%28%E5%85%B0%E5%B7%9E%E5%BC%A0%E6%8E%96%E8%B7%AF%E7%9C%81%E6%94%BF%E5%BA%9C%E5%9C%B0%E9%93%81%E7%AB%99%E5%BA%97%29) -> 美仁大草原 -> 安多合作米拉日巴佛阁 -> [卓尼扎古录大酒店](https://hotels.ctrip.com/hotels/list?keyword=%E5%8D%93%E5%B0%BC%E6%89%8E%E5%8F%A4%E5%BD%95%E5%A4%A7%E9%85%92%E5%BA%97)
+路线：[全季酒店(兰州张掖路省政府地铁站店)](https://m.ctrip.com/html5/hotel/hoteldetail/66757085.html) -> 美仁大草原 -> 安多合作米拉日巴佛阁 -> [卓尼扎古录大酒店](https://m.ctrip.com/html5/hotel/hoteldetail/111531991.html)
 住宿：扎古录镇
-酒店：[卓尼扎古录大酒店](https://hotels.ctrip.com/hotels/list?keyword=%E5%8D%93%E5%B0%BC%E6%89%8E%E5%8F%A4%E5%BD%95%E5%A4%A7%E9%85%92%E5%BA%97)
+酒店：[卓尼扎古录大酒店](https://m.ctrip.com/html5/hotel/hoteldetail/111531991.html)
 
 <div class="spot-grid day-photos">
   <article class="spot-card"><img loading="lazy" referrerpolicy="no-referrer" src="https://dimg04.c-ctrip.com/images/1mf5612000c298kqyCBF3_W_640_400_Q90.jpg?proc=autoorient" alt="美仁大草原"><div><strong>美仁大草原</strong><span>建议 30-45 分钟；玩法：路边安全停车拍草原和经幡，不深入压草场</span><a href="https://www.xiaohongshu.com/search_result?keyword=%E7%BE%8E%E4%BB%81%E5%A4%A7%E8%8D%89%E5%8E%9F" target="_blank" rel="noreferrer">小红书搜图</a></div></article>
@@ -149,7 +149,7 @@
 
 | 时间 | 安排 |
 |---|---|
-| 08:00 | [全季酒店](https://hotels.ctrip.com/hotels/list?keyword=%E5%85%A8%E5%AD%A3%E9%85%92%E5%BA%97%28%E5%85%B0%E5%B7%9E%E5%BC%A0%E6%8E%96%E8%B7%AF%E7%9C%81%E6%94%BF%E5%BA%9C%E5%9C%B0%E9%93%81%E7%AB%99%E5%BA%97%29)早餐后出发，加满油。 |
+| 08:00 | [全季酒店](https://m.ctrip.com/html5/hotel/hoteldetail/66757085.html)早餐后出发，加满油。 |
 | 11:30-12:30 | 美仁大草原短停拍照，午餐建议简单解决。 |
 | 13:30-15:30 | 合作米拉日巴佛阁，留 1-1.5 小时。 |
 | 16:00-18:00 | 前往扎古录入住，尽量天黑前到。 |
@@ -158,9 +158,9 @@
 
 ## D3｜7 月 20 日｜洛克之路到扎尕那
 
-路线：[卓尼扎古录大酒店](https://hotels.ctrip.com/hotels/list?keyword=%E5%8D%93%E5%B0%BC%E6%89%8E%E5%8F%A4%E5%BD%95%E5%A4%A7%E9%85%92%E5%BA%97) -> 达日观景台 -> [云端山舍·全域日出观景民宿(扎尕那达日观景台店)](https://hotels.ctrip.com/hotels/list?keyword=%E4%BA%91%E7%AB%AF%E5%B1%B1%E8%88%8D%C2%B7%E5%85%A8%E5%9F%9F%E6%97%A5%E5%87%BA%E8%A7%82%E6%99%AF%E6%B0%91%E5%AE%BF%28%E6%89%8E%E5%B0%95%E9%82%A3%E8%BE%BE%E6%97%A5%E8%A7%82%E6%99%AF%E5%8F%B0%E5%BA%97%29)
+路线：[卓尼扎古录大酒店](https://m.ctrip.com/html5/hotel/hoteldetail/111531991.html) -> 达日观景台 -> [云端山舍·全域日出观景民宿(扎尕那达日观景台店)](https://m.ctrip.com/html5/hotel/hoteldetail/111872533.html)
 住宿：扎尕那景区内
-酒店：[云端山舍·全域日出观景民宿(扎尕那达日观景台店)](https://hotels.ctrip.com/hotels/list?keyword=%E4%BA%91%E7%AB%AF%E5%B1%B1%E8%88%8D%C2%B7%E5%85%A8%E5%9F%9F%E6%97%A5%E5%87%BA%E8%A7%82%E6%99%AF%E6%B0%91%E5%AE%BF%28%E6%89%8E%E5%B0%95%E9%82%A3%E8%BE%BE%E6%97%A5%E8%A7%82%E6%99%AF%E5%8F%B0%E5%BA%97%29)
+酒店：[云端山舍·全域日出观景民宿(扎尕那达日观景台店)](https://m.ctrip.com/html5/hotel/hoteldetail/111872533.html)
 
 <div class="spot-grid day-photos">
   <article class="spot-card"><img loading="lazy" referrerpolicy="no-referrer" src="https://pic1.zhimg.com/v2-53765bfe290ee08a17bf5cf3cc806abf_1440w.jpg?source=172ae18b" alt="洛克之路山谷"><div><strong>洛克之路</strong><span>建议 4-6 小时含停车；玩法：按天气走山谷、垭口、草甸点位，雨雾天降速或改线</span><a href="https://www.xiaohongshu.com/search_result?keyword=%E7%94%98%E5%8D%97%E6%B4%9B%E5%85%8B%E4%B9%8B%E8%B7%AF" target="_blank" rel="noreferrer">小红书搜图</a></div></article>
@@ -179,19 +179,19 @@
 
 | 时间 | 安排 |
 |---|---|
-| 08:00 | 从[卓尼扎古录大酒店](https://hotels.ctrip.com/hotels/list?keyword=%E5%8D%93%E5%B0%BC%E6%89%8E%E5%8F%A4%E5%BD%95%E5%A4%A7%E9%85%92%E5%BA%97)出发，先确认天气和路况。 |
+| 08:00 | 从[卓尼扎古录大酒店](https://m.ctrip.com/html5/hotel/hoteldetail/111531991.html)出发，先确认天气和路况。 |
 | 上午 | 洛克之路，重点是路上山谷、垭口、草甸风景。 |
 | 中午 | 视路况用路餐，不要把午餐寄托在景区。 |
 | 下午 | 达日观景台，继续前往扎尕那方向。 |
-| 17:00 前 | 抵达[云端山舍·全域日出观景民宿](https://hotels.ctrip.com/hotels/list?keyword=%E4%BA%91%E7%AB%AF%E5%B1%B1%E8%88%8D%C2%B7%E5%85%A8%E5%9F%9F%E6%97%A5%E5%87%BA%E8%A7%82%E6%99%AF%E6%B0%91%E5%AE%BF%28%E6%89%8E%E5%B0%95%E9%82%A3%E8%BE%BE%E6%97%A5%E8%A7%82%E6%99%AF%E5%8F%B0%E5%BA%97%29)，天气好可看日落。 |
+| 17:00 前 | 抵达[云端山舍·全域日出观景民宿](https://m.ctrip.com/html5/hotel/hoteldetail/111872533.html)，天气好可看日落。 |
 
 注意：洛克之路雨天、雾天、塌方/修路时风险会上升；低底盘车不建议硬走，尽量 SUV，离线地图和满油出发。
 
 ## D4｜7 月 21 日｜扎尕那转场郎木寺
 
-路线：[云端山舍·全域日出观景民宿(扎尕那达日观景台店)](https://hotels.ctrip.com/hotels/list?keyword=%E4%BA%91%E7%AB%AF%E5%B1%B1%E8%88%8D%C2%B7%E5%85%A8%E5%9F%9F%E6%97%A5%E5%87%BA%E8%A7%82%E6%99%AF%E6%B0%91%E5%AE%BF%28%E6%89%8E%E5%B0%95%E9%82%A3%E8%BE%BE%E6%97%A5%E8%A7%82%E6%99%AF%E5%8F%B0%E5%BA%97%29) -> 扎尕那仙女滩 -> 格尔底寺 -> 纳摩大峡谷 -> [郎木寺庚盼民宿(白龙江峡谷店)](https://hotels.ctrip.com/hotels/list?keyword=%E9%83%8E%E6%9C%A8%E5%AF%BA%E5%BA%9A%E7%9B%BC%E6%B0%91%E5%AE%BF%28%E7%99%BD%E9%BE%99%E6%B1%9F%E5%B3%A1%E8%B0%B7%E5%BA%97%29)
+路线：[云端山舍·全域日出观景民宿(扎尕那达日观景台店)](https://m.ctrip.com/html5/hotel/hoteldetail/111872533.html) -> 扎尕那仙女滩 -> 格尔底寺 -> 纳摩大峡谷 -> [郎木寺庚盼民宿(白龙江峡谷店)](https://m.ctrip.com/html5/hotel/hoteldetail/134867328.html)
 住宿：郎木寺镇
-酒店：[郎木寺庚盼民宿(白龙江峡谷店)](https://hotels.ctrip.com/hotels/list?keyword=%E9%83%8E%E6%9C%A8%E5%AF%BA%E5%BA%9A%E7%9B%BC%E6%B0%91%E5%AE%BF%28%E7%99%BD%E9%BE%99%E6%B1%9F%E5%B3%A1%E8%B0%B7%E5%BA%97%29)
+酒店：[郎木寺庚盼民宿(白龙江峡谷店)](https://m.ctrip.com/html5/hotel/hoteldetail/134867328.html)
 
 <div class="spot-grid day-photos">
   <article class="spot-card"><img loading="lazy" referrerpolicy="no-referrer" src="https://n.sinaimg.cn/sinacn10120/267/w1600h1067/20190830/965a-icxmqsv7933078.jpg" alt="扎尕那"><div><strong>扎尕那</strong><span>建议 2-3 小时；玩法：晨雾/日出优先，仙女滩和村落观景点二选一深玩</span><a href="https://www.xiaohongshu.com/search_result?keyword=%E6%89%8E%E5%B0%94%E9%82%A3" target="_blank" rel="noreferrer">小红书搜图</a></div></article>
@@ -206,14 +206,14 @@
 | 08:30-11:30 | 扎尕那仙女滩和村落观景点补拍。 |
 | 12:00-14:00 | 午餐后前往郎木寺方向。 |
 | 14:00-17:30 | 格尔底寺、纳摩大峡谷轻徒步。 |
-| 晚上 | 入住[郎木寺庚盼民宿(白龙江峡谷店)](https://hotels.ctrip.com/hotels/list?keyword=%E9%83%8E%E6%9C%A8%E5%AF%BA%E5%BA%9A%E7%9B%BC%E6%B0%91%E5%AE%BF%28%E7%99%BD%E9%BE%99%E6%B1%9F%E5%B3%A1%E8%B0%B7%E5%BA%97%29)，注意保暖。 |
+| 晚上 | 入住[郎木寺庚盼民宿(白龙江峡谷店)](https://m.ctrip.com/html5/hotel/hoteldetail/134867328.html)，注意保暖。 |
 
 
 ## D5｜7 月 22 日｜郎木寺、花湖、九曲到阿坝
 
-路线：[郎木寺庚盼民宿(白龙江峡谷店)](https://hotels.ctrip.com/hotels/list?keyword=%E9%83%8E%E6%9C%A8%E5%AF%BA%E5%BA%9A%E7%9B%BC%E6%B0%91%E5%AE%BF%28%E7%99%BD%E9%BE%99%E6%B1%9F%E5%B3%A1%E8%B0%B7%E5%BA%97%29) -> 花湖湿地 -> 黄河九曲第一湾 -> [朵兰达V酒店(阿坝县店)](https://hotels.ctrip.com/hotels/list?keyword=%E6%9C%B5%E5%85%B0%E8%BE%BEV%E9%85%92%E5%BA%97%28%E9%98%BF%E5%9D%9D%E5%8E%BF%E5%BA%97%29)
+路线：[郎木寺庚盼民宿(白龙江峡谷店)](https://m.ctrip.com/html5/hotel/hoteldetail/134867328.html) -> 花湖湿地 -> 黄河九曲第一湾 -> [朵兰达V酒店(阿坝县店)](https://m.ctrip.com/html5/hotel/hoteldetail/131972530.html)
 住宿：阿坝县
-酒店：[朵兰达V酒店(阿坝县店)](https://hotels.ctrip.com/hotels/list?keyword=%E6%9C%B5%E5%85%B0%E8%BE%BEV%E9%85%92%E5%BA%97%28%E9%98%BF%E5%9D%9D%E5%8E%BF%E5%BA%97%29)
+酒店：[朵兰达V酒店(阿坝县店)](https://m.ctrip.com/html5/hotel/hoteldetail/131972530.html)
 
 <div class="spot-grid day-photos">
   <article class="spot-card"><img loading="lazy" referrerpolicy="no-referrer" src="https://img1.qunarzz.com/travel/d6/1710/aa/eae614fd6912b9b5.jpg?color=#61792b" alt="若尔盖花湖湿地"><div><strong>花湖湿地</strong><span>建议 2-2.5 小时；玩法：观光车进出，走栈道看湿地和水鸟，风大注意保暖</span><a href="https://www.xiaohongshu.com/search_result?keyword=%E8%8A%B1%E6%B9%96%E6%B9%BF%E5%9C%B0" target="_blank" rel="noreferrer">小红书搜图</a></div></article>
@@ -223,20 +223,20 @@
 
 | 时间 | 安排 |
 |---|---|
-| 08:00 | 从[郎木寺庚盼民宿](https://hotels.ctrip.com/hotels/list?keyword=%E9%83%8E%E6%9C%A8%E5%AF%BA%E5%BA%9A%E7%9B%BC%E6%B0%91%E5%AE%BF%28%E7%99%BD%E9%BE%99%E6%B1%9F%E5%B3%A1%E8%B0%B7%E5%BA%97%29)出发。 |
+| 08:00 | 从[郎木寺庚盼民宿](https://m.ctrip.com/html5/hotel/hoteldetail/134867328.html)出发。 |
 | 08:45-11:30 | 花湖湿地，坐观光车/走栈道，注意防晒和风。 |
 | 11:30-13:00 | 前往唐克方向，路上午餐。 |
 | 13:00-16:00 | 黄河九曲第一湾，下午打卡观景。 |
 | 16:00 前后 | 离开九曲前往阿坝县。 |
-| 18:30-19:30 | 抵达[朵兰达V酒店(阿坝县店)](https://hotels.ctrip.com/hotels/list?keyword=%E6%9C%B5%E5%85%B0%E8%BE%BEV%E9%85%92%E5%BA%97%28%E9%98%BF%E5%9D%9D%E5%8E%BF%E5%BA%97%29)入住。 |
+| 18:30-19:30 | 抵达[朵兰达V酒店(阿坝县店)](https://m.ctrip.com/html5/hotel/hoteldetail/131972530.html)入住。 |
 
 关键取舍：如果特别想看黄河九曲日落，建议改住唐克/若尔盖；若坚持住阿坝，不建议等完整日落后夜路前往阿坝。
 
 ## D6｜7 月 23 日｜阿坝、莲宝叶则、各莫寺到久治
 
-路线：[朵兰达V酒店(阿坝县店)](https://hotels.ctrip.com/hotels/list?keyword=%E6%9C%B5%E5%85%B0%E8%BE%BEV%E9%85%92%E5%BA%97%28%E9%98%BF%E5%9D%9D%E5%8E%BF%E5%BA%97%29) -> 莲宝叶则景区 -> 各莫寺 -> [久治玉宫酒店](https://hotels.ctrip.com/hotels/list?keyword=%E4%B9%85%E6%B2%BB%E7%8E%89%E5%AE%AB%E9%85%92%E5%BA%97)
+路线：[朵兰达V酒店(阿坝县店)](https://m.ctrip.com/html5/hotel/hoteldetail/131972530.html) -> 莲宝叶则景区 -> 各莫寺 -> [久治玉宫酒店](https://m.ctrip.com/html5/hotel/hoteldetail/121194192.html)
 住宿：久治县
-酒店：[久治玉宫酒店](https://hotels.ctrip.com/hotels/list?keyword=%E4%B9%85%E6%B2%BB%E7%8E%89%E5%AE%AB%E9%85%92%E5%BA%97)
+酒店：[久治玉宫酒店](https://m.ctrip.com/html5/hotel/hoteldetail/121194192.html)
 
 <div class="spot-grid day-photos">
   <article class="spot-card"><img loading="lazy" referrerpolicy="no-referrer" src="https://tr-osdcp.qunarzz.com/tr-osd-tr-space/img/24b8d7e49e482e0c1eb8a12dc56ef3b2.jpg" alt="莲宝叶则景区"><div><strong>莲宝叶则</strong><span>建议 4-5 小时；玩法：扎尕尔措一线慢走慢拍，少跑跳，不适及时下撤</span><a href="https://www.xiaohongshu.com/search_result?keyword=%E8%8E%B2%E5%AE%9D%E5%8F%B6%E5%88%99" target="_blank" rel="noreferrer">小红书搜图</a></div></article>
@@ -246,18 +246,18 @@
 
 | 时间 | 安排 |
 |---|---|
-| 08:00 | [朵兰达V酒店](https://hotels.ctrip.com/hotels/list?keyword=%E6%9C%B5%E5%85%B0%E8%BE%BEV%E9%85%92%E5%BA%97%28%E9%98%BF%E5%9D%9D%E5%8E%BF%E5%BA%97%29)早餐后出发。 |
+| 08:00 | [朵兰达V酒店](https://m.ctrip.com/html5/hotel/hoteldetail/131972530.html)早餐后出发。 |
 | 09:00-14:30 | 莲宝叶则景区，重点看扎尕尔措一线；身体不适则减少徒步。 |
 | 15:00-16:00 | 各莫寺短停。 |
-| 16:00-18:00 | 前往久治县，入住[久治玉宫酒店](https://hotels.ctrip.com/hotels/list?keyword=%E4%B9%85%E6%B2%BB%E7%8E%89%E5%AE%AB%E9%85%92%E5%BA%97)。 |
+| 16:00-18:00 | 前往久治县，入住[久治玉宫酒店](https://m.ctrip.com/html5/hotel/hoteldetail/121194192.html)。 |
 
 注意：莲宝叶则海拔高，别跑跳；带热水、防晒、雨衣和保暖层。
 
 ## D7｜7 月 24 日｜久治经阿万仓到夏河
 
-路线：[久治玉宫酒店](https://hotels.ctrip.com/hotels/list?keyword=%E4%B9%85%E6%B2%BB%E7%8E%89%E5%AE%AB%E9%85%92%E5%BA%97) -> 娘玛寺 -> 阿万仓湿地 -> 郭莽湿地 -> 桑科草原 -> [夏河蓝庭雅居酒店](https://hotels.ctrip.com/hotels/list?keyword=%E5%A4%8F%E6%B2%B3%E8%93%9D%E5%BA%AD%E9%9B%85%E5%B1%85%E9%85%92%E5%BA%97)
+路线：[久治玉宫酒店](https://m.ctrip.com/html5/hotel/hoteldetail/121194192.html) -> 娘玛寺 -> 阿万仓湿地 -> 郭莽湿地 -> 桑科草原 -> [夏河蓝庭雅居酒店](https://m.ctrip.com/html5/hotel/hoteldetail/130838449.html)
 住宿：夏河县
-酒店：[夏河蓝庭雅居酒店](https://hotels.ctrip.com/hotels/list?keyword=%E5%A4%8F%E6%B2%B3%E8%93%9D%E5%BA%AD%E9%9B%85%E5%B1%85%E9%85%92%E5%BA%97)
+酒店：[夏河蓝庭雅居酒店](https://m.ctrip.com/html5/hotel/hoteldetail/130838449.html)
 高德参考：约 336.6km / 5h26m；实时路况和 POI 命中会浮动，实际按 8-9h 总行程预留。
 
 <div class="spot-grid day-photos">
@@ -269,19 +269,19 @@
 
 | 时间 | 安排 |
 |---|---|
-| 07:30-08:00 | [久治玉宫酒店](https://hotels.ctrip.com/hotels/list?keyword=%E4%B9%85%E6%B2%BB%E7%8E%89%E5%AE%AB%E9%85%92%E5%BA%97)出发，提前加油，准备路餐。 |
+| 07:30-08:00 | [久治玉宫酒店](https://m.ctrip.com/html5/hotel/hoteldetail/121194192.html)出发，提前加油，准备路餐。 |
 | 上午 | 娘玛寺、阿万仓湿地，作为当天重点。 |
 | 中午 | 玛曲/碌曲方向路餐或简餐。 |
 | 下午 | 郭莽湿地短停，桑科草原路过拍照。 |
-| 18:00-19:00 | 抵达[夏河蓝庭雅居酒店](https://hotels.ctrip.com/hotels/list?keyword=%E5%A4%8F%E6%B2%B3%E8%93%9D%E5%BA%AD%E9%9B%85%E5%B1%85%E9%85%92%E5%BA%97)入住。 |
+| 18:00-19:00 | 抵达[夏河蓝庭雅居酒店](https://m.ctrip.com/html5/hotel/hoteldetail/130838449.html)入住。 |
 
 建议：D7 不要每个点都深玩；如果天气差或司机疲劳，优先放弃桑科草原停留，保证天黑前到夏河。
 
 ## D8｜7 月 25 日｜拉卜楞寺、甘加秘境到临夏
 
-路线：[夏河蓝庭雅居酒店](https://hotels.ctrip.com/hotels/list?keyword=%E5%A4%8F%E6%B2%B3%E8%93%9D%E5%BA%AD%E9%9B%85%E5%B1%85%E9%85%92%E5%BA%97) -> 拉卜楞寺 -> 甘加秘境 -> [临夏八坊十三巷美仑酒店](https://hotels.ctrip.com/hotels/list?keyword=%E4%B8%B4%E5%A4%8F%E5%85%AB%E5%9D%8A%E5%8D%81%E4%B8%89%E5%B7%B7%E7%BE%8E%E4%BB%91%E9%85%92%E5%BA%97)
+路线：[夏河蓝庭雅居酒店](https://m.ctrip.com/html5/hotel/hoteldetail/130838449.html) -> 拉卜楞寺 -> 甘加秘境 -> [临夏八坊十三巷美仑酒店](https://m.ctrip.com/html5/hotel/hoteldetail/127225302.html)
 住宿：临夏市
-酒店：[临夏八坊十三巷美仑酒店](https://hotels.ctrip.com/hotels/list?keyword=%E4%B8%B4%E5%A4%8F%E5%85%AB%E5%9D%8A%E5%8D%81%E4%B8%89%E5%B7%B7%E7%BE%8E%E4%BB%91%E9%85%92%E5%BA%97)
+酒店：[临夏八坊十三巷美仑酒店](https://m.ctrip.com/html5/hotel/hoteldetail/127225302.html)
 
 <div class="spot-grid day-photos">
   <article class="spot-card"><img loading="lazy" referrerpolicy="no-referrer" src="https://img1.qunarzz.com/travel/d7/1507/8e/5e05142687af0a.jpg" alt="拉卜楞寺"><div><strong>拉卜楞寺</strong><span>建议 2.5-3 小时；玩法：请讲解或跟寺院路线，看转经长廊、学院和大殿外围</span><a href="https://www.xiaohongshu.com/search_result?keyword=%E6%8B%89%E5%8D%9C%E6%A5%9E%E5%AF%BA" target="_blank" rel="noreferrer">小红书搜图</a></div></article>
@@ -294,18 +294,18 @@
 | 08:00-11:30 | 拉卜楞寺，建议请讲解或跟随寺院讲解路线。 |
 | 11:30-12:30 | 夏河县午餐。 |
 | 12:30-16:30 | 甘加秘境/八角城/白石崖方向，根据开放范围调整。 |
-| 16:30-18:30 | 前往[临夏八坊十三巷美仑酒店](https://hotels.ctrip.com/hotels/list?keyword=%E4%B8%B4%E5%A4%8F%E5%85%AB%E5%9D%8A%E5%8D%81%E4%B8%89%E5%B7%B7%E7%BE%8E%E4%BB%91%E9%85%92%E5%BA%97)入住。 |
+| 16:30-18:30 | 前往[临夏八坊十三巷美仑酒店](https://m.ctrip.com/html5/hotel/hoteldetail/127225302.html)入住。 |
 
 注意：甘加秘境出发前 1-2 天再核实；如核心区受限，改为八角城遗址观景台、白石崖寺和甘加草原路景。
 
 ## D9｜7 月 26 日｜临夏返兰州中川机场
 
-路线：[临夏八坊十三巷美仑酒店](https://hotels.ctrip.com/hotels/list?keyword=%E4%B8%B4%E5%A4%8F%E5%85%AB%E5%9D%8A%E5%8D%81%E4%B8%89%E5%B7%B7%E7%BE%8E%E4%BB%91%E9%85%92%E5%BA%97) -> 黄洮交汇观景平台 -> 兰州中川国际机场 T3 航站楼
+路线：[临夏八坊十三巷美仑酒店](https://m.ctrip.com/html5/hotel/hoteldetail/127225302.html) -> 黄洮交汇观景平台 -> 兰州中川国际机场 T3 航站楼
 航班：MU2446 17:55-20:40
 
 | 时间 | 安排 |
 |---|---|
-| 上午 | [临夏八坊十三巷美仑酒店](https://hotels.ctrip.com/hotels/list?keyword=%E4%B8%B4%E5%A4%8F%E5%85%AB%E5%9D%8A%E5%8D%81%E4%B8%89%E5%B7%B7%E7%BE%8E%E4%BB%91%E9%85%92%E5%BA%97)早餐，可视时间逛八坊十三巷。 |
+| 上午 | [临夏八坊十三巷美仑酒店](https://m.ctrip.com/html5/hotel/hoteldetail/127225302.html)早餐，可视时间逛八坊十三巷。 |
 | 11:00-12:30 | 黄洮交汇观景平台，停留 30-45 分钟即可。 |
 | 13:00 前 | 必须离开观景平台前往中川机场。 |
 | 15:00 左右 | 到机场还车，留足加油、还车、安检时间。 |
