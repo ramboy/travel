@@ -31,24 +31,20 @@
 
 ## 住宿订单
 
-仅统计去哪儿订单列表中显示“预订成功”的酒店订单；已取消订单不计入。D1 全季酒店在当前去哪儿订单列表未见预订成功订单，暂不计入住宿合计。
+| 天数 | 日期 | 酒店 | 房型与间数 | 价格 |
+|---|---|---|---|---:|
+| D0 | 7/17-7/18 | [全季酒店(兰州张掖路省政府地铁站店)](https://m.ctrip.com/html5/hotel/hoteldetail/66757085.html) | 双床房A【安静舒睡 + 商务…】 1间 | ¥363.70 |
+| D1 | 7/18-7/19 | [全季酒店(兰州张掖路省政府地铁站店)](https://m.ctrip.com/html5/hotel/hoteldetail/66757085.html) | 双床房【舒适安睡 + 商务…】 1间<br>高级大床房A【安静舒睡】 2间 | ¥441.42<br>¥414.02 + ¥216.01 |
+| D2 | 7/19-7/20 | [卓尼扎古录大酒店](https://m.ctrip.com/html5/hotel/hoteldetail/111531991.html) | 特惠双床房（一次性面巾 + 一次性浴巾） 3间 | ¥1195 |
+| D3 | 7/20-7/21 | [云端山舍·全域日出观景民宿(扎尕那达日观景台店)](https://m.ctrip.com/html5/hotel/hoteldetail/111872533.html) | 栖山｜观景双床房 1间<br>枕山｜观景双床房 2间 | ¥854<br>¥1626 |
+| D4 | 7/21-7/22 | [郎木寺庚盼民宿(白龙江峡谷店)](https://m.ctrip.com/html5/hotel/hoteldetail/134867328.html) | 郎木寺观景｜豪华标间 2间<br>郎木寺观景｜标间 1间 | ¥950.95<br>¥404.55 |
+| D5 | 7/22-7/23 | [朵兰达V酒店(阿坝县店)](https://m.ctrip.com/html5/hotel/hoteldetail/131972530.html) | Senior·静谧双床房（智能客控 + 空调 + 制氧机 + 加湿器） 1间<br>智能语音大床房 2间 | ¥534<br>¥894 |
+| D6 | 7/23-7/24 | [久治玉宫酒店](https://m.ctrip.com/html5/hotel/hoteldetail/121194192.html) | 豪华双床房（医用级鼻吸供氧） 3间 | ¥1413 |
+| D7 | 7/24-7/25 | [夏河蓝庭雅居酒店](https://m.ctrip.com/html5/hotel/hoteldetail/130838449.html) | 豪华双床房 3间 | ¥1350 |
+| D8 | 7/25-7/26 | [临夏八坊十三巷美仑酒店](https://m.ctrip.com/html5/hotel/hoteldetail/127225302.html) | 大床房（迷你Bar + 舒适床垫） 2间<br>商务双床房（高端洗护 + 干湿分离） 1间 | ¥764<br>¥585 |
 
-| 天数 | 日期 | 酒店 | 房型 | 间数 | 价格 | 备注 |
-|---|---|---|---|---:|---:|---|
-| D1 | 7/18-7/19 | [全季酒店(兰州张掖路省政府地铁站店)](https://m.ctrip.com/html5/hotel/hoteldetail/66757085.html) | 去哪儿订单列表未见预订成功订单 | - | - | 未计入合计 |
-| D2 | 7/19-7/20 | [卓尼扎古录大酒店](https://m.ctrip.com/html5/hotel/hoteldetail/111531991.html) | 特惠双床房（一次性面巾 + 一次性浴巾） | 3间 | ¥1195 | 2份早餐/间 |
-| D3 | 7/20-7/21 | [云端山舍·全域日出观景民宿(扎尕那达日观景台店)](https://m.ctrip.com/html5/hotel/hoteldetail/111872533.html) | 栖山｜观景双床房 | 1间 | ¥854 | 预订成功 |
-| D3 | 7/20-7/21 | [云端山舍·全域日出观景民宿(扎尕那达日观景台店)](https://m.ctrip.com/html5/hotel/hoteldetail/111872533.html) | 枕山｜观景双床房 | 2间 | ¥1626 | 预订成功 |
-| D4 | 7/21-7/22 | [郎木寺庚盼民宿(白龙江峡谷店)](https://m.ctrip.com/html5/hotel/hoteldetail/134867328.html) | 郎木寺观景｜豪华标间 | 2间 | ¥950.95 | 预订成功 |
-| D4 | 7/21-7/22 | [郎木寺庚盼民宿(白龙江峡谷店)](https://m.ctrip.com/html5/hotel/hoteldetail/134867328.html) | 郎木寺观景｜标间 | 1间 | ¥404.55 | 预订成功 |
-| D5 | 7/22-7/23 | [朵兰达V酒店(阿坝县店)](https://m.ctrip.com/html5/hotel/hoteldetail/131972530.html) | Senior·静谧双床房（智能客控 + 空调 + 制氧机 + 加湿器） | 1间 | ¥534 | 2份早餐 |
-| D5 | 7/22-7/23 | [朵兰达V酒店(阿坝县店)](https://m.ctrip.com/html5/hotel/hoteldetail/131972530.html) | 智能语音大床房 | 2间 | ¥894 | 预订成功 |
-| D6 | 7/23-7/24 | [久治玉宫酒店](https://m.ctrip.com/html5/hotel/hoteldetail/121194192.html) | 豪华双床房（医用级鼻吸供氧） | 3间 | ¥1413 | 预订成功 |
-| D7 | 7/24-7/25 | [夏河蓝庭雅居酒店](https://m.ctrip.com/html5/hotel/hoteldetail/130838449.html) | 豪华双床房 | 3间 | ¥1350 | 预订成功 |
-| D8 | 7/25-7/26 | [临夏八坊十三巷美仑酒店](https://m.ctrip.com/html5/hotel/hoteldetail/127225302.html) | 大床房（迷你Bar + 舒适床垫） | 2间 | ¥764 | 预订成功 |
-| D8 | 7/25-7/26 | [临夏八坊十三巷美仑酒店](https://m.ctrip.com/html5/hotel/hoteldetail/127225302.html) | 商务双床房（高端洗护 + 干湿分离） | 1间 | ¥585 | 预订成功 |
+住宿订单合计（D0-D8）：¥12005.65。
 
-已确认住宿订单合计（D2-D8）：¥10570.50。
 
 ## 同类景点取舍
 
