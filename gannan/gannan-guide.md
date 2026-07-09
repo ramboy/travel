@@ -41,9 +41,9 @@
 | D5 | 7-22 | [朵兰达V酒店(阿坝县店)](https://m.ctrip.com/html5/hotel/hoteldetail/131972530.html) | Senior·静谧双床房（智能客控 + 空调 + 制氧机 + 加湿器） 1间<br>智能语音大床房 2间 | ¥534 × 1间<br>¥447 × 2间 |
 | D6 | 7-23 | [久治玉宫酒店](https://m.ctrip.com/html5/hotel/hoteldetail/121194192.html) | 豪华双床房（医用级鼻吸供氧） 3间 | ¥471 × 3间 |
 | D7 | 7-24 | [夏河蓝庭雅居酒店](https://m.ctrip.com/html5/hotel/hoteldetail/130838449.html) | 豪华双床房 3间 | ¥450 × 3间 |
-| D8 | 7-25 | [临夏八坊十三巷美仑酒店](https://m.ctrip.com/html5/hotel/hoteldetail/127225302.html) | 大床房（迷你Bar + 舒适床垫） 2间<br>商务双床房（高端洗护 + 干湿分离） 1间 | ¥382 × 2间<br>¥585 × 1间 |
+| D8 | 7-25 | [临夏八坊十三巷美仑酒店](https://m.ctrip.com/html5/hotel/hoteldetail/127225302.html) | 大床房 3间 | ¥378.73 × 3间 |
 
-住宿订单合计（D0-D8）：¥12005.65。
+住宿订单合计（D0-D8）：¥11792.85。
 
 
 ## 同类景点取舍
