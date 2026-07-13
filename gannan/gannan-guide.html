@@ -151,6 +151,40 @@ section, .map-card {
   box-shadow: 0 12px 36px rgba(20, 44, 37, .08);
 }
 .map-card figcaption { padding: 10px 2px 0; color: var(--muted); font-size: 13px; }
+.route-film { padding-top: 42px; }
+.route-film-head { display: flex; align-items: end; justify-content: space-between; gap: 28px; margin-bottom: 20px; }
+.route-film-head h2 { margin: 0; }
+.route-film-head p { max-width: 470px; margin: 0; color: var(--muted); font-size: 14px; }
+.route-film-player {
+  position: relative;
+  overflow: hidden;
+  aspect-ratio: 16 / 9;
+  border-radius: var(--radius);
+  background: var(--pine-dark);
+  box-shadow: var(--shadow);
+}
+.route-film-player video { display: block; width: 100%; height: 100%; object-fit: cover; background: var(--pine-dark); }
+.route-film-controls { position: absolute; right: 16px; bottom: 16px; display: flex; gap: 8px; }
+.route-film-control {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  min-height: 42px;
+  padding: 9px 13px;
+  border: 1px solid rgba(255,255,255,.52);
+  border-radius: 6px;
+  color: #fff;
+  background: rgba(5, 25, 22, .7);
+  backdrop-filter: blur(10px);
+  font: inherit;
+  font-size: 13px;
+  font-weight: 800;
+  cursor: pointer;
+}
+.route-film-control:hover { background: rgba(5, 25, 22, .9); }
+.route-film-control:focus-visible { outline: 3px solid rgba(226, 162, 50, .78); outline-offset: 2px; }
+.route-film-note { margin-top: 10px; color: var(--muted); font-size: 12px; }
 .trip-meta {
   display: grid;
   grid-template-columns: 1.25fr 1fr;
@@ -325,6 +359,12 @@ tr:last-child td { border-bottom: 0; }
   section, .map-card { padding: 34px 0; }
   .map-card { padding-top: 24px; }
   .map-card img { border-radius: 5px; }
+  .route-film { padding-top: 30px; }
+  .route-film-head { display: block; margin-bottom: 16px; }
+  .route-film-head p { margin-top: 8px; font-size: 13px; }
+  .route-film-player { width: min(100%, 520px); margin: 0 auto; aspect-ratio: 9 / 16; border-radius: 6px; box-shadow: 0 10px 30px rgba(20, 44, 37, .14); }
+  .route-film-controls { right: 10px; bottom: 10px; }
+  .route-film-control { min-height: 40px; padding: 8px 11px; font-size: 12px; }
   .trip-meta { grid-template-columns: 1fr; gap: 12px; margin-top: 18px; padding: 18px 16px; border-radius: 6px; }
   h2 { margin-bottom: 17px; font-size: 26px; }
   h3 { margin-top: 24px; font-size: 18px; }
@@ -380,11 +420,11 @@ tr:last-child td { border-bottom: 0; }
   body { background: #fff; }
   .page { max-width: none; padding: 0; }
   .hero, section, .map-card { box-shadow: none; break-inside: avoid; }
-  .quick-nav, .hero-actions { display: none; }
+  .quick-nav, .hero-actions, .route-film { display: none; }
   a { color: inherit; text-decoration: none; }
 }
 
-</style></head><body><main class="page"><header class="hero"><div class="hero-content"><p class="hero-meta">2026.07.18 - 07.26 · 杭州飞兰州 · 甘南自驾</p><h1>甘南自驾完整<br/>旅行计划</h1><p class="subtitle">洛克之路、扎尕那、郎木寺、花湖黄河、莲宝叶则、阿万仓、拉卜楞寺与临夏返程，一份按住宿与真实车程串好的高原自驾攻略。</p><div class="hero-actions"><a class="hero-action primary" href="gannan-roadbook.html">打开高德路书</a><a class="hero-action" href="#daily-itinerary">查看每日行程</a></div><div class="hero-stats"><div class="hero-stat"><strong>9 天</strong><span>7/18 - 7/26</span></div><div class="hero-stat"><strong>1,712.8 km</strong><span>高德实算总里程</span></div><div class="hero-stat"><strong>31h52m</strong><span>纯驾车参考时长</span></div><div class="hero-stat"><strong>4500m+</strong><span>莲宝叶则最高点</span></div></div></div></header><nav aria-label="攻略导航" class="quick-nav"><a href="#overview">全程概览</a><a href="#hotel-orders">住宿订单</a><a href="#choices">景点取舍</a><a href="#daily-itinerary">每日行程</a><a href="#tickets">购票预约</a><a href="#altitude">海拔示意</a><a href="#notes">注意事项</a><a href="gannan-roadbook.html">高德路书</a></nav><figure class="map-card"><img alt="甘南自驾路书地图" src="甘南自驾路书地图_7月18-26.png"/><figcaption>全程路线示意，实际驾驶以高德路书和当天路况为准。</figcaption></figure><section class="trip-meta"><p><strong>行程日期：</strong>2026 年 7 月 18 日至 7 月 26 日<br/><strong>出发方式：</strong>杭州飞兰州中川国际机场，兰州取车自驾</p><p><strong>航班：</strong>7/18 3U3195 07:20-10:25；7/26 MU2446 17:55-20:40<br/><strong>路书：</strong>见顶部“打开高德路书”入口</p></section><section class="notice">
+</style></head><body><main class="page"><header class="hero"><div class="hero-content"><p class="hero-meta">2026.07.18 - 07.26 · 杭州飞兰州 · 甘南自驾</p><h1>甘南自驾完整<br/>旅行计划</h1><p class="subtitle">洛克之路、扎尕那、郎木寺、花湖黄河、莲宝叶则、阿万仓、拉卜楞寺与临夏返程，一份按住宿与真实车程串好的高原自驾攻略。</p><div class="hero-actions"><a class="hero-action primary" href="gannan-roadbook.html">打开高德路书</a><a class="hero-action" href="#daily-itinerary">查看每日行程</a></div><div class="hero-stats"><div class="hero-stat"><strong>9 天</strong><span>7/18 - 7/26</span></div><div class="hero-stat"><strong>1,712.8 km</strong><span>高德实算总里程</span></div><div class="hero-stat"><strong>31h52m</strong><span>纯驾车参考时长</span></div><div class="hero-stat"><strong>4500m+</strong><span>莲宝叶则最高点</span></div></div></div></header><nav aria-label="攻略导航" class="quick-nav"><a href="#route-film">动态路线</a><a href="#overview">全程概览</a><a href="#hotel-orders">住宿订单</a><a href="#choices">景点取舍</a><a href="#daily-itinerary">每日行程</a><a href="#tickets">购票预约</a><a href="#altitude">海拔示意</a><a href="#notes">注意事项</a><a href="gannan-roadbook.html">高德路书</a></nav><section class="route-film" id="route-film"><div class="route-film-head"><div><span class="section-kicker">ROUTE FILM</span><h2 id="route-film-title">32 秒看完甘南全程</h2></div><p>路线、每日里程、住宿地与海拔变化按 D1-D9 依次展开。默认静音播放，点击声音按钮可开启背景音乐。</p></div><div class="route-film-player"><video aria-describedby="route-film-help" aria-label="甘南自驾 D1 至 D9 动态路线预告片" id="routeFilmVideo" loop muted playsinline preload="metadata" poster="media/gannan-route-poster-landscape.webp"><source media="(max-width: 760px)" src="media/gannan-route-portrait.mp4" type="video/mp4"/><source src="media/gannan-route-landscape.mp4" type="video/mp4"/></video><div class="route-film-controls"><button aria-label="暂停动态路线" class="route-film-control" id="routeFilmPlay" type="button"><span aria-hidden="true">‖</span><span>暂停</span></button><button aria-label="开启背景音乐" class="route-film-control" id="routeFilmSound" type="button"><span aria-hidden="true">♪</span><span>开声</span></button></div></div><p class="route-film-note" id="route-film-help">开启省流量或“减少动态效果”时不会自动播放，可点击播放按钮查看。</p></section><figure class="map-card"><img alt="甘南自驾路书地图" src="甘南自驾路书地图_7月18-26.png"/><figcaption>全程路线示意，实际驾驶以高德路书和当天路况为准。</figcaption></figure><section class="trip-meta"><p><strong>行程日期：</strong>2026 年 7 月 18 日至 7 月 26 日<br/><strong>出发方式：</strong>杭州飞兰州中川国际机场，兰州取车自驾</p><p><strong>航班：</strong>7/18 3U3195 07:20-10:25；7/26 MU2446 17:55-20:40<br/><strong>路书：</strong>见顶部“打开高德路书”入口</p></section><section class="notice">
 <h2 id="summary">行前重点</h2>
 <ol>
 <li>D3 洛克之路和 D6 莲宝叶则看天气行事，雨雾大就降速、缩短停留或改线。</li>
@@ -678,6 +718,41 @@ tr:last-child td { border-bottom: 0; }
       window.location.href=appUrl;
     });
   });
+  var routeFilm=document.getElementById('routeFilmVideo');
+  var routeFilmPlay=document.getElementById('routeFilmPlay');
+  var routeFilmSound=document.getElementById('routeFilmSound');
+  if(routeFilm&&routeFilmPlay&&routeFilmSound){
+    var portraitFilm=window.matchMedia('(max-width: 760px)').matches;
+    var reducedMotion=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    var saveData=Boolean(navigator.connection&&navigator.connection.saveData);
+    if(portraitFilm) routeFilm.poster='media/gannan-route-poster-portrait.webp';
+    var playLabel=routeFilmPlay.querySelectorAll('span');
+    var soundLabel=routeFilmSound.querySelectorAll('span');
+    function updateFilmControls(){
+      var playing=!routeFilm.paused;
+      playLabel[0].textContent=playing?'‖':'▶';
+      playLabel[1].textContent=playing?'暂停':'播放';
+      routeFilmPlay.setAttribute('aria-label',playing?'暂停动态路线':'播放动态路线');
+      soundLabel[1].textContent=routeFilm.muted?'开声':'静音';
+      routeFilmSound.setAttribute('aria-label',routeFilm.muted?'开启背景音乐':'关闭背景音乐');
+    }
+    routeFilmPlay.addEventListener('click',function(){
+      if(routeFilm.paused) routeFilm.play().catch(function(){});
+      else routeFilm.pause();
+    });
+    routeFilmSound.addEventListener('click',function(){
+      routeFilm.muted=!routeFilm.muted;
+      if(!routeFilm.muted) routeFilm.play().catch(function(){});
+      updateFilmControls();
+    });
+    routeFilm.addEventListener('play',updateFilmControls);
+    routeFilm.addEventListener('pause',updateFilmControls);
+    routeFilm.addEventListener('volumechange',updateFilmControls);
+    updateFilmControls();
+    if(!reducedMotion&&!saveData){
+      routeFilm.play().catch(function(){ updateFilmControls(); });
+    }
+  }
   var navLinks=Array.from(document.querySelectorAll('.quick-nav a[href^="#"]'));
   if('IntersectionObserver' in window){
     var activeObserver=new IntersectionObserver(function(entries){
