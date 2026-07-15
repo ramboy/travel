@@ -17,35 +17,43 @@
 
 ## 全程概览
 
-景点坐标预报更新于 2026 年 7 月 14 日 23:47，来自 [Open-Meteo](https://open-meteo.com/en/docs)；区县趋势于 7 月 15 日 08:18 使用 [墨迹天气](https://tianqi.moji.com/) 网页复核。主表温度仍按景点实际坐标展示，下面的墨迹数据用于判断区域趋势；区县城区与高海拔景点温度不可直接互相替代。D7-D9 仍属中远期预报，建议每天出发前复核一次。
+景点坐标预报更新于 2026 年 7 月 15 日 21:58，来自 [Open-Meteo](https://open-meteo.com/en/docs)；区县趋势于同日晚间使用 [墨迹天气](https://tianqi.moji.com/) 网页复核。主表和折线图按景点真实坐标展示，墨迹数据只用于判断区域趋势；城区与高海拔景点温度不可直接互相替代。D7-D9 仍属中远期预报，每天出发前再看一次雷达、预警和路况。
 
 原则：全程按“短袖/速干内层 + 防晒层 + 抓绒或薄羽绒 + 冲锋衣/雨衣”分层准备。兰州、临夏白天偏热，高海拔草原和莲宝叶则早晚冷、风大、雨来得快。
 
 | 日期 | 天数 | 住宿 | 主要路线 | 天气/温度参考 | 穿衣建议 | 随身重点 | 节奏判断 |
 |---|---:|---|---|---|---|---|---|
-| 7/18 周六 | D1 | [全季酒店(兰州张掖路省政府地铁站店)](https://m.ctrip.com/html5/hotel/hoteldetail/66757085.html) | 兰州中川机场 -> 甘肃省博物馆 -> 中山桥 -> [全季酒店](https://m.ctrip.com/html5/hotel/hoteldetail/66757085.html) | 路线 29/17℃<br>兰州市区：阴 29/18℃，降水 33%<br>中川机场：零星小雨 26/17℃，降水 39% | 市区白天短袖/薄长袖；机场和黄河边备轻薄防风雨外套。 | 防晒帽、轻薄外套、舒适步行鞋 | 航班到达后轻松适应 |
-| 7/19 周日 | D2 | [卓尼扎古录大酒店](https://m.ctrip.com/html5/hotel/hoteldetail/111531991.html) | [全季酒店](https://m.ctrip.com/html5/hotel/hoteldetail/66757085.html) -> 美仁大草原 -> 米拉日巴佛阁 -> [卓尼扎古录大酒店](https://m.ctrip.com/html5/hotel/hoteldetail/111531991.html) | 路线 21/4℃<br>美仁草原：零星小雨 17/5℃，降水 67%<br>合作佛阁：零星小雨 21/7℃，降水 49%<br>扎古录：零星小雨 20/4℃，降水 39% | 温差很大：草原和扎古录夜间加抓绒/薄羽绒，下车带防雨层。 | 防风外套、抓绒、墨镜、防晒霜 | 沿途可能有小雨，约 5h 驾驶 |
-| 7/20 周一 | D3 | [云端山舍·全域日出观景民宿(扎尕那达日观景台店)](https://m.ctrip.com/html5/hotel/hoteldetail/111872533.html) | [卓尼扎古录大酒店](https://m.ctrip.com/html5/hotel/hoteldetail/111531991.html) -> 达日观景台 -> [云端山舍](https://m.ctrip.com/html5/hotel/hoteldetail/111872533.html) | 路线 21/6℃<br>达日观景台：小雨 21/6℃，降水 67%，阵风 41km/h<br>扎尕那：小雨 21/8℃，降水 74% | 速干长袖 + 抓绒/薄羽绒 + 冲锋衣，山路湿滑，观景台注意风雨。 | 雨衣、防滑鞋、保暖帽 | 降水概率较高，避免夜走洛克之路 |
-| 7/21 周二 | D4 | [郎木寺庚盼民宿(白龙江峡谷店)](https://m.ctrip.com/html5/hotel/hoteldetail/134867328.html) | [云端山舍](https://m.ctrip.com/html5/hotel/hoteldetail/111872533.html) -> 扎尕那仙女滩 -> 格尔底寺 -> 纳摩大峡谷 -> [郎木寺庚盼民宿](https://m.ctrip.com/html5/hotel/hoteldetail/134867328.html) | 路线 22/9℃<br>扎尕那仙女滩：小雨 22/9℃，降水 67%，阵风 62km/h<br>郎木寺：小雨 17/11℃，降水 41%，阵风 54km/h | 抓绒/薄羽绒外加冲锋衣；观景台和峡谷按强风、间歇小雨准备。 | 冲锋衣、轻便徒步鞋、保暖帽 | 风力明显偏强，仙女滩和峡谷按天气缩时 |
-| 7/22 周三 | D5 | [朵兰达V酒店(阿坝县店)](https://m.ctrip.com/html5/hotel/hoteldetail/131972530.html) | [郎木寺庚盼民宿](https://m.ctrip.com/html5/hotel/hoteldetail/134867328.html) -> 花湖 -> 黄河九曲第一湾 -> [朵兰达V酒店](https://m.ctrip.com/html5/hotel/hoteldetail/131972530.html) | 路线 21/6℃<br>花湖：零星小雨 16/7℃，降水 41%<br>黄河九曲：阴 19/6℃，降水 29%<br>阿坝县：晴间多云 21/9℃，降水 51% | 花湖和九曲约 6-19℃，长袖外加防风层，清晨和雨后补抓绒。 | 防晒、雨具、保温杯 | 午后天气相对好转，仍不等九曲完整日落 |
-| 7/23 周四 | D6 | [久治玉宫酒店](https://m.ctrip.com/html5/hotel/hoteldetail/121194192.html) | [朵兰达V酒店](https://m.ctrip.com/html5/hotel/hoteldetail/131972530.html) -> 莲宝叶则 -> 各莫寺 -> [久治玉宫酒店](https://m.ctrip.com/html5/hotel/hoteldetail/121194192.html) | 路线 20/6℃<br>莲宝叶则：小雨 17/7℃，降水 58%，阵风 35km/h<br>各莫寺：小雨 15/6℃，降水 58%<br>久治：小雨 20/8℃，降水 71% | 抓绒/薄羽绒 + 冲锋衣，莲宝叶则按 7℃、有雨有风准备。 | 保暖层、手套/帽子、雨衣 | 景区降水概率较高，注意高海拔 |
-| 7/24 周五 | D7 | [夏河蓝庭雅居酒店](https://m.ctrip.com/html5/hotel/hoteldetail/130838449.html) | [久治玉宫酒店](https://m.ctrip.com/html5/hotel/hoteldetail/121194192.html) -> 娘玛寺 -> 阿万仓 -> 郭莽 -> 桑科 -> [蓝庭雅居酒店](https://m.ctrip.com/html5/hotel/hoteldetail/130838449.html) | 路线 24/8℃<br>阿万仓：小雨 17/8℃，降水 46%<br>郭莽湿地：小雨 16/8℃，降水 49%，阵风 38km/h<br>桑科/夏河：小雨 18/8℃ -> 多云 24/12℃ | 湿地沿线约 8-18℃且有风，下车加抓绒和防风雨外套；到夏河后可减衣。 | 防风外套、雨具、备用袜子 | 高德约 336.6km/5h26m，雨天按 8-9h 安排 |
-| 7/25 周六 | D8 | [临夏八坊十三巷美仑酒店](https://m.ctrip.com/html5/hotel/hoteldetail/127225302.html) | [蓝庭雅居酒店](https://m.ctrip.com/html5/hotel/hoteldetail/130838449.html) -> 拉卜楞寺 -> 甘加秘境 -> [临夏八坊十三巷美仑酒店](https://m.ctrip.com/html5/hotel/hoteldetail/127225302.html) | 路线 24/10℃<br>拉卜楞寺：小雨 17/12℃，降水 51%，阵风 41km/h<br>甘加秘境：小雨 15/10℃，降水 83%<br>临夏：雷阵雨 24/18℃，降水 59% | 甘加按 10-15℃和雨天穿；到临夏后可减衣，但保留雨具。 | 雨具、防滑鞋、抓绒 | 甘加降水高，临夏有雷暴信号，避开空旷高点 |
-| 7/26 周日 | D9 | 返程 | [临夏八坊十三巷美仑酒店](https://m.ctrip.com/html5/hotel/hoteldetail/127225302.html) -> 黄洮交汇观景平台 -> 兰州中川机场 T3 | 路线 30/17℃<br>黄洮交汇：零星小雨 30/19℃，降水 43%<br>中川机场：多云 29/17℃，降水 31%，阵风 33km/h | 白天偏热，以短袖/薄长袖为主；观景平台和机场备轻薄防风雨外套。 | 防风外套、易脱鞋/舒适鞋 | 17:55 航班，13:00 前离开观景平台 |
+| 7/18 周六 | D1 | [全季酒店(兰州张掖路省政府地铁站店)](https://m.ctrip.com/html5/hotel/hoteldetail/66757085.html) | 兰州中川机场 -> 甘肃省博物馆 -> 中山桥 -> [全季酒店](https://m.ctrip.com/html5/hotel/hoteldetail/66757085.html) | 路线 28/14℃<br>中川机场：小雨 25/14℃，降水 75%，阵风 38km/h<br>兰州市区：小雨 28/18℃，降水 74%，阵风 34km/h | 市区可短袖/薄长袖，机场和黄河边加轻薄防风雨外套。 | 折叠伞、轻薄外套、舒适步行鞋 | 落地大概率遇雨，取车和进城留出缓冲 |
+| 7/19 周日 | D2 | [卓尼扎古录大酒店](https://m.ctrip.com/html5/hotel/hoteldetail/111531991.html) | [全季酒店](https://m.ctrip.com/html5/hotel/hoteldetail/66757085.html) -> 美仁大草原 -> 米拉日巴佛阁 -> [卓尼扎古录大酒店](https://m.ctrip.com/html5/hotel/hoteldetail/111531991.html) | 路线 21/2℃<br>美仁草原：零星小雨 16/4℃，降水 63%<br>合作佛阁：晴间多云 21/7℃，降水 39%<br>扎古录：晴间多云 19/2℃，阵风 30km/h | 温差很大，草原和扎古录按 2-4℃准备抓绒/薄羽绒，白天分层减衣。 | 防风外套、抓绒、墨镜、防晒霜 | 美仁可能短时小雨，后半程天气较好 |
+| 7/20 周一 | D3 | [云端山舍·全域日出观景民宿(扎尕那达日观景台店)](https://m.ctrip.com/html5/hotel/hoteldetail/111872533.html) | [卓尼扎古录大酒店](https://m.ctrip.com/html5/hotel/hoteldetail/111531991.html) -> 达日观景台 -> [云端山舍](https://m.ctrip.com/html5/hotel/hoteldetail/111872533.html) | 路线 21/6℃<br>达日观景台：零星小雨 20/6℃，降水 82%，阵风 35km/h<br>扎尕那：零星小雨 21/7℃，降水 75% | 速干长袖 + 抓绒/薄羽绒 + 冲锋衣，雨后山路湿滑。 | 雨衣、防滑鞋、保暖帽 | 降水概率高，洛克之路降速并避免摸黑抵达 |
+| 7/21 周二 | D4 | [郎木寺庚盼民宿(白龙江峡谷店)](https://m.ctrip.com/html5/hotel/hoteldetail/134867328.html) | [云端山舍](https://m.ctrip.com/html5/hotel/hoteldetail/111872533.html) -> 扎尕那仙女滩 -> 格尔底寺 -> 纳摩大峡谷 -> [郎木寺庚盼民宿](https://m.ctrip.com/html5/hotel/hoteldetail/134867328.html) | 路线 19/6℃<br>扎尕那仙女滩：小雨 19/7℃，降水 88%<br>郎木寺片区：零星小雨 17-18/6-7℃，阵风最高 48km/h | 抓绒/薄羽绒外加冲锋衣；峡谷按有雨、强阵风准备。 | 冲锋衣、轻便徒步鞋、保暖帽 | 仙女滩降水高，纳摩峡谷视风雨缩短停留 |
+| 7/22 周三 | D5 | [朵兰达V酒店(阿坝县店)](https://m.ctrip.com/html5/hotel/hoteldetail/131972530.html) | [郎木寺庚盼民宿](https://m.ctrip.com/html5/hotel/hoteldetail/134867328.html) -> 花湖 -> 黄河九曲第一湾 -> [朵兰达V酒店](https://m.ctrip.com/html5/hotel/hoteldetail/131972530.html) | 路线 20/7℃<br>花湖/黄河九曲：零星小雨 17-18/7℃，降水最高 27%，阵风最高 34km/h<br>阿坝县：零星小雨 20/9℃，降水 26% | 湿地和河湾约 7-18℃，长袖加防风层，雨后补抓绒。 | 防晒、雨具、保温杯 | 降水概率回落，但仍不等完整日落后赶夜路 |
+| 7/23 周四 | D6 | [久治玉宫酒店](https://m.ctrip.com/html5/hotel/hoteldetail/121194192.html) | [朵兰达V酒店](https://m.ctrip.com/html5/hotel/hoteldetail/131972530.html) -> 莲宝叶则 -> 各莫寺 -> [久治玉宫酒店](https://m.ctrip.com/html5/hotel/hoteldetail/121194192.html) | 路线 19/5℃<br>莲宝叶则/各莫寺：零星小雨 13-15/5-6℃，降水 41%，阵风最高 22km/h<br>久治：晴间多云 19/6℃，日内降水概率 59% | 莲宝叶则按 5-15℃穿抓绒/薄羽绒 + 冲锋衣，离开景区后再减衣。 | 保暖层、手套/帽子、雨衣 | 全程最低体感的一天，优先看身体状态 |
+| 7/24 周五 | D7 | [夏河蓝庭雅居酒店](https://m.ctrip.com/html5/hotel/hoteldetail/130838449.html) | [久治玉宫酒店](https://m.ctrip.com/html5/hotel/hoteldetail/121194192.html) -> 娘玛寺 -> 阿万仓 -> 郭莽 -> 桑科 -> [蓝庭雅居酒店](https://m.ctrip.com/html5/hotel/hoteldetail/130838449.html) | 路线 22/8℃<br>娘玛寺/阿万仓：零星小雨 20/8℃，降水 65%<br>郭莽湿地：多云 20/8℃，降水 57%，阵风 28km/h<br>桑科/夏河：零星小雨 21/8℃ -> 22/11℃ | 湿地沿线约 8-20℃，下车加抓绒和防风雨外套；到夏河后可减衣。 | 防风外套、雨具、备用袜子 | 高德约 336.6km/5h26m，雨天仍按 8-9h 安排 |
+| 7/25 周六 | D8 | [临夏八坊十三巷美仑酒店](https://m.ctrip.com/html5/hotel/hoteldetail/127225302.html) | [蓝庭雅居酒店](https://m.ctrip.com/html5/hotel/hoteldetail/130838449.html) -> 拉卜楞寺 -> 甘加秘境 -> [临夏八坊十三巷美仑酒店](https://m.ctrip.com/html5/hotel/hoteldetail/127225302.html) | 路线 23/9℃<br>拉卜楞寺：小雨 18/12℃，降水 31%，阵风 27km/h<br>甘加秘境：小雨 15/9℃，降水 85%<br>临夏：雷阵雨 23/18℃，阵风 25km/h | 甘加按 9-15℃和雨天穿；到临夏后减衣，但雨具继续随身。 | 雨具、防滑鞋、抓绒 | 甘加降水高，临夏有雷暴信号，避开空旷高点 |
+| 7/26 周日 | D9 | 返程 | [临夏八坊十三巷美仑酒店](https://m.ctrip.com/html5/hotel/hoteldetail/127225302.html) -> 黄洮交汇观景平台 -> 兰州中川机场 T3 | 路线 29/19℃<br>黄洮交汇：多云 29/19℃，降水 20%<br>中川机场：晴 29/19℃，降水 24%，阵风 24km/h | 白天偏暖，以短袖/薄长袖为主；观景平台和机场备轻薄防风层。 | 防晒、防风外套、舒适鞋 | 景点模型较稳定，但两来源分歧；返程前复核，13:00 前离开观景平台 |
+
+### 沿途天气温度趋势
+
+<div style="overflow-x:auto;border:1px solid #dfe7e2;border-radius:8px;background:#fff">
+  <img src="images/gannan-weather-trend.svg" alt="甘南自驾 D1 至 D9 沿途天气高低温折线图，包含天气图标、降水概率和地点" style="display:block;width:2280px;max-width:none;height:auto;">
+</div>
+
+同日、同天气类别且最高温和最低温差均不超过 2℃ 的相邻景点已合并；合并温度取四舍五入平均值，降水概率取较高值。手机端可左右滑动查看全程。
 
 ### 墨迹天气区县复核
 
 | 天数 | 区县预报 | 对行程的意义 |
 |---|---|---|
-| D1 | 兰州多云 18-33℃；永登晴 13-27℃ | 市区偏热，机场区域更凉 |
-| D2 | 合作多云 8-22℃；卓尼多云 6-21℃ | 草原与扎古录夜间仍按低温准备 |
-| D3 | 卓尼小雨 6-23℃；迭部小雨 7-20℃ | 与景点模型同样提示有雨 |
-| D4 | 迭部小雨 8-24℃；碌曲小雨 5-20℃ | 墨迹未给景点阵风，仍保留强风预案 |
-| D5 | 若尔盖多云 5-18℃；阿坝小雨 7-20℃ | 花湖与九曲下车需防风保暖 |
-| D6 | 阿坝小雨 7-21℃；久治小雨 5-17℃ | 两来源都支持雨天和低温判断 |
-| D7 | 玛曲小雨 7-19℃；碌曲小雨 6-22℃；夏河小雨 9-23℃ | 全线携带雨具 |
-| D8 | 夏河阴 10-23℃；临夏阴 17-34℃ | 与 Open-Meteo 的临夏雷阵雨差异较大，出发前重点复核雷达和预警 |
-| D9 | 临夏小雨 14-30℃；兰州小雨 21-34℃；永登小雨 15-28℃ | 返程带伞并给还车留余量 |
+| D1 | [兰州](https://tianqi.moji.com/weather/china/gansu/lanzhou) 7/18 多云 18-30℃ | 比景点坐标模型更暖、更少雨；落地仍按小雨准备 |
+| D2 | [卓尼](https://tianqi.moji.com/weather/china/gansu/juoni-county) 7/19 晴 6-22℃ | 支持美仁草原之后天气逐步转好的判断 |
+| D3 | [迭部](https://tianqi.moji.com/weather/china/gansu/diebu-county) 7/20 小雨 7-23℃ | 与达日、扎尕那景点模型一致，洛克之路按雨天驾驶 |
+| D4 | [碌曲](https://tianqi.moji.com/weather/china/gansu/luqu-county) 7/21 小雨 3-19℃ | 郎木寺片区除雨具外还要保留保暖和防强阵风方案 |
+| D5 | [若尔盖](https://tianqi.moji.com/weather/china/sichuan/ruoergai-county) 7/22 小雨 5-20℃ | 支持花湖、九曲湿冷的判断，下车及时加防风层 |
+| D6 | [久治](https://tianqi.moji.com/weather/china/qinghai/jigzhi-county) 7/23 晴 5-17℃ | 县城可能转晴，但莲宝叶则和各莫寺仍按零星小雨准备 |
+| D7 | [碌曲片区](https://tianqi.moji.com/weather/china/gansu/luqu-county) 7/24 多云 7-22℃ | 景点坐标模型仍提示湿地沿线有零星小雨，全程随车带雨具 |
+| D8 | [临夏](https://tianqi.moji.com/weather/china/gansu/linxia) 7/25 小雨 8-21℃ | 景点坐标模型出现雷阵雨信号，按更不利方案执行 |
+| D9 | [兰州](https://tianqi.moji.com/weather/china/gansu/lanzhou) 7/26 小雨 22-33℃ | 与机场坐标模型分歧明显，返程前复核雷达并给还车留余量 |
 
 ## 住宿订单
 
