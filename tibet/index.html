@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="2026 年国庆杭州出发，拉萨落地自驾阿里大环线三方案对比图。">
+  <title>阿里大环线 · 3 份路线选择</title>
+  <link rel="preconnect" href="https://webapi.amap.com">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="hero">
+    <nav class="topbar">
+      <div class="brand"><span>31°N</span> 西藏自驾图册</div>
+      <button class="ghost" id="amap-settings" type="button">高德底图设置</button>
+    </nav>
+    <div class="hero-copy">
+      <p class="eyebrow">HANGZHOU → LHASA · 2026.09.25—10.07</p>
+      <h1>十三天，选一条<br><em>属于你的阿里。</em></h1>
+      <p class="lede">9 月 25 日 16:30 抵达拉萨；所有方案均从拉萨取车出发并回到拉萨，10 月 6 日休整，10 月 7 日 10:55 飞回杭州。</p>
+      <div class="hero-stats">
+        <span><b>3</b> 条方案</span><span><b>8–10</b> 天自驾</span><span><b>3,300–4,000</b> km 估算</span>
+      </div>
+    </div>
+    <div class="contour" aria-hidden="true"></div>
+  </header>
+
+  <main>
+    <section class="chooser" aria-labelledby="choose-title">
+      <div class="section-head">
+        <div><p class="section-no">01 / 选择路线</p><h2 id="choose-title">先选旅行气质</h2></div>
+        <p>点击方案，地图与逐日行程同步切换。</p>
+      </div>
+      <div class="trip-frame" aria-label="固定交通时间框架">
+        <div><b>09.25 · 16:30</b><span>杭州 ✈ 抵达拉萨</span></div>
+        <div><b>09.26</b><span>B 适应高原 / C 自驾出发</span></div>
+        <div class="drive-frame"><b>09.26—10.05</b><span>拉萨取车 → 阿里自驾 → 拉萨还车</span></div>
+        <div><b>10.07 · 10:55</b><span>拉萨 ✈ 杭州</span></div>
+      </div>
+      <div class="route-tabs" id="route-tabs" role="tablist"></div>
+    </section>
+
+    <section class="map-section" aria-label="路线地图">
+      <div class="map-toolbar">
+        <div>
+          <span class="status-dot"></span>
+          <span id="map-mode">离线示意图</span>
+        </div>
+        <div class="map-actions">
+          <button id="fit-route" type="button">适配全线</button>
+          <button id="print-route" type="button">打印 / 存 PDF</button>
+        </div>
+      </div>
+      <div class="map-shell">
+        <div id="schematic-map" aria-label="路线示意地图"></div>
+        <div id="amap-container" hidden></div>
+        <aside class="route-summary" id="route-summary"></aside>
+      </div>
+      <p class="map-note">示意线用于比较方向与停靠点，不等同于导航轨迹；实际道路、管制和通行时间请在出发前复核。</p>
+    </section>
+
+    <section class="itinerary" aria-labelledby="days-title">
+      <div class="section-head">
+        <div><p class="section-no">02 / 逐日计划</p><h2 id="days-title">每一天，都有退路</h2></div>
+        <p id="itinerary-note"></p>
+      </div>
+      <div class="day-grid" id="day-grid"></div>
+    </section>
+
+    <section class="compare" aria-labelledby="compare-title">
+      <div class="section-head light">
+        <div><p class="section-no">03 / 快速决策</p><h2 id="compare-title">怎么选，最简单</h2></div>
+      </div>
+      <div class="compare-grid">
+        <article><span>A</span><h3>此生必走完整环线</h3><p>选「经典大环线」。前提是至少 2 名熟练司机，接受连续长途。</p></article>
+        <article><span>B</span><h3>更早回到拉萨</h3><p>选「截图小北线」。10 月 4 日结束自驾，留下两天完整缓冲。</p></article>
+        <article><span>C</span><h3>避高与完整兼顾</h3><p>选「大北线避高版」。普兰、札达缓冲后进入羌塘，10 月 5 日回拉萨。</p></article>
+      </div>
+    </section>
+
+    <section class="checklist" aria-labelledby="check-title">
+      <div class="section-head">
+        <div><p class="section-no">04 / 出发门槛</p><h2 id="check-title">订票前先确认</h2></div>
+      </div>
+      <div class="check-grid">
+        <article><b>01</b><h3>边境通行证</h3><p>珠峰、普兰、札达等边境区域需按规定办理。2026 年 4 月 15 日起已启用电子边境通行证，可通过“移民局 12367”等渠道申请。</p></article>
+        <article><b>02</b><h3>高原适应</h3><p>抵达拉萨后至少保留 1 个完整适应日。出现头痛、胸闷、呼吸困难等情况，应停止活动并及时就医或下撤。</p></article>
+        <article><b>03</b><h3>车辆与司机</h3><p>三套方案均建议四驱或高离地间隙 SUV、全尺寸备胎、补胎与搭电工具；至少 2 名司机，不开夜车。</p></article>
+        <article><b>04</b><h3>天气与路况</h3><p>10 月初已可能遇雪、结冰或临时管制。每日出发前查西藏交警、景区公告和沿途天气，北线必须保留机动时间。</p></article>
+      </div>
+      <div class="source-row">
+        <a href="https://wlt.xizang.gov.cn/xwzx_69/wlyw/wldt/202507/t20250725_491772.html" target="_blank" rel="noreferrer">西藏文旅厅 · 推荐线路</a>
+        <a href="https://al.gov.cn/info/1031/23190.htm" target="_blank" rel="noreferrer">阿里行署 · 南北大环线</a>
+        <a href="https://s.nia.gov.cn/mps/bszy/dzbjtxz/blzy/202604/t20260414_1001.html" target="_blank" rel="noreferrer">国家移民管理局 · 边境通行证</a>
+        <a href="https://wlt.xizang.gov.cn/xwzx_69/tzgg/202607/t20260716_550274.html" target="_blank" rel="noreferrer">西藏文旅厅 · 安全提示</a>
+        <a href="https://jx.al.gov.cn/info/1842/31801.htm" target="_blank" rel="noreferrer">阿里官方 · 暗夜公园</a>
+      </div>
+    </section>
+  </main>
+
+  <footer><span>ALI GRAND LOOP · LHASA ROUND TRIP</span><span>所有方案：拉萨取车 · 拉萨还车</span></footer>
+
+  <dialog id="settings-dialog">
+    <form method="dialog" id="settings-form">
+      <button class="dialog-close" value="cancel" aria-label="关闭">×</button>
+      <p class="section-no">可选增强</p>
+      <h2>启用高德真实底图</h2>
+      <p>密钥只保存在此浏览器的 localStorage。个人本地预览可用；公开部署请改用后端代理，避免暴露安全密钥。</p>
+      <label>Web 端 Key<input id="amap-key" autocomplete="off" placeholder="在高德开放平台创建 Web 端 JS API Key"></label>
+      <label>安全密钥 securityJsCode<input id="amap-secret" autocomplete="off" placeholder="与 Key 配套的安全密钥"></label>
+      <div class="dialog-actions"><button value="cancel" class="ghost">继续用示意图</button><button value="default" id="enable-amap">启用高德</button></div>
+      <p class="form-error" id="form-error" role="alert"></p>
+    </form>
+  </dialog>
+
+  <script src="https://webapi.amap.com/loader.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
