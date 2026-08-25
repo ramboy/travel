@@ -94,7 +94,7 @@ main > section { padding: 90px max(5vw, 28px); }
 
 .compare { background: var(--ink); color: var(--cream); }
 .section-head.light .section-no { color: var(--yellow); }
-.compare-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 34px; }
+.compare-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 34px; }
 .compare-grid article { border-top: 1px solid rgba(255,255,255,.25); padding-top: 22px; }
 .compare-grid span { color: var(--yellow); font: 600 46px/1 "Songti SC", serif; }
 .compare-grid h3 { font-size: 20px; }
