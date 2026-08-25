@@ -1,38 +1,40 @@
 const ROUTES = {
   classic: {
-    letter: 'A', name: '地图路书大环线', tag: '截图核算', color: '#f1603a',
-    subtitle: '按高德收藏夹 D1—D11 逐段汇总，串联康马、珠峰、阿里西部与羌塘湖群。',
-    recommendation: '路线最完整，里程与时长来自地图截图', days: 11, km: '4,536.9 km', maxAlt: '约 5,200 m', buffer: '无整日缓冲',
+    letter: 'A', name: '阿里中北线', tag: '小红书整理', color: '#f1603a',
+    subtitle: '内容根据小红书路线调整，串联康马、珠峰、阿里西部与羌塘湖群。',
+    recommendation: '中北线完整串联，里程与时长来自地图截图', days: 10, km: '4,479.4 km', maxAlt: '约 5,200 m', buffer: '1 天拉萨市区',
     kmLabel: '截图逐段合计',
-    startEnd: '拉萨市 → 贡嘎县（经阿里大环线返回拉萨）',
+    startEnd: '拉萨市 → 拉萨市',
     fit: ['至少 2 名熟练司机', '想覆盖珠峰、古格与羌塘湖群', '能接受多日连续 7–9 小时驾驶'],
-    warning: 'D1—D10 的地图纯驾驶时间合计已超过 77 小时，未包含游览、检查站、加油与临时管制。截图把机场段放在 10 月 6 日，但既定航班为 10 月 7 日 10:55，出发前需按实际航班调整。',
-    itineraryNote: '里程与时间均由用户提供的高德地图 D1—D11 截图逐段相加；地图时间会随实时路况变化。',
-    stops: ['拉萨','鲁日拉观景台','卡若拉冰川','康马','西林观景台','加乌拉山口','巴松村','珠峰大本营','珠峰古堡遗址','佩枯措','萨嘎','玛旁雍措','拉昂措','普兰','玛朗峡谷观景台','古格王国遗址','札达','霞义沟','狮泉河','革吉','物玛措','改则','雀登村（大地之树、洞措）','措勤','扎日南木措','文布南村（当惹雍错）','尼玛','色林措','班戈','纳木措','拉萨','贡嘎机场'],
+    warning: 'D1—D10 地图纯驾驶时间合计约 77 小时 12 分，未包含游览、检查站、加油与临时管制。10 月 6 日留在拉萨市区游玩，10 月 7 日按 10:55 航班返程。',
+    itineraryNote: '路线内容根据小红书调整；D1—D10 里程与时间由高德地图截图逐段相加，实际用时随路况变化。',
+    stops: ['拉萨','鲁日拉观景台','卡若拉冰川','康马','西林观景台','加乌拉山口','巴松村','珠峰大本营','珠峰古堡遗址','佩枯措','萨嘎','玛旁雍措','拉昂措','普兰','玛朗峡谷观景台','古格王国遗址','札达','霞义沟','狮泉河','革吉','物玛措','改则','雀登村（大地之树、洞措）','措勤','扎日南木措','文布南村（当惹雍错）','尼玛','色林措','班戈','纳木措','拉萨'],
     daysList: [
-      {day:'D1', date:'09.26', route:'拉萨市 → 康马县', highlights:'鲁日拉观景台、卡若拉冰川景区售票处。', distance:'442.1 km / 8小时43分', stay:'康马县'},
+      {day:'D0', date:'09.25', route:'杭州 → 拉萨', highlights:'16:30 抵达拉萨，取车并办理入住。', distance:'飞机', stay:'拉萨市', type:'transit'},
+      {day:'D1', date:'09.26', route:'拉萨市 → 康马县', highlights:'鲁日拉观景台、卡若拉冰川景区售票处。', distance:'442.1 km / 8小时43分', stay:'康马县（备选：日喀则市）'},
       {day:'D2', date:'09.27', route:'康马县 → 巴松村', highlights:'西林观景台、加乌拉山口观景平台。', distance:'476.6 km / 8小时17分', stay:'巴松村'},
       {day:'D3', date:'09.28', route:'巴松村 → 萨嘎县', highlights:'珠峰大本营、珠峰古堡遗址、佩枯措希峰观景台。', distance:'421.7 km / 8小时19分', stay:'萨嘎县'},
-      {day:'D4', date:'09.29', route:'萨嘎县 → 普兰县', highlights:'玛旁雍措观景点、拉昂措观景台。', distance:'559.5 km / 8小时22分', stay:'普兰县'},
+      {day:'D4', date:'09.29', route:'萨嘎县 → 普兰县', highlights:'玛旁雍措观景点、拉昂措观景台。', distance:'559.5 km / 8小时22分', stay:'普兰县（备选：塔尔钦）'},
       {day:'D5', date:'09.30', route:'普兰县 → 札达县', highlights:'玛朗峡谷观景台、古格王国遗址。', distance:'398.3 km / 7小时05分', stay:'札达县'},
       {day:'D6', date:'10.01', route:'札达县 → 革吉县', highlights:'霞义沟土林景区、狮泉河镇；住宿点为维也纳酒店阿里革吉店。', distance:'357.4 km / 6小时', stay:'革吉县'},
       {day:'D7', date:'10.02', route:'革吉县 → 措勤县', highlights:'物玛措、改则县、雀登村（大地之树、洞措）。', distance:'621.3 km / 8小时18分', stay:'措勤县'},
       {day:'D8', date:'10.03', route:'措勤县 → 文布南村', highlights:'扎日南木措北岸观景台、文布南村（当惹雍错）；尼玛县可作为备选住宿地。', distance:'265.6 km / 6小时30分', stay:'文布南村（备选：尼玛县）'},
       {day:'D9', date:'10.04', route:'文布南村 → 班戈县', highlights:'尼玛县、色林措。', distance:'491.3 km / 7小时08分', stay:'班戈县'},
       {day:'D10', date:'10.05', route:'班戈县 → 拉萨市', highlights:'纳木措自然保护区、圣象天门。', distance:'445.6 km / 8小时30分', stay:'拉萨市'},
-      {day:'D11', date:'10.06', route:'拉萨市 → 贡嘎县', highlights:'布达拉宫、拉萨贡嘎国际机场 T3 航站楼。', distance:'57.5 km / 50分', stay:'按实际航班日期调整', type:'transit'}
+      {day:'D11', date:'10.06', route:'拉萨市区游玩', highlights:'布达拉宫、大昭寺、八廓街；还车并整理行李。', distance:'0 km', stay:'拉萨市', type:'buffer'},
+      {day:'D12', date:'10.07', route:'拉萨 → 杭州', highlights:'10:55 航班，预留充足时间前往贡嘎机场。', distance:'飞机', stay:'—', type:'transit'}
     ]
   },
   south: {
-    letter: 'C', name: '大北线避高版', tag: '详细方案', color: '#41675c',
-    subtitle: '用普兰、札达等相对低海拔住宿点缓冲，再从狮泉河进入羌塘大北线。',
-    recommendation: '景点最全，住宿策略最细', days: 10, km: '约 4,000 km', maxAlt: '约 5,200 m', buffer: '1 整天',
+    letter: 'C', name: '阿里北线', tag: '小红书整理', color: '#41675c',
+    subtitle: '内容根据小红书路线调整，用普兰、札达等相对低海拔住宿点缓冲后进入羌塘。',
+    recommendation: '景点最全，住宿策略最细', days: 10, km: '约 4,000 km', maxAlt: '约 5,200 m', buffer: '1 天拉萨市区',
     fit: ['想覆盖古格、狮泉河与大北线', '愿意连续长途驾驶', '会根据高反主动删减行程'],
     warning: 'Day 1 在抵达后不足 24 小时即开始长途并升至日喀则，不符合循序渐进原则；且“拉萨—日喀则 630 km”明显需要导航复核。若抵达当晚睡眠或血氧异常，应留在拉萨，不能硬赶。',
-    itineraryNote: '里程、房价与住宿为用户方案原始信息；明显存在疑问的项目已加“导航/临行复核”提示。',
+    itineraryNote: '路线内容根据小红书调整；里程、房价与住宿为原始记录，疑问项目已加“导航/临行复核”提示。',
     stops: ['拉萨','羊卓雍措','卡若拉冰川','满拉水库','日喀则','定日','珠峰大本营','希夏邦马峰','佩枯措','萨嘎','玛旁雍措','拉昂措','普兰','札达','霞义沟','狮泉河','改则','尼玛','当惹雍措','色林措','班戈','纳木措','拉萨'],
     daysList: [
-      {day:'D0', date:'09.25', route:'杭州 → 拉萨', highlights:'16:30 抵达；布达拉宫、大昭寺、八廓街按体力择一。', distance:'飞机', stay:'拉萨市政府亚朵 · 约 ¥393/晚', alt:'约 3,650 m', strategy:'抵达后不剧烈运动、不饮酒。', type:'transit'},
+      {day:'D0', date:'09.25', route:'杭州 → 拉萨', highlights:'16:30 抵达，取车并办理入住。', distance:'飞机', stay:'拉萨市政府亚朵 · 约 ¥393/晚', alt:'约 3,650 m', strategy:'抵达后不剧烈运动、不饮酒。', type:'transit'},
       {day:'D1', date:'09.26', route:'拉萨 → 羊卓雍措 → 卡若拉冰川 → 满拉水库 → 日喀则', highlights:'岗巴拉山口看羊湖，打卡卡若拉冰川。', distance:'用户记录约 630 km / 7h（导航复核）', stay:'日喀则；亚朵/全季/维也纳/丽枫等', alt:'约 3,860 m', strategy:'日喀则海拔高于拉萨、含氧量更低，不能视为更好适应；若有不适应留在拉萨。'},
       {day:'D2', date:'09.27', route:'日喀则 → 拉孜 → 嘉措拉山口 → 定日 → 珠峰巴松村', highlights:'撒隆达、挂经幡，远眺珠峰与日照金山。阴历十七，星空条件可能受月光影响。', distance:'约 340 km / 6.5h', stay:'巴松村维也纳 · 约 ¥400/晚', alt:'约 4,000–4,100 m', strategy:'不住绒布寺帐篷区；选择巴松村或乌江村降低夜间海拔。'},
       {day:'D3', date:'09.28', route:'珠峰 → 岗嘎古堡 → 希夏邦马峰 → 佩枯措 → 萨嘎', highlights:'岗嘎古堡遗迹、希夏邦马峰、佩枯措。', distance:'约 330 km / 6h', stay:'萨嘎', alt:'约 4,500 m', strategy:'吉隆镇虽低至约 2,805 m，但往返约多 4 小时；本方案放弃绕行。'},
@@ -43,7 +45,7 @@ const ROUTES = {
       {day:'D8', date:'10.03', route:'改则 → 当惹雍措 → 尼玛', highlights:'苯教圣湖当惹雍措。', distance:'约 280 km / 6h', stay:'尼玛县或文布南村', alt:'约 4,300–4,500 m', strategy:'住宿海拔仍高，提前电话确认供氧与医疗条件。'},
       {day:'D9', date:'10.04', route:'尼玛 → 色林措 → 班戈 / 纳木措北岸', highlights:'中国第二大咸水湖色林措。', distance:'约 350 km / 6.5h', stay:'班戈或申措/纳木措北岸', alt:'约 4,600–4,700 m', strategy:'湖边水汽不等于含氧量更高；优先选择供氧、保暖和通信条件更可靠的住宿。'},
       {day:'D10', date:'10.05', route:'班戈 → 巴木措 → 纳木措环湖小段 → 那根拉山口 → 拉萨', highlights:'纳木措；圣象天门视当日开放、预约及路况决定。', distance:'约 387 km / 6h', stay:'拉萨', alt:'约 3,650 m', strategy:'必须回到拉萨，不在当雄过夜，以确保 10 月 7 日航班。'},
-      {day:'D11', date:'10.06', route:'拉萨休整一天', highlights:'还车、整理行李、应对前段延误。', distance:'0 km', stay:'拉萨', alt:'约 3,650 m', type:'buffer'},
+      {day:'D11', date:'10.06', route:'拉萨市区游玩', highlights:'布达拉宫、大昭寺、八廓街；还车并整理行李。', distance:'0 km', stay:'拉萨', alt:'约 3,650 m', type:'buffer'},
       {day:'D12', date:'10.07', route:'拉萨 → 杭州', highlights:'10:55 航班。', distance:'飞机', stay:'—', alt:'—', type:'transit'}
     ]
   }
@@ -146,22 +148,23 @@ function renderDays() {
   const r = ROUTES[activeId];
   document.querySelector('#itinerary-note').textContent = r.itineraryNote || '所有公里数均为规划估算，景区接驳和临时绕行不含在内。';
   dayGrid.style.setProperty('--route-color', r.color);
-  dayGrid.innerHTML = r.daysList.map((entry, i) => {
+  const rows = r.daysList.map((entry, i) => {
     const day = Array.isArray(entry) ? {
       day: `D${i + 1}`, date: entry[0], route: entry[1], highlights: entry[2], distance: entry[3]
     } : entry;
-    const details = [
-      day.distance && ['里程/时长', day.distance],
-      day.stay && ['住宿', day.stay],
-      day.alt && ['住宿海拔', day.alt]
-    ].filter(Boolean);
-    return `<article class="day-card ${esc(day.type || '')}">
-      <span class="date">${esc(day.date)}</span><span class="day-no">${esc(day.day || `D${i + 1}`)}</span>
-      <h3>${esc(day.route)}</h3><p>${esc(day.highlights || '')}</p>
-      ${details.length ? `<div class="detail-list">${details.map(([label, value]) => `<div><b>${esc(label)}</b><span>${esc(value)}</span></div>`).join('')}</div>` : ''}
-      ${day.strategy ? `<div class="strategy"><b>避高提示</b><br>${esc(day.strategy)}</div>` : ''}
-    </article>`;
+    const lodging = [day.stay, day.alt].filter(Boolean).join(' · ');
+    return `<tr class="${esc(day.type || '')}">
+      <td><span class="table-date">${esc(day.date)}</span><small>${esc(day.day || `D${i + 1}`)}</small></td>
+      <td><strong>${esc(day.route)}</strong></td>
+      <td>${esc(day.highlights || '—')}${day.strategy ? `<small class="table-note">提示：${esc(day.strategy)}</small>` : ''}</td>
+      <td class="nowrap">${esc(day.distance || '—')}</td>
+      <td>${esc(lodging || '—')}</td>
+    </tr>`;
   }).join('');
+  dayGrid.innerHTML = `<div class="itinerary-table-wrap"><table class="itinerary-table">
+    <thead><tr><th>日期</th><th>行程</th><th>途经 / 备注</th><th>里程 / 时长</th><th>住宿 / 海拔</th></tr></thead>
+    <tbody>${rows}</tbody>
+  </table></div>`;
 }
 
 function selectRoute(id) {
