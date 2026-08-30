@@ -80,8 +80,8 @@ main > section { padding: 90px max(5vw, 28px); }
 #day-grid { border-top: 4px solid var(--route-color); }
 .itinerary-table-wrap { overflow-x: auto; border: 1px solid var(--line); border-top: 0; }
 .itinerary-table { width: 100%; min-width: 920px; border-collapse: collapse; background: var(--cream); font-size: 13px; }
-.itinerary-table th { padding: 13px 15px; text-align: left; color: var(--muted); background: #f0ebdf; border-bottom: 1px solid var(--line); font-size: 11px; letter-spacing: .08em; white-space: nowrap; }
-.itinerary-table td { padding: 14px 15px; border-bottom: 1px solid var(--line); vertical-align: top; color: var(--muted); line-height: 1.55; }
+.itinerary-table th { padding: 13px 15px; text-align: left; vertical-align: middle; color: var(--muted); background: #f0ebdf; border-bottom: 1px solid var(--line); font-size: 11px; letter-spacing: .08em; white-space: nowrap; }
+.itinerary-table td { padding: 14px 15px; border-bottom: 1px solid var(--line); vertical-align: middle; color: var(--muted); line-height: 1.55; }
 .itinerary-table tbody tr:last-child td { border-bottom: 0; }
 .itinerary-table tbody tr:hover td { background: rgba(244,201,93,.08); }
 .itinerary-table tr.transit td { background: #f1ead9; }
@@ -92,20 +92,22 @@ main > section { padding: 90px max(5vw, 28px); }
 .itinerary-table .table-note { margin-top: 5px; color: var(--green); }
 .itinerary-table .nowrap { white-space: nowrap; color: var(--ink); }
 
-.compare { background: var(--ink); color: var(--cream); }
-.section-head.light .section-no { color: var(--yellow); }
-.compare-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 34px; }
-.compare-grid article { border-top: 1px solid rgba(255,255,255,.25); padding-top: 22px; }
-.compare-grid span { color: var(--yellow); font: 600 46px/1 "Songti SC", serif; }
-.compare-grid h3 { font-size: 20px; }
-.compare-grid p { color: rgba(255,250,240,.62); line-height: 1.7; }
-.check-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 34px; }
-.check-grid article { border-top: 1px solid var(--line); padding-top: 18px; }
-.check-grid b { color: var(--orange); font-size: 13px; }
-.check-grid p { color: var(--muted); line-height: 1.7; }
-.source-row { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 42px; }
-.source-row a { color: var(--ink); text-decoration: none; padding: 10px 14px; border: 1px solid var(--line); border-radius: 999px; font-size: 12px; }
-.source-row a:hover { border-color: var(--orange); color: var(--orange); }
+.hotels { background: #e9e5da; }
+#hotel-grid { border-top: 4px solid var(--orange); }
+.hotel-table-wrap { overflow-x: auto; border: 1px solid var(--line); border-top: 0; background: var(--cream); }
+.hotel-table { width: 100%; min-width: 1680px; border-collapse: collapse; background: var(--cream); font-size: 12px; }
+.hotel-table th { padding: 13px 12px; text-align: left; vertical-align: middle; color: var(--muted); background: #f0ebdf; border-bottom: 1px solid var(--line); font-size: 11px; letter-spacing: .06em; white-space: nowrap; }
+.hotel-table td { padding: 13px 12px; border-bottom: 1px solid var(--line); vertical-align: middle; color: var(--muted); line-height: 1.55; }
+.hotel-table tbody tr:last-child td { border-bottom: 0; }
+.hotel-table tbody tr:hover td { background: rgba(244,201,93,.08); }
+.hotel-table strong { color: var(--ink); }
+.hotel-table small { display: block; margin-top: 3px; color: var(--muted); }
+.hotel-table .nowrap { white-space: nowrap; }
+.hotel-table .hotel-date { vertical-align: middle; background: #f5efe2; }
+.hotel-table .hotel-name { min-width: 220px; }
+.hotel-table .hotel-backup { color: #2f6fb2; font-weight: 700; }
+.hotel-table .hotel-alert { color: #c73522; font-weight: 800; }
+
 footer { display: flex; justify-content: space-between; gap: 20px; padding: 30px max(5vw, 28px); background: #0a201f; color: rgba(255,255,255,.52); font-size: 11px; letter-spacing: .12em; }
 
 dialog { width: min(560px, calc(100vw - 32px)); border: 0; padding: 34px; color: var(--ink); background: var(--cream); box-shadow: 0 30px 80px rgba(0,0,0,.28); }
@@ -120,11 +122,10 @@ dialog input { display: block; width: 100%; margin-top: 8px; border: 1px solid v
 .form-error { min-height: 20px; color: #a73324; font-size: 12px; }
 
 @media (max-width: 980px) {
-  .route-tabs, .compare-grid { grid-template-columns: 1fr; }
+  .route-tabs { grid-template-columns: 1fr; }
   .trip-frame { grid-template-columns: 1fr 1fr; }
   .map-shell { grid-template-columns: 1fr; }
   .route-summary { max-height: none; }
-  .check-grid { grid-template-columns: repeat(2, 1fr); }
   .contour { right: -430px; }
 }
 @media (max-width: 620px) {
@@ -132,10 +133,10 @@ dialog input { display: block; width: 100%; margin-top: 8px; border: 1px solid v
   .hero-copy { padding-top: 70px; }
   .topbar { height: 74px; }
   .section-head { align-items: start; flex-direction: column; }
-  .check-grid { grid-template-columns: 1fr; }
   .trip-frame { grid-template-columns: 1fr; }
   .trip-frame div { min-height: 76px; }
   .itinerary-table { min-width: 780px; }
+  .hotel-table { min-width: 1560px; }
   .map-actions button:first-child { display: none; }
   footer { flex-direction: column; }
 }
@@ -143,7 +144,7 @@ dialog input { display: block; width: 100%; margin-top: 8px; border: 1px solid v
 @media print {
   .hero { min-height: 0; padding-bottom: 28px; }
   .hero-copy { padding: 35px 0; }
-  .topbar, .route-tabs, .map-toolbar, .compare, .checklist, footer { display: none !important; }
+  .topbar, .route-tabs, .map-toolbar, footer { display: none !important; }
   main > section { padding: 24px; }
   .chooser { padding-bottom: 0; }
   .chooser .section-head { margin-bottom: 0; }
@@ -152,4 +153,7 @@ dialog input { display: block; width: 100%; margin-top: 8px; border: 1px solid v
   .itinerary-table-wrap { overflow: visible; }
   .itinerary-table { min-width: 0; font-size: 10px; }
   .itinerary-table th, .itinerary-table td { padding: 7px 8px; }
+  .hotel-table-wrap { overflow: visible; }
+  .hotel-table { min-width: 0; font-size: 7px; }
+  .hotel-table th, .hotel-table td { padding: 4px; }
 }
