@@ -105,8 +105,8 @@ main > section { padding: 90px max(5vw, 28px); }
 .hotel-table .nowrap { white-space: nowrap; }
 .hotel-table .hotel-date { vertical-align: middle; background: #f5efe2; }
 .hotel-table .hotel-name { min-width: 220px; }
-.hotel-table .hotel-backup { color: #2f6fb2; font-weight: 700; }
-.hotel-table .hotel-alert { color: #c73522; font-weight: 800; }
+.hotel-table .hotel-backup { color: #046ffb; font-weight: 700; }
+.hotel-table .hotel-alert { color: #ff1e00; font-weight: 800; }
 
 footer { display: flex; justify-content: space-between; gap: 20px; padding: 30px max(5vw, 28px); background: #0a201f; color: rgba(255,255,255,.52); font-size: 11px; letter-spacing: .12em; }
 

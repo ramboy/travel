@@ -58,6 +58,7 @@ const HOTEL_OPTIONS = [
   {checkin:'09.26', span:'1晚 · 2间', place:'江孜县（备选）', hotel:'艾扉富氧酒店（江孜宗山古堡店）', price:'¥221', room:'艾扉高级双床房', cancel:'入住当日 18:00 前', area:'30 m²', bed:'2张 1.3 m 单人床', oxygen:'弥漫式供氧', breakfast:'无'},
   {checkin:'09.26', span:'1晚 · 2间', place:'日喀则市（备选）', hotel:'兰欧国际酒店（日喀则汽车总站贡觉林卡店）', price:'¥414\n¥374.22', room:'智能豪华双床房\n智能豪华大床房', cancel:'入住当日 18:00 前', area:'32 m²\n30 m²', bed:'2张 1.2 m 单人床\n1张 1.8 m 大床', oxygen:'鼻吸 + 弥散供氧', breakfast:'每间2份，共4份'},
   {checkin:'09.27', span:'1晚 · 2间', place:'巴松村', hotel:'维也纳酒店（珠峰路巴松村店）', price:'¥370.36', room:'供氧豪华双床房', cancel:'09.26 12:00 前', area:'25–28 m²', bed:'2张 1.2 m 单人床', oxygen:'供氧设备（方式未注明）', breakfast:'1份/间，共2份'},
+  {checkin:'09.27', span:'1晚 · 2间', place:'拉孜县（备选）', hotel:'S设计师酒店', price:'¥423', room:'高级双床房', cancel:'入住当日 23:59 前', area:'35 m²', bed:'2张 1.5 m 双人床', oxygen:'弥散式供氧', breakfast:'2份/间，共4份'},
   {checkin:'09.28', span:'1晚 · 2间', place:'萨嘎县', hotel:'如家酒店（萨嘎店）', price:'¥899.50', room:'高级双床房', cancel:'入住当日 18:00 前', area:'25–30 m²', bed:'2张 1.2 m 单人床', oxygen:'弥散式供氧', breakfast:'2份/间，共4份'},
   {checkin:'09.28', span:'1晚 · 2间', place:'萨嘎县（备选）', hotel:'星辰富氧酒店（萨嘎店）', price:'¥861\n¥877', room:'舒适双床房\n豪华大床房', cancel:'入住当日 18:00 前', area:'28 m²', bed:'2张 1.51 m 大床\n1张 1.8 m 大床', oxygen:'弥散 + 鼻吸供氧', breakfast:'每间2份，共4份'},
   {checkin:'09.29', span:'1晚 · 2间', place:'塔尔钦', hotel:'西遇秘境国际大酒店', price:'¥1,226.50', room:'纳木那尼投影标间', cancel:'09.29 20:00 前', area:'26–28 m²', bed:'2张 1.35 m 双人床', oxygen:'全天供氧', breakfast:'2份/间，共4份'},
@@ -65,7 +66,7 @@ const HOTEL_OPTIONS = [
   {checkin:'09.30', span:'1晚 · 2间', place:'札达县', hotel:'环藏酒店', price:'¥636', room:'双床房', cancel:'入住当日 20:00 前', area:'25 m²', bed:'2张 1.1 m 单人床', oxygen:'弥散式供氧', breakfast:'无'},
   {checkin:'10.01', span:'1晚 · 2间', place:'革吉县', hotel:'维也纳酒店（阿里革吉店）', price:'¥513', room:'高级双床房', cancel:'09.30 12:00 前', area:'32–38 m²', bed:'2张 1.35 m 双人床', oxygen:'弥散式供氧', breakfast:'2份/间，共4份'},
   {checkin:'10.02', span:'1晚 · 2间', place:'措勤县', hotel:'汉庭酒店（阿里措勤店）', price:'¥935.28', room:'供氧双床房', cancel:'入住当日 18:00 前', area:'30–35 m²', bed:'2张 1.35 m 双人床', oxygen:'弥散式供氧', breakfast:'无'},
-  {checkin:'10.03', span:'1晚 · 2间', place:'尼玛县', hotel:'尚客优酒店（那曲尼玛县政府客运站店）', price:'¥454', room:'尊享休闲家庭房', cancel:'入住当日 18:00 前', area:'45 m²', bed:'1张 1.2 m 单人床 + 1张 1.8 m 大床', oxygen:'弥散式供氧', breakfast:'无'},
+  {checkin:'10.03', span:'1晚 · 2间', place:'尼玛县', hotel:'尚客优酒店（那曲尼玛县政府客运站店）', price:'¥454', room:'尊享休闲家庭房', cancel:'入住当日 18:00 前', area:'45 m²', bed:'1张 1.2 m 单人床\n1张 1.8 m 大床', oxygen:'弥散式供氧', breakfast:'无'},
   {checkin:'10.03', span:'1晚 · 2间', place:'文布南村（备选）', hotel:'尼玛五龙宾馆', price:'¥500', room:'供氧舒适标准间', cancel:'10.01 23:59 前', area:'18 m²', bed:'2张 1.35 m 双人床', oxygen:'供氧（方式未注明）', breakfast:'无'},
   {checkin:'10.04', span:'1晚 · 2间', place:'班戈县', hotel:'华庭酒店（那曲班戈店）', price:'¥770', room:'特惠双床房', cancel:'入住当日 18:00 前', area:'25 m²', bed:'2张 1.35 m 双人床', oxygen:'供氧（方式未注明）', breakfast:'无'},
   {checkin:'10.05\n10.06', span:'2晚 · 2间', place:'拉萨市', hotel:'拉萨布达拉宫逸扉酒店', price:'¥685.97', room:'豪华双床房', cancel:'入住当日 18:00 前', area:'35–40 m²', bed:'2张 1.35 m 双人床', oxygen:'弥散式供氧', breakfast:'未含，可前台加购'}
