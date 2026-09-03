@@ -51,6 +51,37 @@ const ROUTES = {
   }
 };
 
+const ALTITUDE_PROFILES = {
+  classic: [
+    {day:'D0', date:'09.25', points:[{name:'拉萨', alt:3650, stay:true}]},
+    {day:'D1', date:'09.26', points:[{name:'鲁日拉观景台', alt:5000}, {name:'卡若拉冰川', alt:5020}, {name:'康马', alt:4300, stay:true}]},
+    {day:'D2', date:'09.27', points:[{name:'西林观景台', alt:4590}, {name:'加乌拉山口', alt:5198}, {name:'巴松村', alt:4200, stay:true}]},
+    {day:'D3', date:'09.28', points:[{name:'珠峰大本营', alt:5200}, {name:'珠峰古堡遗址', alt:4300}, {name:'佩枯措', alt:4590}, {name:'萨嘎', alt:4500, stay:true}]},
+    {day:'D4', date:'09.29', points:[{name:'玛旁雍措', alt:4590}, {name:'拉昂措', alt:4570}, {name:'塔尔钦', alt:4675, stay:true}]},
+    {day:'D5', date:'09.30', points:[{name:'普兰', alt:3900}, {name:'玛朗峡谷', alt:4900}, {name:'古格遗址', alt:3700}, {name:'札达', alt:3750, stay:true}]},
+    {day:'D6', date:'10.01', points:[{name:'霞义沟', alt:4400}, {name:'狮泉河', alt:4250}, {name:'革吉', alt:4500, stay:true}]},
+    {day:'D7', date:'10.02', points:[{name:'物玛措', alt:4600}, {name:'改则', alt:4420}, {name:'雀登村', alt:4600}, {name:'措勤', alt:4660, stay:true}]},
+    {day:'D8', date:'10.03', points:[{name:'扎日南木措', alt:4615}, {name:'文布南村', alt:4650, stay:true}]},
+    {day:'D9', date:'10.04', points:[{name:'尼玛', alt:4530}, {name:'色林措', alt:4530}, {name:'班戈', alt:4750, stay:true}]},
+    {day:'D10', date:'10.05', points:[{name:'纳木措', alt:4718}, {name:'拉萨', alt:3650, stay:true}]},
+    {day:'D11', date:'10.06', points:[{name:'拉萨市区', alt:3650, stay:true}]}
+  ],
+  south: [
+    {day:'D0', date:'09.25', points:[{name:'拉萨', alt:3650, stay:true}]},
+    {day:'D1', date:'09.26', points:[{name:'羊卓雍措', alt:4440}, {name:'卡若拉冰川', alt:5020}, {name:'满拉水库', alt:4200}, {name:'日喀则', alt:3840, stay:true}]},
+    {day:'D2', date:'09.27', points:[{name:'拉孜', alt:4050}, {name:'加乌拉山口', alt:5198}, {name:'定日', alt:4300}, {name:'巴松村', alt:4200, stay:true}]},
+    {day:'D3', date:'09.28', points:[{name:'珠峰大本营', alt:5200}, {name:'希夏邦马观景点', alt:5000}, {name:'佩枯措', alt:4590}, {name:'萨嘎', alt:4500, stay:true}]},
+    {day:'D4', date:'09.29', points:[{name:'公珠措', alt:4786}, {name:'玛旁雍措', alt:4590}, {name:'拉昂措', alt:4570}, {name:'普兰', alt:3900, stay:true}]},
+    {day:'D5', date:'09.30', points:[{name:'札达土林', alt:4000}, {name:'古格遗址', alt:3700}, {name:'札达', alt:3750, stay:true}]},
+    {day:'D6', date:'10.01', points:[{name:'霞义沟', alt:4400}, {name:'阿里暗夜公园', alt:4300}, {name:'狮泉河', alt:4250, stay:true}]},
+    {day:'D7', date:'10.02', points:[{name:'洞措', alt:4390}, {name:'邦巴措', alt:4600}, {name:'改则', alt:4420, stay:true}]},
+    {day:'D8', date:'10.03', points:[{name:'当惹雍措', alt:4540}, {name:'尼玛', alt:4530, stay:true}]},
+    {day:'D9', date:'10.04', points:[{name:'色林措', alt:4530}, {name:'班戈', alt:4750, stay:true}]},
+    {day:'D10', date:'10.05', points:[{name:'巴木措', alt:4555}, {name:'纳木措', alt:4718}, {name:'那根拉山口', alt:5190}, {name:'拉萨', alt:3650, stay:true}]},
+    {day:'D11', date:'10.06', points:[{name:'拉萨市区', alt:3650, stay:true}]}
+  ]
+};
+
 const HOTEL_OPTIONS = [
   {checkin:'09.25', span:'1晚 · 2间', place:'拉萨市', hotel:'亚朵酒店（拉萨万达广场市政府店）', price:'¥500.85\n¥456.44', room:'高级双床房\n高级大床房', cancel:'入住当日 12:00 前', area:'27 m²', bed:'2张 1.2 m 单人床\n1张 2 m 特大床', oxygen:'弥散供氧 + 鼻吸', breakfast:'每间2份，共4份'},
   {checkin:'09.25', span:'1晚 · 2间', place:'拉萨机场（备选）', hotel:'维也纳国际酒店（拉萨贡嘎机场店）', price:'¥387', room:'豪华景观双床房', cancel:'09.24 12:00 前', area:'30 m²', bed:'2张 1.35 m 双人床', oxygen:'供氧（方式未注明）', breakfast:'共4份'},
@@ -97,6 +128,7 @@ let amapOverlays = [];
 const tabs = document.querySelector('#route-tabs');
 const summary = document.querySelector('#route-summary');
 const dayGrid = document.querySelector('#day-grid');
+const altitudePoster = document.querySelector('#altitude-poster');
 const hotelGrid = document.querySelector('#hotel-grid');
 const schematic = document.querySelector('#schematic-map');
 const amapContainer = document.querySelector('#amap-container');
@@ -189,6 +221,78 @@ function renderDays() {
   </table></div>`;
 }
 
+function renderAltitudeProfile() {
+  const r = ROUTES[activeId];
+  const groups = ALTITUDE_PROFILES[activeId];
+  const points = groups.flatMap((group, groupIndex) => group.points.map(point => ({...point, date:group.date, day:group.day, groupIndex})));
+  const width = Math.max(1680, points.length * 74 + 150);
+  const height = 690;
+  const left = 74;
+  const right = 42;
+  const plotTop = 150;
+  const plotBottom = 470;
+  const labelY = 505;
+  const minAlt = 3400;
+  const maxAlt = 5400;
+  const plotWidth = width - left - right;
+  const x = index => left + (points.length === 1 ? plotWidth / 2 : index * plotWidth / (points.length - 1));
+  const y = altitude => plotBottom - (altitude - minAlt) / (maxAlt - minAlt) * (plotBottom - plotTop);
+  const coords = points.map((point, index) => [x(index), y(point.alt)]);
+  const line = coords.map(([px, py], index) => `${index ? 'L' : 'M'} ${px.toFixed(1)} ${py.toFixed(1)}`).join(' ');
+  const area = `${line} L ${coords.at(-1)[0].toFixed(1)} ${plotBottom} L ${coords[0][0].toFixed(1)} ${plotBottom} Z`;
+  const ticks = [3500, 4000, 4500, 5000];
+  const grid = ticks.map(tick => `<g class="altitude-grid-line"><line x1="${left}" y1="${y(tick)}" x2="${width - right}" y2="${y(tick)}"/><text x="${left - 14}" y="${y(tick) + 4}" text-anchor="end">${tick.toLocaleString()} m</text></g>`).join('');
+  let offset = 0;
+  const dateBands = groups.map((group, index) => {
+    const startIndex = offset;
+    const endIndex = offset + group.points.length - 1;
+    offset += group.points.length;
+    const bandStart = startIndex === 0 ? left : (x(startIndex - 1) + x(startIndex)) / 2;
+    const bandEnd = endIndex === points.length - 1 ? width - right : (x(endIndex) + x(endIndex + 1)) / 2;
+    return `<g class="altitude-date-band ${index % 2 ? 'is-even' : ''}">
+      <rect x="${bandStart.toFixed(1)}" y="112" width="${(bandEnd - bandStart).toFixed(1)}" height="${plotBottom - 112}"/>
+      <line x1="${bandStart.toFixed(1)}" y1="112" x2="${bandStart.toFixed(1)}" y2="${plotBottom}"/>
+      <text x="${((bandStart + bandEnd) / 2).toFixed(1)}" y="132" text-anchor="middle"><tspan>${esc(group.date)}</tspan><tspan class="altitude-day"> · ${esc(group.day)}</tspan></text>
+    </g>`;
+  }).join('');
+  const markers = points.map((point, index) => {
+    const [px, py] = coords[index];
+    return `<g class="altitude-marker ${point.stay ? 'is-stay' : ''}">
+      <title>${esc(point.date)} ${esc(point.name)}，约 ${point.alt.toLocaleString()} 米${point.stay ? '，住宿点' : ''}</title>
+      <line class="altitude-stem" x1="${px}" y1="${py}" x2="${px}" y2="${plotBottom}"/>
+      <circle cx="${px}" cy="${py}" r="${point.stay ? 8 : 5}"/>
+      ${point.stay ? `<text class="stay-badge" x="${px}" y="${py + 3}" text-anchor="middle">住</text>` : ''}
+      <text class="altitude-value" x="${px}" y="${py - 13}" text-anchor="middle">${point.alt.toLocaleString()}</text>
+      <text class="altitude-place" transform="translate(${px + 2} ${labelY}) rotate(52)" text-anchor="start">${esc(point.name)}</text>
+    </g>`;
+  }).join('');
+  const highest = points.reduce((best, point) => point.alt > best.alt ? point : best, points[0]);
+  const lowest = points.reduce((best, point) => point.alt < best.alt ? point : best, points[0]);
+  const stays = points.filter(point => point.stay).length;
+  const gradientId = `altitude-fill-${activeId}`;
+  altitudePoster.style.setProperty('--profile-color', r.color);
+  altitudePoster.innerHTML = `<article class="altitude-card">
+    <header class="altitude-poster-head">
+      <div><span class="altitude-kicker">ELEVATION PROFILE · ${esc(r.letter)}</span><h3>${esc(r.name)}海拔曲线</h3><p>按每日行车顺序串联主要途经点；实心“住”为当晚住宿点。</p></div>
+      <dl><div><dt>最高点</dt><dd>${highest.alt.toLocaleString()} m</dd><small>${esc(highest.name)}</small></div><div><dt>最低点</dt><dd>${lowest.alt.toLocaleString()} m</dd><small>${esc(lowest.name)}</small></div><div><dt>住宿节点</dt><dd>${stays}</dd><small>09.25—10.06</small></div></dl>
+    </header>
+    <div class="altitude-chart-scroll" tabindex="0" aria-label="可横向滚动查看完整海拔曲线">
+      <svg class="altitude-svg" viewBox="0 0 ${width} ${height}" style="min-width:${width}px" role="img" aria-labelledby="altitude-svg-title altitude-svg-desc">
+        <title id="altitude-svg-title">${esc(r.name)}逐日海拔曲线</title>
+        <desc id="altitude-svg-desc">从 9 月 25 日拉萨开始，按日期展示主要途经点和住宿点的近似海拔。</desc>
+        <defs><linearGradient id="${gradientId}" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="${r.color}" stop-opacity=".30"/><stop offset="1" stop-color="${r.color}" stop-opacity=".03"/></linearGradient></defs>
+        <rect class="altitude-warning-zone" x="${left}" y="${plotTop}" width="${plotWidth}" height="${y(5000) - plotTop}"/>
+        ${dateBands}${grid}
+        <path class="altitude-area" d="${area}" fill="url(#${gradientId})"/>
+        <path class="altitude-line" d="${line}"/>
+        ${markers}
+        <text class="altitude-axis-note" x="${left}" y="${height - 24}">横轴按路线节点顺序排列，不代表等距离；海拔为路线坐标附近近似值。</text>
+      </svg>
+    </div>
+    <footer class="altitude-legend"><span><i class="legend-route"></i>途经点</span><span><i class="legend-stay">住</i>住宿点</span><span><i class="legend-high"></i>5,000 m 以上</span></footer>
+  </article>`;
+}
+
 function renderHotels() {
   const lines = value => esc(value).replace(/\n/g, '<br>');
   const dateCounts = HOTEL_OPTIONS.reduce((counts, hotel) => {
@@ -227,7 +331,7 @@ function renderHotels() {
 function selectRoute(id) {
   activeId = id;
   history.replaceState({}, '', `?route=${id}`);
-  renderTabs(); renderSummary(); renderSchematic(); renderDays();
+  renderTabs(); renderSummary(); renderSchematic(); renderDays(); renderAltitudeProfile();
   if (amap) renderAmapRoute();
 }
 
@@ -285,4 +389,4 @@ document.querySelector('#settings-form').addEventListener('submit', async event 
   } catch (e) { error.textContent = `加载失败：${e.message || e}`; }
 });
 
-renderTabs(); renderSummary(); renderSchematic(); renderDays(); renderHotels();
+renderTabs(); renderSummary(); renderSchematic(); renderDays(); renderAltitudeProfile(); renderHotels();

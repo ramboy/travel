@@ -92,6 +92,45 @@ main > section { padding: 90px max(5vw, 28px); }
 .itinerary-table .table-note { margin-top: 5px; color: var(--green); }
 .itinerary-table .nowrap { white-space: nowrap; color: var(--ink); }
 
+.altitude { background: #e9e5da; }
+.altitude-card { overflow: hidden; border: 1px solid var(--line); background: var(--cream); box-shadow: var(--shadow); }
+.altitude-poster-head { display: flex; justify-content: space-between; gap: 50px; padding: 32px 36px; color: var(--cream); background: var(--ink); }
+.altitude-kicker { color: var(--yellow); font-size: 11px; font-weight: 800; letter-spacing: .16em; }
+.altitude-poster-head h3 { margin: 10px 0 6px; font: 600 34px/1.1 "Songti SC", STSong, serif; }
+.altitude-poster-head p { margin: 0; color: rgba(255,250,240,.64); font-size: 13px; }
+.altitude-poster-head dl { display: grid; grid-template-columns: repeat(3, minmax(108px, 1fr)); gap: 26px; margin: 0; min-width: 390px; }
+.altitude-poster-head dl div { border-left: 1px solid rgba(255,255,255,.2); padding-left: 18px; }
+.altitude-poster-head dt { color: rgba(255,250,240,.55); font-size: 11px; }
+.altitude-poster-head dd { margin: 5px 0 1px; color: var(--yellow); font-size: 22px; font-weight: 800; }
+.altitude-poster-head small { color: rgba(255,250,240,.7); font-size: 10px; }
+.altitude-chart-scroll { overflow-x: auto; scrollbar-color: var(--profile-color) #e8e1d3; }
+.altitude-chart-scroll:focus-visible { outline: 3px solid var(--profile-color); outline-offset: -3px; }
+.altitude-svg { display: block; width: 100%; height: auto; background: var(--cream); font-family: Inter, "PingFang SC", "Microsoft YaHei", sans-serif; }
+.altitude-date-band rect { fill: rgba(19,44,43,.018); }
+.altitude-date-band.is-even rect { fill: rgba(19,44,43,.05); }
+.altitude-date-band line { stroke: rgba(19,44,43,.12); stroke-dasharray: 3 5; }
+.altitude-date-band text { fill: var(--ink); font-size: 13px; font-weight: 800; letter-spacing: .04em; }
+.altitude-date-band .altitude-day { fill: var(--muted); font-size: 10px; }
+.altitude-warning-zone { fill: rgba(241,96,58,.08); }
+.altitude-grid-line line { stroke: rgba(19,44,43,.14); stroke-dasharray: 4 7; }
+.altitude-grid-line text { fill: var(--muted); font-size: 10px; }
+.altitude-area { pointer-events: none; }
+.altitude-line { fill: none; stroke: var(--profile-color); stroke-width: 5; stroke-linecap: round; stroke-linejoin: round; filter: drop-shadow(0 4px 5px rgba(19,44,43,.14)); }
+.altitude-stem { stroke: rgba(19,44,43,.12); stroke-width: 1; }
+.altitude-marker circle { fill: var(--cream); stroke: var(--profile-color); stroke-width: 4; }
+.altitude-marker.is-stay circle { fill: var(--yellow); stroke: var(--ink); stroke-width: 3; }
+.altitude-marker .stay-badge { fill: var(--ink); font-size: 8px; font-weight: 900; pointer-events: none; }
+.altitude-value { fill: var(--ink); font-size: 10px; font-weight: 800; paint-order: stroke; stroke: var(--cream); stroke-width: 4px; stroke-linejoin: round; }
+.altitude-place { fill: var(--muted); font-size: 11px; font-weight: 700; }
+.altitude-marker.is-stay .altitude-place { fill: var(--ink); font-weight: 900; }
+.altitude-axis-note { fill: var(--muted); font-size: 10px; }
+.altitude-legend { display: flex; flex-wrap: wrap; gap: 22px; padding: 14px 36px; border-top: 1px solid var(--line); color: var(--muted); background: #f0ebdf; font-size: 11px; }
+.altitude-legend span { display: inline-flex; align-items: center; gap: 7px; }
+.altitude-legend i { display: inline-grid; place-items: center; width: 14px; height: 14px; font-style: normal; }
+.legend-route { border: 3px solid var(--profile-color); border-radius: 50%; background: var(--cream); }
+.legend-stay { border: 2px solid var(--ink); border-radius: 50%; color: var(--ink); background: var(--yellow); font-size: 7px; font-weight: 900; }
+.legend-high { background: rgba(241,96,58,.16); border: 1px solid rgba(241,96,58,.38); }
+
 .hotels { background: #e9e5da; }
 #hotel-grid { border-top: 4px solid var(--orange); }
 .hotel-table-wrap { overflow-x: auto; border: 1px solid var(--line); border-top: 0; background: var(--cream); }
@@ -126,6 +165,8 @@ dialog input { display: block; width: 100%; margin-top: 8px; border: 1px solid v
   .trip-frame { grid-template-columns: 1fr 1fr; }
   .map-shell { grid-template-columns: 1fr; }
   .route-summary { max-height: none; }
+  .altitude-poster-head { flex-direction: column; gap: 24px; }
+  .altitude-poster-head dl { min-width: 0; }
   .contour { right: -430px; }
 }
 @media (max-width: 620px) {
@@ -136,6 +177,12 @@ dialog input { display: block; width: 100%; margin-top: 8px; border: 1px solid v
   .trip-frame { grid-template-columns: 1fr; }
   .trip-frame div { min-height: 76px; }
   .itinerary-table { min-width: 780px; }
+  .altitude-poster-head { padding: 26px 22px; }
+  .altitude-poster-head dl { grid-template-columns: 1fr; gap: 12px; }
+  .altitude-poster-head dl div { display: grid; grid-template-columns: 90px 1fr; align-items: baseline; gap: 8px; }
+  .altitude-poster-head dd { margin: 0; }
+  .altitude-poster-head small { grid-column: 2; }
+  .altitude-legend { padding-inline: 22px; }
   .hotel-table { min-width: 1560px; }
   .map-actions button:first-child { display: none; }
   footer { flex-direction: column; }
@@ -153,6 +200,10 @@ dialog input { display: block; width: 100%; margin-top: 8px; border: 1px solid v
   .itinerary-table-wrap { overflow: visible; }
   .itinerary-table { min-width: 0; font-size: 10px; }
   .itinerary-table th, .itinerary-table td { padding: 7px 8px; }
+  .altitude-card { box-shadow: none; }
+  .altitude-poster-head { break-inside: avoid; }
+  .altitude-chart-scroll { overflow: visible; }
+  .altitude-svg { width: 100%; min-width: 0 !important; }
   .hotel-table-wrap { overflow: visible; }
   .hotel-table { min-width: 0; font-size: 7px; }
   .hotel-table th, .hotel-table td { padding: 4px; }
