@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="2026 年国庆杭州出发，拉萨落地自驾阿里大环线两方案对比图。">
+  <title>阿里大环线 · 2 份路线选择</title>
+  <link rel="preconnect" href="https://webapi.amap.com">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="hero">
+    <nav class="topbar">
+      <div class="brand"><span>31°N</span> 西藏自驾图册</div>
+      <button class="ghost" id="amap-settings" type="button">高德底图设置</button>
+    </nav>
+    <div class="hero-copy">
+      <p class="eyebrow">HANGZHOU → LHASA · 2026.09.25—10.07</p>
+      <h1>十三天，选一条<br><em>属于你的阿里。</em></h1>
+      <p class="lede">9 月 25 日乘西藏航空 TV9950 抵达拉萨并取车；阿里中北线与阿里北线均根据小红书路线调整，10 月 6 日留在拉萨市区游玩，10 月 7 日乘西藏航空 TV9949 飞回杭州。</p>
+      <div class="hero-stats">
+        <span><b>2</b> 条方案</span><span><b>10</b> 天自驾</span><span><b>4,000–4,479</b> km</span>
+      </div>
+    </div>
+    <div class="contour" aria-hidden="true"></div>
+  </header>
+
+  <main>
+    <section class="chooser" aria-labelledby="choose-title">
+      <div class="section-head">
+        <div><p class="section-no">01 / 选择路线</p><h2 id="choose-title">阿里路线方案</h2></div>
+        <p>点击方案，地图与逐日行程同步切换。</p>
+      </div>
+      <div class="trip-frame" aria-label="固定交通时间框架">
+        <div><b>09.25 · 西藏航空 TV9950</b><span>10:05 杭州萧山 T3<br>16:30 拉萨贡嘎 T3 · 取车</span></div>
+        <div class="drive-frame"><b>09.26—10.05</b><span>阿里中北线 / 阿里北线自驾</span></div>
+        <div><b>10.06</b><span>拉萨市区游玩</span></div>
+        <div><b>10.07 · 西藏航空 TV9949</b><span>10:55 拉萨贡嘎 T3<br>16:55 杭州萧山 T3</span></div>
+      </div>
+      <div class="route-tabs" id="route-tabs" role="tablist"></div>
+    </section>
+
+    <section class="map-section" aria-label="路线地图">
+      <div class="map-toolbar">
+        <div>
+          <span class="status-dot"></span>
+          <span id="map-mode">离线示意图</span>
+        </div>
+        <div class="map-actions">
+          <button id="fit-route" type="button">适配全线</button>
+          <button id="print-route" type="button">打印 / 存 PDF</button>
+        </div>
+      </div>
+      <div class="map-shell">
+        <div id="schematic-map" aria-label="路线示意地图"></div>
+        <div id="amap-container" hidden></div>
+        <aside class="route-summary" id="route-summary"></aside>
+      </div>
+      <p class="map-note">示意线用于比较方向与停靠点，不等同于导航轨迹；实际道路、管制和通行时间请在出发前复核。</p>
+    </section>
+
+    <section class="itinerary" aria-labelledby="days-title">
+      <div class="section-head">
+        <div><p class="section-no">02 / 逐日计划</p><h2 id="days-title">逐日行程表</h2></div>
+        <p id="itinerary-note"></p>
+      </div>
+      <div id="day-grid"></div>
+    </section>
+
+    <section class="altitude" aria-labelledby="altitude-title">
+      <div class="section-head">
+        <div><p class="section-no">03 / 海拔曲线</p><h2 id="altitude-title">逐日海拔海报</h2></div>
+        <p>覆盖主要途经点与住宿点，随所选路线同步切换。</p>
+      </div>
+      <div id="altitude-poster"></div>
+    </section>
+
+    <section class="hotels" aria-labelledby="hotels-title">
+      <div class="section-head">
+        <div><p class="section-no">04 / 酒店预订</p><h2 id="hotels-title">酒店信息表</h2></div>
+      </div>
+      <div id="hotel-grid"></div>
+    </section>
+
+  </main>
+
+  <footer><span>ALI GRAND LOOP · LHASA ROUND TRIP</span><span>9 月 25 日拉萨取车 · 10 月 5 日环线返回拉萨</span></footer>
+
+  <dialog id="settings-dialog">
+    <form method="dialog" id="settings-form">
+      <button class="dialog-close" value="cancel" aria-label="关闭">×</button>
+      <p class="section-no">可选增强</p>
+      <h2>启用高德真实底图</h2>
+      <p>密钥只保存在此浏览器的 localStorage。个人本地预览可用；公开部署请改用后端代理，避免暴露安全密钥。</p>
+      <label>Web 端 Key<input id="amap-key" autocomplete="off" placeholder="在高德开放平台创建 Web 端 JS API Key"></label>
+      <label>安全密钥 securityJsCode<input id="amap-secret" autocomplete="off" placeholder="与 Key 配套的安全密钥"></label>
+      <div class="dialog-actions"><button value="cancel" class="ghost">继续用示意图</button><button value="default" id="enable-amap">启用高德</button></div>
+      <p class="form-error" id="form-error" role="alert"></p>
+    </form>
+  </dialog>
+
+  <script src="https://webapi.amap.com/loader.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

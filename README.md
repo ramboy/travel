@@ -11,10 +11,15 @@
 
 ## 西藏阿里自驾
 
-- [三方案交互路线图](tibet/index.html)
-- [A · 经典大环线](tibet/index.html?route=classic)
-- [B · 康马小北线（截图方案）](tibet/index.html?route=north)
-- [C · 大北线避高版](tibet/index.html?route=south)
+- [方案 A 图文攻略 HTML](tibet/tibet-guide.html)
+- [方案 A 图文攻略 Markdown](tibet/tibet-guide.md)
+- [新攻略维护与数据说明](tibet/GUIDE-README.md)
+
+新攻略包含每日行程、实景图片、天气与温度曲线、酒店信息表和海拔曲线；不含交互路书。以下原有页面保留：
+
+- [原两方案路线图](tibet/index.html)
+- [A · 阿里中北线](tibet/index.html?route=classic)
+- [B · 阿里北线](tibet/index.html?route=south)
 
 西藏页面默认显示不依赖密钥的离线路线示意图。高德交互底图为可选功能，Web Key 和 securityJsCode 由访问者在浏览器本地填写，不写入仓库。
 

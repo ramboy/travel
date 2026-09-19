@@ -1,0 +1,35 @@
+# 阿里中北线图文攻略
+
+打开 `tibet-guide.html`，或在当前目录运行 `python3 -m http.server 8766 --bind 127.0.0.1` 后访问 `http://127.0.0.1:8766/tibet-guide.html`。
+
+本页只采用方案 A，不含交互地图、路书或动态视频；原 `amap-jsapi/` 保持不变。照片来源与天气核对时间均可在页面展开查看。两张已授权照片保存在本地，其余照片为远程引用，需要联网；离线时文字、酒店表、天气快照和曲线仍可使用。
+
+## 内容维护
+
+- `guide-itinerary.js`：13 天时间窗、玩法、取舍与住宿关联。
+- `guide-weather.js`：墨迹带明确日期的天气快照。只填可核验日期，缺失使用 `null`；日最低不等于 07:00—24:00 小时最低。
+- `guide-research.js`：票务、预约、政策及其来源。
+- `guide-media.js`、`guide-hotel-media.js`、`guide-extra-media.js`：实景照片、作者、许可与酒店详情链接。明确要求授权的来源只显示原文入口。
+- `guide.js` / `guide.css`：页面渲染和响应式样式。不加载地图 API，也不发起天气 API 请求。
+
+酒店值由 `build-guide.mjs` 从原 `amap-jsapi/app.js` 精确复制到生成的 `guide-base.js`；海拔沿用原近似数据，新攻略按确认后的塔尔钦、尼玛住宿衔接调整。该命令也会生成同步的 `tibet-guide.md`。不要手工编辑生成文件。
+
+```sh
+node build-guide.mjs
+node test-guide.mjs
+```
+
+测试需要本地服务器、Playwright 与 Chrome。默认使用 Codex 已提供的 Playwright 包和 macOS Chrome；可通过 `GUIDE_PLAYWRIGHT_PATH`、`GUIDE_CHROME_PATH`、`GUIDE_TEST_URL` 指定。测试覆盖 360/390/768/1440px、数据完整性、天气合并、打印排版和本地文件打开，截图保存到系统临时目录。
+
+## 明确待核验
+
+- 10 月 4—7 日尚未进入 2026-09-19 核对的墨迹预报范围；不可用前后日期或气候平均值补齐。
+- D4/D5/D8/D9 的新起终点未能从官方导航网页获取完整结果，保留“待导航复核”，不抄用旧里程。高德入口要求登录、百度途经点消歧未完成。
+- 未找到尼玛五龙宾馆的可确认携程详情页，因此不伪造酒店链接。
+- 小红书技能缺少 Python Playwright 依赖，本稿未引用笔记原文，景点卡链接为明确标识的搜索入口。
+
+## Git 仓库副本
+
+本攻略及所需资源保存到 `travel/tibet/`，入口为 `tibet-guide.html`。该目录下的 `amap-jsapi/` 是生成与回归测试使用的原攻略源文件快照，不替换仓库原有的 `tibet/index.html` 入口。
+
+Git 提交仅在用户要求时进行；提交不等于推送，GitHub 发布需单独请求。
