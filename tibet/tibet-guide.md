@@ -13,46 +13,66 @@
 
 ## 天气
 
-核对时间：2026-09-19T09:03:37+08:00。墨迹带日期预报有效至 2026-10-03，之后待更新。最低温为日最低保守参考，不冒充07:00—24:00小时最低；区县参考不等于景点精确温度。
+墨迹核对：2026-09-19T09:03:37+08:00，15 天预报覆盖至 2026-10-03。MSN 核对：2026-09-19T11:43:35+08:00；10 月 4—7 日暂用 30 天远期趋势，不是短期预报或历史平均值。最低温为日最低保守参考，不冒充07:00—24:00小时最低；区县参考不等于景点精确温度。
 
-| 日期 | 地点 | 天气 | 最高 / 最低 | 风力 | 来源 |
+| 日期 | 地点 | 类型 / 天气 | 最高 / 最低 | 风力 | 来源 |
 | --- | --- | --- | --- | --- | --- |
-| 09-25 | 拉萨贡嘎机场 | 小雨 | 19 / 6℃ | 东北风 3 级 | [贡嘎县](https://tianqi.moji.com/today/china/tibet/gonggar-county) |
-| 09-25 | 拉萨市区 / 拉萨住宿 | 小雨 | 20 / 8℃ | 西南风 2 级 | [拉萨市](https://tianqi.moji.com/today/china/tibet/lhasa) |
-| 09-26 | 鲁日拉观景台 | 阴 | 10 / 2℃ | 东北风 3 级 | [浪卡子县](https://tianqi.moji.com/today/china/tibet/langkazi-county) |
-| 09-26 | 卡若拉冰川 | 阴 | 10 / 2℃ | 东北风 3 级 | [浪卡子县](https://tianqi.moji.com/today/china/tibet/langkazi-county) |
-| 09-26 | 康马住宿 | 阴 | 10 / 4℃ | 南风 3 级 | [康马县](https://tianqi.moji.com/today/china/tibet/kangmar-county) |
-| 09-27 | 康马出发 | 阴 | 12 / 3℃ | 西南风 3 级 | [康马县](https://tianqi.moji.com/today/china/tibet/kangmar-county) |
-| 09-27 | 西林观景台 | 小雨 | 10 / 3℃ | 东南风 2 级 | [定结县](https://tianqi.moji.com/today/china/tibet/dingjie-county) |
-| 09-27 | 加乌拉山口 | 阴转小雨 | 10 / 3℃ | 东南风 2 级 | [定日县](https://tianqi.moji.com/today/china/tibet/tingri-county) |
-| 09-27 | 巴松村住宿 | 阴转小雨 | 10 / 3℃ | 东南风 2 级 | [定日县](https://tianqi.moji.com/today/china/tibet/tingri-county) |
-| 09-28 | 珠峰大本营 | 少云 | 15 / 2℃ | 东南风 2 级 | [珠穆朗玛峰国家级自然保护区](https://tianqi.moji.com/today/china/tibet/qomolangma-national-nature-reserve) |
-| 09-28 | 珠峰古堡遗址 | 小雨转多云 | 12 / 2℃ | 东南风 2 级 | [定日县](https://tianqi.moji.com/today/china/tibet/tingri-county) |
-| 09-28 | 佩枯措 | 小雨转阴 | 8 / 1℃ | 西南风 2 级 | [吉隆县](https://tianqi.moji.com/today/china/tibet/gyirong-county) |
-| 09-28 | 萨嘎住宿 | 小雨转阴 | 9 / 1℃ | 南风 2 级 | [萨嘎县](https://tianqi.moji.com/today/china/tibet/saga-county) |
-| 09-29 | 萨嘎出发 | 小雨转阴 | 7 / 1℃ | 南风 2 级 | [萨嘎县](https://tianqi.moji.com/today/china/tibet/saga-county) |
-| 09-29 | 玛旁雍措 / 拉昂措 | 小雨转雨夹雪 | 14 / 1℃ | 西南风 3 级 | [普兰县](https://tianqi.moji.com/today/china/tibet/burang-county) |
-| 09-29 | 塔尔钦住宿 | 雨转阵雪 | 8 / -2℃ | 西南风 3 级 | [喜马拉雅·冈仁波齐酒店天气点](https://tianqi.moji.com/today/china/tibet/himalaya-gang-rinpoche) |
-| 09-30 | 玛朗峡谷 | 阴转多云 | 16 / 5℃ | 西南风 5 级 | [札达县](https://tianqi.moji.com/today/china/tibet/zanda-county) |
-| 09-30 | 古格王国遗址 / 札达住宿 | 阴转多云 | 16 / 5℃ | 西南风 5 级 | [札达县](https://tianqi.moji.com/today/china/tibet/zanda-county) |
-| 10-01 | 霞义沟土林 | 多云转晴 | 15 / 4℃ | 风力待更新 | [札达县](https://tianqi.moji.com/today/china/tibet/zanda-county) |
-| 10-01 | 狮泉河 | 小雨转多云 | 8 / 0℃ | 风力待更新 | [狮泉河镇](https://tianqi.moji.com/today/china/tibet/shiquanhe-town) |
-| 10-01 | 革吉住宿 | 阴转晴 | 10 / -1℃ | 风力待更新 | [革吉县](https://tianqi.moji.com/today/china/tibet/geji-county) |
-| 10-02 | 革吉出发 | 阴 | 8 / -2℃ | 风力待更新 | [革吉县](https://tianqi.moji.com/today/china/tibet/geji-county) |
-| 10-02 | 物玛措 / 改则 | 小雨转雨夹雪 | 9 / 0℃ | 风力待更新 | [改则县](https://tianqi.moji.com/today/china/tibet/gaize-county) |
-| 10-02 | 雀登村（大地之树） / 洞措沿线 | 小雨转雨夹雪 | 9 / 0℃ | 风力待更新 | [改则县](https://tianqi.moji.com/today/china/tibet/gaize-county) |
-| 10-02 | 措勤住宿 | 阴 | 11 / 0℃ | 风力待更新 | [措勤县](https://tianqi.moji.com/today/china/tibet/cuoqin-county) |
-| 10-03 | 扎日南木措 | 阴 | 11 / 0℃ | 风力待更新 | [措勤县](https://tianqi.moji.com/today/china/tibet/cuoqin-county) |
-| 10-03 | 文布南村 / 当惹雍措 | 小雨转雨夹雪 | 11 / 1℃ | 风力待更新 | [尼玛县](https://tianqi.moji.com/today/china/tibet/nyinma-county) |
-| 10-03 | 尼玛住宿 | 小雨转雨夹雪 | 11 / 1℃ | 风力待更新 | [尼玛县](https://tianqi.moji.com/today/china/tibet/nyinma-county) |
-| 10-04 | 尼玛出发 | 待更新 | 待更新 | 风力待更新 | [尼玛县](https://tianqi.moji.com/today/china/tibet/nyinma-county) |
-| 10-04 | 色林措 / 班戈住宿 | 待更新 | 待更新 | 风力待更新 | [班戈县](https://tianqi.moji.com/today/china/tibet/baingoin-county) |
-| 10-05 | 班戈出发 | 待更新 | 待更新 | 风力待更新 | [班戈县](https://tianqi.moji.com/today/china/tibet/baingoin-county) |
-| 10-05 | 纳木措 / 圣象天门（条件备选） | 待更新 | 待更新 | 风力待更新 | [纳木措国家公园](https://tianqi.moji.com/today/china/tibet/namtso-national-park) |
-| 10-05 | 拉萨住宿 | 待更新 | 待更新 | 风力待更新 | [拉萨市](https://tianqi.moji.com/today/china/tibet/lhasa) |
-| 10-06 | 布达拉宫 / 大昭寺 / 八廓街 / 拉萨住宿 | 待更新 | 待更新 | 风力待更新 | [拉萨市](https://tianqi.moji.com/today/china/tibet/lhasa) |
-| 10-07 | 拉萨市区 | 待更新 | 待更新 | 风力待更新 | [拉萨市](https://tianqi.moji.com/today/china/tibet/lhasa) |
-| 10-07 | 拉萨贡嘎机场 | 待更新 | 待更新 | 风力待更新 | [贡嘎县](https://tianqi.moji.com/today/china/tibet/gonggar-county) |
+| 09-25 | 拉萨贡嘎机场 | 小雨 | 19 / 6℃ | 东北风 3 级 | [墨迹 · 贡嘎县](https://tianqi.moji.com/today/china/tibet/gonggar-county) |
+| 09-25 | 拉萨市区 / 拉萨住宿 | 小雨 | 20 / 8℃ | 西南风 2 级 | [墨迹 · 拉萨市](https://tianqi.moji.com/today/china/tibet/lhasa) |
+| 09-26 | 鲁日拉观景台 | 阴 | 10 / 2℃ | 东北风 3 级 | [墨迹 · 浪卡子县](https://tianqi.moji.com/today/china/tibet/langkazi-county) |
+| 09-26 | 卡若拉冰川 | 阴 | 10 / 2℃ | 东北风 3 级 | [墨迹 · 浪卡子县](https://tianqi.moji.com/today/china/tibet/langkazi-county) |
+| 09-26 | 康马住宿 | 阴 | 10 / 4℃ | 南风 3 级 | [墨迹 · 康马县](https://tianqi.moji.com/today/china/tibet/kangmar-county) |
+| 09-27 | 康马出发 | 阴 | 12 / 3℃ | 西南风 3 级 | [墨迹 · 康马县](https://tianqi.moji.com/today/china/tibet/kangmar-county) |
+| 09-27 | 西林观景台 | 小雨 | 10 / 3℃ | 东南风 2 级 | [墨迹 · 定结县](https://tianqi.moji.com/today/china/tibet/dingjie-county) |
+| 09-27 | 加乌拉山口 | 阴转小雨 | 10 / 3℃ | 东南风 2 级 | [墨迹 · 定日县](https://tianqi.moji.com/today/china/tibet/tingri-county) |
+| 09-27 | 巴松村住宿 | 阴转小雨 | 10 / 3℃ | 东南风 2 级 | [墨迹 · 定日县](https://tianqi.moji.com/today/china/tibet/tingri-county) |
+| 09-28 | 珠峰大本营 | 少云 | 15 / 2℃ | 东南风 2 级 | [墨迹 · 珠穆朗玛峰国家级自然保护区](https://tianqi.moji.com/today/china/tibet/qomolangma-national-nature-reserve) |
+| 09-28 | 珠峰古堡遗址 | 小雨转多云 | 12 / 2℃ | 东南风 2 级 | [墨迹 · 定日县](https://tianqi.moji.com/today/china/tibet/tingri-county) |
+| 09-28 | 佩枯措 | 小雨转阴 | 8 / 1℃ | 西南风 2 级 | [墨迹 · 吉隆县](https://tianqi.moji.com/today/china/tibet/gyirong-county) |
+| 09-28 | 萨嘎住宿 | 小雨转阴 | 9 / 1℃ | 南风 2 级 | [墨迹 · 萨嘎县](https://tianqi.moji.com/today/china/tibet/saga-county) |
+| 09-29 | 萨嘎出发 | 小雨转阴 | 7 / 1℃ | 南风 2 级 | [墨迹 · 萨嘎县](https://tianqi.moji.com/today/china/tibet/saga-county) |
+| 09-29 | 玛旁雍措 / 拉昂措 | 小雨转雨夹雪 | 14 / 1℃ | 西南风 3 级 | [墨迹 · 普兰县](https://tianqi.moji.com/today/china/tibet/burang-county) |
+| 09-29 | 塔尔钦住宿 | 雨转阵雪 | 8 / -2℃ | 西南风 3 级 | [墨迹 · 喜马拉雅·冈仁波齐酒店天气点](https://tianqi.moji.com/today/china/tibet/himalaya-gang-rinpoche) |
+| 09-30 | 玛朗峡谷 | 阴转多云 | 16 / 5℃ | 西南风 5 级 | [墨迹 · 札达县](https://tianqi.moji.com/today/china/tibet/zanda-county) |
+| 09-30 | 古格王国遗址 / 札达住宿 | 阴转多云 | 16 / 5℃ | 西南风 5 级 | [墨迹 · 札达县](https://tianqi.moji.com/today/china/tibet/zanda-county) |
+| 10-01 | 霞义沟土林 | 多云转晴 | 15 / 4℃ | 风力待更新 | [墨迹 · 札达县](https://tianqi.moji.com/today/china/tibet/zanda-county) |
+| 10-01 | 狮泉河 | 小雨转多云 | 8 / 0℃ | 风力待更新 | [墨迹 · 狮泉河镇](https://tianqi.moji.com/today/china/tibet/shiquanhe-town) |
+| 10-01 | 革吉住宿 | 阴转晴 | 10 / -1℃ | 风力待更新 | [墨迹 · 革吉县](https://tianqi.moji.com/today/china/tibet/geji-county) |
+| 10-02 | 革吉出发 | 阴 | 8 / -2℃ | 风力待更新 | [墨迹 · 革吉县](https://tianqi.moji.com/today/china/tibet/geji-county) |
+| 10-02 | 物玛措 / 改则 | 小雨转雨夹雪 | 9 / 0℃ | 风力待更新 | [墨迹 · 改则县](https://tianqi.moji.com/today/china/tibet/gaize-county) |
+| 10-02 | 雀登村（大地之树） / 洞措沿线 | 小雨转雨夹雪 | 9 / 0℃ | 风力待更新 | [墨迹 · 改则县](https://tianqi.moji.com/today/china/tibet/gaize-county) |
+| 10-02 | 措勤住宿 | 阴 | 11 / 0℃ | 风力待更新 | [墨迹 · 措勤县](https://tianqi.moji.com/today/china/tibet/cuoqin-county) |
+| 10-03 | 扎日南木措 | 阴 | 11 / 0℃ | 风力待更新 | [墨迹 · 措勤县](https://tianqi.moji.com/today/china/tibet/cuoqin-county) |
+| 10-03 | 文布南村 / 当惹雍措 | 小雨转雨夹雪 | 11 / 1℃ | 风力待更新 | [墨迹 · 尼玛县](https://tianqi.moji.com/today/china/tibet/nyinma-county) |
+| 10-03 | 尼玛住宿 | 小雨转雨夹雪 | 11 / 1℃ | 风力待更新 | [墨迹 · 尼玛县](https://tianqi.moji.com/today/china/tibet/nyinma-county) |
+| 10-04 | 尼玛出发 | MSN 远期趋势：晴 | 6 / -4℃ | 13 km/h | [MSN · 尼玛县](https://www.msn.cn/zh-cn/weather/forecast/in-%E8%A5%BF%E8%97%8F%E8%87%AA%E6%B2%BB%E5%8C%BA%2C%E9%82%A3%E6%9B%B2%E5%B8%82%2C%E5%B0%BC%E7%8E%9B%E5%8E%BF) |
+| 10-04 | 色林措 / 班戈住宿 | MSN 远期趋势：大部晴朗 | 8 / -3℃ | 12 km/h | [MSN · 班戈县](https://www.msn.cn/zh-cn/weather/forecast/in-%E8%A5%BF%E8%97%8F%E8%87%AA%E6%B2%BB%E5%8C%BA%2C%E9%82%A3%E6%9B%B2%E5%B8%82%2C%E7%8F%AD%E6%88%88%E5%8E%BF) |
+| 10-05 | 班戈出发 | MSN 远期趋势：大部晴朗 | 7 / -4℃ | 12 km/h | [MSN · 班戈县](https://www.msn.cn/zh-cn/weather/forecast/in-%E8%A5%BF%E8%97%8F%E8%87%AA%E6%B2%BB%E5%8C%BA%2C%E9%82%A3%E6%9B%B2%E5%B8%82%2C%E7%8F%AD%E6%88%88%E5%8E%BF) |
+| 10-05 | 纳木措 | MSN 远期趋势：大部晴朗 | 9 / -4℃ | 11 km/h | [MSN · 纳木措（MSN 景点定位）](https://www.msn.cn/zh-cn/weather/forecast/in-%E8%A5%BF%E8%97%8F%E8%87%AA%E6%B2%BB%E5%8C%BA,%E6%8B%89%E8%90%A8%E5%B8%82) |
+| 10-05 | 圣象天门（条件备选） | MSN 远期趋势：大部晴朗 | 9 / -4℃ | 12 km/h | [MSN · 圣象天门（MSN 景点定位）](https://www.msn.cn/zh-cn/weather/forecast/in-%E8%A5%BF%E8%97%8F%E8%87%AA%E6%B2%BB%E5%8C%BA,%E6%8B%89%E8%90%A8%E5%B8%82) |
+| 10-05 | 拉萨住宿 | MSN 远期趋势：天气状态待核实 | 19 / 5℃ | 9 km/h | [MSN · 拉萨市区](https://www.msn.cn/zh-cn/weather/forecast/in-%E8%A5%BF%E8%97%8F%E8%87%AA%E6%B2%BB%E5%8C%BA,%E6%8B%89%E8%90%A8%E5%B8%82) |
+| 10-06 | 布达拉宫 / 大昭寺 / 八廓街 / 拉萨住宿 | MSN 远期趋势：天气状态待核实 | 18 / 5℃ | 风速待更新 | [MSN · 拉萨市区](https://www.msn.cn/zh-cn/weather/forecast/in-%E8%A5%BF%E8%97%8F%E8%87%AA%E6%B2%BB%E5%8C%BA,%E6%8B%89%E8%90%A8%E5%B8%82) |
+| 10-07 | 拉萨市区 | MSN 远期趋势：天气状态待核实 | 16 / 2℃ | 风速待更新 | [MSN · 拉萨市区](https://www.msn.cn/zh-cn/weather/forecast/in-%E8%A5%BF%E8%97%8F%E8%87%AA%E6%B2%BB%E5%8C%BA,%E6%8B%89%E8%90%A8%E5%B8%82) |
+| 10-07 | 拉萨贡嘎机场 | MSN 远期趋势：天气状态待核实 | 20 / 7℃ | 7 km/h | [MSN · 贡嘎机场 T3 天气点](https://www.msn.cn/zh-cn/weather/monthlyforecast/in-%E8%A5%BF%E8%97%8F%E8%87%AA%E6%B2%BB%E5%8C%BA,%E5%B1%B1%E5%8D%97%E5%B8%82?loc=eyJhIjoi5ouJ6JCo6LSh5ZiO5py65Zy6dDPoiKrnq5nmpbwt6JC95a6i5Yy6IiwibCI6Iui0oeWYjuWOvyIsInIiOiLopb%2Fol4%2Foh6rmsrvljLoiLCJyMiI6IuWxseWNl%2BW4giIsImMiOiLkuK3ljY7kurrmsJHlhbHlkozlm70iLCJpIjoiY24iLCJ0IjoxMDEsImciOiJ6aC1jbiIsIngiOiI5MC44OTYxNDI5IiwieSI6IjI5LjI4ODM4NzIifQ%3D%3D&weadegreetype=C) |
+
+### 天气口径与复查
+
+- 2026 年 9 月 19 日核对的墨迹 15 天预报最远到 10 月 3 日；10 月 4—7 日暂用 MSN 30 天远期趋势，以虚线空心点和文字标签区别。不是短期预报，不是历史平均值。
+- 行程日期暂未取得 07:00—24:00 小时预报，所以最低温均为日最低温的保守参考，不冒充白天最低温；临近出发需重新核对小时预报。
+- 天气“转”表示白天预报到夜间预报的变化。温度多为县区代理，山口、冰川、湖岸以及保护区内部不能当作同一温度。
+- 9 月 25—30 日风力来自墨迹同日天气日历；10 月 1—3 日风力待更新。MSN 远期风速按页面 km/h 原单位列出，不换算成风级或套用当前风向。
+- MSN 日历的天气文字是图标解释；县区或景点的定位名均有留存。MSN 可能把地址改写为市级入口，复查时须按来源卡说明重新选中对应地点，不能直接拿默认城市替代。
+- 合并相邻天气点时，最高温取最大值、最低温取最小值，不取平均；存在缺失点时不能宣称已经覆盖整日温度范围。
+- 这是带核对时间的静态快照，不是页面自动更新服务。远期预报可能变化，出发前及每日出门前应重新核对墨迹天气和当地气象预警。
+- 10-04 尼玛出发：尼玛县级参考，不等同于沿线山口天气。 MSN 30 天远期趋势，不等同短期预报，非历史平均值。 复查：打开来源链接，等当前地点显示‘西藏自治区, 那曲市, 尼玛县’，点击‘十月’选项卡。 核对：2026-09-19T11:37:12+08:00。
+- 10-04 色林措 / 班戈住宿：采用班戈县级参考；色林措湖岸与县城温度、风力可能不同。 MSN 30 天远期趋势，不等同短期预报，非历史平均值。 复查：打开来源链接，等当前地点显示‘西藏自治区, 那曲市, 班戈县’，点击‘十月’选项卡。 核对：2026-09-19T11:37:30+08:00。
+- 10-05 班戈出发：班戈县级参考。 MSN 30 天远期趋势，不等同短期预报，非历史平均值。 复查：打开来源链接，等当前地点显示‘西藏自治区, 那曲市, 班戈县’，点击‘十月’选项卡。 核对：2026-09-19T11:37:30+08:00。
+- 10-05 纳木措：景区天气点参考，不是整片湖区的实测；入园须临行核验。 MSN 30 天远期趋势，不等同短期预报，非历史平均值。 复查：在 MSN ‘搜索位置’输入‘纳木措’，选择精确选项‘纳木措, 当雄县, 西藏自治区’；等待当前地点和标题显示纳木措，再点击‘十月’。同名售票处及城关区酸奶店未选用。 核对：2026-09-19T11:38:03+08:00。
+- 10-05 圣象天门（条件备选）：景点天气点参考，不是现场实测；路况和准入仍须临行核验。 MSN 30 天远期趋势，不等同短期预报，非历史平均值。MSN 景点定位，不以供应商行政标签作为独立行政归属证明。 复查：在 MSN ‘搜索位置’输入‘圣象天门’，选择精确选项‘圣象天门, 当雄县, 西藏自治区’；等待当前地点和标题显示圣象天门，再点击‘十月’。广东龙岗同名条目与拉萨城关区服务中心均未选用。 核对：2026-09-19T11:38:32+08:00。
+- 10-05 拉萨住宿：拉萨市区参考，不等同于酒店门口实测。 MSN 30 天远期趋势，不等同短期预报，非历史平均值。 复查：核对当前地点为西藏自治区拉萨市，打开月度天气的 2026 年十月日历。 核对：2026-09-19T11:43:35+08:00。
+- 10-06 布达拉宫 / 大昭寺 / 八廓街 / 拉萨住宿：拉萨市区参考。 MSN 30 天远期趋势，不等同短期预报，非历史平均值。 复查：核对当前地点为西藏自治区拉萨市，打开月度天气的 2026 年十月日历。 核对：2026-09-19T11:43:35+08:00。
+- 10-07 拉萨市区：拉萨市区参考。 MSN 30 天远期趋势，不等同短期预报，非历史平均值。 复查：核对当前地点为西藏自治区拉萨市，打开月度天气的 2026 年十月日历。 核对：2026-09-19T11:43:35+08:00。
+- 10-07 拉萨贡嘎机场：贡嘎机场区域参考，不是拉萨市区数据。 MSN 30 天远期趋势，不等同短期预报，非历史平均值。采用 T3 落客区天气点，不是拉萨市区的温度。 复查：在MSN搜索位置输入拉萨贡嘎机场，选择拉萨贡嘎机场t3航站楼-落客区, 贡嘎县, 西藏自治区，核验页标题后进入月度天气十月。 核对：2026-09-19T11:43:35+08:00。
 
 ## 酒店信息表
 

@@ -19,14 +19,15 @@ fs.writeFileSync(path.join(root,'guide-base.js'), '/* 由 build-guide.mjs 从原
 
 const c = {window:{}};
 vm.createContext(c);
-for(const f of ['guide-base.js','guide-itinerary.js','guide-weather.js','guide-research.js','guide-media.js','guide-hotel-media.js','guide-extra-media.js']) vm.runInContext(read(f),c,{filename:f});
+for(const f of ['guide-base.js','guide-itinerary.js','guide-weather-trends.js','guide-weather.js','guide-research.js','guide-media.js','guide-hotel-media.js','guide-extra-media.js']) vm.runInContext(read(f),c,{filename:f});
 const {TIBET_ITINERARY:guide,TIBET_WEATHER:weather,TIBET_RESEARCH:research,TIBET_HOTEL_MEDIA:hotelMedia}=c.window;
 const media={...c.window.TIBET_MEDIA.assets,...hotelMedia.assets,...c.window.TIBET_EXTRA_MEDIA.assets};
 const findPhoto=name=>Object.values(media).find(a=>a.name===name || (a.aliases||[]).includes(name));
 const mdValue=v=>String(v??'').replaceAll('\n','<br>').replaceAll('|','\\|');
 const hotelLink=h=>hotelMedia.hotels[h.hotel]?.url?`[${h.hotel}](${hotelMedia.hotels[h.hotel].url})`:h.hotel;
-let md = `# ${guide.title}\n\n阿里中北线 · 方案 A · ${guide.dates}\n\n${guide.subtitle}\n\n只含图文攻略；原路线页面保留不变。09.29 住塔尔钦，10.03 住尼玛。\n\n## 航班\n\n- 09.25 西藏航空 TV9950：10:05 杭州萧山 T3 → 16:30 拉萨贡嘎 T3。\n- 10.07 西藏航空 TV9949：10:55 拉萨贡嘎 T3 → 16:55 杭州萧山 T3。\n\n## 天气\n\n核对时间：${weather.checkedAt}。墨迹带日期预报有效至 ${weather.forecastRange.through}，之后待更新。最低温为日最低保守参考，不冒充07:00—24:00小时最低；区县参考不等于景点精确温度。\n\n| 日期 | 地点 | 天气 | 最高 / 最低 | 风力 | 来源 |\n| --- | --- | --- | --- | --- | --- |\n`;
-for(const n of weather.nodes) md+=`| ${n.date.slice(5)} | ${n.places.join(' / ')} | ${n.condition} | ${n.status==='forecast'?`${n.high} / ${n.low}℃`:'待更新'} | ${n.wind} | [${n.region}](${n.sourceUrl}) |\n`;
+let md = `# ${guide.title}\n\n阿里中北线 · 方案 A · ${guide.dates}\n\n${guide.subtitle}\n\n只含图文攻略；原路线页面保留不变。09.29 住塔尔钦，10.03 住尼玛。\n\n## 航班\n\n- 09.25 西藏航空 TV9950：10:05 杭州萧山 T3 → 16:30 拉萨贡嘎 T3。\n- 10.07 西藏航空 TV9949：10:55 拉萨贡嘎 T3 → 16:55 杭州萧山 T3。\n\n## 天气\n\n墨迹核对：${weather.checkedAt}，15 天预报覆盖至 ${weather.forecastRange.through}。MSN 核对：${weather.trendCheckedAt}；10 月 4—7 日暂用 30 天远期趋势，不是短期预报或历史平均值。最低温为日最低保守参考，不冒充07:00—24:00小时最低；区县参考不等于景点精确温度。\n\n| 日期 | 地点 | 类型 / 天气 | 最高 / 最低 | 风力 | 来源 |\n| --- | --- | --- | --- | --- | --- |\n`;
+for(const n of weather.nodes) md+=`| ${n.date.slice(5)} | ${n.places.join(' / ')} | ${n.status==='long_range_trend'?'MSN 远期趋势：':''}${n.condition} | ${Number.isFinite(n.high)&&Number.isFinite(n.low)?`${n.high} / ${n.low}℃`:'待更新'} | ${n.wind} | [${n.provider} · ${n.region}](${n.sourceUrl}) |\n`;
+md+='\n### 天气口径与复查\n\n';for(const note of weather.notes)md+=`- ${note}\n`;for(const n of weather.nodes.filter(n=>n.status==='long_range_trend'))md+=`- ${n.date.slice(5)} ${n.places.join(' / ')}：${n.reason} 复查：${n.navigation} 核对：${n.checkedAt}。\n`;
 md+='\n## 酒店信息表\n\n| 入住日 | 晚数 / 间数 | 地点 | 酒店名 | 单间价格 | 房型 | 可取消时间 | 面积 | 床型 | 供氧方式 | 早餐 |\n| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |\n';
 for(const h of source.hotels) md+='| '+[h.checkin,h.span,h.place+(h.alert?`（${h.alert}）`:''),hotelLink(h),h.price,h.room,h.cancel,h.area,h.bed,h.oxygen,h.breakfast].map(mdValue).join(' | ')+' |\n';
 md+='\n## 海拔曲线\n\n完整按日期曲线见配套 HTML；海拔沿用原攻略近似值，横轴是节点顺序而非等距离。\n\n';
