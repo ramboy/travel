@@ -131,9 +131,43 @@
 
 随身：身份证、租车资料、常用药、饮水
 
-![亚朵酒店（拉萨万达广场市政府店）外景](https://dimg04.c-ctrip.com/images/1mc4212000tlskoarDC0A.jpg)
+#### 亚朵酒店（拉萨万达广场市政府店）｜外观与房型
 
-[酒店详情](https://hotels.ctrip.com/hotels/80400198.html)
+**酒店外观**
+
+![亚朵酒店（拉萨万达广场市政府店）外景](https://dimg04.c-ctrip.com/images/1mc4212000tlskoarDC0A_W_1280_0.jpg)
+
+[图片来源](https://hotels.ctrip.com/hotels/80400198.html) · 酒店 / 携程图片库（远程引用，版权保留）
+
+**高级双床房**
+
+![亚朵酒店（拉萨万达广场市政府店） · 高级双床房](https://dimg04.c-ctrip.com/images/0201w120008y6h5eo3BC5_W_1280_0.jpg)
+
+[图片来源](https://hotels.ctrip.com/hotels/80400198.html) · 酒店 / 携程图片库（远程引用，版权保留） · 来源房型：高级双床房（弥散&鼻吸+独立空调+加湿器+电视投屏）
+
+**高级大床房**
+
+![亚朵酒店（拉萨万达广场市政府店） · 高级大床房](https://dimg04.c-ctrip.com/images/02004120008y6h8gjF6BE_W_1280_0.jpg)
+
+[图片来源](https://hotels.ctrip.com/hotels/80400198.html) · 酒店 / 携程图片库（远程引用，版权保留） · 来源房型：高级大床房（弥散&鼻吸+独立空调+加湿器+电视投屏）
+
+图片只展示对应房型，具体楼层、朝向、布置和入住时现状以酒店安排为准。
+
+#### 维也纳国际酒店（拉萨贡嘎机场店）（备选）｜外观与房型
+
+**酒店外观**
+
+![维也纳国际酒店（拉萨贡嘎机场店）外观](https://dimg04.c-ctrip.com/images/0202e120009mnjydhD510_W_1280_0.jpg)
+
+[图片来源](https://hotels.ctrip.com/hotels/95302521.html) · 酒店 / 携程图片库（远程引用，版权保留）
+
+**豪华景观双床房**
+
+![维也纳国际酒店（拉萨贡嘎机场店） · 豪华景观双床房](https://dimg04.c-ctrip.com/images/02047120009ko1t6h1F65_W_1280_0.jpg)
+
+[图片来源](https://hotels.ctrip.com/hotels/95302521.html) · 酒店 / 携程图片库（远程引用，版权保留） · 来源房型：豪华景观双床房（供氧）
+
+图片只展示对应房型，具体楼层、朝向、布置和入住时现状以酒店安排为准。
 
 | 时间窗 | 安排 | 说明 |
 | --- | --- | --- |
@@ -175,13 +209,81 @@
 
 [小红书搜索攻略](https://www.xiaohongshu.com/search_result?keyword=%E5%8D%A1%E8%8B%A5%E6%8B%89%E5%86%B0%E5%B7%9D%20%E6%94%BB%E7%95%A5)
 
-![康马维纳斯富氧酒店外景](https://dimg04.c-ctrip.com/images/0204n120009d1qq2fFAD7.jpg)
+#### 康马维纳斯富氧酒店｜外观与房型
 
-[酒店详情](https://hotels.ctrip.com/hotels/25266075.html)
+**酒店外观**
 
-![尚客优酒店（康马县汽车站店）外景](https://dimg04.c-ctrip.com/images/1mc6112000sckj9v93180.jpg)
+![康马维纳斯富氧酒店外景](https://dimg04.c-ctrip.com/images/0204n120009d1qq2fFAD7_W_1280_0.jpg)
 
-[酒店详情](https://hotels.ctrip.com/hotels/134438339.html)
+[图片来源](https://hotels.ctrip.com/hotels/25266075.html) · 酒店 / 携程图片库（远程引用，版权保留）
+
+**舒适供氧双床房**
+
+![康马维纳斯富氧酒店 · 舒适供氧双床房](https://dimg04.c-ctrip.com/images/1mc5t12000lzvfzm4E017_W_1280_0.jpg)
+
+[图片来源](https://hotels.ctrip.com/hotels/25266075.html) · 酒店 / 携程图片库（远程引用，版权保留） · 来源房型：舒适供氧双床房（弥散式供氧+加湿器+全屋取暖）
+
+**舒适供氧大床房**
+
+![康马维纳斯富氧酒店 · 舒适供氧大床房](https://dimg04.c-ctrip.com/images/1mc6w12000lzuwxsr6DA6_W_1280_0.jpg)
+
+[图片来源](https://hotels.ctrip.com/hotels/25266075.html) · 酒店 / 携程图片库（远程引用，版权保留） · 来源房型：舒适供氧大床房（弥散式供氧+加湿器+全屋取暖）
+
+图片只展示对应房型，具体楼层、朝向、布置和入住时现状以酒店安排为准。
+
+#### 尚客优酒店（康马县汽车站店）｜外观与房型
+
+**酒店外观**
+
+![尚客优酒店（康马县汽车站店）外景](https://dimg04.c-ctrip.com/images/1mc1m12000ta1k29z5ABA_W_1280_0.jpg)
+
+[图片来源](https://hotels.ctrip.com/hotels/134438339.html) · 酒店 / 携程图片库（远程引用，版权保留）
+
+**智能舒适双床房**
+
+![尚客优酒店（康马县汽车站店） · 智能舒适双床房](https://dimg04.c-ctrip.com/images/0586h12000sc9lgap3AE1_W_1280_0.jpg)
+
+[图片来源](https://hotels.ctrip.com/hotels/134438339.html) · 酒店 / 携程图片库（远程引用，版权保留） · 来源房型：智能舒适双床房||全屋智能+供氧+加湿器+干湿分离+地暖
+
+图片只展示对应房型，具体楼层、朝向、布置和入住时现状以酒店安排为准。
+
+#### 艾扉富氧酒店（江孜宗山古堡店）（备选）｜外观与房型
+
+**酒店外观**
+
+![艾扉富氧酒店（江孜宗山古堡店）外观](https://dimg04.c-ctrip.com/images/1mc1112000fk122lm860D_W_1280_0.jpg)
+
+[图片来源](https://hotels.ctrip.com/hotels/123015297.html) · 酒店 / 携程图片库（远程引用，版权保留）
+
+**艾扉高级双床房**
+
+![艾扉富氧酒店（江孜宗山古堡店） · 艾扉高级双床房](https://dimg04.c-ctrip.com/images/1mc6912000fk0rccjA2F9_W_1280_0.jpg)
+
+[图片来源](https://hotels.ctrip.com/hotels/123015297.html) · 酒店 / 携程图片库（远程引用，版权保留） · 来源房型：艾扉高级双床房（弥漫式氧气+智能客控+加湿器）
+
+图片只展示对应房型，具体楼层、朝向、布置和入住时现状以酒店安排为准。
+
+#### 兰欧国际酒店（日喀则汽车总站贡觉林卡店）（备选）｜外观与房型
+
+**酒店外观**
+
+![兰欧国际酒店（日喀则汽车总站贡觉林卡店）外观](https://dimg04.c-ctrip.com/images/0206u12000sexjzr38DF5_W_1280_0.jpg)
+
+[图片来源](https://hotels.ctrip.com/hotels/134503508.html) · 酒店 / 携程图片库（远程引用，版权保留）
+
+**智能豪华双床房**
+
+![兰欧国际酒店（日喀则汽车总站贡觉林卡店） · 智能豪华双床房](https://dimg04.c-ctrip.com/images/1mc2512000sf0wos0DF1B_W_1280_0.jpg)
+
+[图片来源](https://hotels.ctrip.com/hotels/134503508.html) · 酒店 / 携程图片库（远程引用，版权保留） · 来源房型：智能豪华双床房|鼻吸弥散供氧+中央加湿+智能客控
+
+**智能豪华大床房**
+
+![兰欧国际酒店（日喀则汽车总站贡觉林卡店） · 智能豪华大床房](https://dimg04.c-ctrip.com/images/1mc1z12000sf0pvk9BF8B_W_1280_0.jpg)
+
+[图片来源](https://hotels.ctrip.com/hotels/134503508.html) · 酒店 / 携程图片库（远程引用，版权保留） · 来源房型：智能豪华大床房|鼻吸弥散供氧+中央加湿+智能客控
+
+图片只展示对应房型，具体楼层、朝向、布置和入住时现状以酒店安排为准。
 
 | 时间窗 | 安排 | 说明 |
 | --- | --- | --- |
@@ -224,9 +326,37 @@
 
 [小红书搜索攻略](https://www.xiaohongshu.com/search_result?keyword=%E5%8A%A0%E4%B9%8C%E6%8B%89%E5%B1%B1%E5%8F%A3%20%E6%94%BB%E7%95%A5)
 
-![维也纳酒店（珠峰路巴松村店）外景](https://dimg04.c-ctrip.com/images/1mc2l12000ogbhzj57460.jpg)
+#### 维也纳酒店（珠峰路巴松村店）｜外观与房型
 
-[酒店详情](https://hotels.ctrip.com/hotels/131959061.html)
+**酒店外观**
+
+![维也纳酒店（珠峰路巴松村店）外观](https://dimg04.c-ctrip.com/images/1mc2l12000ogbhzj57460_W_1280_0.jpg)
+
+[图片来源](https://hotels.ctrip.com/hotels/131959061.html) · 酒店 / 携程图片库（远程引用，版权保留）
+
+**供氧豪华双床房**
+
+![维也纳酒店（珠峰路巴松村店） · 供氧豪华双床房](https://dimg04.c-ctrip.com/images/1mc3n12000of3aoz0DF0D_W_1280_0.jpg)
+
+[图片来源](https://hotels.ctrip.com/hotels/131959061.html) · 酒店 / 携程图片库（远程引用，版权保留） · 来源房型：供氧豪华双床房（配备加湿器+全屋地暖+供氧设备）
+
+图片只展示对应房型，具体楼层、朝向、布置和入住时现状以酒店安排为准。
+
+#### S设计师酒店（备选）｜外观与房型
+
+**酒店外观**
+
+![S设计师酒店外观](https://dimg04.c-ctrip.com/images/0201s12000t2okum96FCC_W_1280_0.jpg)
+
+[图片来源](https://hotels.ctrip.com/hotels/135169738.html) · 酒店 / 携程图片库（远程引用，版权保留）
+
+**高级双床房**
+
+![S设计师酒店 · 高级双床房](https://dimg04.c-ctrip.com/images/1mc1s12000t3c2q07E649_W_1280_0.jpg)
+
+[图片来源](https://hotels.ctrip.com/hotels/135169738.html) · 酒店 / 携程图片库（远程引用，版权保留） · 来源房型：高级双床房（弥散式供氧+智能+24小时热水+地暖）
+
+图片只展示对应房型，具体楼层、朝向、布置和入住时现状以酒店安排为准。
 
 | 时间窗 | 安排 | 说明 |
 | --- | --- | --- |
@@ -279,9 +409,43 @@
 
 [小红书搜索攻略](https://www.xiaohongshu.com/search_result?keyword=%E4%BD%A9%E6%9E%AF%E6%8E%AA%20%E6%94%BB%E7%95%A5)
 
-![如家酒店（萨嘎店）外景](https://dimg04.c-ctrip.com/images/1mc2v12000o24tedxB8DB.jpg)
+#### 如家酒店（萨嘎店）｜外观与房型
 
-[酒店详情](https://hotels.ctrip.com/hotels/131302999.html)
+**酒店外观**
+
+![如家酒店（萨嘎店）外观](https://dimg04.c-ctrip.com/images/1mc2v12000o24tedxB8DB_W_1280_0.jpg)
+
+[图片来源](https://hotels.ctrip.com/hotels/131302999.html) · 酒店 / 携程图片库（远程引用，版权保留）
+
+**高级双床房**
+
+![如家酒店（萨嘎店） · 高级双床房](https://dimg04.c-ctrip.com/images/1mc2l12000p9fz6pc4968_W_1280_0.jpg)
+
+[图片来源](https://hotels.ctrip.com/hotels/131302999.html) · 酒店 / 携程图片库（远程引用，版权保留） · 来源房型：高级双床房（加湿器+弥散供氧）
+
+图片只展示对应房型，具体楼层、朝向、布置和入住时现状以酒店安排为准。
+
+#### 星辰富氧酒店（萨嘎店）（备选）｜外观与房型
+
+**酒店外观**
+
+![星辰富氧酒店（萨嘎店）外观](https://dimg04.c-ctrip.com/images/0201t12000sm45v2w2FBC_W_1280_0.jpg)
+
+[图片来源](https://hotels.ctrip.com/hotels/134687158.html) · 酒店 / 携程图片库（远程引用，版权保留）
+
+**舒适双床房**
+
+![星辰富氧酒店（萨嘎店） · 舒适双床房](https://dimg04.c-ctrip.com/images/1mc3612000smhv9ox39EA_W_1280_0.jpg)
+
+[图片来源](https://hotels.ctrip.com/hotels/134687158.html) · 酒店 / 携程图片库（远程引用，版权保留） · 来源房型：舒适双床房（弥散鼻吸供氧+地暖+加湿器）
+
+**豪华大床房**
+
+![星辰富氧酒店（萨嘎店） · 豪华大床房](https://dimg04.c-ctrip.com/images/1mc0t12000smht0q29B76_W_1280_0.jpg)
+
+[图片来源](https://hotels.ctrip.com/hotels/134687158.html) · 酒店 / 携程图片库（远程引用，版权保留） · 来源房型：豪华大床房（弥散鼻吸供氧+地暖+加湿器）
+
+图片只展示对应房型，具体楼层、朝向、布置和入住时现状以酒店安排为准。
 
 | 时间窗 | 安排 | 说明 |
 | --- | --- | --- |
@@ -324,9 +488,43 @@
 
 [小红书搜索攻略](https://www.xiaohongshu.com/search_result?keyword=%E6%8B%89%E6%98%82%E6%8E%AA%20%E6%94%BB%E7%95%A5)
 
-![西遇秘境国际大酒店外景](https://dimg04.c-ctrip.com/images/0200b12000sfa0zm59B97.jpg)
+#### 西遇秘境国际大酒店｜外观与房型
 
-[酒店详情](https://hotels.ctrip.com/hotels/134645724.html)
+**酒店外观**
+
+![西遇秘境国际大酒店外观](https://dimg04.c-ctrip.com/images/0200b12000sfa0zm59B97_W_1280_0.jpg)
+
+[图片来源](https://hotels.ctrip.com/hotels/134645724.html) · 酒店 / 携程图片库（远程引用，版权保留）
+
+**纳木那尼投影标间**
+
+![西遇秘境国际大酒店 · 纳木那尼投影标间](https://dimg04.c-ctrip.com/images/1mc0g12000ski4mnpF9D3_W_1280_0.jpg)
+
+[图片来源](https://hotels.ctrip.com/hotels/134645724.html) · 酒店 / 携程图片库（远程引用，版权保留） · 来源房型：纳木那尼投影标间·全天供氧气
+
+图片只展示对应房型，具体楼层、朝向、布置和入住时现状以酒店安排为准。
+
+#### 普兰迪欧富氧酒店（备选）｜外观与房型
+
+**酒店外观**
+
+![普兰迪欧富氧酒店外观](https://dimg04.c-ctrip.com/images/1mc6y12000svkw4w066A5_W_1280_0.jpg)
+
+[图片来源](https://hotels.ctrip.com/hotels/134867194.html) · 酒店 / 携程图片库（远程引用，版权保留）
+
+**尊享双床房**
+
+![普兰迪欧富氧酒店 · 尊享双床房](https://dimg04.c-ctrip.com/images/1mc5412000suji76a1BC3_W_1280_0.jpg)
+
+[图片来源](https://hotels.ctrip.com/hotels/134867194.html) · 酒店 / 携程图片库（远程引用，版权保留） · 来源房型：尊享双床房（弥散供氧+投影影院+全屋智能+地暖）
+
+**优享大床房（内窗）**
+
+![普兰迪欧富氧酒店 · 优享大床房（内窗）](https://dimg04.c-ctrip.com/images/1mc4o12000sukpc703254_W_1280_0.jpg)
+
+[图片来源](https://hotels.ctrip.com/hotels/134867194.html) · 酒店 / 携程图片库（远程引用，版权保留） · 来源房型：优享大床房（弥散供氧+投影影院+智能+地暖）（内窗）
+
+图片只展示对应房型，具体楼层、朝向、布置和入住时现状以酒店安排为准。
 
 | 时间窗 | 安排 | 说明 |
 | --- | --- | --- |
@@ -369,9 +567,21 @@
 
 [小红书搜索攻略](https://www.xiaohongshu.com/search_result?keyword=%E5%8F%A4%E6%A0%BC%E7%8E%8B%E5%9B%BD%E9%81%97%E5%9D%80%20%E6%94%BB%E7%95%A5)
 
-![环藏酒店外景](https://dimg04.c-ctrip.com/images/1mc5s12000fmvs7ddD1D2.jpg)
+#### 环藏酒店｜外观与房型
 
-[酒店详情](https://hotels.ctrip.com/hotels/123247806.html)
+**酒店外观**
+
+![环藏酒店外观](https://dimg04.c-ctrip.com/images/1mc5s12000fmvs7ddD1D2_W_1280_0.jpg)
+
+[图片来源](https://hotels.ctrip.com/hotels/123247806.html) · 酒店 / 携程图片库（远程引用，版权保留）
+
+**双床房**
+
+![环藏酒店 · 双床房](https://dimg04.c-ctrip.com/images/1mc4712000fmvup3yA735_W_1280_0.jpg)
+
+[图片来源](https://hotels.ctrip.com/hotels/123247806.html) · 酒店 / 携程图片库（远程引用，版权保留） · 来源房型：双床房（弥散供氧）
+
+图片只展示对应房型，具体楼层、朝向、布置和入住时现状以酒店安排为准。
 
 | 时间窗 | 安排 | 说明 |
 | --- | --- | --- |
@@ -414,9 +624,21 @@
 
 [小红书搜索攻略](https://www.xiaohongshu.com/search_result?keyword=%E7%8B%AE%E6%B3%89%E6%B2%B3%20%E6%94%BB%E7%95%A5)
 
-![维也纳酒店（阿里革吉店）外景](https://dimg04.c-ctrip.com/images/1mc2f12000rzng8ojC8DC.jpg)
+#### 维也纳酒店（阿里革吉店）｜外观与房型
 
-[酒店详情](https://hotels.ctrip.com/hotels/134008587.html)
+**酒店外观**
+
+![维也纳酒店（阿里革吉店）外观](https://dimg04.c-ctrip.com/images/1mc2f12000rzng8ojC8DC_W_1280_0.jpg)
+
+[图片来源](https://hotels.ctrip.com/hotels/134008587.html) · 酒店 / 携程图片库（远程引用，版权保留）
+
+**高级双床房**
+
+![维也纳酒店（阿里革吉店） · 高级双床房](https://dimg04.c-ctrip.com/images/1mc4312000s0dmpzoC9B3_W_1280_0.jpg)
+
+[图片来源](https://hotels.ctrip.com/hotels/134008587.html) · 酒店 / 携程图片库（远程引用，版权保留） · 来源房型：高级双床房（弥散供氧+加湿器）
+
+图片只展示对应房型，具体楼层、朝向、布置和入住时现状以酒店安排为准。
 
 | 时间窗 | 安排 | 说明 |
 | --- | --- | --- |
@@ -465,9 +687,21 @@
 
 [小红书搜索攻略](https://www.xiaohongshu.com/search_result?keyword=%E6%B4%9E%E6%8E%AA%E5%A4%A7%E5%9C%B0%E4%B9%8B%E6%A0%91%20%E6%94%BB%E7%95%A5)
 
-![汉庭酒店（阿里措勤店）外景](https://dimg04.c-ctrip.com/images/0202b1200095ne1fe3B5C.jpg)
+#### 汉庭酒店（阿里措勤店）｜外观与房型
 
-[酒店详情](https://hotels.ctrip.com/hotels/83111556.html)
+**酒店外观**
+
+![汉庭酒店（阿里措勤店）外观](https://dimg04.c-ctrip.com/images/0202b1200095ne1fe3B5C_W_1280_0.jpg)
+
+[图片来源](https://hotels.ctrip.com/hotels/83111556.html) · 酒店 / 携程图片库（远程引用，版权保留）
+
+**供氧双床房**
+
+![汉庭酒店（阿里措勤店） · 供氧双床房](https://dimg04.c-ctrip.com/images/0205h120009b5lgy39E2F_W_1280_0.jpg)
+
+[图片来源](https://hotels.ctrip.com/hotels/83111556.html) · 酒店 / 携程图片库（远程引用，版权保留） · 来源房型：供氧双床房（加湿器+弥散式供氧）
+
+图片只展示对应房型，具体楼层、朝向、布置和入住时现状以酒店安排为准。
 
 | 时间窗 | 安排 | 说明 |
 | --- | --- | --- |
@@ -511,9 +745,33 @@
 
 [小红书搜索攻略](https://www.xiaohongshu.com/search_result?keyword=%E6%96%87%E5%B8%83%E5%8D%97%E6%9D%91%20%E6%94%BB%E7%95%A5)
 
-![尚客优酒店（那曲尼玛县政府客运站店）外景](https://dimg04.c-ctrip.com/images/1mc4r12000gyehnchD583.jpg)
+#### 尚客优酒店（那曲尼玛县政府客运站店）｜外观与房型
 
-[酒店详情](https://hotels.ctrip.com/hotels/80819778.html)
+**酒店外观**
+
+![尚客优酒店（那曲尼玛县政府客运站店）外观](https://dimg04.c-ctrip.com/images/1mc4r12000gyehnchD583_W_1280_0.jpg)
+
+[图片来源](https://hotels.ctrip.com/hotels/80819778.html) · 酒店 / 携程图片库（远程引用，版权保留）
+
+**尊享休闲家庭房**
+
+![尚客优酒店（那曲尼玛县政府客运站店） · 尊享休闲家庭房](https://dimg04.c-ctrip.com/images/1mc0i12000g3m3829A1EA_W_1280_0.jpg)
+
+[图片来源](https://hotels.ctrip.com/hotels/80819778.html) · 酒店 / 携程图片库（远程引用，版权保留） · 来源房型：尊享休闲家庭房【弥散式供氧+中央空调】
+
+图片只展示对应房型，具体楼层、朝向、布置和入住时现状以酒店安排为准。
+
+#### 尼玛五龙宾馆（备选）｜外观与房型
+
+**酒店外观**
+
+图片待核实：未找到可确认对应关系的实拍图，不以其他酒店或房型替代。
+
+**供氧舒适标准间**
+
+图片待核实：未找到可确认对应关系的实拍图，不以其他酒店或房型替代。
+
+图片只展示对应房型，具体楼层、朝向、布置和入住时现状以酒店安排为准。
 
 | 时间窗 | 安排 | 说明 |
 | --- | --- | --- |
@@ -547,9 +805,21 @@
 
 [小红书搜索攻略](https://www.xiaohongshu.com/search_result?keyword=%E8%89%B2%E6%9E%97%E6%8E%AA%20%E6%94%BB%E7%95%A5)
 
-![华庭酒店（那曲班戈店）外景](https://dimg04.c-ctrip.com/images/1mc6812000sew0kdr3C6D.jpg)
+#### 华庭酒店（那曲班戈店）｜外观与房型
 
-[酒店详情](https://hotels.ctrip.com/hotels/126991866.html)
+**酒店外观**
+
+![华庭酒店（那曲班戈店）外观](https://dimg04.c-ctrip.com/images/1mc6812000sew0kdr3C6D_W_1280_0.jpg)
+
+[图片来源](https://hotels.ctrip.com/hotels/126991866.html) · 酒店 / 携程图片库（远程引用，版权保留）
+
+**特惠双床房**
+
+![华庭酒店（那曲班戈店） · 特惠双床房](https://dimg04.c-ctrip.com/images/0234i12000tvex2v9B3F1_W_1280_853_R5_Q70.jpg?proc=autoorient)
+
+[图片来源](https://hotels.ctrip.com/hotels/126991866.html) · 携程住客实拍（点评标注特惠双床房，版权归上传者） · 来源房型：特惠双床房(供氧+智能马桶+电动窗帘) · 住客实拍；点评标注为特惠双床房。
+
+图片只展示对应房型，具体楼层、朝向、布置和入住时现状以酒店安排为准。
 
 | 时间窗 | 安排 | 说明 |
 | --- | --- | --- |
@@ -592,9 +862,21 @@
 
 [小红书搜索攻略](https://www.xiaohongshu.com/search_result?keyword=%E5%9C%A3%E8%B1%A1%E5%A4%A9%E9%97%A8%20%E6%94%BB%E7%95%A5)
 
-![拉萨布达拉宫逸扉酒店外景](https://dimg04.c-ctrip.com/images/0584f12000sohi5jaB463.jpg)
+#### 拉萨布达拉宫逸扉酒店｜外观与房型
 
-[酒店详情](https://hotels.ctrip.com/hotels/116695820.html)
+**酒店外观**
+
+![拉萨布达拉宫逸扉酒店外观](https://dimg04.c-ctrip.com/images/0584f12000sohi5jaB463_W_1280_0.jpg)
+
+[图片来源](https://hotels.ctrip.com/hotels/116695820.html) · 酒店 / 携程图片库（远程引用，版权保留）
+
+**豪华双床房**
+
+![拉萨布达拉宫逸扉酒店 · 豪华双床房](https://dimg04.c-ctrip.com/images/1mc1a12000g3wa42q8088_W_1280_0.jpg)
+
+[图片来源](https://hotels.ctrip.com/hotels/116695820.html) · 酒店 / 携程图片库（远程引用，版权保留） · 来源房型：豪华双床房（弥散供氧+智能客控+加湿器)
+
+图片只展示对应房型，具体楼层、朝向、布置和入住时现状以酒店安排为准。
 
 | 时间窗 | 安排 | 说明 |
 | --- | --- | --- |
@@ -647,9 +929,21 @@
 
 [小红书搜索攻略](https://www.xiaohongshu.com/search_result?keyword=%E5%85%AB%E5%BB%93%E8%A1%97%20%E6%94%BB%E7%95%A5)
 
-![拉萨布达拉宫逸扉酒店外景](https://dimg04.c-ctrip.com/images/0584f12000sohi5jaB463.jpg)
+#### 拉萨布达拉宫逸扉酒店｜外观与房型
 
-[酒店详情](https://hotels.ctrip.com/hotels/116695820.html)
+**酒店外观**
+
+![拉萨布达拉宫逸扉酒店外观](https://dimg04.c-ctrip.com/images/0584f12000sohi5jaB463_W_1280_0.jpg)
+
+[图片来源](https://hotels.ctrip.com/hotels/116695820.html) · 酒店 / 携程图片库（远程引用，版权保留）
+
+**豪华双床房**
+
+![拉萨布达拉宫逸扉酒店 · 豪华双床房](https://dimg04.c-ctrip.com/images/1mc1a12000g3wa42q8088_W_1280_0.jpg)
+
+[图片来源](https://hotels.ctrip.com/hotels/116695820.html) · 酒店 / 携程图片库（远程引用，版权保留） · 来源房型：豪华双床房（弥散供氧+智能客控+加湿器)
+
+图片只展示对应房型，具体楼层、朝向、布置和入住时现状以酒店安排为准。
 
 | 时间窗 | 安排 | 说明 |
 | --- | --- | --- |

@@ -13,6 +13,20 @@ for(const name of ['guide-base.js','guide-itinerary.js','guide-weather-trends.js
 const original=read('amap-jsapi/app.js'),old={};vm.createContext(old);vm.runInContext(original.slice(0,original.indexOf('const PLACES ='))+'\nthis.hotels=HOTEL_OPTIONS;',old);
 assert.equal(JSON.stringify(c.window.TIBET_BASE.hotels),JSON.stringify(old.hotels),'original hotel values preserved');
 assert.equal(c.window.TIBET_BASE.hotels.length,19);
+const hotelMedia=c.window.TIBET_HOTEL_MEDIA,hotelRows=c.window.TIBET_BASE.hotels;
+for(const h of hotelRows){
+  const entry=hotelMedia.hotels[h.hotel];assert.ok(entry,`photo entry for ${h.hotel}`);
+  assert.equal(JSON.stringify(entry.rooms.map(r=>r.room)),JSON.stringify(h.room.split('\n')),`booked room order for ${h.hotel}`);
+  if(entry.image){const a=hotelMedia.assets[entry.image];assert.equal(a.kind,'hotel');assert.equal(a.status,'verified');assert.equal(a.sourceUrl,entry.url);}
+  for(const room of entry.rooms){
+    if(!room.image){assert.equal(h.hotel,'尼玛五龙宾馆');assert.equal(room.status,'unavailable');assert.ok(room.note);continue;}
+    const a=hotelMedia.assets[room.image];assert.equal(a.kind,'hotel-room');assert.equal(a.status,'verified');assert.equal(a.sourceUrl,entry.url);assert.ok(a.sourceRoomName);assert.ok(a.evidence);assert.ok(a.src.startsWith('https://dimg04.c-ctrip.com/'));
+    if(a.sourceKind==='guest_review_photo'){assert.ok(a.roomId);assert.ok(a.reviewId);assert.ok(a.imageId);assert.equal(a.picTypeId,9);assert.equal(a.categoryId,null);assert.ok(a.credit.includes('住客实拍'));}
+    else{assert.equal(a.categoryId,9);assert.ok(a.pictureId);}
+  }
+}
+assert.equal(Object.values(hotelMedia.hotels).filter(h=>h.image).length,18,'18 verified hotel exteriors');
+assert.equal(Object.values(hotelMedia.hotels).flatMap(h=>h.rooms).filter(r=>r.image).length,23,'23 verified booked room categories');
 assert.equal(c.window.TIBET_ITINERARY.days.length,13);
 for(const d of c.window.TIBET_ITINERARY.days){const week=new Intl.DateTimeFormat('zh-CN',{weekday:'short',timeZone:'Asia/Shanghai'}).format(new Date(`2026-${d.date.replace('.','-')}T12:00:00+08:00`));assert.equal(d.weekday,week);}
 const profile=c.window.TIBET_BASE.profile;
@@ -47,6 +61,13 @@ for(const width of [360,390,768,1440]){
   await page.goto(url,{waitUntil:'domcontentloaded'});await page.waitForSelector('.day-article');
   const metrics=await page.evaluate(()=>({width:innerWidth,scroll:document.documentElement.scrollWidth,days:document.querySelectorAll('.day-article').length,hotels:document.querySelectorAll('.hotel-table tbody tr').length,backup:[...document.querySelectorAll('.hotel-table .hotel-backup')].map(e=>getComputedStyle(e).color),alert:[...document.querySelectorAll('.hotel-table .hotel-alert')].map(e=>getComputedStyle(e).color),aligned:[...document.querySelectorAll('.hotel-table td,.hotel-table th')].every(e=>getComputedStyle(e).verticalAlign==='middle'),stays:document.querySelectorAll('.altitude-marker.is-stay').length}));
   assert.equal(metrics.width,metrics.scroll,`no page overflow at ${width}`);assert.equal(metrics.days,13);assert.equal(metrics.hotels,19);assert.equal(metrics.stays,12);assert.equal(metrics.aligned,true);assert.ok(metrics.backup.every(c=>c==='rgb(4, 111, 251)'));assert.ok(metrics.alert.every(c=>c==='rgb(255, 30, 0)'));
+  const hotelCards=await page.locator('.hotel-strip').evaluateAll(cards=>cards.map(card=>({id:card.id,hotel:card.dataset.hotel,rooms:[...card.querySelectorAll('.hotel-photo[data-room]')].map(p=>p.dataset.room),missing:card.querySelectorAll('.hotel-photo-missing').length,images:[...card.querySelectorAll('img')].map(i=>i.src)})));
+  const expectedCards=c.window.TIBET_ITINERARY.days.flatMap(d=>hotelRows.filter(h=>h.checkin.split('\n').includes(d.date)).map(h=>({hotel:h.hotel,rooms:Array.from(h.room.split('\n'))})));
+  assert.equal(JSON.stringify(hotelCards.map(({hotel,rooms})=>({hotel,rooms}))),JSON.stringify(expectedCards),'all primary and backup hotels follow date and room order');
+  assert.equal(new Set(hotelCards.map(h=>h.id)).size,hotelCards.length,'unique repeat-stay anchors');
+  assert.equal(hotelCards.length,20);assert.equal(new Set(hotelCards.map(h=>h.hotel)).size,19);
+  assert.deepEqual(hotelCards.filter(h=>h.missing).map(h=>h.hotel),['尼玛五龙宾馆']);assert.equal(hotelCards.find(h=>h.missing).missing,2);
+  assert.equal(await page.locator('.hotel-photo[data-room]').count(),25);assert.equal(await page.locator('.hotel-photo-jump').count(),19);
   const merged=await page.evaluate(()=>window.TIBET_GUIDE_VIEW.mergedWeatherNodes);
   for(const n of merged){if(n.members.length>1){assert.ok(n.members.every(m=>m.date===n.date&&m.status===n.status&&m.provider===n.provider));assert.ok(Math.max(...n.members.map(m=>m.high))-Math.min(...n.members.map(m=>m.high))<=2);assert.ok(Math.max(...n.members.map(m=>m.low))-Math.min(...n.members.map(m=>m.low))<=2);assert.equal(n.high,Math.max(...n.members.map(m=>m.high)));assert.equal(n.low,Math.min(...n.members.map(m=>m.low)));}}
   assert.equal(merged.flatMap(n=>n.members).length,37);
@@ -75,6 +96,9 @@ for(const width of [360,390,768,1440]){
     await page.waitForFunction(()=>[...document.images].every(i=>i.complete),{},{timeout:25000}).catch(()=>{});
     const photos=await page.evaluate(()=>[...document.images].map(i=>({alt:i.alt,loaded:i.complete&&i.naturalWidth>0,src:i.src,fallback:i.parentElement.querySelector('.photo-fallback')?.hidden===false})));
     assert.ok(photos.every(i=>!i.loaded||!i.fallback),'loaded images are not covered by fallback');
+    const failedHotelPhotos=await page.locator('.hotel-strip img').evaluateAll(images=>images.filter(i=>!i.complete||i.naturalWidth===0).map(i=>({alt:i.alt,src:i.src})));
+    assert.deepEqual(failedHotelPhotos,[],'every verified exterior and room photo loads');
+    for(const index of [0,4,15,16])await page.locator(`.hotel-strip[data-hotel="${hotelRows[index].hotel}"]`).first().screenshot({path:path.join(output,`hotel-photo-${index}-${width}.png`)});
     results.push({photos});
     await page.emulateMedia({media:'print'});
     const print=await page.evaluate(()=>({width:document.querySelector('.hotel-table').getBoundingClientRect().width,container:document.querySelector('.hotel-table-wrap').getBoundingClientRect().width}));assert.ok(print.width<=print.container+1,'print hotel table fits');

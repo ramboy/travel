@@ -16,3 +16,21 @@
 .chart-help .forecast-key,.chart-help .trend-key{height:0;border-top:2px solid #627569;background:none}
 .chart-help .trend-key{border-top-style:dashed}
 #weather-stamp br{display:initial}
+/* Each hotel keeps its exterior and booked room categories together, including backups. */
+.hotel-strip{display:block;scroll-margin-top:90px}
+.hotel-strip .hotel-summary{padding:22px 24px 18px}
+.hotel-strip.is-backup{background:#eef0e7;border:1px dashed #bcc8bd}
+.hotel-photo-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px;padding:0 24px}
+.hotel-photo{min-width:0;margin:0;background:var(--paper)}
+.hotel-strip .hotel-photo-grid .photo-wrap{aspect-ratio:16/10;min-height:0}
+.hotel-strip .hotel-photo-grid .photo-wrap img{object-fit:contain;background:#e2e7de}
+.hotel-photo figcaption{padding:12px 14px;display:flex;flex-direction:column;gap:4px;font-size:12px;line-height:1.7}
+.hotel-photo figcaption b{font-weight:650;color:var(--ink)}
+.hotel-photo figcaption span{font-size:10px;color:var(--muted)}
+.hotel-photo figcaption a{font-size:10px;color:#52716a}
+.hotel-photo-missing{aspect-ratio:16/10;display:flex;flex-direction:column;justify-content:center;gap:10px;padding:24px;text-align:center;background:#e2e7de;color:var(--muted)}
+.hotel-photo-missing small{font-size:11px;line-height:1.7}
+.hotel-photo-note{padding:12px 24px 20px;font-size:10px;color:var(--muted)}
+.hotel-photo-jump{display:block;margin-top:5px;font-size:10px;font-weight:400;color:#52716a}
+@media(max-width:760px){.hotel-photo-grid{grid-template-columns:1fr;padding:0 18px;gap:14px}.hotel-strip .hotel-summary{padding:20px 18px 16px}.hotel-photo-note{padding:12px 18px 18px}.hotel-strip .hotel-photo-grid .photo-wrap{aspect-ratio:16/10}.hotel-strip{scroll-margin-top:75px}}
+@media print{.hotel-strip{break-inside:auto}.hotel-photo-grid{grid-template-columns:repeat(3,minmax(0,1fr));padding:0 12px;gap:10px}.hotel-photo{break-inside:avoid}.hotel-photo-note{padding:9px 12px 12px}.hotel-photo-jump{display:none}.hotel-photo figcaption{padding:8px;font-size:10px}}

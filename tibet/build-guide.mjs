@@ -36,7 +36,17 @@ md+='\n## 每日行程\n\n时间窗为建议，车程不含游览、吃饭、检
 for(const d of guide.days){
   md+=`### ${d.day} · ${d.date} ${d.weekday}｜${d.title}\n\n${d.route.join(' → ')}\n\n${d.drive}${d.metricNote?'。'+d.metricNote:''}\n\n住宿：${d.hotelIndexes.length?d.hotelIndexes.map(i=>hotelLink(source.hotels[i])).join(' / '):'无'}\n\n穿衣：${d.clothing}\n\n随身：${d.carry}\n\n`;
   for(const key of d.spots){const s=guide.spots[key],a=findPhoto(s.name);md+=`#### ${s.name}｜${s.duration}\n\n${s.play}\n\n`;if(a?.src&&!a.requiresPermission&&a.display!=='source-link')md+=`![${a.alt}](${a.src})\n\n`;if(a?.sourceUrl)md+=`[图片来源](${a.sourceUrl}) · ${a.credit}${a.licenseUrl?` · [${a.license||'图片许可'}](${a.licenseUrl}) · 图片经缩放与格式转换`:''}\n\n`;if(a?.requiresPermission)md+='图源需转载授权，本稿仅提供原文看图入口。\n\n';md+=`[小红书搜索攻略](https://www.xiaohongshu.com/search_result?keyword=${encodeURIComponent(s.name+' 攻略')})\n\n`;}
-  for(const i of d.hotelIndexes){const h=source.hotels[i],a=findPhoto(h.hotel);if(a?.src)md+=`![${h.hotel}外景](${a.src})\n\n[酒店详情](${a.sourceUrl})\n\n`;}
+  for(const h of source.hotels.filter(h=>h.checkin.split('\n').includes(d.date))){
+    const entry=hotelMedia.hotels[h.hotel],exterior=media[entry?.image]||findPhoto(h.hotel);
+    md+=`#### ${h.hotel}${h.place.endsWith('（备选）')?'（备选）':''}｜外观与房型\n\n`;
+    const photos=[{label:'酒店外观',asset:exterior},...h.room.split('\n').map(room=>({label:room,asset:media[entry?.rooms?.find(r=>r.room===room)?.image]}))];
+    for(const {label,asset:a} of photos){
+      md+=`**${label}**\n\n`;
+      if(a?.src&&a.status==='verified')md+=`![${a.alt}](${a.src})\n\n[图片来源](${a.sourceUrl}) · ${a.credit}${a.sourceRoomName&&a.sourceRoomName!==label?' · 来源房型：'+a.sourceRoomName:''}${a.matchNote?' · '+a.matchNote:''}\n\n`;
+      else md+='图片待核实：未找到可确认对应关系的实拍图，不以其他酒店或房型替代。\n\n';
+    }
+    md+='图片只展示对应房型，具体楼层、朝向、布置和入住时现状以酒店安排为准。\n\n';
+  }
   md+='| 时间窗 | 安排 | 说明 |\n| --- | --- | --- |\n';for(const row of d.schedule)md+='| '+row.map(mdValue).join(' | ')+' |\n';md+=`\n**当日取舍：** ${d.decision}\n\n`;
 }
 md+='## 景点取舍\n\n';for(const p of research.priorities)md+=`- **${p.category}**：优先${p.keep}；可舍弃${p.optional}。${p.reason}\n`;
