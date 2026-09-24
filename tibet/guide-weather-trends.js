@@ -1,8 +1,8 @@
 /* MSN 浏览器核对证据；仅作为墨迹尚未覆盖日期的远期趋势，禁止标为短期预报。 */
 window.TIBET_WEATHER_TRENDS = {
-  "checkedAt": "2026-09-19T11:43:35+08:00",
+  "checkedAt": "2026-09-25T06:28:34.909+08:00",
   "provider": "MSN",
-  "method": "Chrome 浏览器经 Playwright 渲染；读取地点标题、页面当前地点、2026 年 10 月日历及逐日来源标签。未使用天气 API 或 curl。",
+  "method": "浏览器渲染核验；2026-09-25 仅刷新实际使用的圣象天门 10.05 记录，其余历史趋势保留各自原核对时间。未使用天气 API 或 curl。",
   "forecastType": "long_range_trend",
   "notes": [
     "只录入正确定位、2026 年 10 月日历中的 30 天趋势；未使用历史平均值。",
@@ -94,22 +94,22 @@ window.TIBET_WEATHER_TRENDS = {
     {
       "slug": "shengxiang-tianmen",
       "date": "2026-10-05",
-      "high": 9,
-      "low": -4,
-      "condition": "大部晴朗",
-      "conditionBasis": "msn_calendar_weather_icon",
-      "weatherIcon": "https://assets.msn.cn/weathermapdata/1/static/weather/Icons/taskbar_v10/Condition_Card/MostlySunnyDay.svg",
-      "wind": "12 km/h",
-      "windKmh": 12,
+      "high": 10,
+      "low": 0,
+      "condition": "天气状态待核实",
+      "conditionBasis": "unverified_text",
+      "wind": "风速待更新",
+      "windKmh": null,
       "region": "圣象天门（MSN 景点定位）",
       "locationName": "西藏自治区, 拉萨市, 当雄县, 圣象天门",
       "locationNote": "MSN 景点定位，不以供应商行政标签作为独立行政归属证明。",
       "sourceUrl": "https://www.msn.cn/zh-cn/weather/forecast/in-%E8%A5%BF%E8%97%8F%E8%87%AA%E6%B2%BB%E5%8C%BA,%E6%8B%89%E8%90%A8%E5%B8%82",
-      "navigation": "在 MSN ‘搜索位置’输入‘圣象天门’，选择精确选项‘圣象天门, 当雄县, 西藏自治区’；等待当前地点和标题显示圣象天门，再点击‘十月’。广东龙岗同名条目与拉萨城关区服务中心均未选用。",
-      "checkedAt": "2026-09-19T11:38:32+08:00",
-      "sourcePageDate": "2026-09-19",
-      "sourceLabel": "来自30天趋势",
-      "evidence": "59°-4°10%9°-4°83%12 公里/小时来自30天趋势"
+      "navigation": "在 MSN 搜索位置输入“圣象天门”，选择“圣象天门, 当雄县, 西藏自治区”，核对地点标题后打开十月日历。10.05 显示 10° / 0°；详情趋势图按日期读“每日最高温／每日最低温”，不要读“历史每日”值。",
+      "checkedAt": "2026-09-25T06:28:34.909+08:00",
+      "sourcePageDate": "2026-09-25",
+      "sourceLabel": "30天趋势（2026 年十月日历与月度气温趋势图）",
+      "evidence": "2026 年十月日历 5 日 10° / 0°；月度气温趋势图的十月 5, 2026 显示历史最高 10°、历史最低 -3°，每日最高 10°、每日最低 0°，并启用 30 天预报图例；仅采集后两项预报值，不采用历史值。",
+      "forecastThrough": "2026-10-24"
     },
     {
       "slug": "lhasa",

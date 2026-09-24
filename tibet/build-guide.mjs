@@ -19,15 +19,43 @@ fs.writeFileSync(path.join(root,'guide-base.js'), '/* 由 build-guide.mjs 从原
 
 const c = {window:{}};
 vm.createContext(c);
-for(const f of ['guide-base.js','guide-itinerary.js','guide-weather-trends.js','guide-weather.js','guide-research.js','guide-media.js','guide-hotel-media.js','guide-extra-media.js']) vm.runInContext(read(f),c,{filename:f});
-const {TIBET_ITINERARY:guide,TIBET_WEATHER:weather,TIBET_RESEARCH:research,TIBET_HOTEL_MEDIA:hotelMedia}=c.window;
+for(const f of ['guide-base.js','guide-itinerary.js','guide-weather-trends.js','guide-weather.js','guide-research.js','guide-media.js','guide-hotel-media.js','guide-extra-media.js','guide-drone-evidence.js','guide-drone.js']) vm.runInContext(read(f),c,{filename:f});
+const {TIBET_ITINERARY:guide,TIBET_WEATHER:weather,TIBET_RESEARCH:research,TIBET_HOTEL_MEDIA:hotelMedia,TIBET_DRONE:drone}=c.window;
 const media={...c.window.TIBET_MEDIA.assets,...hotelMedia.assets,...c.window.TIBET_EXTRA_MEDIA.assets};
 const findPhoto=name=>Object.values(media).find(a=>a.name===name || (a.aliases||[]).includes(name));
 const mdValue=v=>String(v??'').replaceAll('\n','<br>').replaceAll('|','\\|');
 const hotelLink=h=>hotelMedia.hotels[h.hotel]?.url?`[${h.hotel}](${hotelMedia.hotels[h.hotel].url})`:h.hotel;
-let md = `# ${guide.title}\n\n阿里中北线 · 方案 A · ${guide.dates}\n\n${guide.subtitle}\n\n只含图文攻略；原路线页面保留不变。09.29 住塔尔钦，10.03 住尼玛。\n\n## 航班\n\n- 09.25 西藏航空 TV9950：10:05 杭州萧山 T3 → 16:30 拉萨贡嘎 T3。\n- 10.07 西藏航空 TV9949：10:55 拉萨贡嘎 T3 → 16:55 杭州萧山 T3。\n\n## 天气\n\n墨迹核对：${weather.checkedAt}，15 天预报覆盖至 ${weather.forecastRange.through}。MSN 核对：${weather.trendCheckedAt}；10 月 4—7 日暂用 30 天远期趋势，不是短期预报或历史平均值。最低温为日最低保守参考，不冒充07:00—24:00小时最低；区县参考不等于景点精确温度。\n\n| 日期 | 地点 | 类型 / 天气 | 最高 / 最低 | 风力 | 来源 |\n| --- | --- | --- | --- | --- | --- |\n`;
-for(const n of weather.nodes) md+=`| ${n.date.slice(5)} | ${n.places.join(' / ')} | ${n.status==='long_range_trend'?'MSN 远期趋势：':''}${n.condition} | ${Number.isFinite(n.high)&&Number.isFinite(n.low)?`${n.high} / ${n.low}℃`:'待更新'} | ${n.wind} | [${n.provider} · ${n.region}](${n.sourceUrl}) |\n`;
+const weatherTrends=weather.nodes.filter(n=>n.status==='long_range_trend');
+const staleTrend=n=>n.status==='long_range_trend'&&n.checkedAt.slice(0,10)<weather.checkedAt.slice(0,10);
+const trendSummary=weatherTrends.length?`采用 MSN 30 天远期趋势的地点：${weatherTrends.map(n=>`${n.date.slice(5)} ${n.places.join(' / ')}（${staleTrend(n)?'旧快照，原核对':'本次核对'}：${n.checkedAt}）`).join('；')}。远期趋势不是短期预报或历史平均值。`:'';
+let md = `# ${guide.title}\n\n阿里中北线 · 方案 A · ${guide.dates}\n\n${guide.subtitle}\n\n只含图文攻略；原路线页面保留不变。09.29 住塔尔钦，10.03 住尼玛。\n\n## 航班\n\n- 09.25 西藏航空 TV9950：10:05 杭州萧山 T3 → 16:30 拉萨贡嘎 T3。\n- 10.07 西藏航空 TV9949：10:55 拉萨贡嘎 T3 → 16:55 杭州萧山 T3。\n\n## 天气\n\n墨迹核对：${weather.checkedAt}，明确日期预报范围为 ${weather.forecastRange.from}—${weather.forecastRange.through}。${trendSummary}最低温为日最低保守参考，不冒充07:00—24:00小时最低；区县参考不等于景点精确温度。\n\n| 日期 | 地点 | 类型 / 天气 | 最高 / 最低 | 风力 | 来源 | 核对时间 |\n| --- | --- | --- | --- | --- | --- | --- |\n`;
+for(const n of weather.nodes) md+=`| ${n.date.slice(5)} | ${n.places.join(' / ')} | ${n.status==='long_range_trend'?`MSN 远期趋势（${staleTrend(n)?'保留旧快照':'本次已核验'}）：`:''}${n.condition} | ${Number.isFinite(n.high)&&Number.isFinite(n.low)?`${n.high} / ${n.low}℃`:'待更新'} | ${n.wind} | [${n.provider} · ${n.region}](${n.sourceUrl}) | ${staleTrend(n)?'原核对（本次未更新）：':''}${n.checkedAt||weather.checkedAt} |\n`;
 md+='\n### 天气口径与复查\n\n';for(const note of weather.notes)md+=`- ${note}\n`;for(const n of weather.nodes.filter(n=>n.status==='long_range_trend'))md+=`- ${n.date.slice(5)} ${n.places.join(' / ')}：${n.reason} 复查：${n.navigation} 核对：${n.checkedAt}。\n`;
+md+='\n## 无人机适飞情况\n\n';
+const droneZoneStatus=row=>drone.legend?.colorsVerified===true&&row.uom?.colorVerified===true&&['blue','white','mixed'].includes(row.uom.status)?row.uom.status:'unverified';
+const droneChecked=drone.rows.filter(row=>droneZoneStatus(row)!=='unverified').length;
+md+=`${droneChecked<drone.rows.length?'核验初稿 · UOM 颜色查询尚未完成。':''}资料整理：${drone.checkedAt}；${drone.rows.length} 条逐日记录中，${droneChecked} 条 UOM 颜色已核验。UOM 颜色与景区、文保和现场管理分开核对；蓝区和白区均不单独构成放飞许可，白区不自动等同法定管制区。\n\n`;
+const droneSources=items=>(items||[]).filter(s=>/^https?:\/\//.test(s.url||'')).map(s=>`[${s.title||'来源'}](${s.url})`).join('；');
+if(drone.legend?.verified===true)md+=`UOM 已核验图例：蓝色 = ${drone.legend.blue||'UOM 蓝区'}；白色 = ${drone.legend.white||'UOM 白区'}；待核验不等于适飞。\n\n`;
+else if(drone.legend?.colorsVerified===true)md+='UOM 页面色块已实见：蓝区 / 白区仅描述页面颜色；法律含义未完整核验，不自动推定适飞或法定管制属性。\n\n';
+else md+='UOM 页面色块尚未完成实见核验，暂不填写蓝区 / 白区。\n\n';
+if(drone.legend?.observedAt)md+=`图例观察：${drone.legend.observedAt}\n\n`;
+if(drone.legend?.note)md+=`${drone.legend.note}\n\n`;
+if(drone.legend?.sources?.length)md+=`${droneSources(drone.legend.sources)}\n\n`;
+md+='空域结果只对应记录中的位置与查询时间，不代替出发前和起飞前复查。\n\n| 日期 / 地点与定位 | UOM 空域查询 | 景区 / 场地管理 | 当次结论 / 下一步 |\n| --- | --- | --- | --- |\n';
+for(const row of drone.rows){
+  const location=row.location||{},uom=row.uom||{},venue=row.venue||{};
+  const status=droneZoneStatus(row);
+  const labels={blue:'UOM 蓝区',white:'UOM 白区',mixed:'蓝白交界 / 范围混合',unverified:'待核验 · 不作适飞判断'};
+  const coordinates=Array.isArray(location.coordinates)?location.coordinates.join(', '):location.coordinates;
+  const observation=uom.observation;
+  const uomLabel=status==='unverified'?(uom.status==='unverified'&&(uom.attempt||observation)?uom.label||labels.unverified:labels.unverified):uom.label||labels[status];
+  const observationText=observation?`\n查询词：${observation.queryText||'未记录'}\n匹配结果：${observation.matchedResult||'未记录'}\n地图级别：${observation.zoom??'未记录'}${status!=='unverified'?'\n观察时间：'+(observation.observedAt||'未记录'):''}\n${status==='unverified'?'尝试说明':'观察说明'}：${observation.note||'未记录'}`:'';
+  const queryDate=status==='unverified'&&observation?`尝试日期：${observation.observedAt||'未记录'}`:`颜色核验：${uom.checkedAt||'未完成逐点查询'}`;
+  const cells=[`${row.date} · ${row.day} · ${row.place}\n${location.label||'具体起飞点待定位'}\n定位精度：${location.precision||'待核验'}${coordinates?'\n参考坐标：'+coordinates:''}${location.note?'\n'+location.note:''}`,`${uomLabel}\n${uom.detail||'没有可用于判断此起飞点的 UOM 核验记录。'}\n${queryDate}${observationText}\n${droneSources(uom.sources)}`,`${venue.label||'当地管理待核验'}\n${venue.detail||'未核实场地管理要求；缺少公告不代表允许飞行。'}\n${droneSources(venue.sources)}`,`${row.conclusion||'尚不能判断适飞'}\n${row.action||'确定实际起飞点后，重新查询 UOM 并核对现场管理要求。'}`];
+  md+='| '+cells.map(mdValue).join(' | ')+' |\n';
+}
+md+='\n';for(const note of drone.notes||[])md+=`- ${note}\n`;
 md+='\n## 酒店信息表\n\n| 入住日 | 晚数 / 间数 | 地点 | 酒店名 | 单间价格 | 房型 | 可取消时间 | 面积 | 床型 | 供氧方式 | 早餐 |\n| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |\n';
 for(const h of source.hotels) md+='| '+[h.checkin,h.span,h.place+(h.alert?`（${h.alert}）`:''),hotelLink(h),h.price,h.room,h.cancel,h.area,h.bed,h.oxygen,h.breakfast].map(mdValue).join(' | ')+' |\n';
 md+='\n## 海拔曲线\n\n完整按日期曲线见配套 HTML；海拔沿用原攻略近似值，横轴是节点顺序而非等距离。\n\n';

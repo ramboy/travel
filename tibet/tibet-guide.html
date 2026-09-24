@@ -15,6 +15,8 @@
   <script src="guide-media.js" defer></script>
   <script src="guide-hotel-media.js" defer></script>
   <script src="guide-extra-media.js" defer></script>
+  <script src="guide-drone-evidence.js" defer></script>
+  <script src="guide-drone.js" defer></script>
   <script src="guide.js" defer></script>
 </head>
 <body>
@@ -24,17 +26,18 @@
     <div class="hero-content"><p class="eyebrow">HANGZHOU → LHASA → NGARI</p><h1>去阿里，<br>看山海与旷野。</h1><p class="hero-description">从珠峰到古格，从圣湖到羌塘。<br>十三天，一条向西再向东的环线。</p><div class="hero-actions"><a class="button primary" href="#daily">翻开每日行程 <span>↗</span></a><a class="button ghost" href="#weather">先看沿途天气</a></div><div class="hero-stats"><div><b>13<span>天</span></b><small>09.25 — 10.07</small></div><div><b>10<span>天</span></b><small>阿里中北线自驾</small></div><div><b>5,200<span>m</span></b><small>路线近似最高点</small></div><div><b>12<span>晚</span></b><small>酒店按现有订单保留</small></div></div></div>
     <a class="hero-credit" id="hero-credit" target="_blank" rel="noopener noreferrer">布达拉宫 · 摄影来源 ↗</a>
   </header>
-  <nav class="quick-nav" aria-label="攻略章节"><a href="#overview">全程概览</a><a href="#weather">天气与穿衣</a><a href="#daily">每日行程</a><a href="#hotels">酒店信息</a><a href="#altitude">海拔曲线</a><a href="#choices">景点取舍</a><a href="#tickets">购票预约</a><a href="#notes">行前提醒</a></nav>
+  <nav class="quick-nav" aria-label="攻略章节"><a href="#overview">全程概览</a><a href="#weather">天气与穿衣</a><a href="#daily">每日行程</a><a href="#drone">无人机适飞情况</a><a href="#hotels">酒店信息</a><a href="#altitude">海拔曲线</a><a href="#choices">景点取舍</a><a href="#tickets">购票预约</a><a href="#notes">行前提醒</a></nav>
   <main class="page">
     <section class="intro" aria-label="出发与返回"><div class="intro-copy"><p class="eyebrow">ONE ROUTE, MANY LANDSCAPES</p><h2>把时间，<br>留给真正想看的风景。</h2><p>沿用方案 A 的雪山、古格与羌塘湖群。<br>按最新酒店衔接：9 月 29 日住塔尔钦，10 月 3 日住尼玛。</p></div><div class="flight-board"><div><span>去程 / 09.25 周五</span><b>西藏航空 TV9950</b><p>10:05 杭州萧山 T3<br>16:30 拉萨贡嘎 T3 · 取车</p></div><div><span>返程 / 10.07 周三</span><b>西藏航空 TV9949</b><p>10:55 拉萨贡嘎 T3<br>16:55 杭州萧山 T3</p></div><small>航班信息沿用订单；临行以航司通知为准。</small></div></section>
     <section id="overview"><div class="section-head"><div><p class="eyebrow">01 / THE BIG PICTURE</p><h2>全程概览</h2></div><p>每天从前晚住宿地出发，<br>在当晚酒店收尾。</p></div><div class="editor-note"><b>先看节奏</b><p>D3 珠峰转萨嘎、D7 革吉转措勤、D8 文布南村再到尼玛都需要克制停留。车程不含游览、换乘、用餐与检查站；时间窗是计划，不是抵达承诺。</p></div><div id="overview-content"></div></section>
     <section id="weather"><div class="section-head"><div><p class="eyebrow">02 / WEATHER ALONG THE WAY</p><h2>山湖之间，冷暖有别</h2></div><p id="weather-stamp"></p></div><div id="weather-summary"></div><div id="weather-chart"></div><details class="source-details"><summary>逐点预报、风力与来源</summary><div id="weather-detail"></div></details></section>
     <section id="daily"><div class="section-head"><div><p class="eyebrow">03 / DAY BY DAY</p><h2>每天，都有自己的风景</h2></div><p>实景图片 · 玩法 · 时间窗<br>既有期待，也留余量。</p></div><div class="day-nav" id="day-nav" aria-label="每日行程跳转"></div><div id="days-content"></div></section>
-    <section id="hotels"><div class="section-head"><div><p class="eyebrow">04 / WHERE TO STAY</p><h2>酒店信息表</h2></div><p>原订单信息完整保留<br>同日备选列在主酒店之后。</p></div><div id="hotel-grid"></div><p class="micro">左右滑动可查看全部字段。单间价格沿用订单计算口径；酒店详情链接不代表重新预订。<span class="hotel-backup">（备选）</span> <span class="hotel-alert">（缺1间）</span></p></section>
-    <section id="altitude"><div class="section-head"><div><p class="eyebrow">05 / ELEVATION PROFILE</p><h2>从河谷，到云端</h2></div><p>保留逐日海拔曲线<br>途经点与住宿点一目了然。</p></div><div id="altitude-poster"></div></section>
-    <section id="choices"><div class="section-head"><div><p class="eyebrow">06 / LESS, BUT BETTER</p><h2>哪些留下，哪些放过</h2></div><p>不把每一次路过，<br>都变成必须完成的打卡。</p></div><div id="choices-content" class="choices-grid"></div></section>
-    <section id="tickets"><div class="section-head"><div><p class="eyebrow">07 / BOOK AHEAD</p><h2>购票与预约</h2></div><p>核对日期：2026.09.19<br>历史票价单独标明。</p></div><div id="tickets-content"></div></section>
-    <section id="notes"><div class="section-head"><div><p class="eyebrow">08 / BEFORE YOU GO</p><h2>出发前，记住这些</h2></div></div><div id="notes-content" class="notes-grid"></div><details class="source-details"><summary>图片版权、资料来源与待核验事项</summary><div id="sources-content"></div></details></section>
+    <section id="drone"><div class="section-head"><div><p class="eyebrow">04 / BEFORE TAKEOFF</p><h2>无人机适飞情况</h2></div><p id="drone-stamp">逐日、逐点核对<br>空域与场地限制分开看。</p></div><div id="drone-content"></div></section>
+    <section id="hotels"><div class="section-head"><div><p class="eyebrow">05 / WHERE TO STAY</p><h2>酒店信息表</h2></div><p>原订单信息完整保留<br>同日备选列在主酒店之后。</p></div><div id="hotel-grid"></div><p class="micro">左右滑动可查看全部字段。单间价格沿用订单计算口径；酒店详情链接不代表重新预订。<span class="hotel-backup">（备选）</span> <span class="hotel-alert">（缺1间）</span></p></section>
+    <section id="altitude"><div class="section-head"><div><p class="eyebrow">06 / ELEVATION PROFILE</p><h2>从河谷，到云端</h2></div><p>保留逐日海拔曲线<br>途经点与住宿点一目了然。</p></div><div id="altitude-poster"></div></section>
+    <section id="choices"><div class="section-head"><div><p class="eyebrow">07 / LESS, BUT BETTER</p><h2>哪些留下，哪些放过</h2></div><p>不把每一次路过，<br>都变成必须完成的打卡。</p></div><div id="choices-content" class="choices-grid"></div></section>
+    <section id="tickets"><div class="section-head"><div><p class="eyebrow">08 / BOOK AHEAD</p><h2>购票与预约</h2></div><p>核对日期：2026.09.19<br>历史票价单独标明。</p></div><div id="tickets-content"></div></section>
+    <section id="notes"><div class="section-head"><div><p class="eyebrow">09 / BEFORE YOU GO</p><h2>出发前，记住这些</h2></div></div><div id="notes-content" class="notes-grid"></div><details class="source-details"><summary>图片版权、资料来源与待核验事项</summary><div id="sources-content"></div></details></section>
     <noscript><p>此页面需要 JavaScript 展示完整行程、酒店和曲线。也可查看同目录 tibet-guide.md。</p></noscript>
   </main>
   <footer class="site-footer"><div><b>藏西手记</b><p>一条路线，慢慢看。</p></div><div><a href="tibet-guide.md">文字版 Markdown ↗</a><button type="button" id="print-guide">打印 / 存 PDF</button><a href="#">回到顶部 ↑</a></div><small>2026.09.25 — 10.07 · 阿里中北线方案 A<br>天气为静态快照，远程图片需联网。未修改原路线页面。</small></footer>
