@@ -36,7 +36,7 @@ assert.ok(current.get('weather-detail').includes('本次已核验'));
 assert.ok(!current.get('weather-detail').includes('原核对（本次未更新）'));
 assert.ok(current.get('weather-detail').includes('404'));
 assert.equal(count(current.get('days-content'),/class="day-article"/g),13);
-assert.equal(count(current.get('hotel-grid'),/<tr>/g),20,'19 hotel rows plus header');
+assert.equal(count(current.get('hotel-grid'),/<tr>/g),22,'21 hotel rows plus header');
 assert.equal(count(current.get('altitude-poster'),/altitude-marker is-stay/g),12);
 const view=current.c.window.TIBET_GUIDE_VIEW;
 assert.equal(view.mergedWeatherNodes.flatMap(n=>n.members).length,37);
@@ -68,4 +68,4 @@ const empty=render(w=>{for(const n of w.nodes)Object.assign(n,{status:'unavailab
 assert.equal(empty.c.window.TIBET_GUIDE_VIEW.dayWeather('D0').available,false);
 assert.ok(!/NaN|Infinity/.test(empty.get('weather-chart')));
 assert.ok(empty.get('weather-chart').includes('待更新'));
-console.log('Offline page-template regression passed: current / no trend / partial / unavailable; 37 weather nodes, 19 hotels, 12 stays, 13 days. Visual layout and remote assets not tested.');
+console.log('Offline page-template regression passed: current / no trend / partial / unavailable; 37 weather nodes, 21 hotels, 12 stays, 13 days. Visual layout and remote assets not tested.');

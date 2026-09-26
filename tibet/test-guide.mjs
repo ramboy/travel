@@ -11,15 +11,29 @@ const read=name=>fs.readFileSync(path.join(root,name),'utf8');
 const c={window:{}};vm.createContext(c);
 for(const name of ['guide-base.js','guide-itinerary.js','guide-weather-trends.js','guide-weather.js','guide-media.js','guide-hotel-media.js','guide-extra-media.js','guide-drone-evidence.js','guide-drone.js'])vm.runInContext(read(name),c);
 const original=read('amap-jsapi/app.js'),old={};vm.createContext(old);vm.runInContext(original.slice(0,original.indexOf('const PLACES ='))+'\nthis.hotels=HOTEL_OPTIONS;',old);
-assert.equal(JSON.stringify(c.window.TIBET_BASE.hotels),JSON.stringify(old.hotels),'original hotel values preserved');
-assert.equal(c.window.TIBET_BASE.hotels.length,19);
+const updatedHotels=c.window.TIBET_BASE.hotels;
+const originalRows=updatedHotels.filter(h=>h.hotel!=='珠穆朗玛国际酒店').map(h=>h.hotel==='维也纳酒店（珠峰路巴松村店）'?{...h,place:'巴松村'}:h);
+assert.equal(JSON.stringify(originalRows),JSON.stringify(old.hotels),'existing bookings preserved apart from agreed backup designation');
+assert.equal(updatedHotels.length,21);
+const newRooms=updatedHotels.filter(h=>h.hotel==='珠穆朗玛国际酒店');
+assert.equal(JSON.stringify(newRooms.map(h=>[h.room,h.price,h.bed])),JSON.stringify([
+ ['天际富氧双床房','¥460.02','2张 1.35 m 双人床'],['天际富氧大床房','¥492','1张 1.8 m 大床']
+]));
+assert.ok(newRooms.every(h=>h.checkin==='09.27'&&h.span==='1晚 · 1间'&&h.cancel==='09.27 18:00 前免费取消'&&h.breakfast==='2份/间'));
+assert.equal(Math.round(newRooms.reduce((sum,h)=>sum+Number(h.price.slice(1)),0)*100),95202);
+assert.equal(updatedHotels.find(h=>h.hotel==='维也纳酒店（珠峰路巴松村店）').place,'巴松村（备选）');
+const updatedD2=c.window.TIBET_ITINERARY.days.find(d=>d.day==='D2');
+assert.equal(JSON.stringify(updatedD2.hotelIndexes.map(i=>updatedHotels[i].room)),JSON.stringify(['天际富氧双床房','天际富氧大床房']));
+assert.ok(updatedD2.route.at(-1).includes('珠穆朗玛'));
+assert.ok(c.window.TIBET_ITINERARY.days.find(d=>d.day==='D3').route[0].includes('珠穆朗玛'));
+for(const file of ['guide-hotel-updates.json','guide-base.js','tibet-guide.md'])assert.ok(!/104693960036|104693531951|1197/.test(read(file)),'public artifacts exclude private order and card numbers');
 const hotelMedia=c.window.TIBET_HOTEL_MEDIA,hotelRows=c.window.TIBET_BASE.hotels;
 for(const h of hotelRows){
   const entry=hotelMedia.hotels[h.hotel];assert.ok(entry,`photo entry for ${h.hotel}`);
-  assert.equal(JSON.stringify(entry.rooms.map(r=>r.room)),JSON.stringify(h.room.split('\n')),`booked room order for ${h.hotel}`);
+  assert.ok(h.room.split('\n').every(room=>entry.rooms.some(r=>r.room===room)),`booked rooms for ${h.hotel}`);
   if(entry.image){const a=hotelMedia.assets[entry.image];assert.equal(a.kind,'hotel');assert.equal(a.status,'verified');assert.equal(a.sourceUrl,entry.url);}
   for(const room of entry.rooms){
-    if(!room.image){assert.equal(h.hotel,'尼玛五龙宾馆');assert.equal(room.status,'unavailable');assert.ok(room.note);continue;}
+    if(!room.image){assert.ok(['尼玛五龙宾馆','珠穆朗玛国际酒店'].includes(h.hotel));assert.equal(room.status,'unavailable');assert.ok(room.note);continue;}
     const a=hotelMedia.assets[room.image];assert.equal(a.kind,'hotel-room');assert.equal(a.status,'verified');assert.equal(a.sourceUrl,entry.url);assert.ok(a.sourceRoomName);assert.ok(a.evidence);assert.ok(a.src.startsWith('https://dimg04.c-ctrip.com/'));
     if(a.sourceKind==='guest_review_photo'){assert.ok(a.roomId);assert.ok(a.reviewId);assert.ok(a.imageId);assert.equal(a.picTypeId,9);assert.equal(a.categoryId,null);assert.ok(a.credit.includes('住客实拍'));}
     else{assert.equal(a.categoryId,9);assert.ok(a.pictureId);}
@@ -162,7 +176,7 @@ for(const row of droneRows.filter(r=>r.uom.observation)){
 }
 const hashes={'amap-jsapi/app.js':'d5b21ed08871d2e7853249c2b7b3d296ee72ca724486bd96eec0febf7d54282f','amap-jsapi/index.html':'82bfbf350700b256038ff8d3717a9ecab128818454b72fa1ca1f2582ed292858','amap-jsapi/styles.css':'d224f3a9f22ab156f2208a012dd0f111c346db5270413af33a110ec02d6ab2f4','amap-jsapi/README.md':'0532002ec438d14e44db00642c01b307a9e4c60eb5a50e0487ee73f6d8c6db88'};
 for(const[f,h]of Object.entries(hashes))assert.equal(crypto.createHash('sha256').update(read(f)).digest('hex'),h,`${f} unchanged`);
-console.log('Data assertions passed: 19 hotel rows unchanged; 13 dates; 12 stays; source hashes intact.');
+console.log('Data assertions passed: 21 hotel rows; existing bookings retained; 13 dates; 12 stays; source hashes intact.');
 console.log(`Weather assertions passed: ${forecastNodes.length} Moji nodes; ${activeTrends.length} retained MSN nodes; checked ${weatherData.checkedAt}.`);
 if(process.env.GUIDE_DATA_ONLY==='1'){console.log('GUIDE_DATA_ONLY=1: browser regression skipped.');process.exit(0);}
 
@@ -177,7 +191,7 @@ for(const width of [360,390,768,1440]){
   const page=await browser.newPage({viewport:{width,height:1000}});page.on('pageerror',e=>errors.push(e.message));
   await page.goto(url,{waitUntil:'domcontentloaded'});await page.waitForSelector('.day-article');
   const metrics=await page.evaluate(()=>({width:innerWidth,scroll:document.documentElement.scrollWidth,days:document.querySelectorAll('.day-article').length,hotels:document.querySelectorAll('.hotel-table tbody tr').length,backup:[...document.querySelectorAll('.hotel-table .hotel-backup')].map(e=>getComputedStyle(e).color),alert:[...document.querySelectorAll('.hotel-table .hotel-alert')].map(e=>getComputedStyle(e).color),aligned:[...document.querySelectorAll('.hotel-table td,.hotel-table th')].every(e=>getComputedStyle(e).verticalAlign==='middle'),stays:document.querySelectorAll('.altitude-marker.is-stay').length}));
-  assert.equal(metrics.width,metrics.scroll,`no page overflow at ${width}`);assert.equal(metrics.days,13);assert.equal(metrics.hotels,19);assert.equal(metrics.stays,12);assert.equal(metrics.aligned,true);assert.ok(metrics.backup.every(c=>c==='rgb(4, 111, 251)'));assert.ok(metrics.alert.every(c=>c==='rgb(255, 30, 0)'));
+  assert.equal(metrics.width,metrics.scroll,`no page overflow at ${width}`);assert.equal(metrics.days,13);assert.equal(metrics.hotels,21);assert.equal(metrics.stays,12);assert.equal(metrics.aligned,true);assert.ok(metrics.backup.every(c=>c==='rgb(4, 111, 251)'));assert.ok(metrics.alert.every(c=>c==='rgb(255, 30, 0)'));
   assert.equal(await page.locator('.quick-nav a[href="#drone"]').count(),1,'drone section in main navigation');
   assert.equal(await page.locator('.drone-table tbody tr').count(),droneRows.length,'every drone point rendered');
   const droneCells=await page.locator('.drone-table tbody tr').evaluateAll(rows=>rows.map(row=>({id:row.dataset.droneId,day:row.dataset.day,status:row.dataset.uomStatus,cells:row.children.length,date:row.querySelector('.drone-query-date')?.textContent,precision:row.querySelector('.drone-location-precision')?.textContent})));
@@ -190,9 +204,9 @@ for(const width of [360,390,768,1440]){
   const expectedCards=c.window.TIBET_ITINERARY.days.flatMap(d=>hotelRows.filter(h=>h.checkin.split('\n').includes(d.date)).map(h=>({hotel:h.hotel,rooms:Array.from(h.room.split('\n'))})));
   assert.equal(JSON.stringify(hotelCards.map(({hotel,rooms})=>({hotel,rooms}))),JSON.stringify(expectedCards),'all primary and backup hotels follow date and room order');
   assert.equal(new Set(hotelCards.map(h=>h.id)).size,hotelCards.length,'unique repeat-stay anchors');
-  assert.equal(hotelCards.length,20);assert.equal(new Set(hotelCards.map(h=>h.hotel)).size,19);
-  assert.deepEqual(hotelCards.filter(h=>h.missing).map(h=>h.hotel),['尼玛五龙宾馆']);assert.equal(hotelCards.find(h=>h.missing).missing,2);
-  assert.equal(await page.locator('.hotel-photo[data-room]').count(),25);assert.equal(await page.locator('.hotel-photo-jump').count(),19);
+  assert.equal(hotelCards.length,22);assert.equal(new Set(hotelCards.map(h=>h.hotel)).size,20);
+  assert.deepEqual(hotelCards.filter(h=>h.missing).map(h=>h.hotel),['珠穆朗玛国际酒店','珠穆朗玛国际酒店','尼玛五龙宾馆']);assert.ok(hotelCards.filter(h=>h.missing).every(h=>h.missing===2));
+  assert.equal(await page.locator('.hotel-photo[data-room]').count(),27);assert.equal(await page.locator('.hotel-photo-jump').count(),21);
   const merged=await page.evaluate(()=>window.TIBET_GUIDE_VIEW.mergedWeatherNodes);
   for(const n of merged){if(n.members.length>1){assert.ok(n.members.every(m=>m.date===n.date&&m.status===n.status&&m.provider===n.provider));assert.ok(Math.max(...n.members.map(m=>m.high))-Math.min(...n.members.map(m=>m.high))<=2);assert.ok(Math.max(...n.members.map(m=>m.low))-Math.min(...n.members.map(m=>m.low))<=2);assert.equal(n.high,Math.max(...n.members.map(m=>m.high)));assert.equal(n.low,Math.min(...n.members.map(m=>m.low)));}}
   assert.equal(merged.flatMap(n=>n.members).length,37);

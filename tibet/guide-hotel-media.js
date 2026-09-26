@@ -1036,3 +1036,6 @@ window.TIBET_HOTEL_MEDIA = {
     }
   ]
 };
+
+// 2026-09-26 新订单：尚无可确认对应关系的公开实拍图。
+window.TIBET_HOTEL_MEDIA.hotels["珠穆朗玛国际酒店"] = {"rooms": [{"room": "天际富氧双床房", "status": "unavailable", "note": "用户订单仅展示房型文字，外观及房型实拍待核实。"}, {"room": "天际富氧大床房", "status": "unavailable", "note": "用户订单仅展示房型文字，外观及房型实拍待核实。"}]};

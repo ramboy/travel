@@ -8,14 +8,24 @@ const original = read('amap-jsapi/app.js');
 const source = {};
 vm.createContext(source);
 vm.runInContext(original.slice(0, original.indexOf('const PLACES =')) + '\nthis.hotels = HOTEL_OPTIONS; this.profile = ALTITUDE_PROFILES.classic;', source);
+const updates = JSON.parse(read('guide-hotel-updates.json'));
+for (const hotel of source.hotels) {
+  if (updates.backupHotels.includes(hotel.hotel)) hotel.place = hotel.place.replace(/（备选）$/, '') + '（备选）';
+}
+const insertion = source.hotels.findIndex(h => h.hotel === updates.insertBefore);
+if (insertion < 0) throw new Error('Hotel update anchor missing');
+source.hotels.splice(insertion, 0, ...updates.hotels);
 const profile = JSON.parse(JSON.stringify(source.profile));
 // 新攻略按已确认的主酒店衔接；原页面与原数据不修改。
+const d2 = profile.find(g => g.day === 'D2');
+d2.points = d2.points.filter(p => !p.stay);
+d2.points.push({name:'定日白坝（县域海拔参考）',alt:4300,stay:true});
 profile.find(g => g.day === 'D5').points = profile.find(g => g.day === 'D5').points.filter(p => p.name !== '普兰');
 const d8 = profile.find(g => g.day === 'D8');
 d8.points.forEach(p => {delete p.stay;});
 d8.points.push({name:'尼玛',alt:4530,stay:true});
-const data = {hotels:source.hotels,profile,source:'amap-jsapi/app.js',profileNote:'沿用原海拔曲线的近似值；按主酒店调整塔尔钦及尼玛住宿衔接。'};
-fs.writeFileSync(path.join(root,'guide-base.js'), '/* 由 build-guide.mjs 从原攻略生成；酒店信息原样保留。 */\nwindow.TIBET_BASE = '+JSON.stringify(data,null,2)+';\n');
+const data = {hotels:source.hotels,profile,source:'amap-jsapi/app.js',profileNote:'沿用原海拔曲线的近似值；按主酒店调整定日白坝、塔尔钦及尼玛住宿衔接；定日白坝采用原攻略定日约4300米县域参考，非酒店实测。'};
+fs.writeFileSync(path.join(root,'guide-base.js'), '/* 由 build-guide.mjs 从原攻略及 guide-hotel-updates.json 生成；勿手工修改。 */\nwindow.TIBET_BASE = '+JSON.stringify(data,null,2)+';\n');
 
 const c = {window:{}};
 vm.createContext(c);
@@ -28,7 +38,7 @@ const hotelLink=h=>hotelMedia.hotels[h.hotel]?.url?`[${h.hotel}](${hotelMedia.ho
 const weatherTrends=weather.nodes.filter(n=>n.status==='long_range_trend');
 const staleTrend=n=>n.status==='long_range_trend'&&n.checkedAt.slice(0,10)<weather.checkedAt.slice(0,10);
 const trendSummary=weatherTrends.length?`采用 MSN 30 天远期趋势的地点：${weatherTrends.map(n=>`${n.date.slice(5)} ${n.places.join(' / ')}（${staleTrend(n)?'旧快照，原核对':'本次核对'}：${n.checkedAt}）`).join('；')}。远期趋势不是短期预报或历史平均值。`:'';
-let md = `# ${guide.title}\n\n阿里中北线 · 方案 A · ${guide.dates}\n\n${guide.subtitle}\n\n只含图文攻略；原路线页面保留不变。09.29 住塔尔钦，10.03 住尼玛。\n\n## 航班\n\n- 09.25 西藏航空 TV9950：10:05 杭州萧山 T3 → 16:30 拉萨贡嘎 T3。\n- 10.07 西藏航空 TV9949：10:55 拉萨贡嘎 T3 → 16:55 杭州萧山 T3。\n\n## 天气\n\n墨迹核对：${weather.checkedAt}，明确日期预报范围为 ${weather.forecastRange.from}—${weather.forecastRange.through}。${trendSummary}最低温为日最低保守参考，不冒充07:00—24:00小时最低；区县参考不等于景点精确温度。\n\n| 日期 | 地点 | 类型 / 天气 | 最高 / 最低 | 风力 | 来源 | 核对时间 |\n| --- | --- | --- | --- | --- | --- | --- |\n`;
+let md = `# ${guide.title}\n\n阿里中北线 · 方案 A · ${guide.dates}\n\n${guide.subtitle}\n\n只含图文攻略；原路线页面保留不变。09.27 住定日白坝珠穆朗玛国际酒店（双床、大床各1间，合计¥952.02），巴松村维也纳保留为备选；09.29 住塔尔钦，10.03 住尼玛。\n\n## 航班\n\n- 09.25 西藏航空 TV9950：10:05 杭州萧山 T3 → 16:30 拉萨贡嘎 T3。\n- 10.07 西藏航空 TV9949：10:55 拉萨贡嘎 T3 → 16:55 杭州萧山 T3。\n\n## 天气\n\n墨迹核对：${weather.checkedAt}，明确日期预报范围为 ${weather.forecastRange.from}—${weather.forecastRange.through}。${trendSummary}最低温为日最低保守参考，不冒充07:00—24:00小时最低；区县参考不等于景点精确温度。\n\n| 日期 | 地点 | 类型 / 天气 | 最高 / 最低 | 风力 | 来源 | 核对时间 |\n| --- | --- | --- | --- | --- | --- | --- |\n`;
 for(const n of weather.nodes) md+=`| ${n.date.slice(5)} | ${n.places.join(' / ')} | ${n.status==='long_range_trend'?`MSN 远期趋势（${staleTrend(n)?'保留旧快照':'本次已核验'}）：`:''}${n.condition} | ${Number.isFinite(n.high)&&Number.isFinite(n.low)?`${n.high} / ${n.low}℃`:'待更新'} | ${n.wind} | [${n.provider} · ${n.region}](${n.sourceUrl}) | ${staleTrend(n)?'原核对（本次未更新）：':''}${n.checkedAt||weather.checkedAt} |\n`;
 md+='\n### 天气口径与复查\n\n';for(const note of weather.notes)md+=`- ${note}\n`;for(const n of weather.nodes.filter(n=>n.status==='long_range_trend'))md+=`- ${n.date.slice(5)} ${n.places.join(' / ')}：${n.reason} 复查：${n.navigation} 核对：${n.checkedAt}。\n`;
 md+='\n## 无人机适飞情况\n\n';
@@ -67,6 +77,7 @@ for(const d of guide.days){
   for(const h of source.hotels.filter(h=>h.checkin.split('\n').includes(d.date))){
     const entry=hotelMedia.hotels[h.hotel],exterior=media[entry?.image]||findPhoto(h.hotel);
     md+=`#### ${h.hotel}${h.place.endsWith('（备选）')?'（备选）':''}｜外观与房型\n\n`;
+    if(h.address) md+=`地址：${h.address}\n\n${h.roomNote}；${h.stayNote}\n\n`;
     const photos=[{label:'酒店外观',asset:exterior},...h.room.split('\n').map(room=>({label:room,asset:media[entry?.rooms?.find(r=>r.room===room)?.image]}))];
     for(const {label,asset:a} of photos){
       md+=`**${label}**\n\n`;

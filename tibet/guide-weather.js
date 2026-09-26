@@ -325,7 +325,7 @@ window.TIBET_WEATHER = (() => {
     ['09-27', 'D2', ['康马出发'], 'kangmar-county', '康马县预报。'],
     ['09-27', 'D2', ['西林观景台'], 'dingjie-county', proxy],
     ['09-27', 'D2', ['加乌拉山口'], 'tingri-county', proxy],
-    ['09-27', 'D2', ['巴松村住宿'], 'tingri-county', '定日县级预报供巴松村住宿参考；不是巴松措景区天气。'],
+    ['09-27', 'D2', ['定日白坝住宿'], 'tingri-county', '定日县级预报供白坝珠穆朗玛国际酒店住宿参考；县级旧快照并非酒店实时天气。'],
     ['09-28', 'D3', ['珠峰大本营'], 'qomolangma-national-nature-reserve', '墨迹珠峰保护区天气点参考，不是 5,200 m 大本营实测，也不是峰顶天气。'],
     ['09-28', 'D3', ['珠峰古堡遗址'], 'tingri-county', proxy],
     ['09-28', 'D3', ['佩枯措'], 'gyirong-county', proxy],
