@@ -47,10 +47,38 @@ for(const hotel of plan.hotelChanges){
   assert.ok(hotel.oldCancelDeadline.includes('旧订单'),'cancellation terms retain their old-order label');
   assert.ok(/待|未确认|拟保留/.test(hotel.status),'new hotel actions are not reported complete');
 }
-for(const [name,date] of [['汉庭','2026-09-29'],['尚客优','2026-09-30'],['华庭','2026-10-01']]){
+for(const [name,date] of [['尚客优','2026-09-30'],['华庭','2026-10-01']]){
   const hotel=plan.hotelChanges.find(row=>row.hotel.includes(name));
   assert.equal(hotel.newDate,date);assert.ok(/确认/.test(`${hotel.status} ${hotel.action}`));
 }
+const jinjiang=plan.confirmedStays.find(stay=>stay.id==='coqen-jinjiang-20260929');
+assert.ok(jinjiang,'order screenshot supplies a confirmed Coqen stay');
+assert.equal(jinjiang.hotel,'锦江之星酒店（阿里措勤国道216店）');
+assert.equal(jinjiang.checkin,'2026-09-29');
+assert.equal(jinjiang.checkout,'2026-09-30');
+assert.equal(jinjiang.nights,1);
+assert.equal(jinjiang.status,'已入住');
+assert.deepEqual(jinjiang.rooms.map(room=>[room.name,room.count,room.amount]),[
+  ['高级大床房',1,536],['标准大床房',1,520]
+]);
+assert.equal(jinjiang.total,1056);
+assert.equal(jinjiang.rooms.reduce((total,room)=>total+room.amount,0),jinjiang.total,'two screenshot orders total ¥1,056');
+assert.equal(jinjiang.rooms.reduce((total,room)=>total+room.count,0),2);
+assert.ok(jinjiang.rooms.every(room=>room.features==='弥散供氧、全屋智控、加湿器'));
+assert.equal(jinjiang.source,'用户提供的订单截图');
+const cancelled=plan.cancelledBookings.find(booking=>booking.hotel==='措勤行者无疆旅游酒店');
+assert.ok(cancelled,'cancelled screenshot order is retained for reconciliation');
+assert.equal(cancelled.checkin,'2026-09-29');
+assert.equal(cancelled.checkout,'2026-09-30');
+assert.equal(cancelled.amount,803.17);
+assert.equal(cancelled.status,'已取消');
+assert.ok(!plan.confirmedStays.some(stay=>stay.hotel===cancelled.hotel),'cancelled booking is excluded from valid stays');
+const oldHanting=plan.hotelChanges.find(hotel=>hotel.hotel.includes('汉庭'));
+assert.ok(oldHanting&&oldHanting.oldDate==='2026-10-02','original Hanting booking remains visible');
+assert.notEqual(oldHanting.newDate,'2026-09-29','Hanting is no longer the current Coqen lodging candidate');
+assert.ok(/待/.test(oldHanting.status),'handling of the original Hanting order is not inferred from another order screenshot');
+assert.ok(plan.days[4].hotelNote.includes('锦江之星')&&plan.days[4].hotelNote.includes('已入住'));
+assert.ok(!/住宿待落实|房间仍需落实|今晚没房/.test(plan.days[4].hotelNote),'today lodging is no longer marked unresolved');
 assert.ok(plan.hotelChanges.some(hotel=>hotel.newDate.includes('新增 3 晚')),'adds Lhasa lodging for the early return');
 assert.ok(conditions.weather.length);
 for(const weather of conditions.weather){
@@ -59,9 +87,9 @@ for(const weather of conditions.weather){
   assert.ok(weather.checkedAt&&weather.url&&weather.note);
 }
 assert.ok(!html.includes('guide-weather.js'),'old date-based weather is not loaded');
-assert.ok(markdown.includes('新入住日期均需确认')&&markdown.includes('没有把旧天气平移'));
+assert.ok(markdown.includes('锦江之星')&&markdown.includes('已入住')&&/旧天气没有平移|没有把旧天气平移/.test(markdown));
 assert.ok(!html.includes('4,479.4')&&!markdown.includes('4,479.4'),'old full-loop mileage is not republished as the revised route');
-console.log('Data checks passed: 13 consecutive dates, later route preserved, hotel changes pending, weather unverified.');
+console.log('Data checks passed: 13 dates, Coqen checked in for ¥1,056, cancelled order excluded, later hotel changes pending.');
 
 if(process.env.GUIDE_DATA_ONLY==='1')process.exit(0);
 const library=process.env.GUIDE_PLAYWRIGHT_PATH||path.join(os.homedir(),'.cache/codex-runtimes/codex-primary-runtime/dependencies/node/node_modules/playwright');
@@ -76,7 +104,9 @@ async function checkStaticContent(page,label){
   assert.equal(await page.locator('.overview-table tbody tr').count(),13,`${label}: 13 calendar rows`);
   assert.equal(await page.locator('.day').count(),9,`${label}: 9 upcoming daily articles`);
   assert.equal(await page.locator('.history-row').count(),4,`${label}: 4 historical rows`);
-  const rows=await page.locator('.overview-table tbody tr').evaluateAll(rows=>rows.map(row=>[row.cells[0].innerText,row.cells[2].innerText]));
+  const rows=await page.locator('.overview-table tbody tr').evaluateAll(rows=>rows.map(row=>[
+    row.cells[0].innerText,[...row.cells[2].childNodes].filter(node=>node.nodeType===Node.TEXT_NODE).map(node=>node.textContent).join('').trim()
+  ]));
   for(let index=0;index<plan.days.length;index++){
     assert.ok(rows[index][0].includes(plan.days[index].date.slice(5).replace('-','.')));
     assert.ok(rows[index][0].includes(plan.days[index].weekday));
@@ -87,6 +117,21 @@ async function checkStaticContent(page,label){
   const ids=await page.locator('[id]').evaluateAll(nodes=>nodes.map(node=>node.id));
   assert.equal(new Set(ids).size,ids.length,`${label}: unique anchor IDs`);
   assert.ok((await page.locator('#hotels').innerText()).includes('新日期待确认'));
+  const confirmedText=await page.locator('.confirmed-stay').innerText();
+  assert.ok(confirmedText.includes(jinjiang.hotel)&&confirmedText.includes('已入住'));
+  assert.ok(/1,?056/.test(confirmedText),'confirmed card displays the two-room total');
+  assert.ok(!confirmedText.includes(cancelled.hotel),'cancelled hotel is not shown as a valid checked-in stay');
+  assert.equal(await page.locator('.confirmed-stay img').count(),0,'confirmed hotel does not borrow another hotel photo');
+  const confirmedRooms=await page.locator('.confirmed-room-table tbody tr').allTextContents();
+  assert.equal(confirmedRooms.length,2,'two distinct screenshot room orders are rendered');
+  for(const room of jinjiang.rooms){
+    assert.ok(confirmedRooms.some(text=>text.includes(room.name)&&text.includes(String(room.amount))),'each room keeps its corresponding price');
+  }
+  const hotelText=await page.locator('#hotels').innerText();
+  assert.ok(hotelText.includes(cancelled.hotel)&&hotelText.includes('已取消')&&hotelText.includes('803.17'),'cancelled order remains clearly labelled');
+  const dayD4=await page.locator('#day-D4').innerText();
+  assert.ok(dayD4.includes('锦江之星')&&dayD4.includes('已入住'));
+  assert.ok(!/今晚措勤的房间仍需落实|今晚房间仍需落实|措勤 9 月 29 日住宿待落实|用户此前反馈今晚没房/.test(`${dayD4} ${hotelText}`),'stale tonight-unbooked wording is removed');
   assert.ok((await page.locator('#weather').innerText()).includes('旧预报没有平移'));
   const weather=await page.locator('.weather-table tbody tr').evaluateAll(rows=>rows.map(row=>[row.cells[2].innerText,row.cells[3].innerText]));
   assert.ok(weather.every(row=>row[0]==='待更新'&&row[1]==='待更新'));
@@ -123,7 +168,8 @@ try{
         hidden:image.hidden,fallback:image.nextElementSibling?.classList.contains('image-note')||false,
         group:image.closest('.hotel-card')?'hotel':image.closest('.spot')?'spot':'hero'
       })));
-      assert.equal(photos.filter(photo=>photo.group==='hotel').length,4,'four hotel candidate images are rendered');
+      assert.equal(photos.filter(photo=>photo.group==='hotel').length,3,'three later hotel candidate images are rendered');
+      assert.ok(!photos.filter(photo=>photo.group==='hotel').some(photo=>photo.alt.includes('汉庭')),'old Hanting photo is no longer a current hotel candidate');
       assert.ok(photos.filter(photo=>photo.group==='spot').length>=6,'later sightseeing photos are present');
       assert.ok(photos.every(photo=>photo.loaded||photo.hidden&&photo.fallback),'every failed image has a readable source fallback');
       assert.ok(photos.every(photo=>!photo.loaded||!photo.hidden),'loaded images are visible');
@@ -148,7 +194,7 @@ try{
       await page.evaluate(()=>scrollTo(0,0));
       await page.waitForFunction(()=>document.querySelector('.hero-photo img')?.complete,null,{timeout:15000}).catch(()=>{});
       const hero=path.join(output,`hero-${width}.png`);await page.screenshot({path:hero});screenshots.push(hero);
-      for(const selector of ['#day-D5','#hotels','#weather']){
+      for(const selector of ['#day-D4','#day-D5','.confirmed-stay','#hotels','#weather']){
         const shot=path.join(output,`${selector.slice(1)}-${width}.png`);
         await page.locator(selector).screenshot({path:shot,timeout:15000});screenshots.push(shot);
       }
