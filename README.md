@@ -11,11 +11,15 @@
 
 ## 西藏阿里自驾
 
+- [9/29 措勤转线新攻略 HTML](tibet/tibet-cuoqin-guide.html)
+- [9/29 措勤转线新攻略 Markdown](tibet/tibet-cuoqin-guide.md)
 - [方案 A 图文攻略 HTML](tibet/tibet-guide.html)
 - [方案 A 图文攻略 Markdown](tibet/tibet-guide.md)
 - [新攻略维护与数据说明](tibet/GUIDE-README.md)
 
-新攻略包含每日行程、实景图片、天气与温度曲线、酒店信息表和海拔曲线；不含交互路书。以下原有页面保留：
+9/29 转线版：萨嘎 → 措勤，9/30 尼玛、10/1 班戈、10/2 回拉萨；保留措勤后的景点顺序，暂保留 10/7 返程。新日期酒店改期与天气核实状态单列，原攻略保留。
+
+方案 A 图文攻略包含每日行程、实景图片、天气与温度曲线、酒店信息表和海拔曲线；不含交互路书。以下原有页面保留：
 
 - [原两方案路线图](tibet/index.html)
 - [A · 阿里中北线](tibet/index.html?route=classic)

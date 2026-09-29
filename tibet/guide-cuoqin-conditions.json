@@ -1,0 +1,98 @@
+{
+  "checkedAt": "2026-09-29T10:12:43+08:00",
+  "weather": [
+    {
+      "date": "2026-09-29",
+      "place": "措勤县",
+      "high": null,
+      "low": null,
+      "text": null,
+      "wind": null,
+      "sourceName": "墨迹天气（待核实）",
+      "url": "https://tianqi.moji.com/today/china/tibet/cuoqin-county",
+      "checkedAt": "2026-09-29T10:12:43+08:00",
+      "status": "待更新",
+      "note": "未取得新行程日期对应的天气页面数据；此链接仅为查询入口。"
+    },
+    {
+      "date": "2026-09-30",
+      "place": "尼玛县",
+      "high": null,
+      "low": null,
+      "text": null,
+      "wind": null,
+      "sourceName": "墨迹天气（待核实）",
+      "url": "https://tianqi.moji.com/today/china/tibet/nyinma-county",
+      "checkedAt": "2026-09-29T10:12:43+08:00",
+      "status": "待更新",
+      "note": "未取得新行程日期对应的天气页面数据；县城天气也不能代表沿途湖区和山口。"
+    },
+    {
+      "date": "2026-10-01",
+      "place": "班戈县",
+      "high": null,
+      "low": null,
+      "text": null,
+      "wind": null,
+      "sourceName": "墨迹天气（待核实）",
+      "url": "https://tianqi.moji.com/today/china/tibet/baingoin-county",
+      "checkedAt": "2026-09-29T10:12:43+08:00",
+      "status": "待更新",
+      "note": "未取得新行程日期对应的天气页面数据；此链接仅为查询入口。"
+    },
+    {
+      "date": "2026-10-02",
+      "place": "纳木措国家公园",
+      "high": null,
+      "low": null,
+      "text": null,
+      "wind": null,
+      "sourceName": "墨迹天气（待核实）",
+      "url": "https://tianqi.moji.com/today/china/tibet/namtso-national-park",
+      "checkedAt": "2026-09-29T10:12:43+08:00",
+      "status": "待更新",
+      "note": "未取得新行程日期对应的天气页面数据；景区开放与道路放行须另行确认。"
+    },
+    {
+      "date": "2026-10-02",
+      "place": "拉萨市",
+      "high": null,
+      "low": null,
+      "text": null,
+      "wind": null,
+      "sourceName": "墨迹天气（待核实）",
+      "url": "https://tianqi.moji.com/today/china/tibet/lhasa",
+      "checkedAt": "2026-09-29T10:12:43+08:00",
+      "status": "待更新",
+      "note": "未取得新行程日期对应的天气页面数据；此链接仅为查询入口。"
+    }
+  ],
+  "roads": [
+    {
+      "route": "9/29 萨嘎 → 措勤，G216 北上",
+      "status": "当日全段通行待确认",
+      "asOf": "2026-09-29T10:12:43+08:00",
+      "detail": "尚未查到可确认 9/29 小客车从萨嘎至措勤全段通行的公告。9/28 通告提及恢复的 G216 路段为改则至新疆方向，不能据此判断萨嘎至措勤已放行；出发前需确认山口、车型及防滑链要求。",
+      "url": "https://cbgc.scol.com.cn/news/8004503"
+    },
+    {
+      "route": "G216 措勤岔路口—萨嘎雅江大桥施工段（K3270+040—K3326+438）",
+      "status": "白天施工放行窗口，另查雪情",
+      "asOf": "2026-09-12",
+      "detail": "公告施工期为 2026/9/15—2027/1/10，08:00—20:00 开放，20:00—次日 08:00 封闭；施工仍可能间断放行。这只是指定桩号的施工安排，不代表萨嘎至措勤全段已满足雪后通行条件。",
+      "url": "https://cbgc.scol.com.cn/news/7951524"
+    },
+    {
+      "route": "原西进路线：G219 帕羊 → 马攸桥／塔尔钦",
+      "status": "最近查到 9/28 管制通告，尚未核到此段解除",
+      "asOf": "2026-09-28",
+      "detail": "9/28 公布 G219 帕羊镇 4157KM 至马攸桥 4056KM 因持续降雪实施双向管制；仁多郭瓦拿东拉山、S518 亚热至巴嘎和 X710 亚热至霍尔也有管制。新计划绕开这些西进路段。",
+      "url": "https://cbgc.scol.com.cn/news/8004503"
+    }
+  ],
+  "notes": [
+    "新日期天气尚未核实，温度、天气文字和风力均留空；原攻略其他日期的预报不平移到本版。",
+    "道路公告只适用于所列路段和时段，未检索到解除通知不等于现场一定仍封闭。按当天交警及检查站指引出发。",
+    "本次天气页面读取未成功，checkedAt 为核查尝试时间，不是气象机构的预报发布时间。"
+  ]
+}

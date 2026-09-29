@@ -1,5 +1,26 @@
 # 阿里中北线图文攻略
 
+## 9 月 29 日措勤转线新攻略
+
+入口：[措勤转线 HTML](tibet-cuoqin-guide.html) / [Markdown](tibet-cuoqin-guide.md)。原大环线页面与原订单资料保留。
+
+新安排为 **9/29 萨嘎 → 措勤，9/30 两湖与文布南村 → 尼玛，10/1 色林措 → 班戈，10/2 纳木措 → 拉萨**。后半程整体提前 3 天，10/3—6 留给拉萨休整、市区游与天气机动，暂保留 10/7 原返程。
+
+- `guide-cuoqin-plan.js`：新日期、每日安排、旧订单改期清单和受阻备选。新日期酒店均未视为订房完成。
+- `guide-cuoqin-conditions.json`：带来源日期的路况依据与新日期天气状态。本次未取得新日期预报，不平移旧预报；道路计划不代表实时放行。
+- `build-cuoqin-guide.mjs`：读取新计划与原攻略景点、酒店、图片、票务和无人机资料，生成独立 HTML 与 Markdown。原资料保留原观察时间。
+- `cuoqin-guide.css` / `cuoqin-guide.js`：新页样式、图片回退和打印增强；主要内容无需 JavaScript，远程图片需联网。
+- `test-cuoqin-guide.mjs`：检查日期和路线衔接、天气与酒店状态、手机和桌面排版、无 JavaScript 阅读及打印展开恢复。
+
+```sh
+node build-cuoqin-guide.mjs
+node test-cuoqin-guide.mjs
+```
+
+测试使用下文相同的本地服务器和 Chrome / Playwright 路径。此页与原攻略分开生成，维护时修改输入和生成器，不手改生成的 HTML / Markdown。
+
+## 原大环线攻略
+
 打开 `tibet-guide.html`，或在当前目录运行 `python3 -m http.server 8766 --bind 127.0.0.1` 后访问 `http://127.0.0.1:8766/tibet-guide.html`。
 
 本页只采用方案 A，不含交互地图、路书或动态视频；原 `amap-jsapi/` 保持不变。照片来源与天气核对时间均可在页面展开查看。两张已授权照片保存在本地，其余照片为远程引用，需要联网；离线时文字、酒店表、天气快照和曲线仍可使用。
