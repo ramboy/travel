@@ -1,4 +1,4 @@
-// Official notices checked on 2026-09-19. Prices with older evidence are labelled as references.
+// Base research checked on 2026-09-19; Saint Elephant Gate road/opening notices updated on 2026-09-30. Other prices and weather were not rechecked.
 window.TIBET_RESEARCH = {
   checkedAt: '2026-09-19',
   tickets: [
@@ -90,7 +90,7 @@ window.TIBET_RESEARCH = {
       price: '门票80＋摆渡25＝105元/人；自愿观光车另140元/人',
       channel: '“游藏游”微信小程序、S206旁游客接待中心；18011110212 / 17789060224',
       url: 'https://wlt.xizang.gov.cn/xccx/lytg/202606/t20260617_546017.html',
-      note: '2026-06-15生效公告允许购票核验后自驾入园，不能再写成长期关闭。接入道路为一级土路，接待中心至三生石往返110公里；仅在天气、道路、体力和返程时间均允许时进入，未开放保护区域不可进入。'
+      note: '6月公告允许购票核验后自驾；9月26日已公告雪后重开，但不能保证本次游览日开放。8月20日起东嘎村至三生石原54公里路段封闭施工，仍到游客接待中心办理入园，再按指定绕行线行驶；该线路单程约87.5公里，其中35.3公里为一级土路。往返、摆渡和游览分别留时，车辆准入、票价与当日路况再次确认；管制仅针对公告路段。'
     },
     {
       name: '布达拉宫主体参观',
@@ -131,9 +131,9 @@ window.TIBET_RESEARCH = {
       url:'https://s.nia.gov.cn/mps/mbbszy/dzbjtxz/202604/t20260414_1001.html'
     },
     {
-      title:'圣象天门是条件性备选，已有2026年官方开放规则',
-      text:'6月公告允许实名购票后经人车核验自驾进入。10.04再向景区确认土路、车辆准入和天气，10.05只有在能按时返拉萨的前提下安排；不能用未经证实的“封闭”或“全天随到随进”代替当日核验。',
-      url:'https://wlt.xizang.gov.cn/xccx/lytg/202606/t20260617_546017.html'
+      title:'圣象天门9月26日重开，施工绕行与当天放行另查',
+      text:'9月26日景区公告积雪基本清理、恢复开园；这不证明10.05当天道路放行。8月20日至12月31日，东嘎村至三生石原54公里路段封闭施工，指定绕行单程约87.5公里、含35.3公里一级土路。10.04向景区确认入口、指定绕行线、车辆准入及出园后返拉路线；不要将该施工段扩写为全湖封闭。',
+      url:'https://wlt.xizang.gov.cn/xccx/lytg/202609/t20260928_560871.html'
     },
     {
       title:'布达拉宫：主体票与雪城票分清',
@@ -158,6 +158,9 @@ window.TIBET_RESEARCH = {
   ],
   sources: [
     {title:'西藏文旅厅｜圣象天门游览管理公告', url:'https://wlt.xizang.gov.cn/xccx/lytg/202606/t20260617_546017.html', date:'2026-06-17（6月15日起执行）'},
+    {title:'西藏文旅厅｜圣象天门雪后恢复开园', url:'https://wlt.xizang.gov.cn/xccx/lytg/202609/t20260928_560871.html', date:'2026-09-26（不保证未来游览日开放）'},
+    {title:'西藏卫视+转景区公告｜圣象天门施工绕行线路', url:'https://cbgc.scol.com.cn/news/7880499', date:'2026-08-20景区公告（单程87.5公里，含35.3公里土路）'},
+    {title:'西藏文旅｜圣象天门原道路施工区间及期限', url:'https://weibo.com/2/detail/5333619813647684', date:'2026-08-19（施工期8月20日至12月31日）'},
     {title:'国家移民管理局｜电子边境管理区通行证签发服务指南', url:'https://s.nia.gov.cn/mps/mbbszy/dzbjtxz/202604/t20260414_1001.html', date:'2026-04-14（4月15日起启用）'},
     {title:'西藏文旅厅｜布达拉宫恢复周一闭馆', url:'https://wlt.xizang.gov.cn/xccx/lytg/202609/t20260907_557022.html', date:'2026-09-07（9月21日起执行）'},
     {title:'西藏文旅厅｜布达拉宫雪城单独参观线路', url:'https://wlt.xizang.gov.cn/xccx/lytg/202609/t20260916_559291.html', date:'2026-09-16（9月20日起执行）'},

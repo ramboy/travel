@@ -11,11 +11,15 @@
 
 ## 西藏阿里自驾
 
+- [10/3 回拉萨 · 四套详细方案 HTML](tibet/tibet-return-options.html)
+- [10/3 回拉萨 · 四套详细方案 Markdown](tibet/tibet-return-options.md)
 - [9/29 措勤转线新攻略 HTML](tibet/tibet-cuoqin-guide.html)
 - [9/29 措勤转线新攻略 Markdown](tibet/tibet-cuoqin-guide.md)
 - [方案 A 图文攻略 HTML](tibet/tibet-guide.html)
 - [方案 A 图文攻略 Markdown](tibet/tibet-guide.md)
 - [新攻略维护与数据说明](tibet/GUIDE-README.md)
+
+9/30 新增四案对比：方案 1 为美人尖与北岸湖宿，方案 2 为文布慢游，方案 3 为当雄休整，方案 4 为纳木措双视角。均计划 10/3 回拉萨；候选住宿、驾驶估算和道路待核条件单独列明。
 
 9/29 转线版：萨嘎 → 措勤，9/30 尼玛、10/1 班戈、10/2 回拉萨；保留措勤后的景点顺序，暂保留 10/7 返程。新日期酒店改期与天气核实状态单列，原攻略保留。
 

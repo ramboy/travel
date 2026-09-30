@@ -1,5 +1,21 @@
 # 阿里中北线图文攻略
 
+## 10 月 3 日回拉萨 · 四套方案
+
+入口：[四案对比 HTML](tibet-return-options.html) / [Markdown](tibet-return-options.md)。方案 1 保留用户提出的美人尖、文布南村和北岸湖畔住宿方向；方案 2—4 分别是文布慢游、当雄休整和纳木措双视角。全部覆盖 9/30—10/3，终点为拉萨，10/7 返程沿用原安排，未指定最终执行方案。
+
+- `guide-return-options.json`：四套完整日程、候选住宿、游览时间预算、删减顺序与来源。真实 9/29 酒店从 `guide-cuoqin-plan.js` 读取，避免重复维护。
+- `build-return-options.mjs`：生成 `tibet-return-options.html` 和 `tibet-return-options.md`，不要手改这两个输出。
+- `return-options.css` / `return-options.js`：手机/桌面布局、方案筛选、深链接、全部方案打印及原选择恢复。无 JavaScript 时四案仍可读。
+- `test-return-options.mjs`：路线日期、来源和住宿状态、四种宽度、筛选和深链接、无 JavaScript、打印与内容恢复。
+
+```sh
+node build-return-options.mjs
+node test-return-options.mjs
+```
+
+9/30 新核验的景区施工绕行（单程 87.5 公里、含 35.3 公里一级土路）与 9/26 恢复开园已同步到两份既有攻略的源数据。景区开园不等于未来游览日及所有连接道路已确认通行。没有平移旧天气，也没有把个人实走车程改写为实时导航。
+
 ## 9 月 29 日措勤转线新攻略
 
 入口：[措勤转线 HTML](tibet-cuoqin-guide.html) / [Markdown](tibet-cuoqin-guide.md)。原大环线页面与原订单资料保留。
