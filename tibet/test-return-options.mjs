@@ -34,8 +34,9 @@ for (const plan of data.plans) {
   for (const day of plan.days) {
     assert.equal(day.weekday, ['周日', '周一', '周二', '周三', '周四', '周五', '周六'][new Date(`${day.date}T12:00:00Z`).getUTCDay()], `${plan.id} ${day.date}: correct weekday`);
     assert.ok(day.route.length >= 2 && day.hotel && day.driving && day.decision);
-    assert.ok(/候选|待|未确认|确认后|需确认|预订|订房|房态/.test(day.hotel), `${plan.id} ${day.date}: future hotel is qualified`);
-    assert.ok(!/已入住|已订妥|预订成功|订房成功/.test(day.hotel), `${plan.id} ${day.date}: no invented completed booking`);
+    assert.ok(/原候选|订单|记录/.test(day.hotel), `${plan.id} ${day.date}: historical candidate or actual order is identified`);
+    if(day.date==='2026-10-02'&&!day.stay.includes('拉萨'))assert.ok(day.hotel.includes('原候选'),`${plan.id}: superseded October 2 overnight is labelled as a historical candidate`);
+    assert.ok(!/如家[^。；]*已入住/.test(day.hotel), `${plan.id} ${day.date}: payment does not imply Home Inn check-in`);
     assert.ok(day.schedule.length >= 2 && day.schedule.every(item => item.when && item.title && item.detail));
     assert.ok(day.priorities.length && day.cutFirst.length, `${plan.id} ${day.date}: executable choices are present`);
     for (const id of day.sourceIds || []) assert.ok(sourceIds.has(id), `${plan.id} ${day.date}: source ${id} exists`);
@@ -50,16 +51,38 @@ const context = { window: {} };
 vm.createContext(context);
 vm.runInContext(read('guide-cuoqin-plan.js'), context);
 const stay = context.window.TIBET_CUOQIN_PLAN.confirmedStays.find(item => item.id === 'coqen-jinjiang-20260929');
+const current = JSON.parse(JSON.stringify(context.window.TIBET_CUOQIN_PLAN));
+const huating = current.confirmedStays.find(item => item.hotel.includes('华庭'));
+const homeinn = current.confirmedStays.find(item => item.hotel.includes('如家') && item.hotel.includes('布达拉宫广场'));
+assert.ok(huating && homeinn, 'actual-order summary includes the October 3 updates');
 assert.ok(stay && stay.checkin === '2026-09-29' && stay.checkout === '2026-09-30' && stay.status === '已入住', 'starting overnight is historical and verified');
 assert.equal(stay.total, 1056);
+assert.deepEqual([huating.checkin,huating.checkout,huating.nights,huating.rooms.reduce((sum,room)=>sum+room.count,0),huating.total],['2026-10-01','2026-10-02',1,1,632]);
+assert.deepEqual([homeinn.checkin,homeinn.checkout,homeinn.nights,homeinn.rooms.reduce((sum,room)=>sum+room.count,0),homeinn.total],['2026-10-02','2026-10-04',2,2,1932]);
+assert.ok(huating.status.includes('已完成')&&/已扣款|扣款成功/.test(huating.paymentStatus));
+assert.ok(homeinn.paymentStatus.includes('待扣款')&&homeinn.paymentStatus.includes('离店扣款'));
+assert.ok(/未显示|未确认|未知/.test(`${homeinn.status} ${homeinn.note}`),'current check-in is not inferred from the order');
+assert.equal(current.returnFlight.date,'2026-10-04');
+assert.equal(current.returnFlight.number,'TV9949');
+assert.equal(current.returnFlight.departureTime,null);
+assert.equal(current.returnFlight.arrivalTime,null);
 for (const artifact of [html, markdown]) {
   assert.ok(artifact.includes(stay.hotel) && artifact.includes('已入住') && /1,?056/.test(artifact), 'historical hotel and amount survive publication');
   assert.ok(artifact.includes('87.5') && artifact.includes('35.3'), 'the specific detour and unpaved portion survive publication');
+  for(const record of [huating,homeinn]){
+    assert.ok(artifact.includes(record.hotel)&&artifact.includes(record.status)&&artifact.includes(record.paymentStatus),'both artifacts publish each actual order status and payment separately');
+    assert.ok(artifact.includes(record.breakfast||''),'both artifacts publish the same breakfast allowance');
+    for(const room of record.rooms)assert.ok(artifact.includes(room.amountLabel),'both artifacts retain the room-price scope');
+  }
 }
 assert.ok(data.plans[0].days.flatMap(day => day.route).some(place => place.includes('天空之树')), 'user option retains the correctly named tree stop');
 assert.ok(!data.plans.flatMap(plan => plan.days).flatMap(day => day.route).some(place => place.includes('天空之书')), 'route stops do not use the incorrect tree name');
 assert.ok(html.includes('return-options.css') && html.includes('return-options.js'));
 assert.ok(markdown.length > 1000, 'Markdown contains the complete route comparison');
+assert.equal(data.updatedAt,'2026-10-03');
+assert.ok(data.statusNote.includes('候选')&&data.statusNote.includes('留档'),'all four alternatives are explicitly archived');
+assert.ok(data.statusNote.includes('TV9949')&&/10\s*[/月]\s*4/.test(data.statusNote)&&data.statusNote.includes('杭州'),'latest return is October 4 to Hangzhou');
+for(const artifact of [html,markdown])assert.ok(artifact.includes(data.statusNote),'both artifacts retain the current status summary');
 
 if (process.env.GUIDE_DATA_ONLY === '1') {
   console.log('Return-options source and artifact checks passed.');
@@ -88,6 +111,25 @@ const states = page => page.evaluate(() => ({
 }));
 
 async function checkStructure(page, label) {
+  assert.equal(await page.locator('.confirmed-stay').count(),current.confirmedStays.length,`${label}: actual orders are separate from route candidates`);
+  for(const record of current.confirmedStays){
+    const card=page.locator(`[data-stay-id="${record.id}"]`);
+    const text=normalize(await card.innerText());
+    for(const value of [record.hotel,record.checkin,record.checkout,record.status,record.paymentStatus,record.breakfast].filter(Boolean))assert.ok(text.includes(normalize(value)),`${label}: actual card preserves ${record.id} facts`);
+    assert.ok(text.replaceAll(',','').includes(String(record.total)),`${label}: actual order total renders`);
+    const rows=await card.locator('.confirmed-room-table tbody tr').allTextContents();
+    assert.equal(rows.length,record.rooms.length);
+    for(const room of record.rooms)assert.ok(rows.some(row=>row.includes(room.name)&&row.includes(`${room.count} 间`)&&row.replaceAll(',','').includes(String(room.amount))&&(!room.amountLabel||row.includes(room.amountLabel))),`${label}: room count is paired with total-price scope`);
+    assert.ok(!/\d{12,}/.test(text),'public cards omit long order and payment-card numbers');
+  }
+  const returnText=await page.locator('#return-flight').innerText();
+  assert.ok(returnText.includes('TV9949')&&returnText.includes('杭州')&&/10\s*(?:月|\/|\.|-)\s*0?4/.test(returnText),`${label}: October 4 return supersedes the earlier flight date`);
+  assert.ok(/待确认|未提供|未确认/.test(returnText)&&!/10:55|16:55/.test(returnText),'new flight times remain unconfirmed');
+  const hotelTables=await page.locator('.confirmed-room-table').evaluateAll(tables=>tables.map(table=>{
+    const cell=table.tBodies[0]?.rows[0]?.cells[3],style=cell&&getComputedStyle(cell);
+    return {table:table.getBoundingClientRect().width,container:table.parentElement.getBoundingClientRect().width,descriptionWidth:cell?cell.getBoundingClientRect().width-parseFloat(style.paddingLeft)-parseFloat(style.paddingRight):0,fontSize:style?parseFloat(style.fontSize):0};
+  }));
+  assert.ok(hotelTables.every(size=>size.table<=size.container+1&&size.descriptionWidth>=4*size.fontSize),`${label}: room tables fit and description columns remain readable`);
   assert.deepEqual(await page.locator('section.plan').evaluateAll(nodes => nodes.map(node => node.id)), ids, `${label}: four ordered plans`);
   assert.equal(await page.locator('article.option-day').count(), 16, `${label}: four days per plan`);
   for (const id of ids) {
@@ -157,6 +199,10 @@ try {
     if ([390, 1440].includes(width)) {
       await page.evaluate(() => scrollTo(0, 0));
       await screenshot(page, `overview-${width}.png`);
+      for(const selector of [`#stay-${huating.id}`,`#stay-${homeinn.id}`,'#return-flight']){
+        const target=path.join(output,`${selector.slice(1)}-${width}.png`);
+        await page.locator(selector).screenshot({path:target});screenshots.push(target);
+      }
     }
     await page.close();
   }

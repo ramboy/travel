@@ -1,8 +1,25 @@
 # 阿里中北线图文攻略
 
+## 2026-10-03 酒店与返程更新
+
+新攻略统一更新为 **10/4 TV9949 拉萨返回杭州**，新的起降时刻与航站楼以改期后票面为准。措勤转线主日历缩为9/25—10/4、10天9晚；四套返程路线保留为9/30的历史候选，并把当前酒店订单独立置顶，不推定全部景点已实际游览。原大环线页面保留历史版本。
+
+- 班戈华庭：10/1—10/2，特惠大床1间1晚，¥632，订单已完成且扣款成功。
+- 拉萨如家酒店·neo（布达拉宫广场店）：10/2—10/4，高级双床2间2晚，订单总额¥1,932，离店扣款，截图未显示已入住或已扣款；10/3和10/4每间各2份早餐。
+- `guide-cuoqin-plan.js` 的 `confirmedStays` 和 `returnFlight` 为两页共用来源；`guide-confirmed-stays.mjs` 生成统一酒店卡和Markdown。`rooms[].amount` 是该行所含房间和晚数的总金额，以 `amountLabel` 明示，不再乘房数。
+- 只发布订单必要的行程信息，不保存订单号、银行卡信息或原截图；既有旧单未确认取消时继续标待处理。
+
+```sh
+node build-cuoqin-guide.mjs
+node build-return-options.mjs
+node test-cuoqin-guide.mjs
+node test-return-options.mjs
+```
+
+
 ## 10 月 3 日回拉萨 · 四套方案
 
-入口：[四案对比 HTML](tibet-return-options.html) / [Markdown](tibet-return-options.md)。方案 1 保留用户提出的美人尖、文布南村和北岸湖畔住宿方向；方案 2—4 分别是文布慢游、当雄休整和纳木措双视角。全部覆盖 9/30—10/3，终点为拉萨，10/7 返程沿用原安排，未指定最终执行方案。
+入口：[四案对比 HTML](tibet-return-options.html) / [Markdown](tibet-return-options.md)。方案 1 保留用户提出的美人尖、文布南村和北岸湖畔住宿方向；方案 2—4 分别是文布慢游、当雄休整和纳木措双视角。全部覆盖 9/30—10/3，终点为拉萨，原路线保留为档案；最新酒店订单和10/4 TV9949返杭安排独立展示。
 
 - `guide-return-options.json`：四套完整日程、候选住宿、游览时间预算、删减顺序与来源。真实 9/29 酒店从 `guide-cuoqin-plan.js` 读取，避免重复维护。
 - `build-return-options.mjs`：生成 `tibet-return-options.html` 和 `tibet-return-options.md`，不要手改这两个输出。
@@ -20,7 +37,7 @@ node test-return-options.mjs
 
 入口：[措勤转线 HTML](tibet-cuoqin-guide.html) / [Markdown](tibet-cuoqin-guide.md)。原大环线页面与原订单资料保留。
 
-新安排为 **9/29 萨嘎 → 措勤，9/30 两湖与文布南村 → 尼玛，10/1 色林措 → 班戈，10/2 纳木措 → 拉萨**。后半程整体提前 3 天，10/3—6 留给拉萨休整、市区游与天气机动，暂保留 10/7 原返程。
+转线日历保留 **9/29 萨嘎 → 措勤，9/30 两湖与文布南村 → 尼玛，10/1 色林措 → 班戈，10/2 纳木措 → 拉萨** 的路线框架，未逐项确认实际景点。10/3拉萨休整与返程准备，10/4乘TV9949回杭州；酒店订单按10/3截图更新。
 
 - `guide-cuoqin-plan.js`：新日期、每日安排、旧订单改期清单和受阻备选。9/29 措勤锦江之星已按用户订单截图确认入住，其余改期待确认。
 - `guide-cuoqin-conditions.json`：带来源日期的路况依据与新日期天气状态。本次未取得新日期预报，不平移旧预报；道路计划不代表实时放行。

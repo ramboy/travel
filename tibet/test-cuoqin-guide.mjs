@@ -19,9 +19,11 @@ const html=read('tibet-cuoqin-guide.html');
 const markdown=read('tibet-cuoqin-guide.md');
 const weekday=['周日','周一','周二','周三','周四','周五','周六'];
 
-assert.equal(plan.days.length,13,'retains all 13 calendar days');
+assert.equal(plan.days.length,10,'revised trip has 10 calendar days and 9 nights');
+assert.equal(plan.meta.startDate,'2026-09-25');
+assert.equal(plan.meta.endDate,'2026-10-04');
 assert.equal(plan.days[0].date,'2026-09-25');
-assert.equal(plan.days.at(-1).date,'2026-10-07');
+assert.equal(plan.days.at(-1).date,'2026-10-04');
 for(const [index,day] of plan.days.entries()){
   assert.equal(day.day,`D${index}`);
   assert.equal(day.weekday,weekday[new Date(`${day.date}T12:00:00Z`).getUTCDay()]);
@@ -41,15 +43,15 @@ assert.ok(plan.days[3].decision.includes('用户已确认')&&plan.days[3].decisi
 assert.ok(plan.days[4].drive.includes('待')&&!/\d+(?:\.\d+)?\s*(?:km|公里|小时)/.test(plan.days[4].drive),'new Saga drive has no invented navigation values');
 assert.ok(plan.days[5].metricNote.includes('不含文布南村')&&plan.days[5].metricNote.includes('不能用作'));
 assert.ok(plan.days[6].metricNote.includes('从文布南村出发')&&plan.days[6].metricNote.includes('不能沿用'));
-assert.ok(plan.days.slice(8,12).every(day=>day.status==='flexible'));
-assert.ok(plan.days[12].decision.includes('10 月 7 日'));
+assert.ok(plan.days[8].stay.includes('拉萨'),'October 3 retains Lhasa lodging');
+assert.ok(plan.days[9].route.join(' ').includes('杭州'),'D9 returns to Hangzhou');
+assert.ok(!/拉萨.*(?:住|住宿)|(?:住|住宿).*拉萨/.test(plan.days[9].stay),'October 4 does not add another Lhasa overnight');
 for(const hotel of plan.hotelChanges){
-  assert.ok(hotel.oldCancelDeadline.includes('旧订单'),'cancellation terms retain their old-order label');
-  assert.ok(/待|未确认|拟保留/.test(hotel.status),'new hotel actions are not reported complete');
+  assert.ok(/旧订单|本笔新订单/.test(hotel.oldCancelDeadline),'cancellation terms identify their applicable order');
 }
-for(const [name,date] of [['尚客优','2026-09-30'],['华庭','2026-10-01']]){
+for(const [name,date] of [['尚客优','2026-09-30']]){
   const hotel=plan.hotelChanges.find(row=>row.hotel.includes(name));
-  assert.equal(hotel.newDate,date);assert.ok(/确认/.test(`${hotel.status} ${hotel.action}`));
+  assert.ok(hotel.newDate.includes(date));assert.ok(/核实|确认/.test(`${hotel.status} ${hotel.action}`));
 }
 const jinjiang=plan.confirmedStays.find(stay=>stay.id==='coqen-jinjiang-20260929');
 assert.ok(jinjiang,'order screenshot supplies a confirmed Coqen stay');
@@ -66,6 +68,42 @@ assert.equal(jinjiang.rooms.reduce((total,room)=>total+room.amount,0),jinjiang.t
 assert.equal(jinjiang.rooms.reduce((total,room)=>total+room.count,0),2);
 assert.ok(jinjiang.rooms.every(room=>room.features==='弥散供氧、全屋智控、加湿器'));
 assert.equal(jinjiang.source,'用户提供的订单截图');
+const huating=plan.confirmedStays.find(stay=>stay.hotel.includes('华庭'));
+const homeinn=plan.confirmedStays.find(stay=>stay.hotel.includes('如家')&&stay.hotel.includes('布达拉宫广场'));
+assert.ok(huating&&homeinn,'October 3 screenshots supply both additional hotel records');
+assert.equal(plan.confirmedStays.length,3,'only the three screenshot-backed stays are current records');
+for(const [stay,expected] of [[huating,{checkin:'2026-10-01',checkout:'2026-10-02',nights:1,rooms:1,total:632,room:'特惠大床'}],[homeinn,{checkin:'2026-10-02',checkout:'2026-10-04',nights:2,rooms:2,total:1932,room:'高级双床'}]]){
+  assert.equal(stay.checkin,expected.checkin);assert.equal(stay.checkout,expected.checkout);assert.equal(stay.nights,expected.nights);
+  assert.equal((new Date(stay.checkout)-new Date(stay.checkin))/86400000,stay.nights);
+  assert.equal(stay.rooms.length,1,'one room type is present in each new order');
+  assert.ok(stay.rooms[0].name.includes(expected.room));
+  assert.equal(stay.rooms.reduce((sum,room)=>sum+room.count,0),expected.rooms);
+  assert.equal(stay.total,expected.total);
+  assert.equal(stay.rooms.reduce((sum,room)=>sum+room.amount,0),stay.total,'row amounts are order totals, not per-room rates');
+  assert.ok(stay.rooms.every(room=>room.amountLabel&&/合计|总/.test(room.amountLabel)),'amount scope is explicitly recorded');
+  assert.ok(stay.source.includes('用户')&&stay.source.includes('截图'));
+}
+assert.ok(huating.status.includes('已完成'),'Huating order is complete');
+assert.ok(/扣款成功|已扣款/.test(huating.paymentStatus)&&!huating.paymentStatus.includes('待扣款'),'Huating payment has been taken');
+assert.ok(homeinn.paymentStatus.includes('离店扣款')&&homeinn.paymentStatus.includes('待扣款'),'Home Inn payment is still pending');
+assert.ok(/未显示|未确认|未知/.test(`${homeinn.status} ${homeinn.note}`),'Home Inn check-in remains unverified');
+assert.ok(!/^已入住$|^已完成$/.test(homeinn.status),'pending payment is not interpreted as check-in or completion');
+const breakfast=homeinn.breakfast.replace(/\s+/g,'');
+for(const day of [3,4])assert.ok(new RegExp(`10(?:月|/|\\.|-)${day}(?:日)?`).test(breakfast),`breakfast explicitly covers October ${day}`);
+assert.ok(/每间[^。；]*2份/.test(breakfast)&&/(?:两间|2间)[^。；]*4份/.test(breakfast),'two rooms provide two breakfasts each, four each day');
+assert.ok(/每天|每日|各|均/.test(breakfast),'breakfast quantities are daily rather than a whole-stay total');
+assert.equal(plan.returnFlight.date,'2026-10-04');
+assert.equal(plan.returnFlight.number,'TV9949');
+assert.ok(plan.returnFlight.from.includes('拉萨')&&plan.returnFlight.to.includes('杭州'));
+assert.equal(plan.returnFlight.departureTime,null,'old outbound time is not carried onto the rescheduled return');
+assert.equal(plan.returnFlight.arrivalTime,null,'new return arrival time remains unconfirmed');
+for(const artifact of [html,markdown]){
+  for(const stay of [huating,homeinn]){
+    assert.ok(artifact.includes(stay.hotel)&&artifact.includes(stay.status)&&artifact.includes(stay.paymentStatus),'published actual order keeps its status and payment separate');
+    assert.ok(artifact.includes(stay.breakfast||''),'published breakfast agrees with the order');
+  }
+  assert.ok(!/10\s*月\s*[5-7]\s*日[^。\n]*(?:继续游览|安排还车|仅安排返程)/.test(artifact),'obsolete future days are not still scheduled');
+}
 const cancelled=plan.cancelledBookings.find(booking=>booking.hotel==='措勤行者无疆旅游酒店');
 assert.ok(cancelled,'cancelled screenshot order is retained for reconciliation');
 assert.equal(cancelled.checkin,'2026-09-29');
@@ -79,7 +117,7 @@ assert.notEqual(oldHanting.newDate,'2026-09-29','Hanting is no longer the curren
 assert.ok(/待/.test(oldHanting.status),'handling of the original Hanting order is not inferred from another order screenshot');
 assert.ok(plan.days[4].hotelNote.includes('锦江之星')&&plan.days[4].hotelNote.includes('已入住'));
 assert.ok(!/住宿待落实|房间仍需落实|今晚没房/.test(plan.days[4].hotelNote),'today lodging is no longer marked unresolved');
-assert.ok(plan.hotelChanges.some(hotel=>hotel.newDate.includes('新增 3 晚')),'adds Lhasa lodging for the early return');
+assert.ok(!plan.hotelChanges.some(hotel=>hotel.newDate.includes('新增 3 晚')),'obsolete Lhasa extension is removed');
 assert.ok(conditions.weather.length);
 for(const weather of conditions.weather){
   assert.equal(weather.status,'待更新');
@@ -89,7 +127,7 @@ for(const weather of conditions.weather){
 assert.ok(!html.includes('guide-weather.js'),'old date-based weather is not loaded');
 assert.ok(markdown.includes('锦江之星')&&markdown.includes('已入住')&&/旧天气没有平移|没有把旧天气平移/.test(markdown));
 assert.ok(!html.includes('4,479.4')&&!markdown.includes('4,479.4'),'old full-loop mileage is not republished as the revised route');
-console.log('Data checks passed: 13 dates, Coqen checked in for ¥1,056, cancelled order excluded, later hotel changes pending.');
+console.log('Data checks passed: 10 dates, actual hotel orders and October 4 return checked.');
 
 if(process.env.GUIDE_DATA_ONLY==='1')process.exit(0);
 const library=process.env.GUIDE_PLAYWRIGHT_PATH||path.join(os.homedir(),'.cache/codex-runtimes/codex-primary-runtime/dependencies/node/node_modules/playwright');
@@ -101,9 +139,9 @@ const errors=[],results=[],screenshots=[];
 const trackErrors=page=>page.on('pageerror',error=>errors.push(error.message));
 
 async function checkStaticContent(page,label){
-  assert.equal(await page.locator('.overview-table tbody tr').count(),13,`${label}: 13 calendar rows`);
-  assert.equal(await page.locator('.day').count(),9,`${label}: 9 upcoming daily articles`);
-  assert.equal(await page.locator('.history-row').count(),4,`${label}: 4 historical rows`);
+  assert.equal(await page.locator('.overview-table tbody tr').count(),plan.days.length,`${label}: complete revised calendar`);
+  assert.equal(await page.locator('.day').count(),plan.days.filter(day=>day.status!=='historical').length,`${label}: each detailed day renders`);
+  assert.equal(await page.locator('.history-row').count(),plan.days.filter(day=>day.status==='historical').length,`${label}: historical rows render`);
   const rows=await page.locator('.overview-table tbody tr').evaluateAll(rows=>rows.map(row=>[
     row.cells[0].innerText,[...row.cells[2].childNodes].filter(node=>node.nodeType===Node.TEXT_NODE).map(node=>node.textContent).join('').trim()
   ]));
@@ -116,17 +154,40 @@ async function checkStaticContent(page,label){
   assert.deepEqual(anchors,[],`${label}: internal links resolve`);
   const ids=await page.locator('[id]').evaluateAll(nodes=>nodes.map(node=>node.id));
   assert.equal(new Set(ids).size,ids.length,`${label}: unique anchor IDs`);
-  assert.ok((await page.locator('#hotels').innerText()).includes('新日期待确认'));
-  const confirmedText=await page.locator('.confirmed-stay').innerText();
+  assert.ok((await page.locator('#hotels').innerText()).includes(oldHanting.status),'unverified old orders remain labelled for follow-up');
+  assert.equal(await page.locator('.confirmed-stay').count(),plan.confirmedStays.length,'all actual order records render');
+  const confirmedText=await page.locator(`[data-stay-id="${jinjiang.id}"]`).innerText();
   assert.ok(confirmedText.includes(jinjiang.hotel)&&confirmedText.includes('已入住'));
   assert.ok(/1,?056/.test(confirmedText),'confirmed card displays the two-room total');
   assert.ok(!confirmedText.includes(cancelled.hotel),'cancelled hotel is not shown as a valid checked-in stay');
   assert.equal(await page.locator('.confirmed-stay img').count(),0,'confirmed hotel does not borrow another hotel photo');
-  const confirmedRooms=await page.locator('.confirmed-room-table tbody tr').allTextContents();
+  const confirmedRooms=await page.locator(`[data-stay-id="${jinjiang.id}"] .confirmed-room-table tbody tr`).allTextContents();
   assert.equal(confirmedRooms.length,2,'two distinct screenshot room orders are rendered');
   for(const room of jinjiang.rooms){
     assert.ok(confirmedRooms.some(text=>text.includes(room.name)&&text.includes(String(room.amount))),'each room keeps its corresponding price');
   }
+  for(const stay of [huating,homeinn]){
+    const card=page.locator(`[data-stay-id="${stay.id}"]`);
+    const text=await card.innerText();
+    assert.ok(text.includes(stay.hotel)&&text.includes(stay.status)&&text.includes(stay.checkin)&&text.includes(stay.checkout));
+    assert.ok(text.includes(stay.paymentStatus),'rendered payment status agrees with source');
+    assert.ok(text.includes(stay.breakfast||''),'rendered breakfast agrees with source');
+    assert.ok(text.replaceAll(',','').includes(String(stay.total)),'order total survives rendering');
+    const rows=await card.locator('.confirmed-room-table tbody tr').allTextContents();
+    assert.equal(rows.length,stay.rooms.length);
+    for(const room of stay.rooms)assert.ok(rows.some(row=>row.includes(room.name)&&row.includes(`${room.count} 间`)&&row.replaceAll(',','').includes(String(room.amount))&&row.includes(room.amountLabel)),'room count and amount scope render together');
+    assert.ok(!/\d{12,}/.test(text),'public hotel card does not reveal long order or payment card numbers');
+  }
+  const returnText=await page.locator('#return-flight').innerText();
+  assert.ok(returnText.includes('TV9949')&&returnText.includes('杭州')&&/10\s*(?:月|\/|\.|-)\s*0?4/.test(returnText),'latest flight is October 4 to Hangzhou');
+  assert.ok(!/10:55|16:55/.test(returnText),'old October 7 flight times are not shown as current');
+  assert.ok(/待确认|未提供|未确认/.test(returnText),'new flight times are explicitly unconfirmed');
+  const hotelTableSizes=await page.locator('.confirmed-room-table').evaluateAll(tables=>tables.map(table=>{
+    const cell=table.tBodies[0]?.rows[0]?.cells[3],style=cell&&getComputedStyle(cell);
+    return {table:table.getBoundingClientRect().width,container:table.parentElement.getBoundingClientRect().width,descriptionWidth:cell?cell.getBoundingClientRect().width-parseFloat(style.paddingLeft)-parseFloat(style.paddingRight):0,fontSize:style?parseFloat(style.fontSize):0};
+  }));
+  assert.ok(hotelTableSizes.every(size=>size.table<=size.container+1),`${label}: confirmed room tables fit without hiding a column`);
+  assert.ok(hotelTableSizes.every(size=>size.descriptionWidth>=4*size.fontSize),`${label}: room descriptions have usable mobile width`);
   const hotelText=await page.locator('#hotels').innerText();
   assert.ok(hotelText.includes(cancelled.hotel)&&hotelText.includes('已取消')&&hotelText.includes('803.17'),'cancelled order remains clearly labelled');
   const dayD4=await page.locator('#day-D4').innerText();
@@ -168,9 +229,9 @@ try{
         hidden:image.hidden,fallback:image.nextElementSibling?.classList.contains('image-note')||false,
         group:image.closest('.hotel-card')?'hotel':image.closest('.spot')?'spot':'hero'
       })));
-      assert.equal(photos.filter(photo=>photo.group==='hotel').length,3,'three later hotel candidate images are rendered');
+      assert.ok(photos.filter(photo=>photo.group==='hotel').length>0,'historical hotel references retain sourced images');
       assert.ok(!photos.filter(photo=>photo.group==='hotel').some(photo=>photo.alt.includes('汉庭')),'old Hanting photo is no longer a current hotel candidate');
-      assert.ok(photos.filter(photo=>photo.group==='spot').length>=6,'later sightseeing photos are present');
+      assert.equal(photos.filter(photo=>photo.group==='spot').length,plan.days.filter(day=>day.status!=='historical').reduce((count,day)=>count+day.spots.length,0),'every retained sightseeing stop has a source image');
       assert.ok(photos.every(photo=>photo.loaded||photo.hidden&&photo.fallback),'every failed image has a readable source fallback');
       assert.ok(photos.every(photo=>!photo.loaded||!photo.hidden),'loaded images are visible');
       results.push({photos});
@@ -194,7 +255,7 @@ try{
       await page.evaluate(()=>scrollTo(0,0));
       await page.waitForFunction(()=>document.querySelector('.hero-photo img')?.complete,null,{timeout:15000}).catch(()=>{});
       const hero=path.join(output,`hero-${width}.png`);await page.screenshot({path:hero});screenshots.push(hero);
-      for(const selector of ['#day-D4','#day-D5','.confirmed-stay','#hotels','#weather']){
+      for(const selector of ['#day-D4','#day-D5',...plan.confirmedStays.map(stay=>`#stay-${stay.id}`),'#hotels','#weather','#return-flight']){
         const shot=path.join(output,`${selector.slice(1)}-${width}.png`);
         await page.locator(selector).screenshot({path:shot,timeout:15000});screenshots.push(shot);
       }
