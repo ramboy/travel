@@ -1,0 +1,134 @@
+/* Shared, scoped hotel information table. */
+.hotel-information {
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  color: var(--muted, #61716a);
+}
+.hotel-information .hotel-information-help {
+  margin: 0 0 12px;
+  font-size: 12px;
+  line-height: 1.8;
+  overflow-wrap: anywhere;
+}
+.hotel-information .hotel-information-scroll {
+  box-sizing: border-box;
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  overflow-x: auto;
+  overscroll-behavior-x: contain;
+  border: 1px solid var(--line, #d9dfd3);
+  border-top: 3px solid var(--orange, #a86543);
+  background: var(--cream, #faf6ec);
+  scrollbar-color: #b7b8a2 #eeeade;
+  scrollbar-width: thin;
+  -webkit-overflow-scrolling: touch;
+}
+.hotel-information .hotel-information-scroll:focus-visible {
+  outline: 2px solid var(--pine, #245b50);
+  outline-offset: 3px;
+}
+.hotel-information .hotel-information-table {
+  width: 100%;
+  min-width: 1680px;
+  table-layout: auto;
+  border-collapse: separate;
+  border-spacing: 0;
+  background: var(--cream, #faf6ec);
+  color: var(--muted, #61716a);
+  font-size: 12px;
+  line-height: 1.65;
+}
+.hotel-information .hotel-information-table caption {
+  padding: 12px;
+  text-align: left;
+  font-weight: 700;
+  color: var(--ink, #233d35);
+  background: #f0ebdf;
+}
+.hotel-information .hotel-information-table th,
+.hotel-information .hotel-information-table td {
+  box-sizing: border-box;
+  padding: 13px 12px;
+  border-bottom: 1px solid var(--line, #d9dfd3);
+  text-align: left;
+  vertical-align: middle;
+  overflow-wrap: anywhere;
+}
+.hotel-information .hotel-information-table th {
+  width: auto;
+  background: #f0ebdf;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: .03em;
+  white-space: nowrap;
+}
+.hotel-information .hotel-information-table td { background: var(--cream, #faf6ec); }
+.hotel-information .hotel-information-table tbody tr:last-child td { border-bottom: 0; }
+.hotel-information .hotel-information-table tbody tr:hover td { background: #f6f0df; }
+.hotel-information .hotel-information-table th:first-child,
+.hotel-information .hotel-information-table td:first-child {
+  position: sticky;
+  left: 0;
+  z-index: 1;
+  width: 102px;
+  min-width: 102px;
+  background: #f5efe2;
+  box-shadow: 1px 0 0 var(--line, #d9dfd3);
+}
+.hotel-information .hotel-information-table th:first-child { z-index: 2; }
+.hotel-information .hotel-information-table td[data-col="hotel"] { min-width: 225px; }
+.hotel-information .hotel-information-table td[data-col="price"] { min-width: 170px; }
+.hotel-information .hotel-information-table td[data-col="room"] { min-width: 180px; }
+.hotel-information .hotel-information-table td[data-col="breakfast"] { min-width: 150px; }
+.hotel-information .hotel-information-table td[data-col="bed"] { min-width: 100px; }
+.hotel-information .hotel-information-table td[data-col="oxygen"] { min-width: 100px; }
+.hotel-information .hotel-information-table strong { color: var(--ink, #233d35); }
+.hotel-information .hotel-information-table small {
+  display: block;
+  margin-top: 5px;
+  color: var(--muted, #61716a);
+  font-size: 10px;
+  line-height: 1.65;
+}
+.hotel-information .hotel-information-link {
+  color: var(--ink, #233d35);
+  text-decoration-color: #91a69a;
+  text-underline-offset: 3px;
+}
+.hotel-information .hotel-information-table tr { scroll-margin-top: 90px; }
+@media (max-width: 760px) {
+  .hotel-information .hotel-information-help { font-size: 11px; }
+  .hotel-information .hotel-information-table th,
+  .hotel-information .hotel-information-table td { padding: 11px 10px; }
+  .hotel-information .hotel-information-table th:first-child,
+  .hotel-information .hotel-information-table td:first-child { width: 94px; min-width: 94px; }
+}
+@media print {
+  .hotel-information { width: 100%; max-width: 100%; }
+  .hotel-information .hotel-information-help { font-size: 8px; margin-bottom: 6px; }
+  .hotel-information .hotel-information-scroll { overflow: visible; width: 100%; max-width: 100%; border-top-width: 1px; }
+  .hotel-information .hotel-information-table { width: 100% !important; min-width: 0 !important; table-layout: fixed; font-size: 7px; line-height: 1.4; }
+  .hotel-information .hotel-information-table caption { padding: 5px; font-size: 9px; }
+  .hotel-information .hotel-information-table thead { display: table-header-group; }
+  .hotel-information .hotel-information-table tr { break-inside: avoid; }
+  .hotel-information .hotel-information-table th,
+  .hotel-information .hotel-information-table td,
+  .hotel-information .hotel-information-table th:first-child,
+  .hotel-information .hotel-information-table td:first-child { min-width: 0 !important; width: auto; padding: 5px 3px; white-space: normal; overflow-wrap: anywhere; position: static; box-shadow: none; font-size: 7px; }
+  .hotel-information .hotel-information-table small { margin-top: 3px; font-size: 6.5px; line-height: 1.4; }
+  .hotel-information .hotel-information-col-checkin { width: 7%; }
+  .hotel-information .hotel-information-col-span { width: 8%; }
+  .hotel-information .hotel-information-col-place { width: 6%; }
+  .hotel-information .hotel-information-col-hotel { width: 17%; }
+  .hotel-information .hotel-information-col-price { width: 12%; }
+  .hotel-information .hotel-information-col-room { width: 10%; }
+  .hotel-information .hotel-information-col-cancel { width: 10%; }
+  .hotel-information .hotel-information-col-area { width: 6%; }
+  .hotel-information .hotel-information-col-bed { width: 8%; }
+  .hotel-information .hotel-information-col-oxygen { width: 8%; }
+  .hotel-information .hotel-information-col-breakfast { width: 8%; }
+}

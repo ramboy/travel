@@ -15,6 +15,8 @@ const markdown = read('tibet-return-options.md');
 const ids = ['plan-1', 'plan-2', 'plan-3', 'plan-4'];
 const dates = ['2026-09-30', '2026-10-01', '2026-10-02', '2026-10-03'];
 const normalize = value => String(value).replace(/\s+/g, ' ').trim();
+const hotelHeaders=['入住日','晚数 / 间数','地点','酒店名','单间价格','房型','可取消时间','面积','床型','供氧方式','早餐'];
+const retiredHotelUI=/酒店改期|订单对照与旧单待办|原入住日|新计划入住日|待办与状态/;
 
 assert.deepEqual(data.plans.map(plan => plan.id), ids, 'user plan plus three earlier alternatives remain distinct and ordered');
 assert.deepEqual(data.plans.map(plan => plan.number), [1, 2, 3, 4]);
@@ -50,6 +52,8 @@ for (const plan of data.plans) {
 const context = { window: {} };
 vm.createContext(context);
 vm.runInContext(read('guide-cuoqin-plan.js'), context);
+vm.runInContext(read('guide-base.js'), context);
+const base=JSON.parse(JSON.stringify(context.window.TIBET_BASE));
 const stay = context.window.TIBET_CUOQIN_PLAN.confirmedStays.find(item => item.id === 'coqen-jinjiang-20260929');
 const current = JSON.parse(JSON.stringify(context.window.TIBET_CUOQIN_PLAN));
 const huating = current.confirmedStays.find(item => item.hotel.includes('华庭'));
@@ -67,12 +71,14 @@ assert.equal(current.returnFlight.number,'TV9949');
 assert.equal(current.returnFlight.departureTime,null);
 assert.equal(current.returnFlight.arrivalTime,null);
 for (const artifact of [html, markdown]) {
+  assert.ok(!retiredHotelUI.test(artifact),'hotel change-order interface is absent');
+  assert.ok(artifact.includes('酒店信息')&&artifact.includes('单间价格'),'both artifacts use the hotel information table');
+  assert.ok(artifact.includes('483')&&artifact.includes('均摊'),'Home Inn has an explicit averaged unit price');
   assert.ok(artifact.includes(stay.hotel) && artifact.includes('已入住') && /1,?056/.test(artifact), 'historical hotel and amount survive publication');
   assert.ok(artifact.includes('87.5') && artifact.includes('35.3'), 'the specific detour and unpaved portion survive publication');
   for(const record of [huating,homeinn]){
     assert.ok(artifact.includes(record.hotel)&&artifact.includes(record.status)&&artifact.includes(record.paymentStatus),'both artifacts publish each actual order status and payment separately');
     assert.ok(artifact.includes(record.breakfast||''),'both artifacts publish the same breakfast allowance');
-    for(const room of record.rooms)assert.ok(artifact.includes(room.amountLabel),'both artifacts retain the room-price scope');
   }
 }
 assert.ok(data.plans[0].days.flatMap(day => day.route).some(place => place.includes('天空之树')), 'user option retains the correctly named tree stop');
@@ -102,6 +108,10 @@ const errors = [];
 const results = [];
 const screenshots = [];
 const track = page => page.on('pageerror', error => errors.push(error.message));
+const waitForControls=page=>page.waitForFunction(()=>{
+  const controls=document.querySelector('.plan-controls');
+  return controls&&!controls.hidden&&controls.querySelector('button[aria-pressed="true"]');
+},null,{timeout:10000});
 const visiblePlans = page => page.locator('section.plan').evaluateAll(nodes => nodes
   .filter(node => !node.hidden && getComputedStyle(node).display !== 'none')
   .map(node => node.id));
@@ -111,25 +121,57 @@ const states = page => page.evaluate(() => ({
 }));
 
 async function checkStructure(page, label) {
-  assert.equal(await page.locator('.confirmed-stay').count(),current.confirmedStays.length,`${label}: actual orders are separate from route candidates`);
-  for(const record of current.confirmedStays){
-    const card=page.locator(`[data-stay-id="${record.id}"]`);
-    const text=normalize(await card.innerText());
-    for(const value of [record.hotel,record.checkin,record.checkout,record.status,record.paymentStatus,record.breakfast].filter(Boolean))assert.ok(text.includes(normalize(value)),`${label}: actual card preserves ${record.id} facts`);
-    assert.ok(text.replaceAll(',','').includes(String(record.total)),`${label}: actual order total renders`);
-    const rows=await card.locator('.confirmed-room-table tbody tr').allTextContents();
-    assert.equal(rows.length,record.rooms.length);
-    for(const room of record.rooms)assert.ok(rows.some(row=>row.includes(room.name)&&row.includes(`${room.count} 间`)&&row.replaceAll(',','').includes(String(room.amount))&&(!room.amountLabel||row.includes(room.amountLabel))),`${label}: room count is paired with total-price scope`);
-    assert.ok(!/\d{12,}/.test(text),'public cards omit long order and payment-card numbers');
+  assert.equal(normalize(await page.locator('#confirmed-stays h2').innerText()),'酒店信息表');
+  const hotelTable=page.locator('#confirmed-stays .hotel-information-table');
+  assert.equal(await hotelTable.count(),1,'one complete hotel information table replaces the old card and to-do layout');
+  assert.deepEqual((await hotelTable.locator('thead th').allTextContents()).map(normalize),hotelHeaders);
+  const hotelRows=await hotelTable.locator('tbody tr').evaluateAll(rows=>rows.map(row=>({
+    id:row.dataset.stayId,date:row.dataset.checkin,text:row.innerText,cells:[...row.cells].map(cell=>({key:cell.dataset.col,text:cell.innerText}))
+  })));
+  assert.ok(hotelRows.every(row=>row.cells.length===11&&/^2026-\d{2}-\d{2}$/.test(row.date)),'every hotel row retains all eleven fields and its date');
+  assert.deepEqual(hotelRows.map(row=>row.date),hotelRows.map(row=>row.date).sort(),'hotel rows follow chronological order');
+  for(const stay of current.confirmedStays){
+    const rows=hotelRows.filter(row=>row.id===stay.id);
+    assert.equal(rows.length,stay.rooms.length,'one row per booked room type');
+    const text=normalize(rows.map(row=>row.text).join(' '));
+    for(const value of [stay.hotel,stay.status,stay.paymentStatus,stay.breakfast].filter(Boolean))assert.ok(text.includes(normalize(value)),`${label}: order status, payment and breakfast survive the table`);
+    assert.ok(rows.every(row=>row.date===stay.checkin));
+    assert.equal(await hotelTable.locator(`#stay-${stay.id}`).count(),1,'each order keeps one unique deep link');
+    for(const [index,room] of stay.rooms.entries()){
+      const cells=Object.fromEntries(rows[index].cells.map(cell=>[cell.key,normalize(cell.text)]));
+      assert.ok(cells.room.includes(room.name));
+      assert.ok(new RegExp(`${stay.nights}\\s*晚`).test(cells.span)&&new RegExp(`${room.count}\\s*间`).test(cells.span),'room count and nights are separate from price');
+      assert.ok(cells.checkin.includes(stay.checkout)||cells.checkin.includes(stay.checkout.slice(5).replace('-','.')),'checkout date remains visible');
+      const price=cells.price.replaceAll(',','');
+      for(const amount of [room.amount,stay.total,room.amount/(room.count*stay.nights)])assert.ok(price.includes(String(amount)),`price preserves total and unit basis for ${stay.id}`);
+      if(stay.id===homeinn.id)assert.ok(/均摊/.test(price)&&/每间每晚|\/间\/晚|间.*晚/.test(price),'¥483 is clearly a per-room per-night average');
+      for(const field of ['area','bed','oxygen'])if(room[field])assert.ok(cells[field].includes(normalize(room[field])),`${field} remains in its own column`);
+    }
+    assert.ok(!/\d{12,}/.test(text),'public hotel information omits long order and card numbers');
+  }
+  for(const old of base.hotels.filter(hotel=>['09.25','09.26','09.27'].includes(hotel.checkin)))assert.ok(hotelRows.some(row=>row.date===`2026-${old.checkin.replace('.','-')}`&&row.text.includes(old.hotel)&&old.room.split('\n').every(room=>row.text.includes(room))),'early original hotels and alternatives remain in the information table');
+  const nima=hotelRows.filter(row=>row.date==='2026-09-30');
+  assert.ok(nima.some(row=>row.text.includes('尚客优')),'September 30 Nyima candidate remains visible');
+  for(const row of nima){
+    const cells=Object.fromEntries(row.cells.map(cell=>[cell.key,cell.text]));
+    assert.ok(/未提供|未确认|待确认/.test(cells.price)&&/未提供|未确认|待确认/.test(cells.span),'Nyima candidate does not inherit old price or room count as confirmed');
+  }
+  const bedWidths=await hotelTable.locator('tbody td[data-col="bed"]').evaluateAll(cells=>cells.map(cell=>{
+    const style=getComputedStyle(cell);
+    return {content:cell.getBoundingClientRect().width-parseFloat(style.paddingLeft)-parseFloat(style.paddingRight),font:parseFloat(style.fontSize)};
+  }));
+  assert.ok(bedWidths.every(cell=>cell.content>=4*cell.font),`${label}: bed descriptions fit at least four Chinese characters per line`);
+  const tableBox=await page.locator('#confirmed-stays .hotel-information-scroll').evaluate(node=>({width:node.clientWidth,scroll:node.scrollWidth,overflow:getComputedStyle(node).overflowX}));
+  if(page.viewportSize().width<=768){
+    assert.ok(tableBox.scroll>tableBox.width&&/auto|scroll/.test(tableBox.overflow),'mobile hotel table has local horizontal scrolling');
+    await page.locator('#confirmed-stays .hotel-information-scroll').evaluate(node=>{node.scrollLeft=node.scrollWidth;});
+    assert.ok(await page.locator('#confirmed-stays .hotel-information-scroll').evaluate(node=>node.scrollLeft>0),'rightmost hotel fields are reachable');
+    await page.locator('#confirmed-stays .hotel-information-scroll').evaluate(node=>{node.scrollLeft=0;});
   }
   const returnText=await page.locator('#return-flight').innerText();
   assert.ok(returnText.includes('TV9949')&&returnText.includes('杭州')&&/10\s*(?:月|\/|\.|-)\s*0?4/.test(returnText),`${label}: October 4 return supersedes the earlier flight date`);
   assert.ok(/待确认|未提供|未确认/.test(returnText)&&!/10:55|16:55/.test(returnText),'new flight times remain unconfirmed');
-  const hotelTables=await page.locator('.confirmed-room-table').evaluateAll(tables=>tables.map(table=>{
-    const cell=table.tBodies[0]?.rows[0]?.cells[3],style=cell&&getComputedStyle(cell);
-    return {table:table.getBoundingClientRect().width,container:table.parentElement.getBoundingClientRect().width,descriptionWidth:cell?cell.getBoundingClientRect().width-parseFloat(style.paddingLeft)-parseFloat(style.paddingRight):0,fontSize:style?parseFloat(style.fontSize):0};
-  }));
-  assert.ok(hotelTables.every(size=>size.table<=size.container+1&&size.descriptionWidth>=4*size.fontSize),`${label}: room tables fit and description columns remain readable`);
+  assert.ok(!retiredHotelUI.test(await page.locator('#confirmed-stays').innerText()),'hotel section contains information without change-order controls');
   assert.deepEqual(await page.locator('section.plan').evaluateAll(nodes => nodes.map(node => node.id)), ids, `${label}: four ordered plans`);
   assert.equal(await page.locator('article.option-day').count(), 16, `${label}: four days per plan`);
   for (const id of ids) {
@@ -172,6 +214,7 @@ try {
     const page = await browser.newPage({ viewport: { width, height: 1000 }, reducedMotion: 'reduce' });
     track(page);
     await page.goto(url, { waitUntil: 'domcontentloaded' });
+    await waitForControls(page);
     await checkStructure(page, `${width}px`);
     assert.equal(await page.locator('.plan-controls').getAttribute('hidden'), null, 'JavaScript enables filtering');
     assert.deepEqual(await visiblePlans(page), ids, 'all plans are initially readable');
@@ -199,9 +242,14 @@ try {
     if ([390, 1440].includes(width)) {
       await page.evaluate(() => scrollTo(0, 0));
       await screenshot(page, `overview-${width}.png`);
-      for(const selector of [`#stay-${huating.id}`,`#stay-${homeinn.id}`,'#return-flight']){
+      for(const selector of ['#confirmed-stays','#return-flight']){
         const target=path.join(output,`${selector.slice(1)}-${width}.png`);
         await page.locator(selector).screenshot({path:target});screenshots.push(target);
+      }
+      await page.locator(`#stay-${homeinn.id}`).scrollIntoViewIfNeeded();
+      for(const side of ['left','right']){
+        await page.locator('#confirmed-stays .hotel-information-scroll').evaluate((node,side)=>{node.scrollLeft=side==='left'?0:node.scrollWidth;},side);
+        await screenshot(page,`hotel-table-${side}-${width}.png`);
       }
     }
     await page.close();
@@ -211,6 +259,7 @@ try {
   track(deep);
   for (const id of ids) {
     await deep.goto(`${url.split('#')[0]}#${id}`, { waitUntil: 'domcontentloaded' });
+    await waitForControls(deep);
     assert.deepEqual(await visiblePlans(deep), [id], `direct #${id} selects only the requested plan`);
     assert.equal(await deep.locator(`button[data-filter="${id}"]`).getAttribute('aria-pressed'), 'true');
   }
@@ -222,6 +271,7 @@ try {
   const printing = await browser.newPage({ viewport: { width: 1440, height: 1000 } });
   track(printing);
   await printing.goto(`${url.split('#')[0]}#plan-2`, { waitUntil: 'domcontentloaded' });
+  await waitForControls(printing);
   await printing.locator('#plan-2 details.day-detail').nth(1).locator('summary').click();
   const before = await states(printing);
   await printing.evaluate(() => window.dispatchEvent(new Event('beforeprint')));
@@ -229,11 +279,12 @@ try {
   assert.ok((await states(printing)).details.every(Boolean), 'printing expands all daily details');
   await printing.evaluate(() => window.dispatchEvent(new Event('beforeprint')));
   await printing.emulateMedia({ media: 'print' });
-  const tableSizes = await printing.locator('.table-wrap').evaluateAll(nodes => nodes.map(node => ({
+  const tableSizes = await printing.locator('.table-wrap,.hotel-information-scroll').evaluateAll(nodes => nodes.map(node => ({
     container: node.getBoundingClientRect().width,
     table: node.querySelector('table')?.getBoundingClientRect().width || 0
   })));
   assert.ok(tableSizes.every(size => size.table <= size.container + 1), 'print tables fit their containers');
+  const printShot=path.join(output,'hotel-information-print.png');await printing.locator('#confirmed-stays').screenshot({path:printShot});screenshots.push(printShot);
   for (const id of ids) assert.ok(await printing.locator(`#${id}`).isVisible(), `print includes ${id}`);
   await printing.emulateMedia({ media: 'screen' });
   await printing.evaluate(() => window.dispatchEvent(new Event('afterprint')));
@@ -259,6 +310,7 @@ try {
     assert.ok(await detail.locator(':scope > :not(summary)').first().isVisible(), 'native details work without JavaScript');
     await detail.locator('summary').click();
     await plain.emulateMedia({ media: 'print' });
+    assert.ok(await plain.locator('.hotel-information-scroll').evaluate(node=>node.querySelector('table').getBoundingClientRect().width<=node.getBoundingClientRect().width+1),'no-JS printing fits the full hotel information table');
     for (const id of ids) assert.ok(await plain.locator(`#${id}`).isVisible(), `no-JS printing includes ${id}`);
     const hiddenPrintContent = await plain.locator('details.day-detail').evaluateAll(nodes => nodes
       .map((node, index) => ({ index, elements: [...node.children].filter(child => child.tagName !== 'SUMMARY') }))

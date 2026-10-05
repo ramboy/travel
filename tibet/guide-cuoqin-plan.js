@@ -696,13 +696,19 @@ window.TIBET_CUOQIN_PLAN = {
           "name": "高级大床房",
           "count": 1,
           "amount": 536,
-          "features": "弥散供氧、全屋智控、加湿器"
+          "features": "弥散供氧、全屋智控、加湿器",
+          "area": "未提供",
+          "bed": "大床（床宽未提供）",
+          "oxygen": "弥散供氧"
         },
         {
           "name": "标准大床房",
           "count": 1,
           "amount": 520,
-          "features": "弥散供氧、全屋智控、加湿器"
+          "features": "弥散供氧、全屋智控、加湿器",
+          "area": "未提供",
+          "bed": "大床（床宽未提供）",
+          "oxygen": "弥散供氧"
         }
       ],
       "total": 1056,
@@ -728,7 +734,10 @@ window.TIBET_CUOQIN_PLAN = {
           "amount": 632,
           "amountLabel": "1 间 × 1 晚订单总额",
           "features": "供氧、智能马桶、电动窗帘",
-          "details": "1 张 1.8 米大床；可住 2 人；25㎡；有窗；1—3 层"
+          "details": "1 张 1.8 米大床；可住 2 人；25㎡；有窗；1—3 层",
+          "area": "25㎡",
+          "bed": "1 张 1.8 米大床",
+          "oxygen": "供氧（方式未注明）"
         }
       ],
       "total": 632,
@@ -756,7 +765,10 @@ window.TIBET_CUOQIN_PLAN = {
           "amount": 1932,
           "amountLabel": "2 间 × 2 晚订单总额",
           "features": "弥漫＆鼻吸供氧、加湿器、平台观景",
-          "details": "每间 2 张 1.2 米单人床；每间可住 2 人；22㎡；有窗；2—3 层"
+          "details": "每间 2 张 1.2 米单人床；每间可住 2 人；22㎡；有窗；2—3 层",
+          "area": "22㎡",
+          "bed": "2 张 1.2 米单人床",
+          "oxygen": "弥漫＆鼻吸供氧"
         }
       ],
       "total": 1932,
