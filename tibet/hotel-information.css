@@ -87,6 +87,7 @@
 .hotel-information .hotel-information-table td[data-col="bed"] { min-width: 100px; }
 .hotel-information .hotel-information-table td[data-col="oxygen"] { min-width: 100px; }
 .hotel-information .hotel-information-table strong { color: var(--ink, #233d35); }
+.hotel-information .hotel-information-table .hotel-backup { color: #046ffb; font-weight: 700; }
 .hotel-information .hotel-information-table small {
   display: block;
   margin-top: 5px;

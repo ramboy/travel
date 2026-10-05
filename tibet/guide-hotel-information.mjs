@@ -104,6 +104,9 @@ function cellParts(row, key) {
 }
 
 function cellHtml(row, key) {
+  if (key === 'place' && row.place.endsWith('（备选）')) {
+    return `${htmlLines(row.place.slice(0, -4))} <span class="hotel-backup">（备选）</span>`;
+  }
   const [first, ...rest] = cellParts(row, key);
   const content = key === 'hotel' && safeUrl(row.hotelUrl)
     ? `<a class="hotel-information-link" href="${escapeHtml(row.hotelUrl)}" target="_blank" rel="noopener noreferrer">${htmlLines(first)}</a>`
