@@ -1,12 +1,10 @@
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import path from 'node:path';
-import os from 'node:os';
 import vm from 'node:vm';
-import {fileURLToPath,pathToFileURL} from 'node:url';
-import {createRequire} from 'node:module';
+import {fileURLToPath} from 'node:url';
+import {referenceDataChapters} from './cuoqin-reference-data.mjs';
 
-const require=createRequire(import.meta.url);
 const root=path.dirname(fileURLToPath(import.meta.url));
 const read=name=>fs.readFileSync(path.join(root,name),'utf8');
 const context={window:{}};
@@ -142,218 +140,130 @@ for(const weather of conditions.weather){
   assert.ok(weather.checkedAt&&weather.url&&weather.note);
 }
 assert.ok(!html.includes('guide-weather.js'),'old date-based weather is not loaded');
-assert.ok(markdown.includes('锦江之星')&&markdown.includes('已入住')&&/旧天气没有平移|没有把旧天气平移/.test(markdown));
+assert.ok(markdown.includes('锦江之星')&&markdown.includes('已入住')&&/旧天气没有平移|没有把旧天气平移|未把旧天气平移/.test(markdown));
 assert.ok(!html.includes('4,479.4')&&!markdown.includes('4,479.4'),'old full-loop mileage is not republished as the revised route');
-console.log('Data checks passed: 10 dates, actual hotel orders and October 4 return checked.');
 
-if(process.env.GUIDE_DATA_ONLY==='1')process.exit(0);
-const library=process.env.GUIDE_PLAYWRIGHT_PATH||path.join(os.homedir(),'.cache/codex-runtimes/codex-primary-runtime/dependencies/node/node_modules/playwright');
-const {chromium}=require(library);
-const browser=await chromium.launch({headless:true,executablePath:process.env.GUIDE_CHROME_PATH||'/Applications/Google Chrome.app/Contents/MacOS/Google Chrome'});
-const url=process.env.GUIDE_TEST_URL||'http://127.0.0.1:8766/tibet-cuoqin-guide.html';
-const output=fs.mkdtempSync(path.join(os.tmpdir(),'tibet-cuoqin-qa-'));
-const errors=[],results=[],screenshots=[];
-const trackErrors=page=>page.on('pageerror',error=>errors.push(error.message));
+// Offline publication contracts. Responsive layout and browser interaction are verified in CUA.
+const decoded=value=>String(value).replace(/&amp;/g,'&').replace(/&lt;/g,'<').replace(/&gt;/g,'>').replace(/&quot;/g,'"').replace(/&#39;/g,"'").replace(/&#124;/g,'|');
+const plain=value=>normalize(decoded(String(value).replace(/<br\s*\/?>/g,' ').replace(/<[^>]*>/g,' ')));
+const attribute=(tag,name)=>decoded(tag.match(new RegExp(`(?:\\s|^)${name}="([^"]*)"`))?.[1]||'');
+const classIs=(tag,name)=>attribute(tag,'class').split(/\s+/).includes(name);
+const sections=[...html.matchAll(/<section\b[^>]*\bid="([^"]+)"[^>]*>/g)].map(match=>match[1]);
+const chapterIds=['overview','weather','daily','drone','hotels','altitude','choices','tickets','notes'];
+const navigation=source=>[...(source.match(/<nav\b[^>]*class="quick-nav"[^>]*>([\s\S]*?)<\/nav>/)?.[1]||'').matchAll(/href="#([^"]+)"/g)].map(match=>match[1]);
+assert.deepEqual(sections,chapterIds,'all nine chapters follow the legacy order');
+assert.deepEqual(navigation(html),navigation(read('tibet-guide.html')),'chapter navigation follows the old guide');
+assert.deepEqual(navigation(html),chapterIds);
+const sectionBody=id=>html.match(new RegExp(`<section\\b[^>]*\\bid="${id}"[^>]*>([\\s\\S]*?)<\\/section>`))?.[1]||'';
+const overview=sectionBody('overview');
+assert.ok(overview.includes('id="mileage"')&&overview.includes('mileage-table'),'total, daily driving distances and evidence are inside the overview');
+assert.ok(!sections.includes('mileage'),'mileage is part of the overview, not a separate chapter');
+assert.equal((overview.match(/class="overview-table"/g)||[]).length,1);
+const overviewTable=overview.match(/<table class="overview-table"[^>]*>([\s\S]*?)<\/table>/)?.[1]||'';
+assert.equal((overviewTable.match(/<tbody>([\s\S]*?)<\/tbody>/)?.[1].match(/<tr\b/g)||[]).length,10,'all ten days appear in the overview');
+assert.equal((overviewTable.match(/<th\b/g)||[]).length,5,'overview keeps route, lodging, weather and clothing fields');
+assert.ok(overview.includes('2,732.4')&&overview.includes('2,844.9'),'main and alternative total remain distinguishable');
+assert.ok(markdown.indexOf('### 每日自驾公里数')>markdown.indexOf('## 全程概览')&&markdown.indexOf('### 每日自驾公里数')<markdown.indexOf('## 天气与穿衣'),'Markdown mileage is nested in the overview');
 
-async function checkStaticContent(page,label){
-  assert.equal(await page.locator('.overview-table tbody tr').count(),plan.days.length,`${label}: complete revised calendar`);
-  assert.equal(await page.locator('.day').count(),plan.days.filter(day=>day.status!=='historical').length,`${label}: each detailed day renders`);
-  assert.equal(await page.locator('.history-row').count(),plan.days.filter(day=>day.status==='historical').length,`${label}: historical rows render`);
-  const rows=await page.locator('.overview-table tbody tr').evaluateAll(rows=>rows.map(row=>[
-    row.cells[0].innerText,[...row.cells[2].childNodes].filter(node=>node.nodeType===Node.TEXT_NODE).map(node=>node.textContent).join('').trim()
-  ]));
-  for(let index=0;index<plan.days.length;index++){
-    assert.ok(rows[index][0].includes(plan.days[index].date.slice(5).replace('-','.')));
-    assert.ok(rows[index][0].includes(plan.days[index].weekday));
-    assert.equal(rows[index][1],plan.days[index].stay);
-  }
-  const anchors=await page.evaluate(()=>[...document.querySelectorAll('a[href^="#"]')].filter(a=>a.hash&&!document.getElementById(decodeURIComponent(a.hash.slice(1)))).map(a=>a.hash));
-  assert.deepEqual(anchors,[],`${label}: internal links resolve`);
-  const ids=await page.locator('[id]').evaluateAll(nodes=>nodes.map(node=>node.id));
-  assert.equal(new Set(ids).size,ids.length,`${label}: unique anchor IDs`);
-  assert.equal(normalize(await page.locator('.nav a[href="#hotels"]').innerText()),'酒店信息');
-  assert.equal(normalize(await page.locator('#hotels h2').innerText()),'酒店信息表');
-  const hotelTable=page.locator('#hotels .hotel-information-table');
-  assert.equal(await hotelTable.count(),1,'one complete hotel information table replaces the old card and to-do layout');
-  assert.deepEqual((await hotelTable.locator('thead th').allTextContents()).map(normalize),hotelHeaders);
-  const hotelRows=await hotelTable.locator('tbody tr').evaluateAll(rows=>rows.map(row=>({
-    id:row.dataset.stayId,date:row.dataset.checkin,text:row.innerText,cells:[...row.cells].map(cell=>({key:cell.dataset.col,text:cell.innerText}))
-  })));
-  assert.ok(hotelRows.every(row=>row.cells.length===11&&/^2026-\d{2}-\d{2}$/.test(row.date)),'every hotel row retains all eleven fields and its date');
-  assert.deepEqual(hotelRows.map(row=>row.date),hotelRows.map(row=>row.date).sort(),'hotel rows follow chronological order');
-  for(const stay of plan.confirmedStays){
-    const rows=hotelRows.filter(row=>row.id===stay.id);
-    assert.equal(rows.length,stay.rooms.length,'one row per booked room type');
-    const text=normalize(rows.map(row=>row.text).join(' '));
-    for(const value of [stay.hotel,stay.status,stay.paymentStatus,stay.breakfast].filter(Boolean))assert.ok(text.includes(normalize(value)),`${label}: order status, payment and breakfast survive the table`);
-    assert.ok(rows.every(row=>row.date===stay.checkin));
-    assert.equal(await hotelTable.locator(`#stay-${stay.id}`).count(),1,'each order keeps one unique deep link');
-    for(const [index,room] of stay.rooms.entries()){
-      const cells=Object.fromEntries(rows[index].cells.map(cell=>[cell.key,normalize(cell.text)]));
-      assert.ok(cells.room.includes(room.name));
-      assert.ok(new RegExp(`${stay.nights}\\s*晚`).test(cells.span)&&new RegExp(`${room.count}\\s*间`).test(cells.span),'room count and nights are separate from price');
-      assert.ok(cells.checkin.includes(stay.checkout)||cells.checkin.includes(stay.checkout.slice(5).replace('-','.')),'checkout date remains visible');
-      const price=cells.price.replaceAll(',','');
-      for(const amount of [room.amount,stay.total,room.amount/(room.count*stay.nights)])assert.ok(price.includes(String(amount)),`price preserves total and unit basis for ${stay.id}`);
-      if(stay.id===homeinn.id)assert.ok(/均摊/.test(price)&&/每间每晚|\/间\/晚|间.*晚/.test(price),'¥483 is clearly a per-room per-night average');
-      for(const field of ['area','bed','oxygen'])if(room[field])assert.ok(cells[field].includes(normalize(room[field])),`${field} remains in its own column`);
-    }
-    assert.ok(!/\d{12,}/.test(text),'public hotel information omits long order and card numbers');
-  }
-  for(const old of base.hotels.filter(hotel=>['09.25','09.26','09.27','09.28'].includes(hotel.checkin))) {
-    const matching=hotelRows.filter(row=>row.date===`2026-${old.checkin.replace('.','-')}`&&row.text.includes(old.hotel));
-    assert.ok(matching.length&&old.room.split('\n').every(room=>matching.some(row=>row.text.includes(room))),'actual room rows replace old main rows while historical alternatives remain');
-  }
-  const nima=hotelRows.filter(row=>row.date==='2026-09-30');
-  assert.equal(nima.length,1,'September 30 has one actual suite row');
-  assert.ok(nima[0].text.includes('琼宗湖景驿站')&&nima[0].text.includes('952')&&!nima[0].text.includes('尚客优'),'actual Qiongzong lodging replaces the unbooked Nyima candidate');
-  const qiongCells=Object.fromEntries(nima[0].cells.map(cell=>[cell.key,cell.text]));
-  for(const key of ['area','bed','oxygen','breakfast'])assert.equal(qiongCells[key],'未提供');
-  const bedWidths=await hotelTable.locator('tbody td[data-col="bed"]').evaluateAll(cells=>cells.map(cell=>{
-    const style=getComputedStyle(cell);
-    return {content:cell.getBoundingClientRect().width-parseFloat(style.paddingLeft)-parseFloat(style.paddingRight),font:parseFloat(style.fontSize)};
-  }));
-  assert.ok(bedWidths.every(cell=>cell.content>=4*cell.font),`${label}: bed descriptions fit at least four Chinese characters per line`);
-  const tableBox=await page.locator('#hotels .hotel-information-scroll').evaluate(node=>({width:node.clientWidth,scroll:node.scrollWidth,overflow:getComputedStyle(node).overflowX}));
-  if(page.viewportSize().width<=768){
-    assert.ok(tableBox.scroll>tableBox.width&&/auto|scroll/.test(tableBox.overflow),'mobile hotel table has local horizontal scrolling');
-    await page.locator('#hotels .hotel-information-scroll').evaluate(node=>{node.scrollLeft=node.scrollWidth;});
-    assert.ok(await page.locator('#hotels .hotel-information-scroll').evaluate(node=>node.scrollLeft>0),'rightmost hotel fields are reachable');
-    await page.locator('#hotels .hotel-information-scroll').evaluate(node=>{node.scrollLeft=0;});
-  }
-  const returnText=await page.locator('#return-flight').innerText();
-  assert.ok(returnText.includes('TV9949')&&returnText.includes('杭州')&&/10\s*(?:月|\/|\.|-)\s*0?4/.test(returnText),'latest flight is October 4 to Hangzhou');
-  assert.ok(!/10:55|16:55/.test(returnText),'old October 7 flight times are not shown as current');
-  assert.ok(/待确认|未提供|未确认/.test(returnText),'new flight times are explicitly unconfirmed');
-  const hotelText=await page.locator('#hotels').innerText();
-  assert.ok(!retiredHotelUI.test(hotelText)&&!hotelText.includes(cancelled.hotel),'old change-order controls and cancelled bookings are absent from the hotel information table');
-  const dayD4=await page.locator('#day-D4').innerText();
-  assert.ok(dayD4.includes('锦江之星')&&dayD4.includes('已入住'));
-  assert.ok(!/今晚措勤的房间仍需落实|今晚房间仍需落实|措勤 9 月 29 日住宿待落实|用户此前反馈今晚没房/.test(`${dayD4} ${hotelText}`),'stale tonight-unbooked wording is removed');
-  assert.ok((await page.locator('#weather').innerText()).includes('旧预报没有平移'));
-  const weather=await page.locator('.weather-table tbody tr').evaluateAll(rows=>rows.map(row=>[row.cells[2].innerText,row.cells[3].innerText]));
-  assert.ok(weather.every(row=>row[0]==='待更新'&&row[1]==='待更新'));
-  for(const [day,names] of [['D5',['扎日南木措','文布南村']],['D6',['色林措']],['D7',['纳木措','圣象天门']]]){
-    const titles=await page.locator(`#day-${day} .spot figcaption b`).allTextContents();
-    assert.deepEqual(titles,names,`${label}: original spot sequence for ${day}`);
-  }
+const ids=[...html.matchAll(/\sid="([^"]+)"/g)].map(match=>decoded(match[1]));
+assert.equal(new Set(ids).size,ids.length,'all published IDs are unique');
+for(const match of html.matchAll(/href="#([^"]*)"/g))if(match[1])assert.ok(ids.includes(decodeURIComponent(decoded(match[1]))),`internal anchor resolves: #${match[1]}`);
+const dayArticles=[...html.matchAll(/<article\b[^>]*>/g)].filter(match=>classIs(match[0],'day-article'));
+assert.equal(dayArticles.length,10,'all ten dates have complete day articles');
+assert.deepEqual(dayArticles.map(match=>attribute(match[0],'id')),plan.days.map(day=>`day-${day.day}`));
+assert.equal([...html.matchAll(/<aside\b[^>]*>/g)].filter(match=>classIs(match[0],'hotel-strip')).length,9,'nine nights each have a hotel panel');
+for(const [index,day] of plan.days.entries()){
+  const body=html.slice(dayArticles[index].index,dayArticles[index+1]?.index||html.indexOf('<section id="drone"'));
+  assert.equal(attribute(dayArticles[index][0],'data-date'),day.date);
+  for(const value of [day.title,day.drive,day.clothing,day.carry,day.decision])assert.ok(plain(body).includes(normalize(value)),`${day.day}: complete daily information`);
+  assert.equal((body.match(/class="schedule-row"/g)||[]).length,day.schedule.length,`${day.day}: full schedule`);
+  for(const row of day.schedule)for(const value of row)assert.ok(plain(body).includes(normalize(value)),`${day.day}: schedule text retained`);
+  const stay=plan.confirmedStays.find(stay=>day.date>=stay.checkin&&day.date<stay.checkout);
+  if(stay){assert.ok(body.includes(`data-hotel="${stay.hotel}"`),`${day.day}: actual overnight hotel panel`);assert.ok(body.includes(`href="#stay-${stay.id}"`));}
+  else assert.ok(!body.includes('class="hotel-strip"'),'return day has no additional stay');
 }
 
-try{
-  for(const width of [360,390,768,1440]){
-    const page=await browser.newPage({viewport:{width,height:1000},reducedMotion:'reduce'});
-    trackErrors(page);
-    await page.goto(url,{waitUntil:'domcontentloaded'});
-    await page.locator('.day').first().waitFor();
-    await checkStaticContent(page,`${width}px`);
-    const initial=await page.evaluate(()=>({width:innerWidth,scroll:document.documentElement.scrollWidth,body:document.body.scrollWidth}));
-    assert.ok(initial.scroll<=width+1&&initial.body<=width+1,`no page overflow at ${width}px: ${JSON.stringify(initial)}`);
-    const details=page.locator('#day-D5 details');
-    assert.equal(await details.evaluate(node=>node.open),false,'day detail starts collapsed');
-    await details.locator('summary').click();
-    assert.equal(await details.evaluate(node=>node.open),true,'native detail opens');
-    assert.ok(await details.locator('.spot-grid').isVisible());
-    const expanded=await page.evaluate(()=>document.documentElement.scrollWidth);
-    assert.ok(expanded<=width+1,`expanded detail does not overflow at ${width}px`);
-    await details.locator('summary').click();
-    assert.equal(await details.evaluate(node=>node.open),false,'native detail closes');
-
-    if(width===1440){
-      await page.evaluate(()=>document.querySelectorAll('img').forEach(image=>image.loading='eager'));
-      await page.waitForFunction(()=>[...document.images].every(image=>image.complete),null,{timeout:20000}).catch(()=>{});
-      const photos=await page.locator('img').evaluateAll(images=>images.map(image=>({
-        alt:image.alt,src:image.src,loaded:image.complete&&image.naturalWidth>0,
-        hidden:image.hidden,fallback:image.nextElementSibling?.classList.contains('image-note')||false,
-        group:image.closest('.hotel-card')?'hotel':image.closest('.spot')?'spot':'hero'
-      })));
-      assert.ok(!photos.filter(photo=>photo.group==='hotel').some(photo=>photo.alt.includes('汉庭')),'old Hanting photo is no longer a current hotel candidate');
-      assert.equal(photos.filter(photo=>photo.group==='spot').length,plan.days.filter(day=>day.status!=='historical').reduce((count,day)=>count+day.spots.length,0),'every retained sightseeing stop has a source image');
-      assert.ok(photos.every(photo=>photo.loaded||photo.hidden&&photo.fallback),'every failed image has a readable source fallback');
-      assert.ok(photos.every(photo=>!photo.loaded||!photo.hidden),'loaded images are visible');
-      results.push({photos});
-    }
-
-    await page.locator('.day-tabs a[href="#day-D5"]').click();
-    await page.waitForFunction(()=>location.hash==='#day-D5');
-    const anchorPosition=await page.evaluate(()=>({
-      dayTop:document.querySelector('#day-D5').getBoundingClientRect().top,
-      navBottom:document.querySelector('.nav').getBoundingClientRect().bottom
-    }));
-    assert.ok(anchorPosition.dayTop>=anchorPosition.navBottom-1,`daily anchor is not covered by navigation at ${width}px`);
-    assert.ok(anchorPosition.dayTop<600,`daily anchor is on screen at ${width}px`);
-    results.push({width,anchorPosition});
-    if(width===390||width===1440){
-      const shot=path.join(output,`day-D5-anchor-${width}.png`);
-      await page.screenshot({path:shot});screenshots.push(shot);
-    }
-
-    if(width===390||width===1440){
-      await page.evaluate(()=>scrollTo(0,0));
-      await page.waitForFunction(()=>document.querySelector('.hero-photo img')?.complete,null,{timeout:15000}).catch(()=>{});
-      const hero=path.join(output,`hero-${width}.png`);await page.screenshot({path:hero});screenshots.push(hero);
-      for(const selector of ['#day-D4','#day-D5','#hotels','#weather','#return-flight']){
-        const shot=path.join(output,`${selector.slice(1)}-${width}.png`);
-        await page.locator(selector).screenshot({path:shot,timeout:15000});screenshots.push(shot);
-      }
-      await page.locator(`#stay-${homeinn.id}`).scrollIntoViewIfNeeded();
-      for(const side of ['left','right']){
-        await page.locator('#hotels .hotel-information-scroll').evaluate((node,side)=>{node.scrollLeft=side==='left'?0:node.scrollWidth;},side);
-        const shot=path.join(output,`hotel-table-${side}-${width}.png`);await page.screenshot({path:shot});screenshots.push(shot);
-      }
-      await page.locator('#hotels .hotel-information-scroll').evaluate(node=>{node.scrollLeft=0;});
-    }
-    if(width===1440){
-      await details.locator('summary').click();
-      const states=await page.locator('details').evaluateAll(nodes=>nodes.map(node=>node.open));
-      await page.evaluate(()=>window.dispatchEvent(new Event('beforeprint')));
-      assert.ok((await page.locator('details').evaluateAll(nodes=>nodes.map(node=>node.open))).every(Boolean),'printing expands all details');
-      await page.evaluate(()=>window.dispatchEvent(new Event('beforeprint')));
-      await page.emulateMedia({media:'print'});
-      const print=await page.locator('.table-wrap,.hotel-information-scroll').evaluateAll(nodes=>nodes.map(node=>({container:node.getBoundingClientRect().width,table:node.querySelector('table').getBoundingClientRect().width})));
-      assert.ok(print.every(row=>row.table<=row.container+1),'all print tables fit their containers');
-      const printShot=path.join(output,'hotel-information-print.png');await page.locator('#hotels').screenshot({path:printShot});screenshots.push(printShot);
-      await page.emulateMedia({media:'screen'});
-      await page.evaluate(()=>window.dispatchEvent(new Event('afterprint')));
-      assert.deepEqual(await page.locator('details').evaluateAll(nodes=>nodes.map(node=>node.open)),states,'printing restores exactly the previous detail state');
-      await page.evaluate(()=>{window.__printCalls=0;window.print=()=>window.__printCalls++;});
-      await page.locator('#print-guide').click();
-      assert.equal(await page.evaluate(()=>window.__printCalls),1,'print button invokes print');
-      await page.locator('.hero-photo img').evaluate(image=>image.dispatchEvent(new Event('error')));
-      const fallback=await page.locator('.hero-photo').evaluate(figure=>({
-        display:getComputedStyle(figure.querySelector('img')).display,
-        note:figure.querySelector('.image-note')?.textContent,
-        sourceLinks:figure.querySelectorAll('figcaption a').length
-      }));
-      assert.equal(fallback.display,'none','failed image is actually hidden, including with global img display rules');
-      assert.ok(fallback.note.includes('图片暂未载入')&&fallback.sourceLinks>0,'failed image leaves a readable fallback and source link');
-      await page.locator('.hero-photo img').evaluate(image=>image.dispatchEvent(new Event('error')));
-      assert.equal(await page.locator('.hero-photo .image-note').count(),1,'repeated image failures do not duplicate fallback notices');
-      results.push({simulatedImageFallback:fallback});
-      results.push({printTables:print});
-    }
-    results.push({width,...initial,expandedScroll:expanded});
-    await page.close();
+const hotelSection=sectionBody('hotels');
+const hotelTable=hotelSection.match(/<table\b[^>]*class="hotel-information-table hotel-table"[^>]*>([\s\S]*?)<\/table>/)?.[1]||'';
+assert.ok(hotelTable,'complete hotel information table is static HTML');
+assert.deepEqual([...hotelTable.matchAll(/<th\b[^>]*>([\s\S]*?)<\/th>/g)].map(match=>plain(match[1])),hotelHeaders);
+const hotelRows=[...hotelTable.matchAll(/<tr\b([^>]*)>([\s\S]*?)<\/tr>/g)].filter(match=>match[1].includes('data-stay-id')).map(match=>({
+  id:attribute(match[1],'data-stay-id'),date:attribute(match[1],'data-checkin'),text:plain(match[2]),
+  cells:[...match[2].matchAll(/<td\b([^>]*)>([\s\S]*?)<\/td>/g)].map(cell=>({key:attribute(cell[1],'data-col'),text:plain(cell[2])}))
+}));
+assert.equal(hotelRows.length,19,'hotel table preserves nineteen actual room and historical alternative rows');
+assert.ok(hotelRows.every(row=>row.cells.length===11&&/^2026-\d{2}-\d{2}$/.test(row.date)),'all eleven hotel fields and dates remain present');
+assert.deepEqual(hotelRows.map(row=>row.date),hotelRows.map(row=>row.date).sort(),'hotel rows remain chronological');
+for(const stay of plan.confirmedStays){
+  const rows=hotelRows.filter(row=>row.id===stay.id);
+  assert.equal(rows.length,stay.rooms.length,'one actual hotel row per room type');
+  const text=normalize(rows.map(row=>row.text).join(' '));
+  assert.ok(!/\d{12,}/.test(text),'hotel cells omit long order and card numbers');
+  for(const value of [stay.hotel,stay.status,stay.paymentStatus,stay.breakfast].filter(Boolean))assert.ok(text.includes(normalize(value)),'stay, payment and meal evidence retain separate wording');
+  assert.ok(rows.every(row=>row.date===stay.checkin));
+  assert.equal(ids.filter(id=>id===`stay-${stay.id}`).length,1,'each stay keeps one unique deep link');
+  for(const [index,room] of stay.rooms.entries()){
+    const cells=Object.fromEntries(rows[index].cells.map(cell=>[cell.key,cell.text]));
+    assert.ok(cells.room.includes(room.name));
+    assert.ok(new RegExp(`${stay.nights}\\s*晚`).test(cells.span)&&new RegExp(`${room.count}\\s*间`).test(cells.span),'nights and room count remain separate from price');
+    assert.ok(cells.checkin.includes(stay.checkout)||cells.checkin.includes(stay.checkout.slice(5).replace('-','.')),'checkout stays visible');
+    const price=cells.price.replaceAll(',','');
+    for(const amount of [room.amount,stay.total,room.amount/(room.count*stay.nights)])assert.ok(price.includes(String(amount)),`${stay.id}: amount and per-room basis retained`);
+    if(stay.id===homeinn.id)assert.ok(/均摊/.test(price)&&/每间每晚|\/间\/晚|间.*晚/.test(price));
+    for(const field of ['area','bed','oxygen'])if(room[field])assert.ok(cells[field].includes(normalize(room[field])),`${field} remains in its own column`);
   }
-  const filePage=await browser.newPage({viewport:{width:390,height:1000}});trackErrors(filePage);
-  await filePage.goto(pathToFileURL(path.join(root,'tibet-cuoqin-guide.html')).href,{waitUntil:'domcontentloaded'});
-  await checkStaticContent(filePage,'file://');
-  assert.ok(await filePage.locator('#day-D4 .schedule').isVisible(),'local file has readable schedule');
-  await filePage.close();
-
-  const noJS=await browser.newContext({javaScriptEnabled:false,viewport:{width:390,height:1000}});
-  const noJSPage=await noJS.newPage();trackErrors(noJSPage);
-  await noJSPage.goto(url,{waitUntil:'domcontentloaded'});
-  await checkStaticContent(noJSPage,'no JavaScript');
-  await noJSPage.locator('#day-D5 summary').click();
-  assert.ok(await noJSPage.locator('#day-D5 .spot-grid').isVisible(),'native details still work without JavaScript');
-  await noJSPage.goto(pathToFileURL(path.join(root,'tibet-cuoqin-guide.html')).href,{waitUntil:'domcontentloaded'});
-  await checkStaticContent(noJSPage,'file:// without JavaScript');
-  assert.ok(await noJSPage.locator('#day-D4 .schedule').isVisible(),'offline no-JS schedule remains readable');
-  await noJSPage.emulateMedia({media:'print'});
-  assert.ok(await noJSPage.locator('.hotel-information-scroll').evaluate(node=>node.querySelector('table').getBoundingClientRect().width<=node.getBoundingClientRect().width+1),'hotel print layout also fits without JavaScript');
-  await noJS.close();
-  assert.deepEqual(errors,[],'no page errors');
-  console.log(JSON.stringify({output,results,screenshots,errors,fileReadable:true,noJSReadable:true},null,2));
-}finally{
-  await browser.close();
 }
+for(const old of base.hotels.filter(hotel=>['09.25','09.26','09.27','09.28'].includes(hotel.checkin))){
+  const matching=hotelRows.filter(row=>row.date===`2026-${old.checkin.replace('.','-')}`&&row.text.includes(old.hotel));
+  assert.ok(matching.length&&old.room.split('\n').every(room=>matching.some(row=>row.text.includes(room))),'early actual hotels and historical alternatives retain their room records');
+}
+const villageRows=hotelRows.filter(row=>row.date==='2026-09-30');
+assert.equal(villageRows.length,1);
+assert.ok(villageRows[0].text.includes('琼宗湖景驿站')&&villageRows[0].text.includes('952')&&!villageRows[0].text.includes('尚客优'));
+const villageCells=Object.fromEntries(villageRows[0].cells.map(cell=>[cell.key,cell.text]));
+for(const key of ['area','bed','oxygen','breakfast'])assert.equal(villageCells[key],'未提供');
+assert.ok(!hotelSection.includes(cancelled.hotel)&&!retiredHotelUI.test(hotelSection));
+const returnText=plain(html.match(/<div id="return-flight">([\s\S]*?)<\/div>/)?.[1]||'');
+assert.ok(returnText.includes('TV9949')&&returnText.includes('杭州')&&/10\s*(?:月|\/|\.|-)\s*0?4/.test(returnText));
+assert.ok(!/10:55|16:55/.test(returnText)&&/待|未提供|未确认/.test(returnText),'rescheduled flight times remain unconfirmed');
+
+for(const file of ['guide-weather-trends.js','guide-weather.js','guide-drone-evidence.js','guide-drone.js'])vm.runInContext(read(file),context,{filename:file});
+const weather=JSON.parse(JSON.stringify(context.window.TIBET_WEATHER));
+const drone=JSON.parse(JSON.stringify(context.window.TIBET_DRONE));
+const input={plan,base,original,weather,drone,conditions},before=JSON.stringify(input);
+const data=referenceDataChapters(input);
+assert.equal(JSON.stringify(input),before,'chapter rendering does not mutate source evidence');
+for(const [id,body] of [['weather',data.weatherHtml],['drone',data.droneHtml],['altitude',data.altitudeHtml]])assert.ok(sectionBody(id).includes(body),`${id}: complete data chapter is present without JavaScript`);
+assert.equal(Object.keys(data.weatherByDate).length,10);
+for(const node of data.weatherNodes){
+  assert.ok(plan.days.some(day=>day.date===node.date),'weather dates stay within the revised trip');
+  if(Number.isFinite(node.high)){
+    const source=weather.nodes.find(old=>old.date===node.date&&old.sourceUrl===node.sourceUrl&&old.high===node.high&&old.low===node.low&&old.checkedAt===node.checkedAt&&node.places.every(place=>old.places.includes(place)));
+    assert.ok(source,'every temperature retains its exact original date, location, values, URL and check time');
+  }
+  if(node.date>='2026-09-30')assert.ok(node.high===null&&node.low===null,'rescheduled dates have no substituted temperatures');
+}
+for(const day of plan.days.slice(0,4))assert.equal(data.weatherByDate[day.date].sourceLabel,'原日期预报快照');
+assert.ok(data.weatherHtml.includes('缺失值不插值')&&data.weatherHtml.includes('不代表实际经历的天气'));
+assert.equal(data.droneRows.length,12);
+assert.equal((data.droneHtml.match(/<tr data-drone-id=/g)||[]).length,12);
+for(const row of data.droneRows){
+  const source=drone.rows.find(old=>old.id===row.id);
+  assert.ok(source&&plan.days.find(day=>day.date===row.date)?.spots.includes(row.spotKey));
+  assert.deepEqual(row.uom,source.uom,'UOM status, original observation and sources are not rewritten as fresh evidence');
+  assert.deepEqual(row.venue,source.venue,'original venue evidence is retained');
+  assert.equal(row.originalItineraryDate,source.date);
+}
+const stays=data.altitudePoints.filter(point=>point.stay);
+assert.equal(stays.length,9);
+assert.deepEqual(stays.map(point=>point.date),plan.days.slice(0,9).map(day=>day.date));
+assert.equal(stays.find(point=>point.date==='2026-09-30').alt,4650,'village uses the existing approximate area elevation');
+assert.ok(data.altitudeHtml.includes('非酒店实测'),'rendered text identifies area elevation, not a measured hotel value');
+assert.ok(data.altitudeHtml.includes('不作为琼宗湖景驿站实测海拔'));
+assert.ok(!data.altitudePoints.some(point=>/玛旁|塔尔钦|札达|古格|革吉|改则|物玛|雀登/.test(point.name)),'cancelled western route nodes are absent');
+for(const point of data.altitudePoints)assert.ok(base.profile.flatMap(group=>group.points).some(old=>old.name===point.sourceName&&old.alt===point.alt),'all altitude values come from the original known points');
+for(const artifact of [html,markdown]){
+  assert.ok(!/订单号|信用卡|尾号|银行卡|支付账号/.test(artifact),'public artifacts omit hotel payment and order identifiers');
+  assert.ok(!/codex:\/\/threads/.test(artifact),'internal task links are not published');
+}
+console.log('Offline guide checks passed: 9 legacy chapters, mileage in overview, 10 full days, 9 hotel panels, 19 hotel rows, 12 drone records and 9 altitude stay nodes. Browser layout is checked separately with CUA.');

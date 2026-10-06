@@ -23,3 +23,18 @@ document.querySelectorAll('img').forEach(img => {
   img.addEventListener('error', fail);
   if (img.complete && !img.naturalWidth) fail();
 });
+
+// Match the original guide's current-chapter indicator without hiding static content.
+const chapterLinks=[...document.querySelectorAll('.quick-nav a')];
+if('IntersectionObserver' in window){
+  const observer=new IntersectionObserver(entries=>{
+    for(const entry of entries)if(entry.isIntersecting){
+      chapterLinks.forEach(link=>{
+        const active=link.hash===`#${entry.target.id}`;
+        link.classList.toggle('is-active',active);
+        if(active)link.setAttribute('aria-current','location');else link.removeAttribute('aria-current');
+      });
+    }
+  },{rootMargin:'-90px 0px -68% 0px',threshold:0});
+  document.querySelectorAll('main>section[id]').forEach(section=>observer.observe(section));
+}
