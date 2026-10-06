@@ -27,19 +27,22 @@ export function hotelInformationRows(plan = {}, base = {}, hotelMedia = {}) {
   const year = /^\d{4}/.exec(plan.meta?.startDate || '')?.[0] || '2026';
   const ids = new Map();
   const rows = [];
+  const confirmed = (plan.confirmedStays || []).filter(stay =>
+    stay.checkin >= plan.meta?.startDate && stay.checkin < plan.meta?.endDate && !/已取消/.test(stay.status || ''));
   for (const hotel of base.hotels || []) {
     const match = /^(09)\.(25|26|27|28)$/.exec(hotel.checkin || '');
     if (!match) continue;
     const checkin = `${year}-${match[1]}-${match[2]}`;
+    if (confirmed.some(stay => stay.checkin === checkin && stay.hotel === hotel.hotel)) continue;
     const key = `${checkin}:${hotel.hotel}`;
     if (!ids.has(key)) ids.set(key, `original-${checkin.replaceAll('-', '')}-${ids.size + 1}`);
     rows.push({
       stayId: ids.get(key), origin: 'historical', checkin, checkout: '',
-      span: value(hotel.span), place: value(hotel.place), hotel: value(hotel.hotel),
+      span: value(hotel.span), place: hotel.place?.endsWith('（备选）') ? hotel.place : `${value(hotel.place)}（备选）`, hotel: value(hotel.hotel),
       hotelUrl: mediaUrl(hotelMedia, hotel.hotel), price: value(hotel.price), priceNote: '',
       room: value(hotel.room), cancel: value(hotel.cancel), area: value(hotel.area),
       bed: value(hotel.bed), oxygen: value(hotel.oxygen), breakfast: value(hotel.breakfast),
-      status: '原订单信息，未确认入住', source: '原攻略订单资料',
+      status: '历史备选订单，未列入实际住宿', source: '原攻略订单资料',
       paymentStatus: '', address: hotel.address || '', checkinTime: '', checkoutTime: '',
       features: '', details: hotel.roomNote || '',
       notes: [hotel.stayNote, hotel.alert ? `原记录：${hotel.alert}` : ''].filter(Boolean),
@@ -47,8 +50,7 @@ export function hotelInformationRows(plan = {}, base = {}, hotelMedia = {}) {
     });
   }
 
-  for (const stay of plan.confirmedStays || []) {
-    if (!stay.checkin || stay.checkin < `${year}-09-29` || stay.checkin > `${year}-10-03` || /已取消/.test(stay.status || '')) continue;
+  for (const stay of confirmed) {
     const nights = positive(stay.nights);
     const total = amountValue(stay.total);
     const roomEntries = stay.rooms?.length ? stay.rooms : [{}];
@@ -71,25 +73,13 @@ export function hotelInformationRows(plan = {}, base = {}, hotelMedia = {}) {
         breakfast: value(stay.breakfast), status: value(stay.status), source: value(stay.source),
         paymentStatus: stay.paymentStatus || '', address: stay.address || '',
         checkinTime: stay.checkinTime || '', checkoutTime: stay.checkoutTime || '',
-        features: room.features || '', details: room.details || '', notes: [],
+        features: room.features || '', details: room.details || '', notes: stay.note ? [stay.note] : [],
         nights, count, amount, total, unitAmount,
       });
     }
   }
 
-  const candidateName = '尚客优酒店（那曲尼玛县政府客运站店）';
-  rows.push({
-    stayId: 'nima-shangkeyou-20260930-candidate', origin: 'candidate',
-    checkin: `${year}-09-30`, checkout: '', span: '1 晚（计划） / 间数未提供',
-    place: '尼玛县', hotel: candidateName, hotelUrl: mediaUrl(hotelMedia, candidateName),
-    price: MISSING, priceNote: '', room: MISSING, cancel: MISSING, area: MISSING,
-    bed: MISSING, oxygen: MISSING, breakfast: MISSING,
-    status: '住宿候选，未确认订单或入住', source: '9 月 30 日路线住宿候选',
-    paymentStatus: '', address: '', checkinTime: '', checkoutTime: '',
-    features: '', details: '', notes: [], nights: 1, count: null,
-    amount: null, total: null, unitAmount: null,
-  });
-  return rows.sort((a, b) => a.checkin.localeCompare(b.checkin));
+  return rows.sort((a, b) => a.checkin.localeCompare(b.checkin) || Number(b.origin === 'confirmed') - Number(a.origin === 'confirmed'));
 }
 
 function cellParts(row, key) {
@@ -122,11 +112,11 @@ export function hotelInformationHtml(rows = []) {
     seen.add(row.stayId);
     return `<tr${id} data-stay-id="${escapeHtml(row.stayId)}" data-checkin="${escapeHtml(row.checkin)}" data-origin="${escapeHtml(row.origin)}">${COLUMNS.map(([key]) => `<td data-col="${key}" data-field="${key}">${cellHtml(row, key)}</td>`).join('')}</tr>`;
   }).join('');
-  return `<div class="hotel-information"><p class="hotel-information-help">按入住日期排列；可左右滑动查看全部 11 列。原订单信息与住宿候选均保留状态标注，缺失字段显示“未提供”。多间多晚的单间价格按订单总额均摊。</p><div class="hotel-information-scroll" tabindex="0" role="region" aria-label="可横向滚动的酒店信息表"><table class="hotel-information-table hotel-table"><caption>酒店信息 · 房型、价格与服务</caption><colgroup>${COLUMNS.map(([key]) => `<col class="hotel-information-col-${key}">`).join('')}</colgroup><thead><tr>${COLUMNS.map(([, title]) => `<th scope="col">${title}</th>`).join('')}</tr></thead><tbody>${body}</tbody></table></div></div>`;
+  return `<div class="hotel-information"><p class="hotel-information-help">按入住日期排列，实际住宿列在同日历史备选之前；可左右滑动查看全部 11 列。缺失字段显示“未提供”。多间多晚的单间价格按对应总额均摊；措勤两种房型保留原订单价，并注明记账均摊额。</p><div class="hotel-information-scroll" tabindex="0" role="region" aria-label="可横向滚动的酒店信息表"><table class="hotel-information-table hotel-table"><caption>酒店信息 · 房型、价格与服务</caption><colgroup>${COLUMNS.map(([key]) => `<col class="hotel-information-col-${key}">`).join('')}</colgroup><thead><tr>${COLUMNS.map(([, title]) => `<th scope="col">${title}</th>`).join('')}</tr></thead><tbody>${body}</tbody></table></div></div>`;
 }
 
 export function hotelInformationMarkdown(rows = []) {
   const header = `| ${COLUMNS.map(([, title]) => title).join(' | ')} |\n| ${COLUMNS.map(() => '---').join(' | ')} |\n`;
   const body = rows.map(row => `| ${COLUMNS.map(([key]) => cellParts(row, key).map(markdown).join('<br>')).join(' | ')} |`).join('\n');
-  return '原订单信息与住宿候选保留状态标注；缺失字段为“未提供”。多间多晚单间价格按订单总额均摊。\n\n' + header + body + '\n';
+  return '实际住宿列在同日历史备选之前；缺失字段为“未提供”。多间多晚单间价格按对应总额均摊；措勤保留原订单价，并注明记账均摊额。\n\n' + header + body + '\n';
 }

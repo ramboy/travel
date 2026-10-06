@@ -1,0 +1,255 @@
+{
+  "query_date": "2026-10-06",
+  "days": [
+    {
+      "date": "2026-09-25",
+      "km": 61.5,
+      "route": [
+        "拉萨贡嘎国际机场T3航站楼",
+        "亚朵酒店(拉萨万达广场市政府店)"
+      ],
+      "url": "https://www.amap.com/ssr/dir?from=home&type=0&fname=%E6%8B%89%E8%90%A8%E8%B4%A1%E5%98%8E%E5%9B%BD%E9%99%85%E6%9C%BA%E5%9C%BAT3%E8%88%AA%E7%AB%99%E6%A5%BC&flat=29.289247&flon=90.895441&fid=B0FFLHIUL6&fpoitype=150104&dname=%E4%BA%9A%E6%9C%B5%E9%85%92%E5%BA%97%28%E6%8B%89%E8%90%A8%E4%B8%87%E8%BE%BE%E5%B9%BF%E5%9C%BA%E5%B8%82%E6%94%BF%E5%BA%9C%E5%BA%97%29&dlat=29.658296&dlon=91.156726&did=B0HU15BWOA&dpoitype=100100&policy=1",
+      "note": "按机场T3至酒店计算，实际租车提车点未单独提供。"
+    },
+    {
+      "date": "2026-09-26",
+      "km": 390.2,
+      "route": [
+        "亚朵酒店(拉萨万达广场市政府店)",
+        "鲁日拉观景台",
+        "卡若拉冰川停车场",
+        "康马维纳斯酒店"
+      ],
+      "url": "https://www.amap.com/ssr/dir?from=home&type=0&fname=%E4%BA%9A%E6%9C%B5%E9%85%92%E5%BA%97%28%E6%8B%89%E8%90%A8%E4%B8%87%E8%BE%BE%E5%B9%BF%E5%9C%BA%E5%B8%82%E6%94%BF%E5%BA%9C%E5%BA%97%29&flat=29.658296&flon=91.156726&fid=B0HU15BWOA&fpoitype=100100&dname=%E5%BA%B7%E9%A9%AC%E7%BB%B4%E7%BA%B3%E6%96%AF%E9%85%92%E5%BA%97&dlat=28.558874&dlon=89.677379&did=B0L3AUVE6P&dpoitype=100100&policy=1&vname=%E9%B2%81%E6%97%A5%E6%8B%89%E8%A7%82%E6%99%AF%E5%8F%B0%7C%E5%8D%A1%E8%8B%A5%E6%8B%89%E5%86%B0%E5%B7%9D%E5%81%9C%E8%BD%A6%E5%9C%BA&vlat=29.037311%7C28.895750&vlon=90.922754%7C90.165786&vid=B0HANZNTL5%7CB0GUO75N8C",
+      "note": "完整多途经路线，一次规划读取，非分段估算。"
+    },
+    {
+      "date": "2026-09-27",
+      "km": 421.7,
+      "route": [
+        "康马维纳斯酒店",
+        "西林观景台",
+        "加乌拉山口观景平台",
+        "定日县珠穆朗玛国际酒店"
+      ],
+      "url": "https://www.amap.com/ssr/dir?from=home&type=0&fname=%E5%BA%B7%E9%A9%AC%E7%BB%B4%E7%BA%B3%E6%96%AF%E9%85%92%E5%BA%97&flat=28.558874&flon=89.677379&fid=B0L3AUVE6P&fpoitype=100100&dname=%E5%AE%9A%E6%97%A5%E5%8E%BF%E7%8F%A0%E7%A9%86%E6%9C%97%E7%8E%9B%E5%9B%BD%E9%99%85%E9%85%92%E5%BA%97&dlat=28.629200&dlon=87.177734&did=B0KR6OY1D2&dpoitype=100100&policy=1&vname=%E8%A5%BF%E6%9E%97%E8%A7%82%E6%99%AF%E5%8F%B0%7C%E5%8A%A0%E4%B9%8C%E6%8B%89%E5%B1%B1%E5%8F%A3%E8%A7%82%E6%99%AF%E5%B9%B3%E5%8F%B0&vlat=28.474818%7C28.499393&vlon=87.702591%7C87.070059&vid=B0FFKJWFPH%7CB0L2BLLTOX",
+      "note": "完整多途经路线。截图确认第一项蓝框选中421.7公里；第二项442.9公里虽耗时较短，仍采用默认第一推荐方案。"
+    },
+    {
+      "date": "2026-09-28",
+      "km": 408.9,
+      "route": [
+        "定日县珠穆朗玛国际酒店",
+        "珠峰景区环保车换乘中心",
+        "珠峰古堡停车场",
+        "佩枯错希峰观景台",
+        "如家酒店(萨嘎店)"
+      ],
+      "pois": [
+        {
+          "name": "定日县珠穆朗玛国际酒店",
+          "address": "协格尔镇白坝村白坝大道白坝派出所西南190米",
+          "lat": 28.6292,
+          "lon": 87.177734,
+          "id": "B0KR6OY1D2"
+        },
+        {
+          "name": "珠峰景区环保车换乘中心",
+          "address": "珠峰路与生态路交叉口西北120米",
+          "lat": 28.423855,
+          "lon": 87.0252,
+          "id": "B0JD0HNNV9"
+        },
+        {
+          "name": "珠峰古堡停车场",
+          "address": "东巴村珠峰古堡西北侧",
+          "lat": 28.580182,
+          "lon": 86.516101,
+          "id": "B0K1KDB778"
+        },
+        {
+          "name": "佩枯错希峰观景台",
+          "address": "希峰观景区停车场",
+          "lat": 28.872316,
+          "lon": 85.655333,
+          "id": "B0HUA590SE"
+        },
+        {
+          "name": "如家酒店(萨嘎店)",
+          "address": "德吉路106号",
+          "lat": 29.331318,
+          "lon": 85.234727,
+          "id": "B0L14O33QN"
+        }
+      ],
+      "url": "https://www.amap.com/ssr/dir?from=home&type=0&fname=%E5%AE%9A%E6%97%A5%E5%8E%BF%E7%8F%A0%E7%A9%86%E6%9C%97%E7%8E%9B%E5%9B%BD%E9%99%85%E9%85%92%E5%BA%97&flat=28.629200&flon=87.177734&fid=B0KR6OY1D2&fpoitype=100100&dname=%E5%A6%82%E5%AE%B6%E9%85%92%E5%BA%97%28%E8%90%A8%E5%98%8E%E5%BA%97%29&dlat=29.331318&dlon=85.234727&did=B0L14O33QN&dpoitype=100000&policy=1&vname=%E7%8F%A0%E5%B3%B0%E6%99%AF%E5%8C%BA%E7%8E%AF%E4%BF%9D%E8%BD%A6%E6%8D%A2%E4%B9%98%E4%B8%AD%E5%BF%83%7C%E7%8F%A0%E5%B3%B0%E5%8F%A4%E5%A0%A1%E5%81%9C%E8%BD%A6%E5%9C%BA%7C%E4%BD%A9%E6%9E%AF%E9%94%99%E5%B8%8C%E5%B3%B0%E8%A7%82%E6%99%AF%E5%8F%B0&vlat=28.423855%7C28.580182%7C28.872316&vlon=87.025200%7C86.516101%7C85.655333&vid=B0JD0HNNV9%7CB0K1KDB778%7CB0HUA590SE",
+      "note": "珠峰景区环保车换乘中心为自驾到达点，不含换乘中心至大本营的接驳车里程。"
+    },
+    {
+      "date": "2026-09-29",
+      "km": 286.6,
+      "route": [
+        "如家酒店(萨嘎店)",
+        "锦江之星酒店(阿里措勤国道216店)"
+      ],
+      "pois": [
+        {
+          "name": "如家酒店(萨嘎店)",
+          "address": "德吉路106号",
+          "lat": 29.331318,
+          "lon": 85.234727,
+          "id": "B0L14O33QN"
+        },
+        {
+          "name": "锦江之星酒店(阿里措勤国道216店)",
+          "address": "216国道川味居老厨房向北15米",
+          "lat": 31.019946,
+          "lon": 85.151803,
+          "id": "B0LA31F2O0"
+        }
+      ],
+      "url": "https://www.amap.com/ssr/dir?from=home&type=0&fname=%E5%A6%82%E5%AE%B6%E9%85%92%E5%BA%97%28%E8%90%A8%E5%98%8E%E5%BA%97%29&flat=29.331318&flon=85.234727&fid=B0L14O33QN&fpoitype=100000&dname=%E9%94%A6%E6%B1%9F%E4%B9%8B%E6%98%9F%E9%85%92%E5%BA%97%28%E9%98%BF%E9%87%8C%E6%8E%AA%E5%8B%A4%E5%9B%BD%E9%81%93216%E5%BA%97%29&dlat=31.019946&dlon=85.151803&did=B0LA31F2O0&dpoitype=100100&policy=1",
+      "note": "沿G216北上，未额外加入达格架喷泉或草帽山。"
+    },
+    {
+      "date": "2026-09-30",
+      "km": 274.9,
+      "time": "4小时48分钟",
+      "route": [
+        "锦江之星酒店(阿里措勤国道216店)",
+        "扎日南木措北岸观景台",
+        "尼玛琼宗湖景驿站"
+      ],
+      "pois": [
+        {
+          "name": "锦江之星酒店(阿里措勤国道216店)",
+          "id": "B0LA31F2O0",
+          "lat": 31.019946,
+          "lon": 85.151803
+        },
+        {
+          "name": "扎日南木措北岸观景台",
+          "id": "B0GRRSJIJ7",
+          "lat": 31.031001,
+          "lon": 85.636776
+        },
+        {
+          "name": "尼玛琼宗湖景驿站",
+          "id": "B0IUTK0X0R",
+          "lat": 31.340374,
+          "lon": 86.757124
+        }
+      ],
+      "note": "默认第一条蓝框选中路线，途经604县道、652乡道、205省道。截图已核验。第二条备选230公里5小时6分未采用。直接以村内酒店作为文布南村到达点，不额外绕行公益电影放映点。",
+      "url": "https://www.amap.com/ssr/dir?from=home&type=0&fname=%E9%94%A6%E6%B1%9F%E4%B9%8B%E6%98%9F%E9%85%92%E5%BA%97(%E9%98%BF%E9%87%8C%E6%8E%AA%E5%8B%A4%E5%9B%BD%E9%81%93216%E5%BA%97)&flat=31.019946&flon=85.151803&fid=B0LA31F2O0&fpoitype=100100&dname=%E5%B0%BC%E7%8E%9B%E7%90%BC%E5%AE%97%E6%B9%96%E6%99%AF%E9%A9%BF%E7%AB%99&dlat=31.340374&dlon=86.757124&did=B0IUTK0X0R&policy=1&vname=%E6%89%8E%E6%97%A5%E5%8D%97%E6%9C%A8%E6%8E%AA%E5%8C%97%E5%B2%B8%E8%A7%82%E6%99%AF%E5%8F%B0&vlat=31.031001&vlon=85.636776&vid=B0GRRSJIJ7"
+    },
+    {
+      "date": "2026-10-01",
+      "query_date": "2026-10-06",
+      "km": 453.1,
+      "duration": "5小时42分钟",
+      "route": [
+        "尼玛琼宗湖景驿站",
+        "色林错观景台",
+        "华庭酒店(那曲班戈店)"
+      ],
+      "pois": [
+        {
+          "name": "尼玛琼宗湖景驿站",
+          "id": "B0IUTK0X0R",
+          "lat": 31.340374,
+          "lon": 86.757124
+        },
+        {
+          "name": "色林错观景台",
+          "id": "B0L1DRV20D",
+          "lat": 31.694154,
+          "lon": 88.750963
+        },
+        {
+          "name": "华庭酒店(那曲班戈店)",
+          "id": "B0LGAZMYB1",
+          "lat": 31.403426,
+          "lon": 90.027663
+        }
+      ],
+      "roads": [
+        "205省道",
+        "317国道"
+      ],
+      "note": "从文布南村实际入住酒店出发，经色林错317国道北侧观景台到班戈；高德当前仅显示一条推荐路线453.1公里。未绕行原拟尼玛县城尚客优。",
+      "url": "https://www.amap.com/ssr/dir?from=home&type=0&fname=%E5%B0%BC%E7%8E%9B%E7%90%BC%E5%AE%97%E6%B9%96%E6%99%AF%E9%A9%BF%E7%AB%99&flat=31.340374&flon=86.757124&fid=B0IUTK0X0R&fpoitype=100100&dname=%E5%8D%8E%E5%BA%AD%E9%85%92%E5%BA%97%28%E9%82%A3%E6%9B%B2%E7%8F%AD%E6%88%88%E5%BA%97%29&dlat=31.403426&dlon=90.027663&did=B0LGAZMYB1&dpoitype=100100&policy=1&vname=%E8%89%B2%E6%9E%97%E9%94%99%E8%A7%82%E6%99%AF%E5%8F%B0&vlat=31.694154&vlon=88.750963&vid=B0L1DRV20D"
+    },
+    {
+      "date": "2026-10-02",
+      "km": 377.7,
+      "route": [
+        "华庭酒店(那曲班戈店)",
+        "纳木错游客集散中心地上停车场",
+        "如家酒店·neo(拉萨布达拉宫广场店)"
+      ],
+      "url": "https://www.amap.com/ssr/dir?from=home&type=0&fname=华庭酒店%28那曲班戈店%29&flat=31.403426&flon=90.027663&fid=B0LGAZMYB1&fpoitype=100100&dname=如家酒店·neo%28拉萨布达拉宫广场店%29&dlat=29.651190&dlon=91.122185&did=B0FFJGJRKZ&dpoitype=100105&policy=1&vname=纳木错游客集散中心地上停车场&vlat=30.733875&vlon=91.089075&vid=B0MAD1JUON",
+      "note": "纳木措采用当雄县206省道与当亚线交叉口北420米的游客集散中心停车场，之后至扎西半岛的景区接驳车不计入自驾。高德默认推荐377.7公里，备选393.7、397.6公里。"
+    },
+    {
+      "date": "2026-10-04",
+      "km": 57.8,
+      "route": [
+        "如家酒店·neo（拉萨布达拉宫广场店）",
+        "拉萨贡嘎国际机场T3航站楼"
+      ],
+      "url": "https://www.amap.com/ssr/dir?from=home&type=0&fname=如家酒店·neo%28拉萨布达拉宫广场店%29&flat=29.651190&flon=91.122185&fid=B0FFJGJRKZ&fpoitype=100105&dname=拉萨贡嘎国际机场T3航站楼&dlat=29.289247&dlon=90.895441&did=B0FFLHIUL6&dpoitype=150104&policy=1",
+      "note": "机场按T3航站楼规划；尚未指定实际租车还车门店，门店绕行及接驳不在此数内。"
+    }
+  ],
+  "scope": {
+    "basis": "实际酒店已核对，景点沿用攻略途经点；公里数为2026-10-06高德当前默认驾车规划，不是历史车辆轨迹或里程表",
+    "query_date": "2026-10-06",
+    "airport": "9月25日及10月4日统一以贡嘎机场T3航站楼为机场端点，实际提还车门店绕行另计",
+    "september30": "措勤经扎日南木措北岸至文布南村琼宗湖景驿站；10/1由该驿站出发经色林措去班戈",
+    "october2": "10/2暂沿用纳木措游客集散中心停车场口径；圣象天门路线单列供确认",
+    "october3": "10/3市区驾车路线未提供，未计入汇总",
+    "shuttle": "珠峰及纳木措均以换乘停车点计，自驾里程不包括其后的景区接驳车",
+    "rounding": "按高德页面显示的0.1公里数值相加"
+  },
+  "total_km": 2732.4,
+  "airport_km": 119.3,
+  "loop_km": 2613.1,
+  "alternatives": [
+    {
+      "date": "2026-10-02",
+      "label": "10/2 若途经圣象天门停车场",
+      "km": 490.2,
+      "url": "https://www.amap.com/ssr/dir?from=home&type=0&fname=%E5%8D%8E%E5%BA%AD%E9%85%92%E5%BA%97(%E9%82%A3%E6%9B%B2%E7%8F%AD%E6%88%88%E5%BA%97)&flat=31.403426&flon=90.027663&fid=B0LGAZMYB1&fpoitype=100100&dname=%E5%A6%82%E5%AE%B6%E9%85%92%E5%BA%97%C2%B7neo(%E6%8B%89%E8%90%A8%E5%B8%83%E8%BE%BE%E6%8B%89%E5%AE%AB%E5%B9%BF%E5%9C%BA%E5%BA%97)&dlat=29.65119&dlon=91.122185&did=B0FFJGJRKZ&dpoitype=100105&policy=1&vname=%E8%A5%BF%E8%97%8F%E7%BA%B3%E6%9C%A8%E9%94%99%E8%87%AA%E7%84%B6%E4%BF%9D%E6%8A%A4%E5%8C%BA%E5%9C%A3%E8%B1%A1%E5%A4%A9%E9%97%A8%E5%81%9C%E8%BD%A6%E5%9C%BA&vlat=30.820352&vlon=90.510277&vid=B0HGCSJ3NA",
+      "route": [
+        "华庭酒店(那曲班戈店)",
+        "西藏纳木错自然保护区圣象天门停车场",
+        "如家酒店·neo(拉萨布达拉宫广场店)"
+      ],
+      "pois": [
+        {
+          "name": "华庭酒店(那曲班戈店)",
+          "id": "B0LGAZMYB1",
+          "lat": 31.403426,
+          "lon": 90.027663
+        },
+        {
+          "name": "西藏纳木错自然保护区圣象天门停车场",
+          "id": "B0HGCSJ3NA",
+          "lat": 30.820352,
+          "lon": 90.510277,
+          "category": "地面停车场",
+          "verification": "高德搜索唯一结果、POI详情标题及路线URL坐标"
+        },
+        {
+          "name": "如家酒店·neo(拉萨布达拉宫广场店)",
+          "id": "B0FFJGJRKZ",
+          "lat": 29.65119,
+          "lon": 91.122185
+        }
+      ],
+      "note": "实际到访及停车方式待用户确认，本路线暂不替换上次采用的纳木措游客集散中心口径；不同时叠加两条线路。",
+      "total_km": 2844.9
+    }
+  ]
+}

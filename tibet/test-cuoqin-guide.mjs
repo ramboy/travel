@@ -37,16 +37,16 @@ for(const [index,day] of plan.days.entries()){
   for(const key of day.spots)assert.ok(original.spots[key],`known spot ${key}`);
 }
 assert.deepEqual(plan.days.slice(4,8).map(day=>[day.date,day.stay]),[
-  ['2026-09-29','措勤县'],['2026-09-30','尼玛县'],['2026-10-01','班戈县'],['2026-10-02','拉萨市']
+  ['2026-09-29','措勤县'],['2026-09-30','文布南村'],['2026-10-01','班戈县'],['2026-10-02','拉萨市']
 ]);
 assert.deepEqual(plan.days.slice(5,8).map(day=>day.spots),original.days.slice(8,11).map(day=>day.spots),'keeps the original later sightseeing order');
-assert.deepEqual(plan.days.slice(5,7).map(day=>day.route),original.days.slice(8,10).map(day=>day.route),'retains Wenbu as a stop and Nyima as the overnight destination');
+assert.ok(plan.days[5].route.at(-1).includes('琼宗')&&plan.days[6].route[0].includes('琼宗'),'September 30 overnight matches October 1 departure');
 assert.ok(plan.days[7].decision.includes('条件备选')&&plan.days[7].schedule.some(row=>row.join(' ').includes('替换')),'elephant gate remains a conditional alternative');
 assert.ok(plan.days.slice(0,4).every(day=>day.status==='historical'));
-assert.ok(plan.days[3].decision.includes('用户已确认')&&plan.days[3].decision.includes('尚未逐项确认'));
-assert.ok(plan.days[4].drive.includes('待')&&!/\d+(?:\.\d+)?\s*(?:km|公里|小时)/.test(plan.days[4].drive),'new Saga drive has no invented navigation values');
-assert.ok(plan.days[5].metricNote.includes('不含文布南村')&&plan.days[5].metricNote.includes('不能用作'));
-assert.ok(plan.days[6].metricNote.includes('从文布南村出发')&&plan.days[6].metricNote.includes('不能沿用'));
+assert.ok(plan.days[3].hotelNote.includes('如家')&&plan.days[3].decision.includes('未逐项确认'));
+assert.ok(plan.days[4].drive.includes('286.6')&&plan.days[4].drive.includes('高德'),'Saga mileage comes from the checked AMap route');
+assert.ok(plan.days[5].drive.includes('2026-10-06')&&plan.days[5].metricNote.includes('历史'));
+assert.ok(plan.days[6].drive.includes('2026-10-06')&&plan.days[6].metricNote.includes('历史'));
 assert.ok(plan.days[8].stay.includes('拉萨'),'October 3 retains Lhasa lodging');
 assert.ok(plan.days[9].route.join(' ').includes('杭州'),'D9 returns to Hangzhou');
 assert.ok(!/拉萨.*(?:住|住宿)|(?:住|住宿).*拉萨/.test(plan.days[9].stay),'October 4 does not add another Lhasa overnight');
@@ -71,11 +71,22 @@ assert.equal(jinjiang.total,1056);
 assert.equal(jinjiang.rooms.reduce((total,room)=>total+room.amount,0),jinjiang.total,'two screenshot orders total ¥1,056');
 assert.equal(jinjiang.rooms.reduce((total,room)=>total+room.count,0),2);
 assert.ok(jinjiang.rooms.every(room=>room.features==='弥散供氧、全屋智控、加湿器'));
-assert.equal(jinjiang.source,'用户提供的订单截图');
+assert.ok(jinjiang.source.includes('实际住宿记录')&&jinjiang.source.includes('截图'));
+assert.ok(jinjiang.note.includes('各 ¥528')&&jinjiang.note.includes('不是'),'accounting split is not substituted for order prices');
 const huating=plan.confirmedStays.find(stay=>stay.hotel.includes('华庭'));
 const homeinn=plan.confirmedStays.find(stay=>stay.hotel.includes('如家')&&stay.hotel.includes('布达拉宫广场'));
 assert.ok(huating&&homeinn,'October 3 screenshots supply both additional hotel records');
-assert.equal(plan.confirmedStays.length,3,'only the three screenshot-backed stays are current records');
+assert.equal(plan.confirmedStays.length,8,'eight actual hotels cover nine nights');
+assert.equal(plan.confirmedStays.reduce((n,stay)=>n+stay.nights,0),9);
+assert.ok(plan.confirmedStays.every(stay=>stay.status.includes('已入住')&&stay.source.includes('实际住宿记录')));
+const qiongzong=plan.confirmedStays.find(stay=>stay.id==='qiongzong-lake-20260930');
+assert.ok(qiongzong&&qiongzong.hotel==='琼宗湖景驿站');
+assert.deepEqual([qiongzong.checkin,qiongzong.checkout,qiongzong.rooms[0].name,qiongzong.rooms[0].count,qiongzong.total],['2026-09-30','2026-10-01','豪华套房',1,952]);
+for(const key of ['area','bed','oxygen'])assert.equal(qiongzong.rooms[0][key],'未提供','unprovided Qiongzong facilities remain unknown');
+const tingri=plan.confirmedStays.find(stay=>stay.id==='tingri-everest-20260927');
+assert.deepEqual(tingri.rooms.map(room=>[room.name,room.amount]),[['天际富氧双床房',492],['天际富氧大床房',460.02]],'user-corrected Tingri room-price mapping');
+const saga=plan.confirmedStays.find(stay=>stay.id==='saga-homeinn-20260928');
+assert.deepEqual([saga.rooms[0].count,saga.rooms[0].amount,saga.total],[2,1799,1799]);
 for(const [stay,expected] of [[huating,{checkin:'2026-10-01',checkout:'2026-10-02',nights:1,rooms:1,total:632,room:'特惠大床'}],[homeinn,{checkin:'2026-10-02',checkout:'2026-10-04',nights:2,rooms:2,total:1932,room:'高级双床'}]]){
   assert.equal(stay.checkin,expected.checkin);assert.equal(stay.checkout,expected.checkout);assert.equal(stay.nights,expected.nights);
   assert.equal((new Date(stay.checkout)-new Date(stay.checkin))/86400000,stay.nights);
@@ -89,9 +100,8 @@ for(const [stay,expected] of [[huating,{checkin:'2026-10-01',checkout:'2026-10-0
 }
 assert.ok(huating.status.includes('已完成'),'Huating order is complete');
 assert.ok(/扣款成功|已扣款/.test(huating.paymentStatus)&&!huating.paymentStatus.includes('待扣款'),'Huating payment has been taken');
-assert.ok(homeinn.paymentStatus.includes('离店扣款')&&homeinn.paymentStatus.includes('待扣款'),'Home Inn payment is still pending');
-assert.ok(/未显示|未确认|未知/.test(`${homeinn.status} ${homeinn.note}`),'Home Inn check-in remains unverified');
-assert.ok(!/^已入住$|^已完成$/.test(homeinn.status),'pending payment is not interpreted as check-in or completion');
+assert.ok(homeinn.paymentStatus.includes('10/3')&&homeinn.paymentStatus.includes('待扣款')&&homeinn.paymentStatus.includes('后续扣款状态未核实'),'past payment evidence is dated and does not imply a current charge status');
+assert.ok(homeinn.status.includes('已入住')&&homeinn.source.includes('实际住宿记录'),'actual stay confirmation comes from the user record');
 const breakfast=homeinn.breakfast.replace(/\s+/g,'');
 for(const day of [3,4])assert.ok(new RegExp(`10(?:月|/|\\.|-)${day}(?:日)?`).test(breakfast),`breakfast explicitly covers October ${day}`);
 assert.ok(/每间[^。；]*2份/.test(breakfast)&&/(?:两间|2间)[^。；]*4份/.test(breakfast),'two rooms provide two breakfasts each, four each day');
@@ -122,7 +132,7 @@ const oldHanting=plan.hotelChanges.find(hotel=>hotel.hotel.includes('汉庭'));
 assert.ok(oldHanting&&oldHanting.oldDate==='2026-10-02','original Hanting booking remains visible');
 assert.notEqual(oldHanting.newDate,'2026-09-29','Hanting is no longer the current Coqen lodging candidate');
 assert.ok(/待/.test(oldHanting.status),'handling of the original Hanting order is not inferred from another order screenshot');
-assert.ok(plan.days[4].hotelNote.includes('锦江之星')&&plan.days[4].hotelNote.includes('已入住'));
+assert.ok(plan.days[4].hotelNote.includes('锦江之星')&&/已入住|实际入住/.test(plan.days[4].hotelNote));
 assert.ok(!/住宿待落实|房间仍需落实|今晚没房/.test(plan.days[4].hotelNote),'today lodging is no longer marked unresolved');
 assert.ok(!plan.hotelChanges.some(hotel=>hotel.newDate.includes('新增 3 晚')),'obsolete Lhasa extension is removed');
 assert.ok(conditions.weather.length);
@@ -190,13 +200,15 @@ async function checkStaticContent(page,label){
     }
     assert.ok(!/\d{12,}/.test(text),'public hotel information omits long order and card numbers');
   }
-  for(const old of base.hotels.filter(hotel=>['09.25','09.26','09.27'].includes(hotel.checkin)))assert.ok(hotelRows.some(row=>row.date===`2026-${old.checkin.replace('.','-')}`&&row.text.includes(old.hotel)&&old.room.split('\n').every(room=>row.text.includes(room))),'early original hotels and alternatives remain in the information table');
-  const nima=hotelRows.filter(row=>row.date==='2026-09-30');
-  assert.ok(nima.some(row=>row.text.includes('尚客优')),'September 30 Nyima candidate remains visible');
-  for(const row of nima){
-    const cells=Object.fromEntries(row.cells.map(cell=>[cell.key,cell.text]));
-    assert.ok(/未提供|未确认|待确认/.test(cells.price)&&/未提供|未确认|待确认/.test(cells.span),'Nyima candidate does not inherit old price or room count as confirmed');
+  for(const old of base.hotels.filter(hotel=>['09.25','09.26','09.27','09.28'].includes(hotel.checkin))) {
+    const matching=hotelRows.filter(row=>row.date===`2026-${old.checkin.replace('.','-')}`&&row.text.includes(old.hotel));
+    assert.ok(matching.length&&old.room.split('\n').every(room=>matching.some(row=>row.text.includes(room))),'actual room rows replace old main rows while historical alternatives remain');
   }
+  const nima=hotelRows.filter(row=>row.date==='2026-09-30');
+  assert.equal(nima.length,1,'September 30 has one actual suite row');
+  assert.ok(nima[0].text.includes('琼宗湖景驿站')&&nima[0].text.includes('952')&&!nima[0].text.includes('尚客优'),'actual Qiongzong lodging replaces the unbooked Nyima candidate');
+  const qiongCells=Object.fromEntries(nima[0].cells.map(cell=>[cell.key,cell.text]));
+  for(const key of ['area','bed','oxygen','breakfast'])assert.equal(qiongCells[key],'未提供');
   const bedWidths=await hotelTable.locator('tbody td[data-col="bed"]').evaluateAll(cells=>cells.map(cell=>{
     const style=getComputedStyle(cell);
     return {content:cell.getBoundingClientRect().width-parseFloat(style.paddingLeft)-parseFloat(style.paddingRight),font:parseFloat(style.fontSize)};

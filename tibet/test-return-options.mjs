@@ -65,7 +65,10 @@ assert.deepEqual([huating.checkin,huating.checkout,huating.nights,huating.rooms.
 assert.deepEqual([homeinn.checkin,homeinn.checkout,homeinn.nights,homeinn.rooms.reduce((sum,room)=>sum+room.count,0),homeinn.total],['2026-10-02','2026-10-04',2,2,1932]);
 assert.ok(huating.status.includes('已完成')&&/已扣款|扣款成功/.test(huating.paymentStatus));
 assert.ok(homeinn.paymentStatus.includes('待扣款')&&homeinn.paymentStatus.includes('离店扣款'));
-assert.ok(/未显示|未确认|未知/.test(`${homeinn.status} ${homeinn.note}`),'current check-in is not inferred from the order');
+assert.ok(homeinn.status.includes('已入住')&&homeinn.source.includes('实际住宿记录'),'actual Home Inn stay is confirmed by the user record');
+assert.ok(homeinn.paymentStatus.includes('10/3')&&homeinn.paymentStatus.includes('后续扣款状态未核实'),'payment evidence retains its observation date');
+assert.equal(current.confirmedStays.length,8);
+assert.equal(current.confirmedStays.reduce((n,stay)=>n+stay.nights,0),9);
 assert.equal(current.returnFlight.date,'2026-10-04');
 assert.equal(current.returnFlight.number,'TV9949');
 assert.equal(current.returnFlight.departureTime,null);
@@ -85,7 +88,7 @@ assert.ok(data.plans[0].days.flatMap(day => day.route).some(place => place.inclu
 assert.ok(!data.plans.flatMap(plan => plan.days).flatMap(day => day.route).some(place => place.includes('天空之书')), 'route stops do not use the incorrect tree name');
 assert.ok(html.includes('return-options.css') && html.includes('return-options.js'));
 assert.ok(markdown.length > 1000, 'Markdown contains the complete route comparison');
-assert.equal(data.updatedAt,'2026-10-03');
+assert.equal(data.updatedAt,'2026-10-06');
 assert.ok(data.statusNote.includes('候选')&&data.statusNote.includes('留档'),'all four alternatives are explicitly archived');
 assert.ok(data.statusNote.includes('TV9949')&&/10\s*[/月]\s*4/.test(data.statusNote)&&data.statusNote.includes('杭州'),'latest return is October 4 to Hangzhou');
 for(const artifact of [html,markdown])assert.ok(artifact.includes(data.statusNote),'both artifacts retain the current status summary');
@@ -149,13 +152,15 @@ async function checkStructure(page, label) {
     }
     assert.ok(!/\d{12,}/.test(text),'public hotel information omits long order and card numbers');
   }
-  for(const old of base.hotels.filter(hotel=>['09.25','09.26','09.27'].includes(hotel.checkin)))assert.ok(hotelRows.some(row=>row.date===`2026-${old.checkin.replace('.','-')}`&&row.text.includes(old.hotel)&&old.room.split('\n').every(room=>row.text.includes(room))),'early original hotels and alternatives remain in the information table');
-  const nima=hotelRows.filter(row=>row.date==='2026-09-30');
-  assert.ok(nima.some(row=>row.text.includes('尚客优')),'September 30 Nyima candidate remains visible');
-  for(const row of nima){
-    const cells=Object.fromEntries(row.cells.map(cell=>[cell.key,cell.text]));
-    assert.ok(/未提供|未确认|待确认/.test(cells.price)&&/未提供|未确认|待确认/.test(cells.span),'Nyima candidate does not inherit old price or room count as confirmed');
+  for(const old of base.hotels.filter(hotel=>['09.25','09.26','09.27','09.28'].includes(hotel.checkin))) {
+    const matching=hotelRows.filter(row=>row.date===`2026-${old.checkin.replace('.','-')}`&&row.text.includes(old.hotel));
+    assert.ok(matching.length&&old.room.split('\n').every(room=>matching.some(row=>row.text.includes(room))),'actual room rows replace old main rows while historical alternatives remain');
   }
+  const nima=hotelRows.filter(row=>row.date==='2026-09-30');
+  assert.equal(nima.length,1,'September 30 has one actual suite row');
+  assert.ok(nima[0].text.includes('琼宗湖景驿站')&&nima[0].text.includes('952')&&!nima[0].text.includes('尚客优'),'actual Qiongzong lodging replaces the unbooked Nyima candidate');
+  const qiongCells=Object.fromEntries(nima[0].cells.map(cell=>[cell.key,cell.text]));
+  for(const key of ['area','bed','oxygen','breakfast'])assert.equal(qiongCells[key],'未提供');
   const bedWidths=await hotelTable.locator('tbody td[data-col="bed"]').evaluateAll(cells=>cells.map(cell=>{
     const style=getComputedStyle(cell);
     return {content:cell.getBoundingClientRect().width-parseFloat(style.paddingLeft)-parseFloat(style.paddingRight),font:parseFloat(style.fontSize)};
